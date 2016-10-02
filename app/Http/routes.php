@@ -17,7 +17,6 @@ Route::get('/historia', 'MainController@historia');
 
 Route::get('/inscripcion', 'InscriptionController@inscription');
 
-Route::get('/formulario', 'InscriptionController@formulary');
 
 Route::get('/teacher_profile', 'TeachersController@perfil');
 Route::get('/dash_teacher', 'TeachersController@dashboard');
