@@ -15,4 +15,8 @@ class InscriptionController extends Controller
     public function formulary(){
         return view('matricula.formulario');
     }
+
+    public function afiche(){
+        return view('matricula.propuesta');
+    }
 }

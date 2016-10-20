@@ -124,13 +124,13 @@
             </div>
             </a>
 
-            <a href="#" class="mdl-navigation__link">
+            <a href="{{url('/propuesta')}}" class="mdl-navigation__link">
                 <div class="col-md-4 feature">
                     <i class="material-icons">new_releases</i>
                     <h3>Propuesta 2017</h3>
                     <div class="title_border"></div>
-                    <p>Texto texto Texto texto Texto texto Texto texto Texto texto Texto texto Texto texto Texto texto
-                        Texto texto Texto texto Texto texto Texto texto Texto texto Texto.</p>
+                    <p>En este apartado podrás encontrar toda la información que necesites sobre nuestra propuesta
+                        escolar para el año 2017. ¡Anímate a la excelencia!</p>
                 </div>
             </a>
         </div>
