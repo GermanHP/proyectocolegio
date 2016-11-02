@@ -27,3 +27,5 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/download/{tipo}', 'PdfController@crear_prospecto');
+

@@ -1,5 +1,23 @@
 @extends('layouts.app')
 @section('content')
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading mdl-color--pink-900">
+
+                <img class="img-thumbnail center-block" src="img/indexes/logo.jpg"
+                     alt="Generic placeholder image" width="240" height="240">
+
+                <h3 class="text-center">Colegio San Juan Bautista</h3>
+                <h3 class="text-center">C&oacute;digo de Infraest. 20860</h3>
+                <h3 class="text-center">Olocuilta, La Paz</h3>
+            </div>
+            <hr class="divider">
+            <div class="panel-body">
+                <h1>Próximamente...</h1>
+            </div>
+        </div>
+    </div>
+    <!--
     <div class="panel panel-primary container">
         <div class="panel-heading">
             <h2>Personal Docente</h2>
@@ -47,6 +65,6 @@
             <p><h2>Jean Grey</h2></p>
             <p>Poderosa telépata portadora de la fuerza Fenix.</p>
         </div>
-    </div>
+    </div> -->
 
 @endsection

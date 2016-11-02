@@ -39,7 +39,7 @@
                     aria-expanded="false">Servicios<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Cuadro de honor</a></li>
-                        <li><a href="#">Comentarios</a></li>
+                        <li><a data-toggle="modal" data-target="#myModal">Comentarios</a></li>
                         <li><a href="#">Encuesta</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Contáctanos</a></li>
@@ -73,7 +73,37 @@
                 </script>
         </div>
     </main>
-    <div class="mdl-mega-footer__drop-down-section">
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Comentarios</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group form-group">
+                        <span class="input-group-addon" id="basic-addon1">Correo Electrónico</span>
+                        <input type="email" class="form-control" placeholder="email@email.com" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group form-group">
+                        <span class="input-group-addon" id="basic-addon1">Comentario</span>
+                        <input type="email" class="form-control" placeholder="Comentario" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Enviar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mdl-mega-footer__drop-down-sec>
         @include('includes.footer')
     </div>
 </div>

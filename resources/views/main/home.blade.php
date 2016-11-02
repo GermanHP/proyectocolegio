@@ -61,21 +61,22 @@
         <h4>Noticias SJB</h4>
         <a href="" class="list-group-item">
             <h4 class="list-group-item-heading">Inicio de matrícula</h4>
-            <p class="list-group-item-text">Matrícula abierta año 2017 a partir del día X.</p>
+            <p class="list-group-item-text">Ya está abierta la matícula para el año escolar 2017.</p>
         </a>
         <a href="" class="list-group-item">
-            <h4 class="list-group-item-heading">Conoce nuestro sitio web.</h4>
+            <h4 class="list-group-item-heading">Conoce nuestro sitio web</h4>
             <p class="list-group-item-text">De la mano con la excelencia, la tecnología ahora está con nosotros.</p>
         </a>
         <a href="" class="list-group-item">
-            <h4 class="list-group-item-heading">Matrícula en Línea</h4>
-            <p class="list-group-item-text">Como sello de nuestra calidad, a partir del año 2017 ponemos a disposición
-            la matrícula en línea</p>
+            <h4 class="list-group-item-heading">Fiesta de elección y coronación del rey y la reina del Colegio San Juan
+                Bautista 2016-2017, con cena incluida</h4>
+            <p class="list-group-item-text">Tendremos además la presentación especial del Mariachi Guadalupano. Costo
+                de la tarjeta $5.00, de venta en la oficina del colegio.</p>
         </a>
         <a href="" class="list-group-item">
-            <h4 class="list-group-item-heading">Concierto navideño.</h4>
-            <p class="list-group-item-text">Nuestros docentes y alumnos se unen para deleitar con un concierto de
-            música navideña</p>
+            <h4 class="list-group-item-heading">Clausura del año escolar 2016</h4>
+            <p class="list-group-item-text">Para parvularia miércoles 16 de noviembre, hora 8:00 am. Para primero,
+                segundo y tercer ciclo, martes 22 de noviembre, hora 8:00 am.</p>
         </a>
     </aside>
 
@@ -119,8 +120,8 @@
                 <i class="material-icons">thumb_up</i>
                 <h3>Conócenos</h3>
                 <div class="title_border"></div>
-                <p>Texto texto Texto texto Texto texto Texto texto Texto texto Texto texto Texto texto Texto texto
-                    Texto texto Texto texto Texto texto Texto texto Texto texto Texto.</p>
+                <p>Conóce nuestra historia, todo un legado en educación con excelencia, logros
+                    y avances que nos destacan por mucho como una institución de avanzada.</p>
             </div>
             </a>
 

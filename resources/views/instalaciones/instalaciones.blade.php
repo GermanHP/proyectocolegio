@@ -1,15 +1,13 @@
 @extends('layouts.app2')
 @section('content')
     <link rel="stylesheet" href="css/instalacion.css">
-    <div id="principal" class="size-principal"></div>
-    <div id="contenedor">
-        <div id="cuerpo">
-            <hr class="featurette-divider">
-            <div class="row container margen-cuerpo list-group-item">
+    <div id="principal" class="container"></div>
+    <div id="contenedor" class="container">
+        <div class="panel panel-body container row">
+
                 <div class="col-lg-4">
                     <h2>Laboratorio de Inglés y Computación</h2>
-                    <p>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                        texto texto texto texto texto texto texto texto texto texto texto texto texto </p>
+
                 </div><!-- /.col-lg-4 -->
                 <div>
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -63,13 +61,10 @@
 
                 <hr class="featurette-divider">
 
-            </div><!-- /.row -->
 
-            <div class="row container margen-cuerpo list-group-item">
                 <div class="col-lg-4">
                     <h2>Laboratorio de Ciencias</h2>
-                    <p>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                        texto texto texto texto texto texto texto texto texto texto texto texto texto </p>
+
                 </div><!-- /.col-lg-4 -->
                 <div>
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -124,13 +119,9 @@
 
                 <hr class="featurette-divider">
 
-            </div><!-- /.row -->
-
-            <div class="row container margen-cuerpo list-group-item">
                 <div class="col-lg-4">
                     <h2>Clases de Natación</h2>
-                    <p>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                        texto texto texto texto texto texto texto texto texto texto texto texto texto </p>
+
                 </div><!-- /.col-lg-4 -->
                 <div>
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -183,13 +174,10 @@
                     </div>
                 </div>
                 <hr class="featurette-divider">
-            </div><!-- /.row -->
 
-            <div class="row container margen-cuerpo list-group-item">
                 <div class="col-lg-4">
                     <h2>Clases de Ajedrez</h2>
-                    <p>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                        texto texto texto texto texto texto texto texto texto texto texto texto texto </p>
+
                 </div><!-- /.col-lg-4 -->
                 <div>
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -241,13 +229,10 @@
                     </div>
                 </div>
                 <hr class="featurette-divider">
-            </div><!-- /.row -->
 
-            <div class="row container margen-cuerpo list-group-item">
                 <div class="col-lg-4">
                     <h2>Robótica Educativa</h2>
-                    <p>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                        texto texto texto texto texto texto texto texto texto texto texto texto texto </p>
+
                 </div><!-- /.col-lg-4 -->
                 <div>
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -299,13 +284,10 @@
                     </div>
                 </div>
                 <hr class="featurette-divider">
-            </div><!-- /.row -->
 
-            <div class="row container margen-cuerpo list-group-item">
                 <div class="col-lg-4">
                     <h2>Grupo de Danza</h2>
-                    <p>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                        texto texto texto texto texto texto texto texto texto texto texto texto texto </p>
+
                 </div><!-- /.col-lg-4 -->
                 <div>
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -343,13 +325,10 @@
                     </div>
                 </div>
                 <hr class="featurette-divider">
-            </div><!-- /.row -->
 
-            <div class="row container margen-cuerpo list-group-item">
                 <div class="col-lg-4">
                     <h2>Banda de Paz</h2>
-                    <p>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                        texto texto texto texto texto texto texto texto texto texto texto texto texto </p>
+
                 </div><!-- /.col-lg-4 -->
                 <div>
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -401,13 +380,10 @@
                     </div>
                 </div>
                 <hr class="featurette-divider">
-            </div><!-- /.row -->
 
-            <div class="row container margen-cuerpo list-group-item">
                 <div class="col-lg-4">
                     <h2>Cancha de Fútbol</h2>
-                    <p>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                        texto texto texto texto texto texto texto texto texto texto texto texto texto </p>
+
                 </div><!-- /.col-lg-4 -->
                 <div>
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -431,35 +407,32 @@
                             <div class="item">
                                 <img id="slider" class="size" src="img/futbol/futbol2.jpg" alt="...">
                                 <div class="carousel-caption">
-                                    ...
+
                                 </div>
                             </div>
                             <div class="item">
                                 <img id="slider" class="size" src="img/futbol/futbol3.jpg" alt="...">
                                 <div class="carousel-caption">
-                                    ...
+
                                 </div>
                             </div>
                             <div class="item">
                                 <img id="slider" class="size" src="img/futbol/futbol4.jpg" alt="...">
                                 <div class="carousel-caption">
-                                    ...
+
                                 </div>
                             </div>
                             <div class="item">
                                 <img id="slider" class="size" src="img/futbol/futbol5.jpg" alt="...">
                                 <div class="carousel-caption">
-                                    ...
+
                                 </div>
                             </div>
-                            ...
                         </div>
 
                         <!-- Controls -->
                     </div>
                 </div>
-
-            </div><!-- /.row -->
         </div>
     </div>
 @endsection
