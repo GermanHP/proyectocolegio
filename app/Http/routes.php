@@ -20,6 +20,7 @@ Route::get('/formulario', 'InscriptionController@formulary');
 Route::get('/propuesta', 'InscriptionController@afiche');
 
 
+
 Route::get('/teacher_profile', 'TeachersController@perfil');
 Route::get('/dash_teacher', 'TeachersController@dashboard');
 
