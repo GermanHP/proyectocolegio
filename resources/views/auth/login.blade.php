@@ -10,7 +10,7 @@
                     Iniciar Sesión
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    <form class="form-horizontal"> <!-- role="form" method="POST" action="#"-->
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -57,7 +57,7 @@
                                     <i class="fa fa-btn fa-sign-in"></i> Ingresar
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">¿Olvidaste tu contraseña?</a>
+                                <a class="btn btn-link" href="#">¿Olvidaste tu contraseña?</a>
                             </div>
                         </div>
                     </form>

@@ -2,6 +2,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="keywords" content="educación, olocuilta, san juan, san juan bautista, la paz, el salvador, parroquia,
+    parroquia san juan bautista">
+    <meta name="description" content="Sitio web del Colegio San Juan Bautista.">
+    <meta name="owner" content="Colegio San Juan Bautista">
     <title>Colegio San Juan Bautista</title>
     <!--Styles-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
@@ -37,14 +41,14 @@
                 <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
                 <a class="mdl-navigation__link" href="#">Actividades</a>
                 <li class="dropdown">
-                    <a href="" class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    <a href="#" class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" role="button" aria-haspopup="true"
                     aria-expanded="false">Servicios<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Cuadro de honor</a></li>
-                        <li><a data-toggle="modal" data-target="#myModal">Comentarios</a></li>
+                        <li><a data-toggle="modal" data-target="#myModal" href="#">Comentarios</a></li>
                         <li><a href="#">Encuesta</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Contáctanos</a></li>
+                        <li><a data-toggle="modal" data-target="#modalContacto" href="#">Contáctanos</a></li>
                     </ul>
                 </li>
             </nav>
@@ -76,7 +80,7 @@
         </div>
     </main>
 
-    <!-- Modal -->
+    <!-- Modal Comentarios-->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
 
@@ -89,16 +93,144 @@
                 <div class="modal-body">
                     <div class="input-group form-group">
                         <span class="input-group-addon" id="basic-addon1">Correo Electrónico</span>
-                        <input type="email" class="form-control" placeholder="email@email.com" aria-describedby="basic-addon1">
+                        <input type="email" name="correo" class="form-control" placeholder="email@email.com" aria-describedby="basic-addon1">
                     </div>
                     <div class="input-group form-group">
                         <span class="input-group-addon" id="basic-addon1">Comentario</span>
-                        <input type="email" class="form-control" placeholder="Comentario" aria-describedby="basic-addon1">
+                        <input type="text" name="comentario" class="form-control" placeholder="Comentario" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Enviar</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Noticia 1-->
+    <div class="modal fade" id="modalNoticia1" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Inicio de Matrícula</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="list-group-item-text">Ya está abierta la matícula para el año escolar 2017.</p>
+
+                    <a href="{{url('/propuesta')}}"><img class="size" src="img/propuesta/prospecto1.jpg" height="300" width="532"></a>
+
+                    <hr class="featurette-divider">
+
+                    <a href="{{url('propuesta')}}"><img src="img/propuesta/prospecto2.jpg" height="300" width="532"></a>
+                    </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Noticia 2-->
+    <div class="modal fade" id="modalNoticia2" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Conoce Nuestro Sitio Web</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="list-group-item-text">De la mano con la excelencia, la tecnología ahora está con nosotros.
+                    </p><br>
+                    <p class="list-group-item-text">Aquí encontrarás noticias del acontecer de nuestra institución,
+                        además podrás conocer nuestras instalaciones, ver una galería de imágenes y conocer historia
+                        sobre nuestra institución.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Noticia 3-->
+    <div class="modal fade" id="modalNoticia3" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Ceremonia de graduación.</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="list-group-item-text">Ceremonia de graduación para alumnos de preparatoria y
+                        noveno grado.</p><br>
+                    <p class="list-group-item-text"></p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Noticia 4-->
+    <div class="modal fade" id="modalNoticia4" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Clausura del año escolar 2016.</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="list-group-item-text">Para parvularia miércoles 16 de noviembre, hora 8:00 am. Para primero,
+                        segundo y tercer ciclo, martes 22 de noviembre, hora 8:00 am.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Contacto-->
+    <div class="modal fade" id="modalContacto" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="modal-title"><i class="material-icons">mail</i>Correo electrónico.</h4>
+                    <p class="list-group-item-text">sanjuanbautistacoleg@gmail.com</p>
+                    <hr class="divider">
+                    <h4 class="modal-title"><i class="material-icons">call</i>Teléfono</h4>
+                    <p class="list-group-item-text">2330-6336</p>
+                    <hr class="divider">
+                    <h4 class="modal-title"><i class="material-icons">place</i>Dirección</h4>
+                    <p class="list-group-item-text">Avenida San José, barrio el centro, Olocuilta.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
 
