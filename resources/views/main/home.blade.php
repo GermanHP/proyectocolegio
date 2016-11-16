@@ -84,18 +84,18 @@
             <img class="img-circle" src="img/aulavirtual.png"
                  alt="Generic placeholder image" width="140" height="140">
             <h2>Aula Virtual</h2>
-            <p>Cómo parte de la innovación y la excelencia académica que nos caracteriza, ofrecemos el espacio de aula
-                virtual, en donde los alumnos pueden obtener acceso a material, trabajos, eventos, que tengan
-                que ver con el curso en el que se ha matriculado.</p>
+            <p>Cómo parte de la innovación y la excelencia académica que nos caracteriza, ofrecemos nuestra Aula
+                virtual, que es el espacio en donde los miembros de la comunidad educativa pueden obtener acceso a
+                materiales, trabajos, eventos y toda información institucional  referente al grado y sección en el que
+                se ha matriculado.</p>
             <p><a class="btn btn-primary" href="{{ url('/login') }}" role="button">Ingresar</a></p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4 list-group-item container2">
             <img class="img-circle" src="img/matricula.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>Matrícula</h2>
-            <p>La matrícula en línea ofrece una asignación
-                de cupo temporal de 24 horas, el cual caduca si en ese período no se efectúan los pagos y aranceles
-                estipulados por la institución para hacer válida la matrícula.</p>
+            <p>Es el espacio en el que se registra toda la información  del estudiante y de sus responsables, y que le
+                acredita en la matrícula oficial de nuestra institución.</p>
             <p><a class="btn btn-primary" href="{{ url('/inscripcion') }}" role="button">Ingresar</a></p>
         </div><!-- /.col-lg-4 -->
 
@@ -110,8 +110,8 @@
                 <i class="material-icons">group</i>
                 <h3>Personal Docente</h3>
                 <div class="title_border"></div>
-                <p>Personal docente altamente calificado imparte las clases a nueestros alumnos asegurando así,
-                    la máxima calidad de aprendizaje.</p>
+                <p>Personal docente  calificado y debidamente acreditado por el MINED imparte las clases a nuestros
+                    estudiantes, asegurando así, la máxima calidad de aprendizaje.</p>
             </div>
 
             </a>

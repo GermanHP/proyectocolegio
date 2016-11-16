@@ -44,9 +44,11 @@
             </div>
             <div class="input-group form-group">
                 <span class="input-group-addon" id="basic-addon1">Estudió Parvularia</span>
-                <input type="text" class="form-control" placeholder="Si/No" aria-describedby="basic-addon1">
+                <label class="radio-inline"><input type="radio" name="estudioP">Sí</label>
+                <label class="radio-inline"><input type="radio" name="estudioP">No</label>
                 <span class="input-group-addon" id="basic-addon1">Repite Grado</span>
-                <input type="text" class="form-control" placeholder="Si/No" aria-describedby="basic-addon1">
+                <label class="radio-inline"><input type="radio" name="repeatG">Sí</label>
+                <label class="radio-inline"><input type="radio" name="repeatG">No</label>
             </div>
             <div class="input-group form-group">
                 <span class="input-group-addon" id="basic-addon1">Dirección de Residencia del Estudiante</span>
@@ -63,92 +65,92 @@
                 <span class="input-group-addon" id="basic-addon1">¿Posee Tratamiento Médico o Medícamentos?</span>
                 <input type="text" class="form-control" placeholder="Describa tratamiento o medicamento" aria-describedby="basic-addon1">
             </div>
-
-            <hr class="divider">
-            <h3>Datos del Padre</h3>
-            <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">Nombre del Padre</span>
-                <input type="text" class="form-control" placeholder="Nombre Completo" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">Numero de DUI</span>
-                <input type="number" placeholder="000000000"  maxlength="9">
-                <span class="input-group-addon" id="basic-addon1">Edad</span>
-                <input type="number" placeholder="00" maxlength="9">
-                <span class="input-group-addon" id="basic-addon1">Profesión u Oficio</span>
-                <input type="text" class="form-control" placeholder="Profesión u Oficio" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">Lugar de Trabajo</span>
-                <input type="text" class="form-control" placeholder="Lugar de trabajo" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Teléfono</span>
-                <input type="number" placeholder="00" maxlength="9">
-            </div>
-            <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">Dirección del trabajo</span>
-                <input type="text" class="form-control" placeholder="Dirección" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">Sacramentos Recibidos: </span>
-                <span class="input-group-addon" id="basic-addon1">Bautismo</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Primera Comunión</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Confirma</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Matrimonio</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Ninguno</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-            </div>
-
-            <hr class="divider">
-            <h3>Datos del Padre</h3>
-
-            <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">Nombre del Padre</span>
-                <input type="text" class="form-control" placeholder="Nombre Completo" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">Numero de DUI</span>
-                <input type="number" placeholder="000000000"  maxlength="9">
-                <span class="input-group-addon" id="basic-addon1">Edad</span>
-                <input type="number" placeholder="00" maxlength="9">
-                <span class="input-group-addon" id="basic-addon1">Profesión u Oficio</span>
-                <input type="text" class="form-control" placeholder="Profesión u Oficio" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">Lugar de Trabajo</span>
-                <input type="text" class="form-control" placeholder="Lugar de trabajo" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Teléfono</span>
-                <input type="number" placeholder="00" maxlength="9">
-            </div>
-            <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">Dirección del trabajo</span>
-                <input type="text" class="form-control" placeholder="Dirección" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">Sacramentos Recibidos: </span>
-                <span class="input-group-addon" id="basic-addon1">Bautismo</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Primera Comunión</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Confirma</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Matrimonio</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Ninguno</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-            </div>
-
             <div class="input-group form-group">
                 <span class="input-group-addon" id="basic-addon1">EL/LA ESTUDIANTE SE RETIRA DE LA INSTITUCIÓN A LA HORA
                     DE SALIDA: </span>
-                <span class="input-group-addon" id="basic-addon1">Solo</span>
+                <label class="radio-inline"><input type="radio" name="salida">Solo</label>
+                <label class="radio-inline"><input type="radio" name="salida">Acompañado</label>
+            </div>
+
+            <hr class="divider">
+            <h3>Datos del Padre</h3>
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Nombre del Padre</span>
+                <input type="text" class="form-control" placeholder="Nombre Completo" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Numero de DUI</span>
+                <input type="number" placeholder="000000000"  maxlength="9">
+                <span class="input-group-addon" id="basic-addon1">Fecha de Nacimiento</span>
+                <input type="date">
+                <span class="input-group-addon" id="basic-addon1">Profesión u Oficio</span>
+                <input type="text" class="form-control" placeholder="Profesión u Oficio" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Lugar de Trabajo</span>
+                <input type="text" class="form-control" placeholder="Lugar de trabajo" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1">Teléfono</span>
+                <input class="form-control" type="text" pattern="[0-9]{8}"  placeholder="000000000" maxlength="8">
+
+            </div>
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Dirección del trabajo</span>
+                <input type="text" class="form-control" placeholder="Dirección" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Sacramentos Recibidos: </span>
+                <span class="input-group-addon" id="basic-addon1">Bautismo</span>
                 <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Acompañado</span>
+                <span class="input-group-addon" id="basic-addon1">Primera Comunión</span>
+                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1">Confirma</span>
+                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1">Matrimonio</span>
+                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1">Ninguno</span>
                 <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
             </div>
+
+            <hr class="divider">
+            <h3>Datos de la Madre</h3>
+
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Nombre del Padre</span>
+                <input type="text" class="form-control" placeholder="Nombre Completo" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Numero de DUI</span>
+                <input type="number" placeholder="000000000"  maxlength="9">
+                <span class="input-group-addon" id="basic-addon1">Fecha de Nacimiento</span>
+                <input type="date">
+                <span class="input-group-addon" id="basic-addon1">Profesión u Oficio</span>
+                <input type="text" class="form-control" placeholder="Profesión u Oficio" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Lugar de Trabajo</span>
+                <input type="text" class="form-control" placeholder="Lugar de trabajo" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1">Teléfono</span>
+                <input class="form-control" type="text" pattern="[0-9]{8}"  placeholder="000000000" maxlength="8">
+            </div>
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Dirección del trabajo</span>
+                <input type="text" class="form-control" placeholder="Dirección" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Sacramentos Recibidos: </span>
+                <span class="input-group-addon" id="basic-addon1">Bautismo</span>
+                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1">Primera Comunión</span>
+                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1">Confirma</span>
+                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1">Matrimonio</span>
+                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1">Ninguno</span>
+                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+            </div>
+
+
             <div class="input-group form-group">
                 <span class="input-group-addon" id="basic-addon1">Nombre de la Persona Autorizada:</span>
                 <input type="text" class="form-control" placeholder="Nombre completo" aria-describedby="basic-addon1">
@@ -161,20 +163,15 @@
                 <span class="input-group-addon" id="basic-addon1">Dirección:</span>
                 <input type="text" class="form-control" placeholder="Dirección" aria-describedby="basic-addon1">
                 <span class="input-group-addon" id="basic-addon1">Teléfono</span>
-                <input type="number" placeholder="00" maxlength="9">
+                <input class="form-control" type="text" pattern="[0-9]{8}"  placeholder="000000000" maxlength="8">
             </div>
             <h3>Estado Civíl de los Padres o Responsables</h3>
             <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">Solteros</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Casados</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Acompañados</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Divorciados</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">Viudo</span>
-                <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+                <label class="radio-inline"><input type="radio" name="estadoCivil">Soltero</label>
+                <label class="radio-inline"><input type="radio" name="estadoCivil">Casado</label>
+                <label class="radio-inline"><input type="radio" name="estadoCivil">Acompañados</label>
+                <label class="radio-inline"><input type="radio" name="estadoCivil">Divorciados</label>
+                <label class="radio-inline"><input type="radio" name="estadoCivil">Viudo/a</label>
             </div>
             <hr class="divider">
             <h3>Historial Escolar del Estudiante</h3>
@@ -198,14 +195,6 @@
             <div class="input-group form-group">
                 <span class="input-group-addon" id="basic-addon1">Observaciones</span>
                 <input type="text" class="form-control" placeholder="Observaciones" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">Olocuilta, a los</span>
-                <input type="text" class="form-control" placeholder="Cinco/quince/veinticinco" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">días del mes de</span>
-                <input type="text" class="form-control" placeholder="Diciembre/enero/febrero" aria-describedby="basic-addon1">
-                <span class="input-group-addon" id="basic-addon1">de dos mil</span>
-                <input type="text" class="form-control" placeholder="Dieciseis/diecisiete" aria-describedby="basic-addon1">
             </div>
 
             <button type="button" id="myButton" data-loading-text="Enviando..." class="btn btn-primary btn-lg btn-align" autocomplete="off">

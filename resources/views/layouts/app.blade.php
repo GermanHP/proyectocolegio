@@ -21,6 +21,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
 
     <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" href="css/socialbar.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/appblade.css">
     <script src="js/material.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -39,7 +41,6 @@
             <nav class="mdl-navigation ">
                 <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
                 <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
-                <a class="mdl-navigation__link" href="#">Actividades</a>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" role="button" aria-haspopup="true"
                     aria-expanded="false">Servicios<span class="caret"></span></a>
@@ -227,6 +228,18 @@
                     <hr class="divider">
                     <h4 class="modal-title"><i class="material-icons">place</i>Dirección</h4>
                     <p class="list-group-item-text">Avenida San José, barrio el centro, Olocuilta.</p>
+                    <hr class="divider">
+                    <h4 class="modal-title"><i class="icon-facebook"></i>Facebook</h4>
+                    <a href="https://www.facebook.com/colegioSJBOficial"><p class="list-group-item-text">
+                        https://www.facebook.com/colegioSJBOficial</p></a>
+                    <hr class="divider">
+                    <h4 class="modal-title"><i class="icon-twitter"></i>Twitter</h4>
+                    <a href="https://www.twitter.com/colegioSJBSV"><p class="list-group-item-text">
+                            https://www.twitter.com/colegioSJBSV</p></a>
+                    <hr class="divider">
+                    <h4 class="modal-title"><i class="icon-youtube"></i>You Tube</h4>
+                    <a href="https://www.youtube.com/channel/UCkWI9SYJt2y8AtTgrtcLJqQ"><p class="list-group-item-text">
+                            https://www.youtube.com/channel/UCkWI9SYJt2y8AtTgrtcLJqQ</p></a>
                 </div>
 
                 <div class="modal-footer">
@@ -240,6 +253,5 @@
     <div class="mdl-mega-footer__drop-down-sec>
         @include('includes.footer')
     </div>
-</div>
 </body>
 </html>
