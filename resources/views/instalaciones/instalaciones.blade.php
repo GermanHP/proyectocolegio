@@ -59,6 +59,14 @@
                         </div>
 
                         <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
 
@@ -72,7 +80,7 @@
 
                 </div><!-- /.col-lg-4 -->
                 <div>
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
@@ -118,6 +126,14 @@
                         </div>
 
                         <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic2" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
 
                     </div>
                 </div>
@@ -129,14 +145,14 @@
 
                 </div><!-- /.col-lg-4 -->
                 <div>
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div id="carousel-example-generic3" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                            <li data-target="#carousel-example-generic3" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic3" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic3" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic3" data-slide-to="3"></li>
+                            <li data-target="#carousel-example-generic3" data-slide-to="4"></li>
                         </ol>
 
                         <!-- Wrapper for slides -->
@@ -175,6 +191,14 @@
                         </div>
 
                         <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic3" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic3" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
 
                     </div>
                 </div>
@@ -185,14 +209,14 @@
 
                 </div><!-- /.col-lg-4 -->
                 <div>
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div id="carousel-example-generic4" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                            <li data-target="#carousel-example-generic4" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic4" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic4" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic4" data-slide-to="3"></li>
+                            <li data-target="#carousel-example-generic4" data-slide-to="4"></li>
                         </ol>
 
                         <!-- Wrapper for slides -->
@@ -231,6 +255,14 @@
                         </div>
 
                         <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic4" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic4" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
                 <hr class="featurette-divider">
@@ -243,14 +275,14 @@
 
                 </div><!-- /.col-lg-4 -->
                 <div>
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div id="carousel-example-generic5" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                            <li data-target="#carousel-example-generic5" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic5" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic5" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic5" data-slide-to="3"></li>
+                            <li data-target="#carousel-example-generic5" data-slide-to="4"></li>
                         </ol>
 
                         <!-- Wrapper for slides -->
@@ -289,6 +321,14 @@
                         </div>
 
                         <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic5" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic5" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
                 <hr class="featurette-divider">
@@ -300,12 +340,12 @@
 
                 </div><!-- /.col-lg-4 -->
                 <div>
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div id="carousel-example-generic8" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic8" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic8" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic8" data-slide-to="2"></li>
                         </ol>
 
                         <!-- Wrapper for slides -->
@@ -332,6 +372,14 @@
                         </div>
 
                         <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic8" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic8" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
                 <hr class="featurette-divider">
@@ -343,14 +391,14 @@
 
                 </div><!-- /.col-lg-4 -->
                 <div>
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div id="carousel-example-generic6" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                            <li data-target="#carousel-example-generic6" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic6" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic6" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic6" data-slide-to="3"></li>
+                            <li data-target="#carousel-example-generic6" data-slide-to="4"></li>
                         </ol>
 
                         <!-- Wrapper for slides -->
@@ -389,6 +437,14 @@
                         </div>
 
                         <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic6" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic6" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
                 <hr class="featurette-divider">
@@ -400,14 +456,14 @@
 
                 </div><!-- /.col-lg-4 -->
                 <div>
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div id="carousel-example-generic7" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                            <li data-target="#carousel-example-generic7" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic7" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic7" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic7" data-slide-to="3"></li>
+                            <li data-target="#carousel-example-generic7" data-slide-to="4"></li>
                         </ol>
 
                         <!-- Wrapper for slides -->
@@ -445,6 +501,14 @@
                         </div>
 
                         <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic7" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic7" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
         </div>

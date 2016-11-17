@@ -1,7 +1,3 @@
-body{
-
-}
-
 .mdl-layout__header{
     background-color: #3422FF;
 }
@@ -51,7 +47,7 @@ body{
     background:#1E825F;
     padding:30px;
     border-radius:50%;
-    border: solid 3px #1E825F;
+    border: solid 3px #000;
 }
 
 .feature h3 {
@@ -68,13 +64,13 @@ body{
 }
 
 .feature:hover i{
-    color:#1E825F;
-    border-color:#1E825F;
+    color:#212121;
+    border-color:#212121;
     background:#FFFFFF;
 }
 
 .feature:hover .title_border {
-    background-color:#1E825F;
+    background-color:#212121;
     width:50%;
 }
 
@@ -118,7 +114,7 @@ body{
 }
 
 .container2{
-    margin-top: 60px;
+    margin-top: 13px;
     height: 500px;
 }
 

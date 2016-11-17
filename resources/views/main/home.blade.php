@@ -59,7 +59,9 @@
     </div>
     <div class="container">
     <aside class="col-md-4">
-        <h4>Noticias SJB</h4>
+        <div class="panel panel-primary">
+        <h4 class="panel-heading">Noticias SJB</h4>
+        <div class="panel-body">
         <a href="#" data-toggle="modal" data-target="#modalNoticia1" class="list-group-item">
             <h4 class="list-group-item-heading">Inicio de matrícula</h4>
             <p class="list-group-item-text">Ya está abierta la matícula para el año escolar 2017.</p>
@@ -77,26 +79,37 @@
             <p class="list-group-item-text">Para parvularia miércoles 16 de noviembre, hora 8:00 am. Para primero,
                 segundo y tercer ciclo, martes 22 de noviembre, hora 8:00 am.</p>
         </a>
+        </div>
+        </div>
     </aside>
 
     <div class="row container margin-cont">
-        <div class="col-lg-4 list-group-item container2">
+        <div class="col-lg-4 list-group-item  panel panel-primary">
+            <div class="panel-heading">
             <img class="img-circle" src="img/aulavirtual.png"
                  alt="Generic placeholder image" width="140" height="140">
             <h2>Aula Virtual</h2>
+            </div>
+            <div class="panel-body">
             <p>Cómo parte de la innovación y la excelencia académica que nos caracteriza, ofrecemos nuestra Aula
                 virtual, que es el espacio en donde los miembros de la comunidad educativa pueden obtener acceso a
                 materiales, trabajos, eventos y toda información institucional  referente al grado y sección en el que
                 se ha matriculado.</p>
-            <p><a class="btn btn-primary" href="{{ url('/login') }}" role="button">Ingresar</a></p>
+            <a class="btn btn-info" href="{{ url('/login') }}" role="button">Ingresar</a>
+            </div>
         </div><!-- /.col-lg-4 -->
 
-        <div class="col-lg-4 list-group-item container2">
+        <div class="col-lg-4 list-group-item  panel panel-primary">
+            <div class="panel-heading">
             <img class="img-circle" src="img/matricula.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>Matrícula</h2>
+            </div>
+            <div class="panel-body">
             <p>Es el espacio en el que se registra toda la información  del estudiante y de sus responsables, y que le
-                acredita en la matrícula oficial de nuestra institución.</p>
-            <p><a class="btn btn-primary" href="{{ url('/inscripcion') }}" role="button">Ingresar</a></p>
+                acredita en la matrícula oficial de nuestra institución. Además, se presentan los poasos a seguir para
+            poder efectuar la reserva de la matrícula en línea.</p>
+            <p><a class="btn btn-info" href="{{ url('/inscripcion') }}" role="button">Ingresar</a></p>
+            </div>
         </div><!-- /.col-lg-4 -->
 
     </div><!-- /.row -->
@@ -106,31 +119,31 @@
     <div class="container" id="features">
         <div class="row">
             <a href="{{ url('/teacher_profile') }}" class="mdl-navigation__link">
-            <div class="col-md-4 feature">
-                <i class="material-icons">group</i>
-                <h3>Personal Docente</h3>
+            <div class="col-md-4 feature container2">
+                <i class="material-icons mdl-color--yellow-700">group</i>
+                <h3 class="mdl-color-text--black">Personal Docente</h3>
                 <div class="title_border"></div>
-                <p>Personal docente  calificado y debidamente acreditado por el MINED imparte las clases a nuestros
+                <p class="mdl-color-text--black">Personal docente  calificado y debidamente acreditado por el MINED imparte las clases a nuestros
                     estudiantes, asegurando así, la máxima calidad de aprendizaje.</p>
             </div>
 
             </a>
             <a href="{{ url('/historia') }}" class="mdl-navigation__link">
-            <div class="col-md-4 feature">
-                <i class="material-icons">thumb_up</i>
-                <h3>Conócenos</h3>
+            <div class="col-md-4 feature container2">
+                <i class="material-icons mdl-color--orange-900">thumb_up</i>
+                <h3 class="mdl-color-text--black">Conócenos</h3>
                 <div class="title_border"></div>
-                <p>Conóce nuestra historia, todo un legado en educación con excelencia, logros
+                <p class="mdl-color-text--black">Conóce nuestra historia, todo un legado en educación con excelencia, logros
                     y avances que nos destacan por mucho como una institución de avanzada.</p>
             </div>
             </a>
 
             <a href="{{url('/propuesta')}}" class="mdl-navigation__link">
-                <div class="col-md-4 feature">
-                    <i class="material-icons">new_releases</i>
-                    <h3>Propuesta 2017</h3>
+                <div class="col-md-4 feature container2">
+                    <i class="material-icons mdl-color--light-blue-A700">new_releases</i>
+                    <h3 class="mdl-color-text--black">Propuesta 2017</h3>
                     <div class="title_border"></div>
-                    <p>En este apartado podrás encontrar toda la información que necesites sobre nuestra propuesta
+                    <p class="mdl-color-text--black">En este apartado podrás encontrar toda la información que necesites sobre nuestra propuesta
                         escolar para el año 2017. ¡Anímate a la excelencia!</p>
                 </div>
             </a>
