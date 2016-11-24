@@ -18,6 +18,8 @@ Route::get('/historia', 'MainController@historia');
 Route::get('/inscripcion', 'InscriptionController@inscription');
 Route::get('/formulario', 'InscriptionController@formulary');
 Route::get('/propuesta', 'InscriptionController@afiche');
+Route::get('/registro_matricula', 'InscriptionController@dash_inscription');
+Route::get('/nueva', 'InscriptionController@local_inscription');
 
 
 Route::get('/teacher_profile', 'TeachersController@perfil');

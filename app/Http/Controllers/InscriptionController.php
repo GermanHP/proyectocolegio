@@ -19,4 +19,12 @@ class InscriptionController extends Controller
     public function afiche(){
         return view('matricula.propuesta');
     }
+
+    public function dash_inscription(){
+        return view('matricula.dash_matricula');
+    }
+
+    public function local_inscription(){
+        return view('matricula.matricula_local');
+    }
 }
