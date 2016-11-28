@@ -20,6 +20,8 @@ Route::get('/formulario', 'InscriptionController@formulary');
 Route::get('/propuesta', 'InscriptionController@afiche');
 Route::get('/registro_matricula', 'InscriptionController@dash_inscription');
 Route::get('/nueva', 'InscriptionController@local_inscription');
+Route::get('/registro', 'InscriptionController@registro');
+Route::get('/noticias', 'InscriptionController@noticias');
 
 
 Route::get('/teacher_profile', 'TeachersController@perfil');

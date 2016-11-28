@@ -47,7 +47,6 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Inicio</span>
             <div class="mdl-layout-spacer"></div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                 <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -79,20 +78,31 @@
             <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">home</i>Inicio</a>
             <a class="mdl-navigation__link" href="{{url('/nueva')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                       role="presentation">note_add</i>Nueva Matrícula</a>
+                                                                        role="presentation">note_add</i>Nueva Matrícula</a>
             <a class="mdl-navigation__link" href="{{url('/registro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                       role="presentation">description</i>Registro de Matrículas</a>
-            <a class="mdl-navigation__link" href="{{url('/noticias')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                           role="presentation">description</i>Registro de Matrículas</a>
+            <a class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">create</i>Sección Noticias</a>
             <a class="mdl-navigation__link" href="{{ url('/') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                      role="presentation">input</i>Página Principal</a>
         </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
-        <h3>Aquí habrá contenido acerca de las matrículas</h3>
+        <div class="container panel panel-body">
+        <h3>Nombre de la Noticia</h3>
+        <div class="input-group form-group">
+            <span class="input-group-addon" id="basic-addon1">Noticia</span>
+            <input type="text" class="form-control" placeholder="Nombre de noticia" aria-describedby="basic-addon1">
+        </div>
+            <h3>Contenido de la noticia</h3>
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon1">Contenido</span>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+        </div>
     </main>
 </div>
 <script src="$$hosted_libs_prefix$$/$$version$$/material.min.js"></script>
 </body>
 </html>
-@endsection
+@stop

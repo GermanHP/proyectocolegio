@@ -79,8 +79,8 @@
             <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">home</i>Inicio</a>
             <a class="mdl-navigation__link" href="{{url('/nueva')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                       role="presentation">note_add</i>Nueva Matrícula</a>
-            <a class="mdl-navigation__link" href="{{url('/registro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                        role="presentation">note_add</i>Nueva Matrícula</a>
+            <a class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">description</i>Registro de Matrículas</a>
             <a class="mdl-navigation__link" href="{{url('/noticias')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">create</i>Sección Noticias</a>
@@ -89,10 +89,10 @@
         </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
-        <h3>Aquí habrá contenido acerca de las matrículas</h3>
+        <h3>Aquí se encontrarán las matrículas hechas y las ya migradas</h3>
     </main>
 </div>
 <script src="$$hosted_libs_prefix$$/$$version$$/material.min.js"></script>
 </body>
 </html>
-@endsection
+@stop

@@ -27,4 +27,12 @@ class InscriptionController extends Controller
     public function local_inscription(){
         return view('matricula.matricula_local');
     }
+
+    public function registro(){
+        return view('matricula.registro_matricula');
+    }
+
+    public function noticias(){
+        return view('matricula.noticias');
+    }
 }
