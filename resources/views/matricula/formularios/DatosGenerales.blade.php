@@ -31,4 +31,8 @@
     </div>
     <a href="#padre" aria-controls="profile" role="tab" data-toggle="tab">
         <button class="btn btn-danger">Atrás</button></a>
-    <a href="#" >
+    <a href="#" ></a>
+    {!!Form::submit('Registrar Estudiante', ['class'=>'btn btn-primary','name'=>'btnCrearUsuario'])!!}
+    {!!Form::close()!!}
+
+</div>

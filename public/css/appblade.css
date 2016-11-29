@@ -158,3 +158,22 @@ img#slider{
     background:
             url('../img/indexes/LOGO.jpg') bottom right 15% no-repeat #46B6AC;
 }
+
+.floating{
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    z-index: 100;
+}
+
+.floating2{
+    position: fixed;
+    bottom: 5em;
+    right: 2em;
+    z-index: 100;
+}
+
+.seleccionada{
+    background-color: #0585C0;
+    color: white;
+}

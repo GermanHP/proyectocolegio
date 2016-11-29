@@ -1,3 +1,4 @@
+<div id="ingreso">
 <h3>Datos del Estudiante</h3>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">Nombres</span>
@@ -71,7 +72,13 @@
     <span class="input-group-addon" id="basic-addon1">Teléfono</span>
     <input class="form-control" type="text" pattern="[0-9]{8}"  placeholder="000000000" maxlength="8">
 </div>
+<div id="add_estudiante">
+
+</div>
+
 <a href="#padre" aria-controls="profile" role="tab" data-toggle="tab">
     <button class="btn btn-primary">Siguiente</button></a>
 </div>
 </div>
+</div>
+
