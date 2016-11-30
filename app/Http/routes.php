@@ -17,7 +17,10 @@ Route::get('/historia', 'MainController@historia');
 
 Route::get('/inscripcion', 'InscriptionController@inscription');
 Route::get('/formulario', 'InscriptionController@formulary');
+Route::post('/formulario', 'InscriptionController@registrarEstudiante')->name('Registrar.Estudiante');
 Route::get('/propuesta', 'InscriptionController@afiche');
+Route::get('/registro_matricula', 'InscriptionController@dash_inscription');
+Route::get('/nueva', 'InscriptionController@local_inscription');
 
 
 
