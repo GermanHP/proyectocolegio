@@ -15,8 +15,8 @@ class Municipios extends Migration
         Schema::create('Municipios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre', 50);
-            $table->integer('idDepartamento')->unsigned();
-            $table->foreign('idDepartamento') ->references('id')->on('Departamentos');
+            $table->integer('id_departamento')->unsigned();
+            $table->foreign('id_departamento') ->references('id')->on('Departamentos');
             $table->timestamps();
             $table->softDeletes();
         });

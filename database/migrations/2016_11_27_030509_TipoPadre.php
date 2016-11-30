@@ -14,7 +14,7 @@ class TipoPadre extends Migration
     {
         Schema::create('TipoPadre', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre', 50);
+            $table->string('tipo', 50);
             $table->timestamps();
             $table->softDeletes();
         });

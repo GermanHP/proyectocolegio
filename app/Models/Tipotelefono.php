@@ -9,7 +9,7 @@ class Tipotelefono extends Model {
      */
 
     protected $table = 'tipotelefonos';
-    protected $fillable = ['id', 'nombre', 'deleted_at'];
+    protected $fillable = ['id', 'tipo', 'deleted_at'];
 
 
     public function users() {

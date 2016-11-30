@@ -9,11 +9,11 @@ class Departamento extends Model {
      */
 
     protected $table = 'departamentos';
-    protected $fillable = ['id', 'nombreDepartamento', 'deleted_at'];
+    protected $fillable = ['id', 'nombre', 'deleted_at'];
 
 
     public function municipios() {
-        return $this->hasMany('App\Models\Municipio', 'idDepartamento', 'id');
+        return $this->hasMany('App\Models\Municipio', 'id_departamento', 'id');
     }
 
 

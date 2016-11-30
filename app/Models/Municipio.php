@@ -9,11 +9,11 @@ class Municipio extends Model {
      */
 
     protected $table = 'municipios';
-    protected $fillable = ['id', 'nombre', 'idDepartamento', 'deleted_at'];
+    protected $fillable = ['id', 'nombre', 'id_departamento', 'deleted_at'];
 
 
     public function departamento() {
-        return $this->belongsTo('App\Models\Departamento', 'idDepartamento', 'id');
+        return $this->belongsTo('App\Models\Departamento', 'id_departamento', 'id');
     }
 
     public function users() {
