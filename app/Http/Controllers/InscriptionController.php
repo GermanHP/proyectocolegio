@@ -17,6 +17,10 @@ class InscriptionController extends Controller
     }
     public function registrarEstudiante(Request $request){
 
+        foreach ($request['nombreEstudiante'] as $estudiante){
+            echo $estudiante."</br>";
+        }
+
     }
 
     public function afiche(){
