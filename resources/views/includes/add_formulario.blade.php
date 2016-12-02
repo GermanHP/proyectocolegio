@@ -1,13 +1,10 @@
-<script>
+<!-- <script>
 $(document).ready(function () {
     $('#btn_add').click(function(){
         agregar();
     });
 
-
-    $('#btn_del').click(function(){
-        eliminar();
-    });
+    $(".btn-danger").on('click', eliminar());
 });
     var cont=0;
     function agregar() {
@@ -54,12 +51,12 @@ $(document).ready(function () {
                 '<input type="text" class="form-control" placeholder="Dirección" aria-describedby="basic-addon1">' +
                 '<span class="input-group-addon" id="basic-addon1">Teléfono</span>' +
                 '<input class="form-control" type="text" pattern="[0-9]{8}"  placeholder="000000000" maxlength="8">' +
-                '<a href="#" id="btn_del" onClick="eliminar(id_ingreso)" class="container">Eliminar</a></div></div>';
+                '</div><a href="#" class="btn btn-danger">Eliminar</a></div>';
 
         $('#add_estudiante').append(form);
     }
     
-    function eliminar(id_ingreso) {
-        $('#'+id_ingreso).remove();
+    function eliminar() {
+       console.log($(this));
     }
-</script>
+</script> -->

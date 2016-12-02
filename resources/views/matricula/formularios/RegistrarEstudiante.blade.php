@@ -72,12 +72,35 @@
     <span class="input-group-addon" id="basic-addon1">Teléfono</span>
     <input class="form-control" type="text" pattern="[0-9]{8}"  placeholder="000000000" maxlength="8">
 </div>
+    <h3>Historial Escolar del Estudiante</h3>
+    <div class="input-group form-group">
+        <span class="input-group-addon" id="basic-addon1">Último Grado Cursado</span>
+        <input type="text" class="form-control" placeholder="Primer Grado" aria-describedby="basic-addon1">
+        <span class="input-group-addon" id="basic-addon1">Centro Escolar Donde Cursó</span>
+        <input type="text" class="form-control" placeholder="Nombre del centro escolar" aria-describedby="basic-addon1">
+    </div>
+    <h3>Documentos Entregados al Formalizar la Matrícula</h3>
+    <div class="input-group form-group">
+        <span class="input-group-addon" id="basic-addon1">Partida de Nacimiento Original</span>
+        <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+        <span class="input-group-addon" id="basic-addon1">Certificado de Último Grado Aprobado</span>
+        <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+        <span class="input-group-addon" id="basic-addon1">Fotocopia de los Padres o Responsable</span>
+        <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+        <span class="input-group-addon" id="basic-addon1">2 Fotografías Recientes</span>
+        <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group form-group">
+        <span class="input-group-addon" id="basic-addon1">Observaciones</span>
+        <input type="text" class="form-control" placeholder="Observaciones" aria-describedby="basic-addon1">
+    </div>
 <div id="add_estudiante">
 
 </div>
 
 <a href="#padre" aria-controls="profile" role="tab" data-toggle="tab">
     <button class="btn btn-primary">Siguiente</button></a>
+
 </div>
 </div>
 </div>
