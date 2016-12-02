@@ -22,6 +22,9 @@ class PadreDeFamilia extends Migration
             $table->foreign('idOficio') ->references('id')->on('Oficios');
             $table->integer('idTipoPadre')->unsigned();
             $table->foreign('idTipoPadre') ->references('id')->on('TipoPadre');
+            $table->integer('idEstadoCivil')->unsigned();
+            $table->foreign('idEstadoCivil') ->references('id')->on('EstadoCivil');
+
             $table->timestamps();
             $table->softDeletes();
         });

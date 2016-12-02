@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SacramentosSeeder extends Seeder
+class DocumentosSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,21 +11,23 @@ class SacramentosSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Sacramento')->insert(array(
-            'nombre' => 'Bautismo',
-            'created_at' => new DateTime,
-            'updated_at' => new DateTime
-        ));DB::table('Sacramento')->insert(array(
-            'nombre' => 'Primera Comunion',
-            'created_at' => new DateTime,
-            'updated_at' => new DateTime
-        ));DB::table('Sacramento')->insert(array(
-            'nombre' => 'Confirma',
+        DB::table('Documentos')->insert(array(
+            'nombre' => 'Partida de Nacimiento Original',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
-        DB::table('Sacramento')->insert(array(
-            'nombre' => 'Matrimonio',
+        DB::table('Documentos')->insert(array(
+            'nombre' => 'Certificado de Último Grado Aprobado',
+            'created_at' => new DateTime,
+            'updated_at' => new DateTime
+        ));
+        DB::table('Documentos')->insert(array(
+            'nombre' => 'Fotocopia de los Padres o Responsable',
+            'created_at' => new DateTime,
+            'updated_at' => new DateTime
+        ));
+        DB::table('Documentos')->insert(array(
+            'nombre' => '2 Fotografías Recientes',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
