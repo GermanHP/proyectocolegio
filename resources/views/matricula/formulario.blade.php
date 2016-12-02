@@ -23,9 +23,9 @@
                 </div>
             </div>
     </div>
-        <button id="btn_add" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored floating">
+        <!--<button role="button" data-toggle="button" id="btn_add" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored floating">
             <i class="material-icons">add</i>
-        </button>
+        </button>-->
 
     </div>
 @stop

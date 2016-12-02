@@ -37,8 +37,14 @@
         <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
         <span class="input-group-addon" id="basic-addon1">Matrimonio</span>
         <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-        <span class="input-group-addon" id="basic-addon1">Ninguno</span>
-        <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+    </div>
+    <h5>Estado Civíl</h5>
+    <div class="input-group form-group">
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="1">Soltero</label>
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="2" checked>Casado</label>
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="3">Acompañados</label>
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="4">Divorciados</label>
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="5">Viudo/a</label>
     </div>
     <h3>Datos de la Madre</h3>
     <div class="input-group form-group">
@@ -77,8 +83,14 @@
         <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
         <span class="input-group-addon" id="basic-addon1">Matrimonio</span>
         <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-        <span class="input-group-addon" id="basic-addon1">Ninguno</span>
-        <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+    </div>
+    <h5>Estado Civíl</h5>
+    <div class="input-group form-group">
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="1">Soltero</label>
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="2" checked>Casado</label>
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="3">Acompañados</label>
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="4">Divorciados</label>
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="5">Viudo/a</label>
     </div>
     <h3>Datos del Responsable</h3>
     <div class="input-group form-group">
@@ -117,13 +129,19 @@
         <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
         <span class="input-group-addon" id="basic-addon1">Matrimonio</span>
         <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
-        <span class="input-group-addon" id="basic-addon1">Ninguno</span>
-        <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+    </div>
+    <h5>Estado Civíl</h5>
+    <div class="input-group form-group">
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="1">Soltero</label>
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="2" checked>Casado</label>
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="3">Acompañados</label>
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="4">Divorciados</label>
+        <label class="radio-inline"><input type="radio" name="estadoCivil" value="5">Viudo/a</label>
     </div>
 
     <a href="#estudiante" aria-controls="profile" role="tab" data-toggle="tab">
         <button class="btn btn-danger">Atrás</button></a>
-    <a href="#otros" aria-controls="profile" role="tab" data-toggle="tab">
-        <button class="btn btn-primary">Siguiente</button></a>
-
+    <a href="#" ></a>
+    {!!Form::submit('Registrar Estudiante', ['class'=>'btn btn-primary','name'=>'btnCrearUsuario'])!!}
+    {!!Form::close()!!}
 </div>
