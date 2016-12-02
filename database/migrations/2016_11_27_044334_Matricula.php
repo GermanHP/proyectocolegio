@@ -15,6 +15,7 @@ class Matricula extends Migration
         Schema::create('Matriculas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('idCurso',500)->nullable();
+            $table->string('Observaciones');
             $table->integer('idEstudiante')->unsigned();
             $table->foreign('idEstudiante') ->references('id')->on('Estudiante');
             $table->integer('idSeccion')->unsigned();
