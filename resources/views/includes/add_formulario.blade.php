@@ -14,7 +14,7 @@ $(document).ready(function () {
         cont++;
         var form='<div id="ingreso" +cont+><h3>Datos del Estudiante</h3>' +
                 '<div class="input-group form-group"><span class="input-group-addon" id="basic-addon1">Nombres</span>' +
-                '<input type="text" class="form-control" placeholder="Nombres..." aria-describedby="basic-addon1">' +
+                '<input name ="nombreEstudiante[]" id="nombreEstudiante[]" type="text" class="form-control" placeholder="Nombres..." aria-describedby="basic-addon1">' +
                 '</div><div class="input-group form-group"><span class="input-group-addon" id="basic-addon1">Apellidos</span>' +
                 '<input type="text" class="form-control" placeholder="Apellidos..." aria-describedby="basic-addon1">' +
                 '</div><div class="input-group form-group"><span class="input-group-addon" id="basic-addon1">Lugar de Nacimiento</span>' +
