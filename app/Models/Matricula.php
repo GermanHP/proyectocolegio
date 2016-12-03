@@ -9,7 +9,7 @@ class Matricula extends Model {
      */
 
     protected $table = 'matriculas';
-    protected $fillable = ['id', 'idCurso', 'idEstudiante', 'idSeccion', 'deleted_at'];
+    protected $fillable = ['id', 'idCurso', 'Observaciones', 'idEstudiante', 'idSeccion', 'deleted_at'];
 
 
     public function estudiante() {

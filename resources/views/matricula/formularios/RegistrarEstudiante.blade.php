@@ -105,7 +105,7 @@
 </div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">Grado que Estudiará</span>
-
+    {!! Form::select('departamento',$grados,null,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'department', 'onchange'=>'GetMunicipios(this)', 'style'=>'width: 100%']) !!}
 </div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">Sacramentos: </span>
