@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Departamento;
+use App\Models\Grado;
 use App\Models\Municipio;
 use Exception;
 use Illuminate\Http\Request;
@@ -17,7 +18,8 @@ class InscriptionController extends Controller
 
     public function formulary(){
         $departamentos = Departamento::orderBy('nombre', 'ASC')->lists('nombre', 'id');
-        return view('matricula.formulario', compact('departamentos'));
+        $grados = Grado::orderBy('nombre', 'ASC')->lists('nombre', 'id');
+        return view('matricula.formulario', compact('departamentos','grados'));
     }
     public function registrarEstudiante(Request $request){
 
@@ -69,5 +71,9 @@ class InscriptionController extends Controller
         }
 
 
+    }
+
+    public function asignarGradoEstudiante(){
+        return view('matricula.formularios.alumno_grado');
     }
 }
