@@ -118,6 +118,7 @@
     <input type="checkbox"  name="sacramentosEstudiante[]" value="3" aria-describedby="basic-addon1">
 </div>
 <div class="input-group form-group">
+
     <span class="input-group-addon" id="basic-addon1">Estudió Parvularia</span>
     <label class="radio-inline"><input type="radio" name="estudioP" value="1" checked>Sí</label>
     <label class="radio-inline"><input type="radio" name="estudioP" value="2" >No</label>
