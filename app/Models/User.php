@@ -9,11 +9,9 @@ class User extends Model {
      */
 
     protected $table = 'users';
-    protected $fillable = ['id', 'nombre', 'apellido', 'genero', 'email', 'password', 'idTipousuario', 'remember_token', 'deleted_at'];
+    protected $fillable = ['id', 'nombre', 'apellido', 'genero', 'email', 'password', 'passwordMoodle', 'idTipousuario', 'remember_token', 'deleted_at'];
 
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+
     public function tipousuario() {
         return $this->belongsTo('App\Models\Tipousuario', 'idTipousuario', 'id');
     }

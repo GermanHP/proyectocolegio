@@ -17,8 +17,9 @@ class CreateUsersTable extends Migration
             $table->string('nombre', 50);
             $table->string('apellido', 50);
             $table->boolean('genero');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->string('email')->unique()->nullable();;
+            $table->string('password')->nullable();;
+            $table->string('passwordMoodle')->nullable();
             $table->integer('idTipousuario')->unsigned();
             $table->foreign('idTipousuario') ->references('id')->on('tipoUsuario');
             $table->rememberToken();

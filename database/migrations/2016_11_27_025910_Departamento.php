@@ -14,7 +14,7 @@ class Departamento extends Migration
     {
         Schema::create('Departamentos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombreDepartamento', 50);
+            $table->string('nombre', 50);
             $table->timestamps();
             $table->softDeletes();
         });

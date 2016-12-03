@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Departamento;
+use App\Models\Municipio;
+use Exception;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,9 +16,14 @@ class InscriptionController extends Controller
     }
 
     public function formulary(){
-        return view('matricula.formulario');
+        $departamentos = Departamento::orderBy('nombre', 'ASC')->lists('nombre', 'id');
+        return view('matricula.formulario', compact('departamentos'));
     }
     public function registrarEstudiante(Request $request){
+
+        foreach ($request['nombreEstudiante'] as $estudiante){
+            echo $estudiante."</br>";
+        }
 
     }
 
@@ -39,7 +47,27 @@ class InscriptionController extends Controller
         return view('matricula.noticias');
     }
 
-    public function asignarGradoEstudiante(){
-        return view('matricula.formularios.alumno_grado');
+    public function getMunicipios(Request $request)
+    {
+
+        try {
+
+
+            $municipios = Municipio::where('id_departamento', $request['id'])->get();
+
+            if (count($municipios) > 0) {
+
+                return response()->json($municipios, 200);
+
+            } else {
+
+                return response()->json(['error' => 'No se encontraron municipios para este departamento'], 450);
+            }
+        } catch (Exception $e) {
+
+            return response()->json(['error' => 'Ocurrio un error en la consulta'], 450);
+        }
+
+
     }
 }

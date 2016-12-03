@@ -14,8 +14,7 @@ class Documentos extends Migration
     {
         Schema::create('Documentos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('nombre')->unsigned();
-
+            $table->string('nombre',250);
             $table->timestamps();
             $table->softDeletes();
         });

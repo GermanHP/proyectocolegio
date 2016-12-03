@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+
+
     @include('includes.tab_formulario')
     @include('includes.add_formulario')
     <div class="panel panel-heading mdl-color--pink-900 container">

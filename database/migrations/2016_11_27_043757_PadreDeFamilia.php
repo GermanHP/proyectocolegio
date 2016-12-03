@@ -16,12 +16,16 @@ class PadreDeFamilia extends Migration
             $table->increments('id');
             $table->date('fechaNacimiento');
             $table->string('DUI',10);
+            $table->string('nombreLugarTrabajo',250)->nullable();
             $table->integer('idUsuario')->unsigned();
             $table->foreign('idUsuario') ->references('id')->on('users');
             $table->integer('idOficio')->unsigned();
             $table->foreign('idOficio') ->references('id')->on('Oficios');
             $table->integer('idTipoPadre')->unsigned();
             $table->foreign('idTipoPadre') ->references('id')->on('TipoPadre');
+            $table->integer('idEstadoCivil')->unsigned();
+            $table->foreign('idEstadoCivil') ->references('id')->on('EstadoCivil');
+
             $table->timestamps();
             $table->softDeletes();
         });

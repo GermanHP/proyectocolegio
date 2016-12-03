@@ -9,7 +9,7 @@ class Tipopadre extends Model {
      */
 
     protected $table = 'tipopadre';
-    protected $fillable = ['id', 'nombre', 'deleted_at'];
+    protected $fillable = ['id', 'tipo', 'deleted_at'];
 
 
     public function padredefamilia() {

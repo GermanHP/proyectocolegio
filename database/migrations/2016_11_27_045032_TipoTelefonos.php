@@ -14,7 +14,7 @@ class TipoTelefonos extends Migration
     {
         Schema::create('TipoTelefonos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre',50);
+            $table->string('tipo',50);
             $table->timestamps();
             $table->softDeletes();
         });

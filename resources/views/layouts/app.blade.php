@@ -8,6 +8,47 @@
     <meta name="owner" content="Colegio San Juan Bautista">
     <title>Colegio San Juan Bautista</title>
     <!--Styles-->
+{!! Html::style('assets/css/bootstrap.css') !!}
+<!-- Font Awesome -->
+
+{!! Html::style('assets/css/font-awesome.css') !!}
+{!! Html::style('dist/css/select2.css') !!}
+<!-- Ionicons -->
+
+    <!-- DataTables -->
+{!! Html::style('assets/plugins/datatables/dataTables.bootstrap.css') !!}
+<!-- Theme style -->
+{!! Html::style('assets/dist/css/AdminLTE.css') !!}
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+{!! Html::style('assets/dist/css/skins/_all-skins.css') !!}
+    <!-- jQuery 2.1.4 -->
+{!! Html::script('assets/plugins/jQuery/jQuery-2.1.4.min.js') !!}
+
+{!! Html::script('dist/js/select2.full.js') !!}
+<!-- Bootstrap 3.3.5 -->
+{!! Html::script('assets/js/bootstrap.min.js') !!}
+<!-- DataTables -->
+{!! Html::script('assets/plugins/datatables/jquery.dataTables.min.js') !!}
+{!! Html::script('assets/plugins/datatables/dataTables.bootstrap.min.js') !!}
+<!-- SlimScroll -->
+{!! Html::script('assets/plugins/slimScroll/jquery.slimscroll.min.js') !!}
+<!-- FastClick -->
+{!! Html::script('assets/plugins/fastclick/fastclick.min.js') !!}
+<!-- AdminLTE App -->
+{!! Html::script('assets/dist/js/app.min.js') !!}
+<!-- AdminLTE for demo purposes -->
+    {!! Html::script('assets/dist/js/demo.js') !!}
+
+    {!! Html::script('assets/plugins/datepicker/bootstrap-datepicker.js') !!}
+
+    {!! Html::script('assets/plugins/timepicker/bootstrap-timepicker.min.js') !!}
+    {!! Html::script('assets/plugins/datepicker/locales/bootstrap-datepicker.es.js') !!}
+    {!! Html::script('assets/js/jquery.mask.min.js') !!}
+    {!! Html::style('assets/plugins/datepicker/datepicker3.css') !!}
+    {!! Html::script('assets/js/loading.js') !!}
+    {!! Html::script('assets/js/SERO.js') !!}
+    {!! Html::style('assets/css/SERO.css') !!}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -20,12 +61,14 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
 
+
+
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/socialbar.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/appblade.css">
     <script src="js/material.min.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
 </head>
 <body>
 
@@ -69,15 +112,12 @@
         <div class="page-content">
             @yield('content')
 
-            <!--Scripts-->
-                <!-- Scripts -->
-                <script src="http://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js"></script>
-                <script >
-                    $.material.init();
-                </script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js"></script>
+            <script >
+                $.material.init();
+            </script>
         </div>
     </main>
 
