@@ -70,4 +70,8 @@ class InscriptionController extends Controller
 
 
     }
+
+    public function asignarGradoEstudiante(){
+        return view('matricula.formularios.alumno_grado');
+    }
 }
