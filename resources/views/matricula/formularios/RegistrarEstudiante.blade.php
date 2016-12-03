@@ -3,6 +3,7 @@
 
         $("#department").select2();
         $("#municipio").select2();
+        $("#gradoCombo").select2();
         $('#dui').mask('000000000');
         $('#nit').mask('00000000000000');
         //$.fn.datepicker.defaults.language = 'es';
@@ -105,16 +106,16 @@
 </div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">Grado que Estudiará</span>
-    {!! Form::select('departamento',$grados,null,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'department', 'onchange'=>'GetMunicipios(this)', 'style'=>'width: 100%']) !!}
+    {!! Form::select('gradoNuevo',$grados,null,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'gradoCombo',  'style'=>'width: 100%']) !!}
 </div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">Sacramentos: </span>
     <span class="input-group-addon" id="basic-addon1">Bautismo</span>
-    <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+    <input type="checkbox" name="sacramentosEstudiante[]" value="1" aria-describedby="basic-addon1">
     <span class="input-group-addon" id="basic-addon1">Primera Comunión</span>
-    <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+    <input type="checkbox" name="sacramentosEstudiante[]" value="2" aria-describedby="basic-addon1">
     <span class="input-group-addon" id="basic-addon1">Confirma</span>
-    <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+    <input type="checkbox"  name="sacramentosEstudiante[]" value="3" aria-describedby="basic-addon1">
 </div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">Estudió Parvularia</span>
