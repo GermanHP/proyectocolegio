@@ -30,6 +30,7 @@ class ValidacionMatriculaNueva extends Request
             'departamento' => 'required|exists:departamentos,id',
             'municipio' => 'required|exists:municipios,id',
             'fechaNacimientoEstudiante' => 'required|date',
+            'gradoNuevo'=>'required|exists:grados,id',
         ];
     }
 }

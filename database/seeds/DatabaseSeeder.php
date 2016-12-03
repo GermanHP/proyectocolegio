@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call(OficiosSeeder::class);
         $this->call(DocumentosSeeder::class);
         $this->call(EstadoCivilSeeder::class);
+        $this->call(TipoDireccionSeeder::class);
     }
 }

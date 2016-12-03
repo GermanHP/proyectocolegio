@@ -16,10 +16,6 @@ class Municipio extends Model {
         return $this->belongsTo('App\Models\Departamento', 'id_departamento', 'id');
     }
 
-    public function users() {
-        return $this->belongsToMany('App\Models\User', 'direcciones', 'idMunicipio', 'idUsuario');
-    }
-
     public function direcciones() {
         return $this->hasMany('App\Models\Direccione', 'idMunicipio', 'id');
     }
