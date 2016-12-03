@@ -14,7 +14,7 @@
         <span class="input-group-addon" id="basic-addon1">Fecha de Nacimiento</span>
         <input type="date">
         <span class="input-group-addon" id="basic-addon1">Profesión u Oficio</span>
-        <input type="text" class="form-control" placeholder="Profesión u Oficio" aria-describedby="basic-addon1">
+        {!! Form::select('oficiosPadres[]',$oficios,null,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'gradoCombo',  'style'=>'width: 100%']) !!}
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Lugar de Trabajo</span>
@@ -61,7 +61,7 @@
         <span class="input-group-addon" id="basic-addon1">Fecha de Nacimiento</span>
         <input type="date">
         <span class="input-group-addon" id="basic-addon1">Profesión u Oficio</span>
-        <input type="text" class="form-control" placeholder="Profesión u Oficio" aria-describedby="basic-addon1">
+        {!! Form::select('oficiosPadres[]',$oficios,null,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'gradoCombo',  'style'=>'width: 100%']) !!}
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Lugar de Trabajo</span>
@@ -107,7 +107,7 @@
         <span class="input-group-addon" id="basic-addon1">Fecha de Nacimiento</span>
         <input type="date">
         <span class="input-group-addon" id="basic-addon1">Profesión u Oficio</span>
-        <input type="text" class="form-control" placeholder="Profesión u Oficio" aria-describedby="basic-addon1">
+        {!! Form::select('oficiosPadres[]',$oficios,null,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'gradoCombo',  'style'=>'width: 100%']) !!}
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Lugar de Trabajo</span>

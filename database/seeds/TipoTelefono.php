@@ -26,5 +26,10 @@ class TipoTelefono extends Seeder
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
+        DB::table('TipoTelefonos')->insert(array(
+            'tipo' => 'EmergenciaContacto',
+            'created_at' => new DateTime,
+            'updated_at' => new DateTime
+        ));
     }
 }
