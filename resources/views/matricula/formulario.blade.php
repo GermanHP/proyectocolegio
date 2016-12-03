@@ -11,9 +11,12 @@
     </div>
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="estudiante">
+
             {!!Form::open(['route'=>'Registrar.Estudiante', 'method'=>'POST', 'onsubmit'=>"waitingDialog.show('Guardando Espere... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
 
             <div class="container panel panel-body">
+                @include('alertas.errores')
+                @include('alertas.flash')
                 @include('matricula.formularios.RegistrarEstudiante')
 
                 <div role="tabpanel" class="tab-pane fade" id="padre">

@@ -21,11 +21,9 @@ class InscriptionController extends Controller
         $grados = Grado::orderBy('nombre', 'ASC')->lists('nombre', 'id');
         return view('matricula.formulario', compact('departamentos','grados'));
     }
-    public function registrarEstudiante(Request $request){
+    public function registrarEstudiante(Requests\ValidacionMatriculaNueva $request){
 
-        foreach ($request['nombreEstudiante'] as $estudiante){
-            echo $estudiante."</br>";
-        }
+
 
     }
 
