@@ -38,4 +38,8 @@ class InscriptionController extends Controller
     public function noticias(){
         return view('matricula.noticias');
     }
+
+    public function asignarGradoEstudiante(){
+        return view('matricula.formularios.alumno_grado');
+    }
 }
