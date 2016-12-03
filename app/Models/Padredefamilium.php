@@ -9,8 +9,12 @@ class Padredefamilium extends Model {
      */
 
     protected $table = 'padredefamilia';
-    protected $fillable = ['id', 'fechaNacimiento', 'DUI', 'idUsuario', 'idOficio', 'idTipoPadre', 'deleted_at'];
+    protected $fillable = ['id', 'fechaNacimiento', 'DUI', 'idUsuario', 'idOficio', 'idTipoPadre', 'idEstadoCivil', 'deleted_at'];
 
+
+    public function estadocivil() {
+        return $this->belongsTo('App\Models\Estadocivil', 'idEstadoCivil', 'id');
+    }
 
     public function oficio() {
         return $this->belongsTo('App\Models\Oficio', 'idOficio', 'id');
