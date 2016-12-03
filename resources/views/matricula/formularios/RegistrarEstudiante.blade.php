@@ -3,6 +3,7 @@
 
         $("#department").select2();
         $("#municipio").select2();
+        $("#gradoCombo").select2();
         $('#dui').mask('000000000');
         $('#nit').mask('00000000000000');
         //$.fn.datepicker.defaults.language = 'es';
@@ -87,7 +88,7 @@
 
     <input type="text" name="lugarNacimiento" class="form-control" placeholder="Lugar de Nacimiento" aria-describedby="basic-addon1">
 </div>
-    <div class="input-group form-group">
+    <div class="form-group">
         {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }} {!! Form::select('departamento',$departamentos,null,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'department', 'onchange'=>'GetMunicipios(this)', 'style'=>'width: 100%']) !!}
     </div>
 
@@ -103,35 +104,21 @@
     <span class="input-group-addon" id="basic-addon1">Fecha de Nacimiento</span>
     <input type="date" name="fechaNacimientoEstudiante" class="form-control" >
 </div>
-
-    <div class="input-group form-group">
-        <span for="selectGrado" class="input-group-addon" id="basic-addon1">Grado en que Estudiará</span>
-        <select class="form-control" id="selectGrado">
-            <option value="1">Kinder 4</option>
-            <option value="2">Kinder 5</option>
-            <option value="3">Primer Grado</option>
-            <option value="4">Segundo Grado</option>
-            <option value="5">Tercer Grado</option>
-            <option value="6">Cuarto Grado</option>
-            <option value="7">Quinto Grado</option>
-            <option value="8">Sexto Grado</option>
-            <option value="9">Séptimo Grado</option>
-            <option value="10">Octavo Grado</option>
-            <option value="11">Noveno Grado</option>
-        </select>
-
-    </div>
-
+<div class="input-group form-group">
+    <span class="input-group-addon" id="basic-addon1">Grado que Estudiará</span>
+    {!! Form::select('gradoNuevo',$grados,null,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'gradoCombo',  'style'=>'width: 100%']) !!}
+</div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">Sacramentos: </span>
     <span class="input-group-addon" id="basic-addon1">Bautismo</span>
-    <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+    <input type="checkbox" name="sacramentosEstudiante[]" value="1" aria-describedby="basic-addon1">
     <span class="input-group-addon" id="basic-addon1">Primera Comunión</span>
-    <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+    <input type="checkbox" name="sacramentosEstudiante[]" value="2" aria-describedby="basic-addon1">
     <span class="input-group-addon" id="basic-addon1">Confirma</span>
-    <input type="checkbox" class="form-control" aria-describedby="basic-addon1">
+    <input type="checkbox"  name="sacramentosEstudiante[]" value="3" aria-describedby="basic-addon1">
 </div>
 <div class="input-group form-group">
+
     <span class="input-group-addon" id="basic-addon1">Estudió Parvularia</span>
     <label class="radio-inline"><input type="radio" name="estudioP" value="1" checked>Sí</label>
     <label class="radio-inline"><input type="radio" name="estudioP" value="2" >No</label>
@@ -196,6 +183,9 @@
         <span class="input-group-addon" id="basic-addon1">Observaciones</span>
         <input type="text" class="form-control" placeholder="Observaciones" aria-describedby="basic-addon1">
     </div>
+<div id="add_estudiante">
+
+</div>
 
 <a href="#padre" aria-controls="profile" role="tab" data-toggle="tab">
     <button class="btn btn-primary">Siguiente</button></a>
