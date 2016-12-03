@@ -12,9 +12,4 @@
     $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
 </script>
 
-<script>
-    $('a[id="btn_add"]').on('hide.bs.btn_add', function (e) {
-        e.target.hidden
-        e.relatedTarget
-    })
-</script>
+
