@@ -2,25 +2,25 @@
 <div id="ingreso">
 <h3>Datos del Estudiante</h3>
     <div class="input-group form-group">
-        <span class="input-group-addon" id="basic-addon1">Nombres</span>
-        <input name ="nombreEstudiante" id="nombreEstudiante" type="text" class="form-control" placeholder="Nombres..." aria-describedby="basic-addon1">
+        {{Form::label('Nombres',null,['class'=>'input-group-addon'])}}
+        {{Form::text('nombre',null, ['class'=>'form-control', 'placeholder'=>'Ingrese los nombres del estudiante'])}}
     </div>
     <div class="input-group form-group">
-        <span class="input-group-addon" id="basic-addon1">Apellidos</span>
-        <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellidos..." aria-describedby="basic-addon1">
+        {{Form::label('Apellidos',null,['class'=>'input-group-addon'])}}
+        {{Form::text('apellido',null, ['class'=>'form-control', 'placeholder'=>'Ingrese los apellidos del estudiante'])}}
     </div>
     <div class="input-group form-group">
-    <span class="input-group-addon" id="basic-addon1">Génereo</span>
-    <label class="radio-inline"><input type="radio" name="generoEstudiante" value="1" checked>Masculino</label>
-    <label class="radio-inline"><input type="radio" name="generoEstudiante" value="2" >Femenino</label>
+        {{Form::label('Género',null,['class'=>'input-group-addon'])}}
+        <label class="radio-inline">{!! Form::radio('generoEstudiante','1', true) !!}Masculino</label>
+        <label class="radio-inline">{!! Form::radio('generoEstudiante','2') !!}Femenino</label>
     </div>
     <div class="input-group form-group">
-        <span class="input-group-addon" id="basic-addon1">Correo Electrónico</span>
-        <input name ="correoEstudiante" id="correoEstudiante" type="email" class="form-control" placeholder="e-mail..." aria-describedby="basic-addon1">
-    </div>
+        {{Form::label('Correo Electrónico',null,['class'=>'input-group-addon'])}}
+        {{Form::email('correoEstudiante',null, ['class'=>'form-control', 'placeholder'=>'Ingrese e-mail del estudiante', 'id'=>'correoEstudiante', 'aria-describedby'=>'basic-addon1'])}}
+       </div>
     <div class="input-group form-group">
-        <span class="input-group-addon" id="basic-addon1">Lugar de Nacimiento</span>
-        <input type="text" name="lugarNacimiento" class="form-control" placeholder="Lugar de Nacimiento" aria-describedby="basic-addon1">
+        {{Form::label('Lugar de Nacimiento',null,['class'=>'input-group-addon'])}}
+        {{Form::text('lugarNacimiento',null, ['class'=>'form-control', 'placeholder'=>'Lugar de Nacimiento', 'aria-describedby'=>'basic-addon1'])}}
     </div>
     <div class="input-group form-group">
         {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }} {!! Form::select('departamento',$departamentos,9,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'department', 'onchange'=>'GetMunicipios(this)', 'style'=>'width: 100%']) !!}
@@ -30,8 +30,8 @@
         {!! Form::select('municipio',$municipios,145,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipio',  'style'=>'width: 100%']) !!}
     </div>
     <div class="input-group form-group">
-        <span class="input-group-addon" id="basic-addon1">Fecha de Nacimiento</span>
-        <input type="date" name="fechaNacimientoEstudiante" class="form-control" >
+        {{ Form::label('Fecha de Nacimiento',null,['class'=>'input-group-addon']) }}
+        {{Form::date('fechaNacimientoEstudiante', \Carbon\Carbon::now())}}
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Grado que Estudiará</span>
@@ -40,25 +40,24 @@
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Sacramentos: </span>
         <span class="input-group-addon" id="basic-addon1">Bautismo</span>
-        <input type="checkbox" name="sacramentosEstudiante[]" value="1" aria-describedby="basic-addon1">
+        {!! Form::checkbox('sacramentoEstudiante[]','1') !!}
         <span class="input-group-addon" id="basic-addon1">Primera Comunión</span>
-        <input type="checkbox" name="sacramentosEstudiante[]" value="2" aria-describedby="basic-addon1">
+        {!! Form::checkbox('sacramentoEstudiante[]','2') !!}
         <span class="input-group-addon" id="basic-addon1">Confirma</span>
-        <input type="checkbox"  name="sacramentosEstudiante[]" value="3" aria-describedby="basic-addon1">
+        {!! Form::checkbox('sacramentoEstudiante[]','3') !!}
     </div>
     <div class="input-group form-group">
 
         <span class="input-group-addon" id="basic-addon1">Estudió Parvularia</span>
-        <label class="radio-inline"><input type="radio" name="estudioP" value="1" checked>Sí</label>
-        <label class="radio-inline"><input type="radio" name="estudioP" value="2" >No</label>
+        <label class="radio-inline">{!! Form::radio('estudioP','1', true) !!}Si</label>
+        <label class="radio-inline">{!! Form::radio('estudioP','2') !!}No</label>
         <span class="input-group-addon" id="basic-addon1">Repite Grado</span>
-        <label class="radio-inline"><input type="radio" name="repeatG" value="1">Sí</label>
-        <label class="radio-inline"><input type="radio" name="repeatG" value="2" checked>No</label>
+        <label class="radio-inline">{!! Form::radio('repeatG','1', true) !!}Si</label>
+        <label class="radio-inline">{!! Form::radio('repeatG','2') !!}No</label>
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Dirección de Residencia del Estudiante</span>
-        <input type="text" class="form-control" name="residenciaEstudiante" placeholder="Dirección" aria-describedby="basic-addon1">
-
+        {{Form::text('residenciaEstudiante',null,['class'=>'form-control', 'placeholder'=>'Dirección', 'aria-describedby'=>'basic-addon1'])}}
     </div>
     <div class="input-group form-group">
         {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }}
