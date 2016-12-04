@@ -34,7 +34,7 @@
 
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Dirección del trabajo</span>
-        <input type="text" class="form-control" placeholder="Dirección" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="DirecciónPadre" aria-describedby="basic-addon1">
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Sacramentos: </span>
@@ -74,13 +74,13 @@
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Lugar de Trabajo</span>
-        <input type="text" class="form-control" placeholder="Lugar de trabajo" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" name="lugarTrabajoMadre" placeholder="Lugar de trabajo" aria-describedby="basic-addon1">
         <span class="input-group-addon" id="basic-addon1">Teléfono</span>
-        <input class="form-control" type="text" pattern="[0-9]{8}"  placeholder="000000000" maxlength="8">
+        <input class="form-control" type="text" name="telefonoMadre" pattern="[0-9]{8}"  placeholder="000000000" maxlength="8">
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Dirección del trabajo</span>
-        <input type="text" class="form-control" placeholder="Dirección" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="DirecciónMadre" aria-describedby="basic-addon1">
     </div>
     <div class="input-group form-group">
         {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }} {!! Form::select('departamento',$departamentos,9,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'departmentMadre', 'onchange'=>'GetMunicipiosMadre(this)', 'style'=>'width: 100%']) !!}

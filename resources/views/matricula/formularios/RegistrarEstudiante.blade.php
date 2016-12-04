@@ -313,7 +313,7 @@
 </div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">Dirección de Residencia del Estudiante</span>
-    <input type="text" class="form-control" placeholder="Dirección" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="DireccionEstudiante" placeholder="Dirección" aria-describedby="basic-addon1">
 
 </div>
     <div class="input-group form-group">
@@ -329,7 +329,7 @@
     <label class="radio-inline"><input type="radio" name="enfermedadRadio" value="1">Sí</label>
     <label class="radio-inline"><input type="radio" name="enfermedadRadio" value="2" checked>No</label>
     <span class="input-group-addon" id="basic-addon1">Nombre de la Enfermedad</span>
-    <input type="text" class="form-control" name ="nombreEnfermedad"placeholder="Nombre de la enfermedad" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name ="nombreEnfermedad" placeholder="Nombre de la enfermedad" aria-describedby="basic-addon1">
 </div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">¿Posee Tratamiento Médico o Medícamentos?</span>
@@ -338,12 +338,12 @@
 <div class="input-group form-group">
                 <span class="input-group-addon" id="basic-addon1">EL/LA ESTUDIANTE SE RETIRA DE LA INSTITUCIÓN A LA HORA
                     DE SALIDA: </span>
-    <label class="radio-inline"><input type="radio" name="salidaRadio">Solo</label>
-    <label class="radio-inline"><input type="radio" name="salidaRadio" checked>Acompañado</label>
+    <label class="radio-inline"><input type="radio" name="salidaRadio" value ="1">Solo</label>
+    <label class="radio-inline"><input type="radio" name="salidaRadio" value ="2" checked>Acompañado</label>
 </div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">Nombre de la Persona Autorizada:</span>
-    <input type="text" class="form-control" name ="personaAutorizada"placeholder="Nombre completo" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name ="personaAutorizada" placeholder="Nombre completo" aria-describedby="basic-addon1">
 </div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">En caso de emergencia comunicarse con</span>
