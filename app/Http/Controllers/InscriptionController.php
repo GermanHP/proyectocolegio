@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Departamento;
 use App\Models\Grado;
 use App\Models\Municipio;
+use App\Models\Oficio;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -18,14 +19,15 @@ class InscriptionController extends Controller
 
     public function formulary(){
         $departamentos = Departamento::orderBy('nombre', 'ASC')->lists('nombre', 'id');
+        $municipios = Municipio::where('id_departamento','=',9)->orderBy('nombre', 'ASC')->lists('nombre', 'id');
         $grados = Grado::orderBy('nombre', 'ASC')->lists('nombre', 'id');
-        return view('matricula.formulario', compact('departamentos','grados'));
-    }
-    public function registrarEstudiante(Request $request){
+        $oficios = Oficio::orderBy('nombre', 'ASC')->lists('nombre', 'id');
 
-        foreach ($request['nombreEstudiante'] as $estudiante){
-            echo $estudiante."</br>";
-        }
+        return view('matricula.formulario', compact('departamentos','grados','oficios','municipios'));
+    }
+    public function registrarEstudiante(Requests\ValidacionMatriculaNueva $request){
+
+
 
     }
 

@@ -9,11 +9,15 @@ class Direccione extends Model {
      */
 
     protected $table = 'direcciones';
-    protected $fillable = ['id', 'detalle', 'idMunicipio', 'idUsuario', 'deleted_at'];
+    protected $fillable = ['id', 'detalle', 'idMunicipio', 'idTipoDireccion', 'idUsuario', 'deleted_at'];
 
 
     public function municipio() {
         return $this->belongsTo('App\Models\Municipio', 'idMunicipio', 'id');
+    }
+
+    public function tipodireccion() {
+        return $this->belongsTo('App\Models\Tipodireccion', 'idTipoDireccion', 'id');
     }
 
     public function user() {

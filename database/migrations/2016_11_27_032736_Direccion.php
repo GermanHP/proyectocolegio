@@ -17,6 +17,8 @@ class Direccion extends Migration
             $table->string('detalle', 50);
             $table->integer('idMunicipio')->unsigned();
             $table->foreign('idMunicipio') ->references('id')->on('Municipios');
+            $table->integer('idTipoDireccion')->unsigned();
+            $table->foreign('idTipoDireccion') ->references('id')->on('TipoDireccion');
             $table->integer('idUsuario')->unsigned();
             $table->foreign('idUsuario') ->references('id')->on('users');
             $table->timestamps();

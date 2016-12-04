@@ -9,7 +9,7 @@ class Estudiante extends Model {
      */
 
     protected $table = 'estudiante';
-    protected $fillable = ['id', 'fechaNacimiento', 'lugarNacimiento', 'parvularia', 'Carnet', 'idUsuario', 'deleted_at'];
+    protected $fillable = ['id', 'fechaNacimiento', 'parvularia', 'retirada', 'PersonaAutorizada', 'PersonaEmergencia', 'Carnet', 'idUsuario', 'deleted_at'];
 
 
     public function user() {
@@ -26,6 +26,10 @@ class Estudiante extends Model {
 
     public function estudianteenfermedads() {
         return $this->hasMany('App\Models\Estudianteenfermedad', 'idEstudiante', 'id');
+    }
+
+    public function historicoestudiantes() {
+        return $this->hasMany('App\Models\Historicoestudiante', 'idEstudiante', 'id');
     }
 
     public function matriculas() {

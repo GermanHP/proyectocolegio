@@ -15,9 +15,11 @@ class Estudiante extends Migration
         Schema::create('Estudiante', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fechaNacimiento');
-            $table->string('lugarNacimiento',50);
             $table->boolean('parvularia');
-            $table->string('Carnet',50);
+            $table->boolean('retirada');
+            $table->string('PersonaAutorizada',500);
+            $table->string('PersonaEmergencia',500);
+            $table->string('Carnet',100);
             $table->integer('idUsuario')->unsigned();
             $table->foreign('idUsuario') ->references('id')->on('users');
             $table->timestamps();

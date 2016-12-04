@@ -9,7 +9,7 @@ class Padredefamilium extends Model {
      */
 
     protected $table = 'padredefamilia';
-    protected $fillable = ['id', 'fechaNacimiento', 'DUI', 'idUsuario', 'idOficio', 'idTipoPadre', 'idEstadoCivil', 'deleted_at'];
+    protected $fillable = ['id', 'fechaNacimiento', 'DUI', 'nombreLugarTrabajo', 'idUsuario', 'idOficio', 'idTipoPadre', 'idEstadoCivil', 'deleted_at'];
 
 
     public function estadocivil() {

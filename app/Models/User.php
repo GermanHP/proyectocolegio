@@ -16,10 +16,6 @@ class User extends Model {
         return $this->belongsTo('App\Models\Tipousuario', 'idTipousuario', 'id');
     }
 
-    public function municipios() {
-        return $this->belongsToMany('App\Models\Municipio', 'direcciones', 'idUsuario', 'idMunicipio');
-    }
-
     public function sacramentos() {
         return $this->belongsToMany('App\Models\Sacramento', 'sacramentousuario', 'idUsuario', 'idSacramento');
     }
