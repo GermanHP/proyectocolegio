@@ -9,6 +9,10 @@
         <input type="text" class="form-control" name="apellidosPadre" placeholder="Apellidos..." aria-describedby="basic-addon1">
     </div>
     <div class="input-group form-group">
+        <span class="input-group-addon" id="basic-addon1">Correo Electrónico</span>
+        <input name ="correoPadre" id="correoPadre" type="email" class="form-control" placeholder="e-mail..." aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Numero de DUI</span>
         <input class="form-control" name="DUIpadre" type="text" pattern="[0-9]{9}"  placeholder="0000000000" maxlength="9">
         <span class="input-group-addon" id="basic-addon1">Fecha de Nacimiento</span>
@@ -65,6 +69,11 @@
         <input type="text" class="form-control" name="apellidoMadre" placeholder="Apellidos..." aria-describedby="basic-addon1">
     </div>
     <div class="input-group form-group">
+        <span class="input-group-addon" id="basic-addon1">Correo Electrónico</span>
+        <input name ="correoMadre" id="correoMadre" type="email" class="form-control" placeholder="e-mail..." aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Numero de DUI</span>
         <input class="form-control" type="text" name="DUIMadre" pattern="[0-9]{9}"  placeholder="0000000000" maxlength="9">
         <span class="input-group-addon" id="basic-addon1">Fecha de Nacimiento</span>
@@ -118,6 +127,11 @@
         <span class="input-group-addon" id="basic-addon1">Apellidos</span>
         <input type="text" class="form-control" name="apellidoResponsable" placeholder="Apellidos..." aria-describedby="basic-addon1">
     </div>
+    <div class="input-group form-group">
+        <span class="input-group-addon" id="basic-addon1">Correo Electrónico</span>
+        <input name ="correoResponsable" id="correoResponsable" type="email" class="form-control" placeholder="e-mail..." aria-describedby="basic-addon1">
+    </div>
+
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Numero de DUI</span>
         <input class="form-control"  name="DUIResponsable" type="text" pattern="[0-9]{9}"  placeholder="0000000000" maxlength="9">
