@@ -73,6 +73,35 @@
         });
     }
 </script>
+<script>
+    function addEnfermedad() {
+        /*<a type="button">
+         <i class="fa fa-minus-circle min-button" aria-hidden="true"></i>
+         </a>*/
+        if (contador < 4) {
+            var numeroCuenta = $('.pivot');
+            var general = $('.cdv');
+            $(numeroCuenta[contador]).clone().appendTo('#enfermedad');
+            if (contador == 0) {
+                var divcod = $('.margin-TopDiv');
+                console.log('divcod length ' + divcod.length);
+                $(divcod[1]).append('<a class="aPivot" type="button"> <i class="fa fa-minus-circle min-button" aria-hidden="true"></i> </a>');
+            }
+            contador++;
+            var inputNumber = $('.inputNumber');
+            $(inputNumber[contador]).val('');
+            var aPivot = $('.aPivot');
+            // console.log('pivot 1 ' +JSON.stringify(('.pivot'[contador])) );
+            numeroCuenta = $('.pivot');
+            $(numeroCuenta[contador]).attr('id', 't' + contador);
+            $(aPivot[contador - 1]).attr('onclick', 'removeCedeval(' + contador + ')');
+        }
+        else {
+            $('#modalbody').text("Solo puede agregar 5 cuentas cedevales");
+            $('#modal').modal('show');
+        }
+    }
+</script>
 <div id="ingreso">
 <h3>Datos del Estudiante</h3>
 <div class="input-group form-group">
@@ -135,7 +164,7 @@
     <label class="radio-inline"><input type="radio" name="optradio" value="1">Sí</label>
     <label class="radio-inline"><input type="radio" name="optradio" value="2" checked>No</label>
     <span class="input-group-addon" id="basic-addon1">Nombre de la Enfermedad</span>
-    <input type="text" class="form-control" placeholder="Nombre de la enfermedad" aria-describedby="basic-addon1">
+    <select name="Nombre enfermedad" id="enfermedad"></select>
 </div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">¿Posee Tratamiento Médico o Medícamentos?</span>
