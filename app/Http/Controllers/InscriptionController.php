@@ -19,9 +19,11 @@ class InscriptionController extends Controller
 
     public function formulary(){
         $departamentos = Departamento::orderBy('nombre', 'ASC')->lists('nombre', 'id');
+        $municipios = Municipio::where('id_departamento','=',9)->orderBy('nombre', 'ASC')->lists('nombre', 'id');
         $grados = Grado::orderBy('nombre', 'ASC')->lists('nombre', 'id');
         $oficios = Oficio::orderBy('nombre', 'ASC')->lists('nombre', 'id');
-        return view('matricula.formulario', compact('departamentos','grados','oficios'));
+
+        return view('matricula.formulario', compact('departamentos','grados','oficios','municipios'));
     }
     public function registrarEstudiante(Requests\ValidacionMatriculaNueva $request){
 
