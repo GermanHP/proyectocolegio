@@ -26,6 +26,7 @@ class ValidacionMatriculaNueva extends Request
         return [
             'nombreEstudiante'=>'required|regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/',
             'apellido'=>'required|regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/',
+            'correoEstudiante'=>'email',
             'lugarNacimiento'=>'required',
             'departamento' => 'required|exists:departamentos,id',
             'municipio' => 'required|exists:municipios,id',
@@ -52,6 +53,7 @@ class ValidacionMatriculaNueva extends Request
 
             'nombrePadre'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/\'',
             'apellidosPadre'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/\'',
+            'correoPadre'=>'email',
             'DUIpadre'=>'arrayunique:padredefamilia,DUI|size:9|regex:/^([0-9])+$/i\'',
             'fechaNacimientoPadre'=>'date',
             'oficiosPadre'=>'exists:oficios,id',
@@ -63,8 +65,10 @@ class ValidacionMatriculaNueva extends Request
             'estadoCivilPadre'=>'exists:estadocivil,id',
 
 
+
             'nombreMadre'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/\'',
             'apellidoMadre'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/\'',
+            'correoMadre'=>'email',
             'DUIMadre'=>'arrayunique:padredefamilia,DUI|size:9|regex:/^([0-9])+$/i\'',
             'fechaNacimientoMadre'=>'date',
             'oficioMadre'=>'exists:oficios,id',
@@ -78,6 +82,7 @@ class ValidacionMatriculaNueva extends Request
 
             'nombreResponsable'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/\'',
             'apellidoResponsable'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/\'',
+            'correoResponsable'=>'email',
             'DUIResponsable'=>'arrayunique:padredefamilia,DUI|size:9|regex:/^([0-9])+$/i\'',
             'FechaNacimientoResponsable'=>'date',
             'oficioResponsable'=>'exists:oficios,id',
