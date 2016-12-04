@@ -25,11 +25,11 @@
 
     </div>
     <div class="input-group form-group">
-        {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }} {!! Form::select('departamento',$departamentos,9,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'department', 'onchange'=>'GetMunicipios(this)', 'style'=>'width: 100%']) !!}
+        {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }} {!! Form::select('departamento',$departamentos,9,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'departmentPadre', 'onchange'=>'GetMunicipiosPadre(this)', 'style'=>'width: 100%']) !!}
     </div>
-    <div id="divmun" class="form-group" >
+    <div id="divmunPadre" class="form-group" >
         {{ Form::label('Municipio',null,['class'=>'input-group-addon']) }}
-        {!! Form::select('municipioTrabajoPadre',$municipios,145,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipio',  'style'=>'width: 100%']) !!}
+        {!! Form::select('municipioTrabajoPadre',$municipios,145,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipioTrabajoPadre',  'style'=>'width: 100%']) !!}
     </div>
 
     <div class="input-group form-group">
@@ -83,11 +83,11 @@
         <input type="text" class="form-control" placeholder="Dirección" aria-describedby="basic-addon1">
     </div>
     <div class="input-group form-group">
-        {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }} {!! Form::select('departamento',$departamentos,9,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'department', 'onchange'=>'GetMunicipios(this)', 'style'=>'width: 100%']) !!}
+        {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }} {!! Form::select('departamento',$departamentos,9,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'departmentMadre', 'onchange'=>'GetMunicipiosMadre(this)', 'style'=>'width: 100%']) !!}
     </div>
-    <div id="divmun" class="form-group" >
+    <div id="divmunMadre" class="form-group" >
         {{ Form::label('Municipio',null,['class'=>'input-group-addon']) }}
-        {!! Form::select('municipioTrabajoMadre',$municipios,145,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipio',  'style'=>'width: 100%']) !!}
+        {!! Form::select('municipioTrabajoMadre',$municipios,145,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipioMadre',  'style'=>'width: 100%']) !!}
     </div>
 
     <div class="input-group form-group">
@@ -138,11 +138,11 @@
         <input type="text" name="DireccionTrabajoResponsable" class="form-control" placeholder="Dirección" aria-describedby="basic-addon1">
     </div>
     <div class="input-group form-group">
-        {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }} {!! Form::select('departamento',$departamentos,9,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'department', 'onchange'=>'GetMunicipios(this)', 'style'=>'width: 100%']) !!}
+        {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }} {!! Form::select('departamento',$departamentos,9,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'departmentResponsable', 'onchange'=>'GetMunicipiosResponsable(this)', 'style'=>'width: 100%']) !!}
     </div>
-    <div id="divmun" class="form-group" >
+    <div id="divmunResponsable" class="form-group" >
         {{ Form::label('Municipio',null,['class'=>'input-group-addon']) }}
-        {!! Form::select('municipioTrabajoResponsable',$municipios,145,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipio',  'style'=>'width: 100%']) !!}
+        {!! Form::select('municipioTrabajoResponsable',$municipios,145,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipioRespobsable',  'style'=>'width: 100%']) !!}
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Sacramentos: </span>
