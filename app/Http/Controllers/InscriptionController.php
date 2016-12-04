@@ -63,6 +63,7 @@ class InscriptionController extends Controller
         ]);
         $estudiante->save();
 
+
         $direccionNacimiento = new Direccione();
         $direccionNacimiento->fill([
             'detalle'=>$request['lugarNacimiento'],
