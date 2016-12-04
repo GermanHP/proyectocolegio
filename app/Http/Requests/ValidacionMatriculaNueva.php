@@ -51,8 +51,8 @@ class ValidacionMatriculaNueva extends Request
             'observacionesMatricula'=>'string',
 
 
-            'nombrePadre'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/\'',
-            'apellidosPadre'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/\'',
+            'nombrePadre'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/',
+            'apellidosPadre'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/',
             'correoPadre'=>'email',
             'DUIpadre'=>'arrayunique:padredefamilia,DUI|size:9|regex:/^([0-9])+$/i\'',
             'fechaNacimientoPadre'=>'date',
@@ -65,9 +65,8 @@ class ValidacionMatriculaNueva extends Request
             'estadoCivilPadre'=>'exists:estadocivil,id',
 
 
-
-            'nombreMadre'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/\'',
-            'apellidoMadre'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/\'',
+            'nombreMadre'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/',
+            'apellidoMadre'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/',
             'correoMadre'=>'email',
             'DUIMadre'=>'arrayunique:padredefamilia,DUI|size:9|regex:/^([0-9])+$/i\'',
             'fechaNacimientoMadre'=>'date',
@@ -80,8 +79,8 @@ class ValidacionMatriculaNueva extends Request
             'estadoCivilMadre'=>'exists:estadocivil,id',
 
 
-            'nombreResponsable'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/\'',
-            'apellidoResponsable'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/\'',
+            'nombreResponsable'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/',
+            'apellidoResponsable'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/',
             'correoResponsable'=>'email',
             'DUIResponsable'=>'arrayunique:padredefamilia,DUI|size:9|regex:/^([0-9])+$/i\'',
             'FechaNacimientoResponsable'=>'date',
