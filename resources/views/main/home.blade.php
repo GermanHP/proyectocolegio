@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    <link rel="stylesheet" href="css/socialbar.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <div>
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -155,6 +157,30 @@
         <h2>Ubicación Colegio San Juan Bautista</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3878.4537066065122!2d-89.11974768561723!3d13.569069390465966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6335143ad7b0ef%3A0x7a1250432086b07f!2sColegio+San+Juan+Bautista!5e0!3m2!1ses!2ses!4v1475113455948" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+        <h4>Colegio San Juan Bautista</h4>
+                <div class="col-md-5">
+                    <address>
+                        Tel. 2330-6336, <br>
+                        Avenida San José, barrio el centro, Olocuilta, La Paz, El Salvador.
+                    </address>
+                </div>
+
+            </div>
+            <div class="bottom-footer">
+                <div class="col-md-5">&copy; Copyright Colegio San Juan Bautista, Olocuilta.</div>
+                <div class="col-md-7">
+                    <ul class="footer-nav">
+                        <li><a href="https://www.facebook.com/colegioSJBOficial" target="_blank" class="icon-facebook"></a></li>
+                        <li><a href="https://www.twitter.com/colegioSJBSV" target="_blank" class="icon-twitter"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCkWI9SYJt2y8AtTgrtcLJqQ" target="_blank" class="icon-youtube"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     @include('includes.social_bar')
 @endsection

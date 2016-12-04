@@ -10,6 +10,11 @@
         <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellidos..." aria-describedby="basic-addon1">
     </div>
     <div class="input-group form-group">
+    <span class="input-group-addon" id="basic-addon1">Génereo</span>
+    <label class="radio-inline"><input type="radio" name="generoEstudiante" value="1" checked>Masculino</label>
+    <label class="radio-inline"><input type="radio" name="generoEstudiante" value="2" >Femenino</label>
+    </div>
+    <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Correo Electrónico</span>
         <input name ="correoEstudiante" id="correoEstudiante" type="email" class="form-control" placeholder="e-mail..." aria-describedby="basic-addon1">
     </div>

@@ -118,6 +118,7 @@
         </script>
     </div>
 </main>
+
 </div>
 
 <!-- Modal Comentarios-->
@@ -284,8 +285,5 @@
     </div>
 </div>
 
-<div class="mdl-mega-footer__drop-down-section">
-    @include('includes.footer')
-</div>
 </body>
 </html>
