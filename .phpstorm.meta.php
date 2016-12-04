@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2016-12-03.
+    * Generated on 2016-12-04.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -32,7 +32,7 @@ namespace PHPSTORM_META {
             'filesystem' instanceof \Illuminate\Filesystem\FilesystemManager,
             'filesystem.disk' instanceof \Illuminate\Filesystem\FilesystemAdapter,
             'session' instanceof \Illuminate\Session\SessionManager,
-            'session.store' instanceof \Illuminate\Session\Store,
+            'session.store' instanceof \Illuminate\Session\EncryptedStore,
             'Illuminate\Session\Middleware\StartSession' instanceof \Illuminate\Session\Middleware\StartSession,
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
@@ -54,6 +54,8 @@ namespace PHPSTORM_META {
             'migration.generate' instanceof \Xethron\MigrationsGenerator\MigrateGenerateCommand,
             'Illuminate\Database\Migrations\MigrationRepositoryInterface' instanceof \Illuminate\Database\Migrations\DatabaseMigrationRepository,
             'command.models.generate' instanceof \User11001\EloquentModelGenerator\Console\GenerateModelsCommand,
+            'Laracasts\Flash\SessionStore' instanceof \Laracasts\Flash\LaravelSessionStore,
+            'flash' instanceof \Laracasts\Flash\FlashNotifier,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
@@ -157,7 +159,7 @@ namespace PHPSTORM_META {
             'filesystem' instanceof \Illuminate\Filesystem\FilesystemManager,
             'filesystem.disk' instanceof \Illuminate\Filesystem\FilesystemAdapter,
             'session' instanceof \Illuminate\Session\SessionManager,
-            'session.store' instanceof \Illuminate\Session\Store,
+            'session.store' instanceof \Illuminate\Session\EncryptedStore,
             'Illuminate\Session\Middleware\StartSession' instanceof \Illuminate\Session\Middleware\StartSession,
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
@@ -179,6 +181,8 @@ namespace PHPSTORM_META {
             'migration.generate' instanceof \Xethron\MigrationsGenerator\MigrateGenerateCommand,
             'Illuminate\Database\Migrations\MigrationRepositoryInterface' instanceof \Illuminate\Database\Migrations\DatabaseMigrationRepository,
             'command.models.generate' instanceof \User11001\EloquentModelGenerator\Console\GenerateModelsCommand,
+            'Laracasts\Flash\SessionStore' instanceof \Laracasts\Flash\LaravelSessionStore,
+            'flash' instanceof \Laracasts\Flash\FlashNotifier,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
@@ -282,7 +286,7 @@ namespace PHPSTORM_META {
             'filesystem' instanceof \Illuminate\Filesystem\FilesystemManager,
             'filesystem.disk' instanceof \Illuminate\Filesystem\FilesystemAdapter,
             'session' instanceof \Illuminate\Session\SessionManager,
-            'session.store' instanceof \Illuminate\Session\Store,
+            'session.store' instanceof \Illuminate\Session\EncryptedStore,
             'Illuminate\Session\Middleware\StartSession' instanceof \Illuminate\Session\Middleware\StartSession,
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
@@ -304,6 +308,8 @@ namespace PHPSTORM_META {
             'migration.generate' instanceof \Xethron\MigrationsGenerator\MigrateGenerateCommand,
             'Illuminate\Database\Migrations\MigrationRepositoryInterface' instanceof \Illuminate\Database\Migrations\DatabaseMigrationRepository,
             'command.models.generate' instanceof \User11001\EloquentModelGenerator\Console\GenerateModelsCommand,
+            'Laracasts\Flash\SessionStore' instanceof \Laracasts\Flash\LaravelSessionStore,
+            'flash' instanceof \Laracasts\Flash\FlashNotifier,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
@@ -407,7 +413,7 @@ namespace PHPSTORM_META {
             'filesystem' instanceof \Illuminate\Filesystem\FilesystemManager,
             'filesystem.disk' instanceof \Illuminate\Filesystem\FilesystemAdapter,
             'session' instanceof \Illuminate\Session\SessionManager,
-            'session.store' instanceof \Illuminate\Session\Store,
+            'session.store' instanceof \Illuminate\Session\EncryptedStore,
             'Illuminate\Session\Middleware\StartSession' instanceof \Illuminate\Session\Middleware\StartSession,
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
@@ -429,6 +435,8 @@ namespace PHPSTORM_META {
             'migration.generate' instanceof \Xethron\MigrationsGenerator\MigrateGenerateCommand,
             'Illuminate\Database\Migrations\MigrationRepositoryInterface' instanceof \Illuminate\Database\Migrations\DatabaseMigrationRepository,
             'command.models.generate' instanceof \User11001\EloquentModelGenerator\Console\GenerateModelsCommand,
+            'Laracasts\Flash\SessionStore' instanceof \Laracasts\Flash\LaravelSessionStore,
+            'flash' instanceof \Laracasts\Flash\FlashNotifier,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,

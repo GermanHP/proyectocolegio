@@ -45,10 +45,15 @@
     {!! Html::script('assets/plugins/timepicker/bootstrap-timepicker.min.js') !!}
     {!! Html::script('assets/plugins/datepicker/locales/bootstrap-datepicker.es.js') !!}
     {!! Html::script('assets/js/jquery.mask.min.js') !!}
+
     {!! Html::style('assets/plugins/datepicker/datepicker3.css') !!}
     {!! Html::script('assets/js/loading.js') !!}
     {!! Html::script('assets/js/SERO.js') !!}
     {!! Html::style('assets/css/SERO.css') !!}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -61,13 +66,12 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
 
-
-
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/socialbar.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/appblade.css">
     <script src="js/material.min.js"></script>
+
 
 </head>
 <body>
@@ -83,17 +87,8 @@
             <nav class="mdl-navigation ">
                 <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
                 <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Servicios<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Cuadro de honor</a></li>
-                        <li><a data-toggle="modal" data-target="#myModal" href="#">Comentarios</a></li>
-                        <li><a href="#">Encuesta</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a data-toggle="modal" data-target="#modalContacto" href="#">Contáctanos</a></li>
-                    </ul>
-                </li>
+                <a class="mdl-navigation__link" data-toggle="modal" data-target="#myModal" href="#">Comentarios</a>
+                <a class="mdl-navigation__link" data-toggle="modal" data-target="#modalContacto" href="#">Contáctanos</a>
             </nav>
         </div>
     </header>
@@ -109,6 +104,7 @@
 
     <hr class="featurette-divider">
 </div>
+
 
 <main class="mdl-layout__content">
     <div class="page-content">
@@ -136,12 +132,8 @@
             </div>
             <div class="modal-body">
                 <div class="input-group form-group">
-                    <span class="input-group-addon" id="basic-addon1">Correo Electrónico</span>
-                    <input type="email" name="correo" class="form-control" placeholder="email@email.com" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group form-group">
                     <span class="input-group-addon" id="basic-addon1">Comentario</span>
-                    <input type="text" name="comentario" class="form-control" placeholder="Comentario" aria-describedby="basic-addon1">
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
@@ -291,9 +283,9 @@
 
     </div>
 </div>
+
 <div class="mdl-mega-footer__drop-down-section">
     @include('includes.footer')
 </div>
-
 </body>
 </html>

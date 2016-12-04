@@ -1,268 +1,4 @@
-<script>
-    $(function () {
-
-        $("#department").select2();
-        $("#departmentVivienda").select2();
-        $("#municipio").select2();
-        $("#municipioVivienda").select2();
-        $("#departmentPadre").select2();
-        $("#departmentMadre").select2();
-        $("#municipioTrabajoPadre").select2();
-        $("#municipioMadre").select2();
-        $("#departmentResponsable").select2();
-        $("#municipioRespobsable").select2();
-        $("#gradoCombo").select2();
-        $('#dui').mask('000000000');
-        $('#nit').mask('00000000000000');
-        //$.fn.datepicker.defaults.language = 'es';
-        $('#datepicker').datepicker({
-            pickTime: false,
-            autoclose: true,
-            language: 'es',
-            cursor: 'pointer',
-            maxDate: '-18Y',
-            minDate: '-100Y',
-            yearRange: '-100'
-        });
-
-
-
-    });
-    function charge() {
-        waitingDialog.show('Procesando... ', {progressType: 'info'})
-    }
-    function stop() {
-        waitingDialog.hide();
-    }
-    function GetMunicipios(dep) {
-        //FUNCION QUE DESPLIEGA LA ANIMACIÓN DE CARGANDO
-        this.charge();
-        $('#municipio').find('option').remove();
-        //ELIMINANDO MUNICIPIOS DEL SELECT
-        $('#divmun').removeClass('add-Active');
-        $('#divmun').addClass('add-Innactive');
-        $.ajax({
-            // la URL para la petición
-            url: '{{route('getMun')}}',
-            // la información a enviar
-            // (también es posible utilizar una cadena de datos)
-            data: {_token: $('input[name=_token]').val(), id: dep.value},
-            // especifica si será una petición POST o GET
-            type: 'POST',
-            // el tipo de información que se espera de respuesta
-            dataType: 'json',
-            // código a ejecutar si la petición es satisfactoria;
-            // la respuesta es pasada como argumento a la función
-            success: function (json, textStatus, xhr) {
-                waitingDialog.hide();
-                console.log('status ' + xhr.status);
-                $('#divmun').removeClass('add-Innactive');
-                $('#divmun').addClass('add-Active');
-                json.forEach(function (entry) {
-                    $("#municipio").append('<option value="' + entry.id + '">' + entry.nombre + '</option>');
-                });
-            },
-            // código a ejecutar si la petición falla;
-            // son pasados como argumentos a la función
-            // el objeto de la petición en crudo y código de estatus de la petición
-            error: function (xhr, status) {
-                waitingDialog.hide();
-                //  this.stop();
-            },
-            // código a ejecutar sin importar si la petición falló o no
-            complete: function (xhr, status, json) {
-                waitingDialog.hide();
-                if (xhr.status == 450) {
-                    var response = JSON.parse(xhr.responseText);
-                    $('#modalbody').text(response.error);
-                    $('#modal').modal('show');
-                }
-            }
-        });
-    } function GetMunicipiosVivienda(dep) {
-        //FUNCION QUE DESPLIEGA LA ANIMACIÓN DE CARGANDO
-        this.charge();
-        $('#municipioVivienda').find('option').remove();
-        //ELIMINANDO MUNICIPIOS DEL SELECT
-        $('#divmunVivienda').removeClass('add-Active');
-        $('#divmunVivienda').addClass('add-Innactive');
-        $.ajax({
-            // la URL para la petición
-            url: '{{route('getMun')}}',
-            // la información a enviar
-            // (también es posible utilizar una cadena de datos)
-            data: {_token: $('input[name=_token]').val(), id: dep.value},
-            // especifica si será una petición POST o GET
-            type: 'POST',
-            // el tipo de información que se espera de respuesta
-            dataType: 'json',
-            // código a ejecutar si la petición es satisfactoria;
-            // la respuesta es pasada como argumento a la función
-            success: function (json, textStatus, xhr) {
-                waitingDialog.hide();
-                console.log('status ' + xhr.status);
-                $('#divmunVivienda').removeClass('add-Innactive');
-                $('#divmunVivienda').addClass('add-Active');
-                json.forEach(function (entry) {
-                    $("#municipioVivienda").append('<option value="' + entry.id + '">' + entry.nombre + '</option>');
-                });
-            },
-            // código a ejecutar si la petición falla;
-            // son pasados como argumentos a la función
-            // el objeto de la petición en crudo y código de estatus de la petición
-            error: function (xhr, status) {
-                waitingDialog.hide();
-                //  this.stop();
-            },
-            // código a ejecutar sin importar si la petición falló o no
-            complete: function (xhr, status, json) {
-                waitingDialog.hide();
-                if (xhr.status == 450) {
-                    var response = JSON.parse(xhr.responseText);
-                    $('#modalbody').text(response.error);
-                    $('#modal').modal('show');
-                }
-            }
-        });
-    }
-    function GetMunicipiosPadre(dep) {
-        //FUNCION QUE DESPLIEGA LA ANIMACIÓN DE CARGANDO
-        this.charge();
-        $('#municipioTrabajoPadre').find('option').remove();
-        //ELIMINANDO MUNICIPIOS DEL SELECT
-        $('#divmunPadre').removeClass('add-Active');
-        $('#divmunPadre').addClass('add-Innactive');
-        $.ajax({
-            // la URL para la petición
-            url: '{{route('getMun')}}',
-            // la información a enviar
-            // (también es posible utilizar una cadena de datos)
-            data: {_token: $('input[name=_token]').val(), id: dep.value},
-            // especifica si será una petición POST o GET
-            type: 'POST',
-            // el tipo de información que se espera de respuesta
-            dataType: 'json',
-            // código a ejecutar si la petición es satisfactoria;
-            // la respuesta es pasada como argumento a la función
-            success: function (json, textStatus, xhr) {
-                waitingDialog.hide();
-                console.log('status ' + xhr.status);
-                $('#divmunPadre').removeClass('add-Innactive');
-                $('#divmunPadre').addClass('add-Active');
-                json.forEach(function (entry) {
-                    $("#municipioTrabajoPadre").append('<option value="' + entry.id + '">' + entry.nombre + '</option>');
-                });
-            },
-            // código a ejecutar si la petición falla;
-            // son pasados como argumentos a la función
-            // el objeto de la petición en crudo y código de estatus de la petición
-            error: function (xhr, status) {
-                waitingDialog.hide();
-                //  this.stop();
-            },
-            // código a ejecutar sin importar si la petición falló o no
-            complete: function (xhr, status, json) {
-                waitingDialog.hide();
-                if (xhr.status == 450) {
-                    var response = JSON.parse(xhr.responseText);
-                    $('#modalbody').text(response.error);
-                    $('#modal').modal('show');
-                }
-            }
-        });
-    }
-    function GetMunicipiosMadre(dep) {
-        //FUNCION QUE DESPLIEGA LA ANIMACIÓN DE CARGANDO
-        this.charge();
-        $('#municipioMadre').find('option').remove();
-        //ELIMINANDO MUNICIPIOS DEL SELECT
-        $('#divmunMadre').removeClass('add-Active');
-        $('#divmunMadre').addClass('add-Innactive');
-        $.ajax({
-            // la URL para la petición
-            url: '{{route('getMun')}}',
-            // la información a enviar
-            // (también es posible utilizar una cadena de datos)
-            data: {_token: $('input[name=_token]').val(), id: dep.value},
-            // especifica si será una petición POST o GET
-            type: 'POST',
-            // el tipo de información que se espera de respuesta
-            dataType: 'json',
-            // código a ejecutar si la petición es satisfactoria;
-            // la respuesta es pasada como argumento a la función
-            success: function (json, textStatus, xhr) {
-                waitingDialog.hide();
-                console.log('status ' + xhr.status);
-                $('#divmunMadre').removeClass('add-Innactive');
-                $('#divmunMadre').addClass('add-Active');
-                json.forEach(function (entry) {
-                    $("#municipioMadre").append('<option value="' + entry.id + '">' + entry.nombre + '</option>');
-                });
-            },
-            // código a ejecutar si la petición falla;
-            // son pasados como argumentos a la función
-            // el objeto de la petición en crudo y código de estatus de la petición
-            error: function (xhr, status) {
-                waitingDialog.hide();
-                //  this.stop();
-            },
-            // código a ejecutar sin importar si la petición falló o no
-            complete: function (xhr, status, json) {
-                waitingDialog.hide();
-                if (xhr.status == 450) {
-                    var response = JSON.parse(xhr.responseText);
-                    $('#modalbody').text(response.error);
-                    $('#modal').modal('show');
-                }
-            }
-        });
-    }function GetMunicipiosResponsable(dep) {
-        //FUNCION QUE DESPLIEGA LA ANIMACIÓN DE CARGANDO
-        this.charge();
-        $('#municipioRespobsable').find('option').remove();
-        //ELIMINANDO MUNICIPIOS DEL SELECT
-        $('#divmunResponsable').removeClass('add-Active');
-        $('#divmunResponsable').addClass('add-Innactive');
-        $.ajax({
-            // la URL para la petición
-            url: '{{route('getMun')}}',
-            // la información a enviar
-            // (también es posible utilizar una cadena de datos)
-            data: {_token: $('input[name=_token]').val(), id: dep.value},
-            // especifica si será una petición POST o GET
-            type: 'POST',
-            // el tipo de información que se espera de respuesta
-            dataType: 'json',
-            // código a ejecutar si la petición es satisfactoria;
-            // la respuesta es pasada como argumento a la función
-            success: function (json, textStatus, xhr) {
-                waitingDialog.hide();
-                console.log('status ' + xhr.status);
-                $('#divmunResponsable').removeClass('add-Innactive');
-                $('#divmunResponsable').addClass('add-Active');
-                json.forEach(function (entry) {
-                    $("#municipioRespobsable").append('<option value="' + entry.id + '">' + entry.nombre + '</option>');
-                });
-            },
-            // código a ejecutar si la petición falla;
-            // son pasados como argumentos a la función
-            // el objeto de la petición en crudo y código de estatus de la petición
-            error: function (xhr, status) {
-                waitingDialog.hide();
-                //  this.stop();
-            },
-            // código a ejecutar sin importar si la petición falló o no
-            complete: function (xhr, status, json) {
-                waitingDialog.hide();
-                if (xhr.status == 450) {
-                    var response = JSON.parse(xhr.responseText);
-                    $('#modalbody').text(response.error);
-                    $('#modal').modal('show');
-                }
-            }
-        });
-    }
-</script>
+@include('includes.insert_formulario')
 <div id="ingreso">
 <h3>Datos del Estudiante</h3>
 <div class="input-group form-group">
@@ -275,13 +11,12 @@
 </div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">Lugar de Nacimiento</span>
-
     <input type="text" name="lugarNacimiento" class="form-control" placeholder="Lugar de Nacimiento" aria-describedby="basic-addon1">
 </div>
     <div class="input-group form-group">
         {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }} {!! Form::select('departamento',$departamentos,9,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'department', 'onchange'=>'GetMunicipios(this)', 'style'=>'width: 100%']) !!}
     </div>
-    <div id="divmunVivienda" class="form-group" >
+    <div id="divmunVivienda" class="input-group form-group" >
         {{ Form::label('Municipio',null,['class'=>'input-group-addon']) }}
         {!! Form::select('municipio',$municipios,145,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipio',  'style'=>'width: 100%']) !!}
     </div>
@@ -313,13 +48,14 @@
 </div>
 <div class="input-group form-group">
     <span class="input-group-addon" id="basic-addon1">Dirección de Residencia del Estudiante</span>
-    <input type="text" class="form-control" placeholder="Dirección" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="residenciaEstudiante" placeholder="Dirección" aria-describedby="basic-addon1">
 
 </div>
     <div class="input-group form-group">
-        {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }} {!! Form::select('departamento',$departamentos,9,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'departmentVivienda', 'onchange'=>'GetMunicipiosVivienda(this)', 'style'=>'width: 100%']) !!}
+        {{ Form::label('Departamento',null,['class'=>'input-group-addon']) }}
+        {!! Form::select('departamento',$departamentos,9,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'departmentVivienda', 'onchange'=>'GetMunicipiosVivienda(this)', 'style'=>'width: 100%']) !!}
     </div>
-    <div id="divmun" class="form-group" >
+    <div id="divmun" class="input-group form-group" >
         {{ Form::label('Municipio',null,['class'=>'input-group-addon']) }}
         {!! Form::select('municipioVivienda',$municipios,145,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipioVivienda',  'style'=>'width: 100%']) !!}
     </div>
@@ -336,8 +72,7 @@
     <input type="text" class="form-control" name="TratamientoEnfermedad" placeholder="Describa tratamiento o medicamento" aria-describedby="basic-addon1">
 </div>
 <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">EL/LA ESTUDIANTE SE RETIRA DE LA INSTITUCIÓN A LA HORA
-                    DE SALIDA: </span>
+    <span class="input-group-addon" id="basic-addon1">EL/LA ESTUDIANTE SE RETIRA DE LA INSTITUCIÓN A LA HORA DE SALIDA: </span>
     <label class="radio-inline"><input type="radio" name="salidaRadio">Solo</label>
     <label class="radio-inline"><input type="radio" name="salidaRadio" checked>Acompañado</label>
 </div>

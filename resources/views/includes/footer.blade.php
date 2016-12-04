@@ -1,9 +1,6 @@
 <div id="footer" class="foo">
-    <div class="container">
-        <p class="text-muted credit">
-            <span style="text-align: left; float: left">Copyright &copy; 2017
-                <a href="#">Colegio San Juan Bautista</a>
-            </span>
-        </p>
-    </div>
+    <footer>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
 </div>
