@@ -171,6 +171,7 @@
     </div>
 </div>
 
+
 <!-- Modal Noticia 2-->
 <div class="modal fade" id="modalNoticia2" role="dialog">
     <div class="modal-dialog">
