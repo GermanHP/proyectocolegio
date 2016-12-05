@@ -93,7 +93,6 @@
         </div>
     </header>
 
-
 <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">San Juan Bautista</span>
     <nav class="mdl-navigation">
@@ -104,7 +103,6 @@
 
     <hr class="featurette-divider">
 </div>
-
 
 <main class="mdl-layout__content">
     <div class="page-content">

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <link rel="stylesheet" href="css/socialbar.css">
     <link rel="stylesheet" href="css/fonts.css">
@@ -117,6 +116,7 @@
 
     </div><!-- /.row -->
     </div>
+
     <!-- features -->
 
     <div class="container" id="features">
@@ -181,7 +181,6 @@
             </div>
         </div>
     </footer>
-
     @include('includes.social_bar')
 @endsection
 
