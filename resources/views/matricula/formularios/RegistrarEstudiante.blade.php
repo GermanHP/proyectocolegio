@@ -70,55 +70,55 @@
 
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Padece Alguna Enfermedad: </span>
-        <label class="radio-inline"><input type="radio" name="enfermedadRadio" value="1">Sí</label>
-        <label class="radio-inline"><input type="radio" name="enfermedadRadio" value="2" checked>No</label>
+        <label class="radio-inline">{!! Form::radio('enfermedadRadio','1') !!}Si</label>
+        <label class="radio-inline">{!! Form::radio('enfermedadRadio','2', true) !!}No</label>
         <span class="input-group-addon" id="basic-addon1">Nombre de la Enfermedad</span>
-        <input type="text" class="form-control" name ="nombreEnfermedad"placeholder="Nombre de la enfermedad" aria-describedby="basic-addon1">
+        {{Form::text('enfermedadEstudiante',null, ['class'=>'form-control', 'placeholder'=>'Nombre de la enfermedad', 'aria-describedby'=>'basic-addon1'])}}
     </div>
     <div class="input-group form-group">
-        <span class="input-group-addon" id="basic-addon1">¿Posee Tratamiento Médico o Medícamentos?</span>
-        <input type="text" class="form-control" name="TratamientoEnfermedad" placeholder="Describa tratamiento o medicamento" aria-describedby="basic-addon1">
+        <span class="input-group-addon" id="basic-addon1">¿Posee Tratamiento Médico o Medicamentos?</span>
+        {{Form::text('tratamientoEnfermedad',null, ['class'=>'form-control', 'placeholder'=>'Tratamiento/Medicamento', 'aria-describedby'=>'basic-addon1'])}}
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">EL/LA ESTUDIANTE SE RETIRA DE LA INSTITUCIÓN A LA HORA DE SALIDA: </span>
-        <label class="radio-inline"><input type="radio" name="salidaRadio">Solo</label>
-        <label class="radio-inline"><input type="radio" name="salidaRadio" checked>Acompañado</label>
+        <label class="radio-inline">{!! Form::radio('salidaRadio','1') !!}Solo</label>
+        <label class="radio-inline">{!! Form::radio('salidaRadio','2', true) !!}Acompañado</label>
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Nombre de la Persona Autorizada:</span>
-        <input type="text" class="form-control" name ="personaAutorizada"placeholder="Nombre completo" aria-describedby="basic-addon1">
+        {{Form::text('personaAutorizada',null,['class'=>'form-control', 'placeholder'=>'Nombre Completo', 'ariadescribedby'=>'basic-addon1'])}}
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">En caso de emergencia comunicarse con</span>
-        <input type="text" class="form-control" name="CasoEmergenciaNombre" placeholder="Nombre completo" aria-describedby="basic-addon1">
+        {{Form::text('CasoEmergenciaNombre',null,['class'=>'form-control', 'placeholder'=>'Nombre Completo', 'ariadescribedby'=>'basic-addon1'])}}
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Dirección:</span>
-        <input type="text" class="form-control" name="DireccioNEmergencia" placeholder="Dirección" aria-describedby="basic-addon1">
+        {{Form::text('DireccionEmergencia',null,['class'=>'form-control', 'placeholder'=>'Dirección', 'ariadescribedby'=>'basic-addon1'])}}
         <span class="input-group-addon" id="basic-addon1">Teléfono</span>
-        <input class="form-control" type="text" pattern="[0-9]{8}"   name="TelefonoEmergenciaNombre" placeholder="000000000" maxlength="8">
+        {{Form::text('TelefonoEmergenciaNombre',null,['class'=>'form-control','pattern'=>'[0-9]{8}','placeholder'=>'12345678', 'maxlength'=>'8'])}}
     </div>
     <h3>Historial Escolar del Estudiante</h3>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Último Grado Cursado</span>
         {!! Form::select('gradoAnterior',$grados,null,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'gradoAnterior',  'style'=>'width: 100%']) !!}
         <span class="input-group-addon" id="basic-addon1">Centro Escolar Donde Cursó</span>
-        <input type="text" class="form-control" name="NombreEscuelaAnterior" value="Colegio San Juan Bautista" placeholder="Nombre del centro escolar" aria-describedby="basic-addon1">
+        {{Form::text('NombreEscuelaAnterior',null,['class'=>'form-control','value'=>'Colegio San Juan Bautista', 'placeholder'=>'Nombre Completo', 'ariadescribedby'=>'basic-addon1'])}}
     </div>
     <h3>Documentos Entregados al Formalizar la Matrícula</h3>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Partida de Nacimiento Original</span>
-        <input type="checkbox" name="DocumentosEntregados[]" value="1" aria-describedby="basic-addon1">
+        {!! Form::checkbox('DocumentosEntregados[]','1') !!}
         <span class="input-group-addon" id="basic-addon1">Certificado de Último Grado Aprobado</span>
-        <input type="checkbox" name="DocumentosEntregados[]" value="2" aria-describedby="basic-addon1">
+        {!! Form::checkbox('DocumentosEntregados[]','2') !!}
         <span class="input-group-addon" id="basic-addon1">Fotocopia de los Padres o Responsable</span>
-        <input type="checkbox" name="DocumentosEntregados[]" value="3"  aria-describedby="basic-addon1">
+        {!! Form::checkbox('DocumentosEntregados[]','3') !!}
         <span class="input-group-addon" id="basic-addon1">2 Fotografías Recientes</span>
-        <input type="checkbox" name="DocumentosEntregados[]" value="4"  aria-describedby="basic-addon1">
+        {!! Form::checkbox('DocumentosEntregados[]','4') !!}
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Observaciones</span>
-        <input type="text" name ="observacionesMatricula"class="form-control" placeholder="Observaciones" aria-describedby="basic-addon1">
+        {{Form::text('observacionesMatricula',null,['class'=>'form-control', 'placeholder'=>'Observaciones', 'ariadescribedby'=>'basic-addon1'])}}
     </div>
 
 <a href="#padre" aria-controls="profile" role="tab" data-toggle="tab">
