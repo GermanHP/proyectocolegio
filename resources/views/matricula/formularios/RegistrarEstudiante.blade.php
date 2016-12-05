@@ -3,7 +3,7 @@
 <h3>Datos del Estudiante</h3>
     <div class="input-group form-group">
         {{Form::label('Nombres',null,['class'=>'input-group-addon'])}}
-        {{Form::text('nombre',null, ['class'=>'form-control', 'placeholder'=>'Ingrese los nombres del estudiante'])}}
+        {{Form::text('nombreEstudiante',null, ['class'=>'form-control', 'placeholder'=>'Ingrese los nombres del estudiante'])}}
     </div>
     <div class="input-group form-group">
         {{Form::label('Apellidos',null,['class'=>'input-group-addon'])}}
@@ -40,11 +40,11 @@
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Sacramentos: </span>
         <span class="input-group-addon" id="basic-addon1">Bautismo</span>
-        {!! Form::checkbox('sacramentoEstudiante[]','1') !!}
+        {!! Form::checkbox('sacramentosEstudiante[]','1') !!}
         <span class="input-group-addon" id="basic-addon1">Primera Comunión</span>
-        {!! Form::checkbox('sacramentoEstudiante[]','2') !!}
+        {!! Form::checkbox('sacramentosEstudiante[]','2') !!}
         <span class="input-group-addon" id="basic-addon1">Confirma</span>
-        {!! Form::checkbox('sacramentoEstudiante[]','3') !!}
+        {!! Form::checkbox('sacramentosEstudiante[]','3') !!}
     </div>
     <div class="input-group form-group">
 
