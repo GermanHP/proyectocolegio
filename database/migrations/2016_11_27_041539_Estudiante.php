@@ -16,6 +16,7 @@ class Estudiante extends Migration
             $table->increments('id');
             $table->date('fechaNacimiento');
             $table->boolean('parvularia');
+            $table->boolean('repiteGrado');
             $table->boolean('retirada');
             $table->string('PersonaAutorizada',500);
             $table->string('PersonaEmergencia',500);
