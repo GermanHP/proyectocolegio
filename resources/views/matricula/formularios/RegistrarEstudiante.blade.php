@@ -111,6 +111,8 @@
         {!! Form::checkbox('DocumentosEntregados[]','1') !!}
         <span class="input-group-addon" id="basic-addon1">Certificado de Último Grado Aprobado</span>
         {!! Form::checkbox('DocumentosEntregados[]','2') !!}
+    </div>
+    <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Fotocopia de los Padres o Responsable</span>
         {!! Form::checkbox('DocumentosEntregados[]','3') !!}
         <span class="input-group-addon" id="basic-addon1">2 Fotografías Recientes</span>

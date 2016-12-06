@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <link rel="stylesheet" href="css/socialbar.css">
     <link rel="stylesheet" href="css/fonts.css">
     <div>
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -59,6 +58,18 @@
         </a>
          </div>
     </div>
+
+    <input type="checkbox" class="checkbox" id="check">
+    <label class="menu" for="check">|||</label>
+    <div class="left-panel container">
+        <ul>
+            <a href="#"><li><h4>Nuestras Redes Oficiales</h4></li></a>
+            <a href="https://www.facebook.com/colegioSJBOficial" target="_blank"><li class="icon-facebook">Facebook</li></a>
+            <a href="https://www.twitter.com/colegioSJBSV" target="_blank"><li class="icon-twitter">Twitter</li></a>
+            <a href="https://www.youtube.com/channel/UCkWI9SYJt2y8AtTgrtcLJqQ" target="_blank"><li class="icon-youtube">You Tube</li></a>
+        </ul>
+    </div>
+
     <div class="container">
     <aside class="col-md-4">
         <div class="panel panel-primary">
@@ -181,6 +192,6 @@
             </div>
         </div>
     </footer>
-    @include('includes.social_bar')
+
 @endsection
 
