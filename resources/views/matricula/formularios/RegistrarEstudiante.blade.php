@@ -73,11 +73,11 @@
         <label class="radio-inline">{!! Form::radio('enfermedadRadio','1') !!}Si</label>
         <label class="radio-inline">{!! Form::radio('enfermedadRadio','2', true) !!}No</label>
         <span class="input-group-addon" id="basic-addon1">Nombre de la Enfermedad</span>
-        {{Form::text('enfermedadEstudiante',null, ['class'=>'form-control', 'placeholder'=>'Nombre de la enfermedad', 'aria-describedby'=>'basic-addon1'])}}
+        {{Form::text('enfermedadEstudiante[]',null, ['class'=>'form-control', 'placeholder'=>'Nombre de la enfermedad', 'aria-describedby'=>'basic-addon1'])}}
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">¿Posee Tratamiento Médico o Medicamentos?</span>
-        {{Form::text('tratamientoEnfermedad',null, ['class'=>'form-control', 'placeholder'=>'Tratamiento/Medicamento', 'aria-describedby'=>'basic-addon1'])}}
+        {{Form::text('tratamientoEnfermedad[]',null, ['class'=>'form-control', 'placeholder'=>'Tratamiento/Medicamento', 'aria-describedby'=>'basic-addon1'])}}
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">EL/LA ESTUDIANTE SE RETIRA DE LA INSTITUCIÓN A LA HORA DE SALIDA: </span>
@@ -94,7 +94,8 @@
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Dirección:</span>
-        {{Form::text('DireccionEmergencia',null,['class'=>'form-control', 'placeholder'=>'Dirección', 'ariadescribedby'=>'basic-addon1'])}}
+
+        {{Form::text('residenciaEstudianteEmergencia',null,['class'=>'form-control', 'placeholder'=>'Dirección', 'aria-describedby'=>'basic-addon1'])}}
         <span class="input-group-addon" id="basic-addon1">Teléfono</span>
         {{Form::text('TelefonoEmergenciaNombre',null,['class'=>'form-control','pattern'=>'[0-9]{8}','placeholder'=>'12345678', 'maxlength'=>'8'])}}
     </div>

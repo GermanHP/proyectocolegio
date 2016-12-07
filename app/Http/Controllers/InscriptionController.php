@@ -38,19 +38,28 @@ class InscriptionController extends Controller
         }
         $action = new Action();
         $password = bcrypt($action->makePassword());
+
+
+        $carnetEstudiate = $action->generarCarnet($request['nombreEstudiante'],$request['apellido']);
+        $emailEstudiante =$request['correoEstudiante'];
+        $emailPadre ="";
+        $emailMadre ="";
+        $emailResponsable ="";
+
+
+        if($request['correoEstudiante']==NULL){
+            $emailEstudiante = $carnetEstudiate.'@colegiosjb.net';
+        }
         $usuarioEstudiante = new User();
         $usuarioEstudiante->fill([
             'nombre'=>$request['nombreEstudiante'],
             'apellido'=>$request['apellido'],
             'genero'=>1,
-            'email'=>$request['correoEstudiante'],
+            'email'=>$emailEstudiante,
             'password'=>$password,
             'idTipousuario'=>1,
         ]);
         $usuarioEstudiante->save();
-
-
-        $carnetEstudiate = $action->generarCarnet($request['nombreEstudiante'],$request['apellido']);
         $estudiante = new Estudiante();
         $estudiante->fill([
             'fechaNacimiento'=>$request['fechaNacimientoEstudiante'],
@@ -73,29 +82,31 @@ class InscriptionController extends Controller
         ]);
         $direccionNacimiento->save();
 
-
-        $sacramentosEstudiante = new Sacramentousuario();
-        foreach ($request['sacramentosEstudiante'] as $sacramento){
-            $sacramentosEstudiante->fill([
-                'idSacramento'=>$sacramento,
-                'idUsuario'=>$usuarioEstudiante->id,
-            ]);
-            $sacramentosEstudiante->save();
+        if(count ($request['sacramentosEstudiante'])>0){
+            $sacramentosEstudiante = new Sacramentousuario();
+            foreach ($request['sacramentosEstudiante'] as $sacramento){
+                $sacramentosEstudiante->fill([
+                    'idSacramento'=>$sacramento,
+                    'idUsuario'=>$usuarioEstudiante->id,
+                ]);
+                $sacramentosEstudiante->save();
+            }
         }
 
 
+
         $direccionEmergencia = new Direccione();
-        $direccionEmergencia->fill([
-            'detalle'=>$request['DireccioNEmergencia'],
+        /*$direccionEmergencia->fill([
+            'detalle'=>$request['DireccionEmergencia'],
             'idMunicipio'=>$request['municipioVivienda'],
             'idTipoDireccion'=>4,
             'idUsuario'=>$usuarioEstudiante->id,
         ]);
         $direccionEmergencia->save();
-
+*/
         $direccionResidenciaEstudiante = new Direccione();
         $direccionResidenciaEstudiante->fill([
-            'detalle'=>$request['DireccionEstudiante'],
+            'detalle'=>$request['residenciaEstudiante'],
             'idMunicipio'=>$request['municipioVivienda'],
             'idTipoDireccion'=>2,
             'idUsuario'=>$usuarioEstudiante->id,
@@ -112,7 +123,7 @@ class InscriptionController extends Controller
 
 
 
-        flash('Registro Exitoso', 'success');
+        flash('Registro '.$request['residenciaEstudianteEmergencia'], 'success');
         return redirect()->back();
 
     }
