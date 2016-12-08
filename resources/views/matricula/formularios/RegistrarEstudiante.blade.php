@@ -52,8 +52,8 @@
         <label class="radio-inline">{!! Form::radio('estudioP','1', true) !!}Si</label>
         <label class="radio-inline">{!! Form::radio('estudioP','2') !!}No</label>
         <span class="input-group-addon" id="basic-addon1">Repite Grado</span>
-        <label class="radio-inline">{!! Form::radio('repeatG','1', true) !!}Si</label>
-        <label class="radio-inline">{!! Form::radio('repeatG','2') !!}No</label>
+        <label class="radio-inline">{!! Form::radio('repeatG','1') !!}Si</label>
+        <label class="radio-inline">{!! Form::radio('repeatG','2', true) !!}No</label>
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Dirección de Residencia del Estudiante</span>
@@ -72,7 +72,7 @@
         <span class="input-group-addon" id="basic-addon1">Padece Alguna Enfermedad: </span>
         <label class="radio-inline">{!! Form::radio('enfermedadRadio','1') !!}Si</label>
         <label class="radio-inline">{!! Form::radio('enfermedadRadio','2', true) !!}No</label>
-        <span class="input-group-addon" id="basic-addon1">Nombre de la Enfermedad</span>
+        <span class="input-group-addon" id="nombreEnfermedad">Nombre de la Enfermedad</span>
         {{Form::text('enfermedadEstudiante[]',null, ['class'=>'form-control', 'placeholder'=>'Nombre de la enfermedad', 'aria-describedby'=>'basic-addon1'])}}
     </div>
     <div class="input-group form-group">

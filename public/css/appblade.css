@@ -11,7 +11,12 @@
 .carousel{
     display: flex;
     height: 400px;
-    background-color: #2F2933;
+    /*Safari*/
+    background: -webkit-linear-gradient(#3422FF,#3422FF,#4E7AC7,#7FB2F0,#ADD5F7);
+    /*Opera*/
+    background: -o-linear-gradient(#3422FF,#3422FF,#4E7AC7,#7FB2F0,#ADD5F7);
+    /*Estandar*/
+    background: linear-gradient(#3422FF,#3422FF,#4E7AC7,#7FB2F0,#ADD5F7);
 }
 
 .carousel img{
@@ -289,5 +294,5 @@ img#slider{
  }
 
  .left-panel h4{
-     color: #038E9E;
+     color: #F2FF00;
  }
