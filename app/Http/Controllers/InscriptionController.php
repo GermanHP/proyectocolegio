@@ -144,6 +144,10 @@ class InscriptionController extends Controller
         return view('matricula.registro_matricula');
     }
 
+    public function detalleAlumno(){
+        return view('matricula.detalle_alumno');
+    }
+
     public function noticias(){
         return view('matricula.noticias');
     }

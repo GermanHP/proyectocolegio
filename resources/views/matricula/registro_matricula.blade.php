@@ -48,7 +48,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
 
     <link rel="stylesheet" href="css/material.min.css">
-    <link rel="stylesheet" href="css/socialbar.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/appblade.css">
     <script src="js/material.min.js"></script>
@@ -109,9 +109,9 @@
                                                                      role="presentation">input</i>Página Principal</a>
         </nav>
     </div>
-    <main class="mdl-layout__content mdl-color--grey-100 container">
+    <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="container panel panel-body">
         <h3>Registro de Matrículas</h3>
-        <div>
             <h2># Grado</h2>
             <table class="table table-striped" id="matriculados">
                 <thead>
@@ -119,6 +119,7 @@
                     <th>Nombres</th>
                     <th>Apellidos</th>
                     <th>Encargado</th>
+                    <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -126,16 +127,19 @@
                     <td>John</td>
                     <td>Doe</td>
                     <td>john@example.com</td>
+                    <td><a href="{{url('/detalle_alumno')}}"><button class="btn btn-primary">Detalles</button></a></td>
                 </tr>
                 <tr>
                     <td>Mary</td>
                     <td>Moe</td>
                     <td>mary@example.com</td>
+                    <td><a href="{{url('/detalle_alumno')}}"><button class="btn btn-primary">Detalles</button></a></td>
                 </tr>
                 <tr>
                     <td>July</td>
                     <td>Dooley</td>
                     <td>july@example.com</td>
+                    <td><a href="{{url('/detalle_alumno')}}"><button class="btn btn-primary">Detalles</button></a></td>
                 </tr>
                 </tbody>
             </table>
