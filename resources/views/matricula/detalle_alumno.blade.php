@@ -6,8 +6,8 @@
         <h4>Nombre del Alumno</h4>
 
         <table class="table table-hover" id="matriculados">
+
             <tbody>
-            <thead></thead>
             <tr>
                 <td>Lugar de Nacimiento</td>
                 <td>Detalle</td>
