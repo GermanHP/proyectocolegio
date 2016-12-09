@@ -175,8 +175,28 @@ class InscriptionController extends Controller
         }
 
 
+        //Inscripcion de Padre
+        if($request['nombrePadre']!=NULL&&$request['apellidosPadre']!=NULL && $request['DUIpadre']!=NULL ){
+            $usuarioPadre = new User();
+            $usuarioPadre->fill([
+                'nombre'=>$request['nombrePadre'],
+                'apellido'=>$request['apellidosPadre'],
+                'genero'=>1,
+            ]);
+        }
 
 
+
+        //Inscripcion de Madres
+        if($request['nombreMadre']!=NULL&&$request['apellidoMadre']!=NULL && $request['DUIMadre']!=NULL ){
+
+        }
+
+
+        //Inscripcion de Encargado
+        if($request['nombreResponsable']!=NULL&&$request['apellidoResponsable']!=NULL && $request['DUIResponsable']!=NULL ){
+
+        }
 
 
 
@@ -252,4 +272,6 @@ class InscriptionController extends Controller
 
         return $correcto;
     }
+
+
 }
