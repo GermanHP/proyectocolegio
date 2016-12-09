@@ -90,7 +90,8 @@
             </tr>
             </tbody>
         </table>
-            <a href="{{url('/registro')}}"><button class="btn btn-primary btn-align">Regresar</button></a>
+            <a href="{{url('/detalle_padres')}}"><button class="btn btn-primary btn-align">Ver Detalles de los Padres</button></a>
+            <a href="{{url('/registro')}}"><button class="btn btn-danger btn-align">Regresar</button></a>
         </div>
         <script>
             $(document).ready(function () {

@@ -77,7 +77,7 @@
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
             <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                       role="presentation">home</i>Inicio</a>
+                                                       role="presentation" aria-selected="true">home</i>Inicio</a>
             <a class="mdl-navigation__link" href="{{url('/nueva')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">note_add</i>Nueva Matrícula</a>
             <a class="mdl-navigation__link" href="{{url('/registro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"

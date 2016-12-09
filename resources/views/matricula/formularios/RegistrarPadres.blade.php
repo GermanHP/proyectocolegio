@@ -2,7 +2,7 @@
     <h3>Datos del Padre</h3>
     <div class="input-group form-group">
         {{Form::label('Nombres',null,['class'=>'input-group-addon'])}}
-        {{Form::text('nombrePadre',null, ['class'=>'form-control', 'placeholder'=>'NOmbres'])}}
+        {{Form::text('nombrePadre',null, ['class'=>'form-control', 'placeholder'=>'Nombres'])}}
     </div>
     <div class="input-group form-group">
         {{Form::label('Apellidos',null,['class'=>'input-group-addon'])}}
