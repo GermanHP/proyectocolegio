@@ -15,7 +15,8 @@ class HistoricoEstudianteNuevo extends Migration
         Schema::create('HistoricoEstudiante', function (Blueprint $table) {
             $table->increments('id');
             $table->string('InstitucionAnteior',500);
-            $table->string('GradoAnterior',500);
+            $table->integer('GradoAnterior')->unsigned()->nullable();
+            $table->foreign('GradoAnterior') ->references('id')->on('grados');
             $table->integer('idEstudiante')->unsigned();
             $table->foreign('idEstudiante') ->references('id')->on('Estudiante');
             $table->timestamps();

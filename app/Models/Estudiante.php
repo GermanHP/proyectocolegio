@@ -9,7 +9,7 @@ class Estudiante extends Model {
      */
 
     protected $table = 'estudiante';
-    protected $fillable = ['id', 'fechaNacimiento', 'parvularia', 'repiteGrado','retirada', 'PersonaAutorizada', 'PersonaEmergencia', 'Carnet', 'idUsuario', 'deleted_at'];
+    protected $fillable = ['id', 'fechaNacimiento', 'parvularia', 'repiteGrado', 'retirada', 'PersonaAutorizada', 'PersonaEmergencia', 'Carnet', 'idUsuario', 'deleted_at'];
 
 
     public function user() {
@@ -18,6 +18,10 @@ class Estudiante extends Model {
 
     public function enfermedades() {
         return $this->belongsToMany('App\Models\Enfermedade', 'estudianteenfermedad', 'idEstudiante', 'idEnfermedad');
+    }
+
+    public function grados() {
+        return $this->belongsToMany('App\Models\Grado', 'historicoestudiante', 'idEstudiante', 'GradoAnterior');
     }
 
     public function padredefamilia() {

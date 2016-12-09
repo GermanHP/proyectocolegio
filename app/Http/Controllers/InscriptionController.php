@@ -6,16 +6,21 @@ use App\Models\Departamento;
 use App\Models\Direccione;
 use App\Models\Estudiante;
 use App\Models\Grado;
+use App\Models\Gradoseccion;
 use App\Models\Historicoestudiante;
+use App\Models\Matricula;
+use App\Models\Matriculadocumento;
 use App\Models\Municipio;
 use App\Models\Oficio;
 use App\Models\Sacramentousuario;
 use App\Models\User;
 use App\Utilities\Action;
+use DB;
 use Exception;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use phpDocumentor\Reflection\Types\Null_;
 
 class InscriptionController extends Controller
 {
@@ -26,10 +31,18 @@ class InscriptionController extends Controller
     public function formulary(){
         $departamentos = Departamento::orderBy('nombre', 'ASC')->lists('nombre', 'id');
         $municipios = Municipio::where('id_departamento','=',9)->orderBy('nombre', 'ASC')->lists('nombre', 'id');
-        $grados = Grado::orderBy('nombre', 'ASC')->lists('nombre', 'id');
+
+
+        $grados = DB::table('gradoseccion')
+            ->join('grados', 'grados.id', '=', 'gradoseccion.idGrado')
+            ->join('seccion', 'seccion.id', '=', 'gradoseccion.idSeccion')
+            ->select('gradoseccion.id', DB::raw('concat(grados.nombre, " ", seccion.Nombre ) as nombre'))
+            ->lists('nombre', 'id');
+        $gradosAntiguos = Grado::all()->lists('nombre','id');
+
         $oficios = Oficio::orderBy('nombre', 'ASC')->lists('nombre', 'id');
 
-        return view('matricula.formulario', compact('departamentos','grados','oficios','municipios'));
+        return view('matricula.formulario', compact('departamentos','grados','oficios','municipios','gradosAntiguos'));
     }
     public function registrarEstudiante(Requests\ValidacionMatriculaNueva $request){
         $validado = $this->ValidarEncargado($request);
@@ -56,31 +69,42 @@ class InscriptionController extends Controller
             'apellido'=>$request['apellido'],
             'genero'=>1,
             'email'=>$emailEstudiante,
-            'password'=>$password,
+            'password'=>$carnetEstudiate,
             'idTipousuario'=>1,
         ]);
         $usuarioEstudiante->save();
+        $personaAutorizada=$request['personaAutorizada'];
+        if($request['salidaRadio']==1){
+            $personaAutorizada =" ";
+        }
+
+        $casoEmergencia= $request['CasoEmergenciaNombre'];
+        if($casoEmergencia==NULL){
+            $casoEmergencia=" ";
+        }
         $estudiante = new Estudiante();
         $estudiante->fill([
             'fechaNacimiento'=>$request['fechaNacimientoEstudiante'],
             'parvularia'=>$request['estudioP'],
             'retirada'=>$request['salidaRadio'],
-            'PersonaAutorizada'=>$request['personaAutorizada'],
-            'PersonaEmergencia'=>$request['CasoEmergenciaNombre'],
+            'PersonaAutorizada'=>$personaAutorizada,
+            'PersonaEmergencia'=>$casoEmergencia,
             'Carnet'=>$carnetEstudiate,
             'idUsuario'=>$usuarioEstudiante->id,
         ]);
         $estudiante->save();
 
+        if($request['lugarNacimiento']!=NULL){
+            $direccionNacimiento = new Direccione();
+            $direccionNacimiento->fill([
+                'detalle'=>$request['lugarNacimiento'],
+                'idMunicipio'=>$request['municipio'],
+                'idTipoDireccion'=>1,
+                'idUsuario'=>$usuarioEstudiante->id,
+            ]);
+            $direccionNacimiento->save();
+        }
 
-        $direccionNacimiento = new Direccione();
-        $direccionNacimiento->fill([
-            'detalle'=>$request['lugarNacimiento'],
-            'idMunicipio'=>$request['municipio'],
-            'idTipoDireccion'=>1,
-            'idUsuario'=>$usuarioEstudiante->id,
-        ]);
-        $direccionNacimiento->save();
 
         if(count ($request['sacramentosEstudiante'])>0){
             $sacramentosEstudiante = new Sacramentousuario();
@@ -94,36 +118,89 @@ class InscriptionController extends Controller
         }
 
 
+        if($request['residenciaEstudianteEmergencia']!=NULL){
+            $direccionEmergencia = new Direccione();
+            $direccionEmergencia->fill([
+                'detalle'=>$request['residenciaEstudianteEmergencia'],
+                'idMunicipio'=>$request['municipioVivienda'],
+                'idTipoDireccion'=>4,
+                'idUsuario'=>$usuarioEstudiante->id,
+            ]);
+            $direccionEmergencia->save();
+        }
 
-        $direccionEmergencia = new Direccione();
-        /*$direccionEmergencia->fill([
-            'detalle'=>$request['DireccionEmergencia'],
-            'idMunicipio'=>$request['municipioVivienda'],
-            'idTipoDireccion'=>4,
-            'idUsuario'=>$usuarioEstudiante->id,
+        if($request['residenciaEstudiante']!=NULL){
+            $direccionResidenciaEstudiante = new Direccione();
+            $direccionResidenciaEstudiante->fill([
+                'detalle'=>$request['residenciaEstudiante'],
+                'idMunicipio'=>$request['municipioVivienda'],
+                'idTipoDireccion'=>2,
+                'idUsuario'=>$usuarioEstudiante->id,
+            ]);
+            $direccionResidenciaEstudiante->save();
+        }
+
+        if($request['NombreEscuelaAnterior']!=NULL && $request['gradoAnterior'] !=NULL){
+            $historialEstudiante = new Historicoestudiante();
+            $historialEstudiante->fill([
+                'InstitucionAnteior'=>$request['NombreEscuelaAnterior'],
+                'GradoAnterior'=>$request['gradoAnterior'],
+                'idEstudiante'=> $estudiante->id,
+            ]);
+            $historialEstudiante->save();
+        }
+
+        $matricula = new Matricula();
+        $observaciones = $request['observacionesMatricula'];
+        if($observaciones==NULL){
+            $observaciones=" ";
+        }
+        $matricula->fill([
+            'Observaciones'=>$observaciones,
+            'idEstudiante'=>$estudiante->id,
+            'idGradoSeccion'=>$request['gradoNuevo']
         ]);
-        $direccionEmergencia->save();
-*/
-        $direccionResidenciaEstudiante = new Direccione();
-        $direccionResidenciaEstudiante->fill([
-            'detalle'=>$request['residenciaEstudiante'],
-            'idMunicipio'=>$request['municipioVivienda'],
-            'idTipoDireccion'=>2,
-            'idUsuario'=>$usuarioEstudiante->id,
-        ]);
-        $direccionResidenciaEstudiante->save();
-
-        $historialEstudiante = new Historicoestudiante();
-        $historialEstudiante->fill([
-            'InstitucionAnteior'=>$request['NombreEscuelaAnterior'],
-            'GradoAnterior'=>$request['gradoAnterior'],
-            'idEstudiante'=> $estudiante->id,
-        ]);
-        $historialEstudiante->save();
+        $matricula->save();
 
 
+        if(count ($request['DocumentosEntregados'])>0){
+            foreach ($request['DocumentosEntregados'] as $documento){
+                $DocumentosMatricula = new Matriculadocumento();
+                $DocumentosMatricula->fill([
+                    'idMatricula'=>$matricula->id,
+                    'idDocumento'=>$documento
+                ]);
+                $DocumentosMatricula->save();
+            }
+        }
 
-        flash('Registro '.$request['residenciaEstudianteEmergencia'], 'success');
+
+        //Inscripcion de Padre
+        if($request['nombrePadre']!=NULL&&$request['apellidosPadre']!=NULL && $request['DUIpadre']!=NULL ){
+            $usuarioPadre = new User();
+            $usuarioPadre->fill([
+                'nombre'=>$request['nombrePadre'],
+                'apellido'=>$request['apellidosPadre'],
+                'genero'=>1,
+            ]);
+        }
+
+
+
+        //Inscripcion de Madres
+        if($request['nombreMadre']!=NULL&&$request['apellidoMadre']!=NULL && $request['DUIMadre']!=NULL ){
+
+        }
+
+
+        //Inscripcion de Encargado
+        if($request['nombreResponsable']!=NULL&&$request['apellidoResponsable']!=NULL && $request['DUIResponsable']!=NULL ){
+
+        }
+
+
+
+        flash('Registro Exitoso', 'success');
         return redirect()->back();
 
     }
@@ -195,4 +272,6 @@ class InscriptionController extends Controller
 
         return $correcto;
     }
+
+
 }

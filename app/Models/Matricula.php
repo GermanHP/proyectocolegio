@@ -9,15 +9,15 @@ class Matricula extends Model {
      */
 
     protected $table = 'matriculas';
-    protected $fillable = ['id', 'idCurso', 'Observaciones', 'idEstudiante', 'idSeccion', 'deleted_at'];
+    protected $fillable = ['id', 'idCurso', 'Observaciones', 'idEstudiante', 'idGradoSeccion', 'deleted_at'];
 
 
     public function estudiante() {
         return $this->belongsTo('App\Models\Estudiante', 'idEstudiante', 'id');
     }
 
-    public function seccion() {
-        return $this->belongsTo('App\Models\Seccion', 'idSeccion', 'id');
+    public function gradoseccion() {
+        return $this->belongsTo('App\Models\Gradoseccion', 'idGradoSeccion', 'id');
     }
 
     public function documentos() {
