@@ -22,5 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call(DocumentosSeeder::class);
         $this->call(EstadoCivilSeeder::class);
         $this->call(TipoDireccionSeeder::class);
+        $this->call(GradosSeeder::class);
+        $this->call(SeccionesSeeder::class);
+
     }
 }

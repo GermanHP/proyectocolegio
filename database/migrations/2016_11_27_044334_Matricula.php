@@ -15,11 +15,11 @@ class Matricula extends Migration
         Schema::create('Matriculas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('idCurso',500)->nullable();
-            $table->string('Observaciones');
+            $table->string('Observaciones')->nullable();
             $table->integer('idEstudiante')->unsigned();
             $table->foreign('idEstudiante') ->references('id')->on('Estudiante');
-            $table->integer('idSeccion')->unsigned();
-            $table->foreign('idSeccion') ->references('id')->on('Seccion');
+            $table->integer('idGradoSeccion')->unsigned();
+            $table->foreign('idGradoSeccion') ->references('id')->on('GradoSeccion');
             $table->timestamps();
             $table->softDeletes();
         });

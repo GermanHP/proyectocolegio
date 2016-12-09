@@ -102,7 +102,7 @@
     <h3>Historial Escolar del Estudiante</h3>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Último Grado Cursado</span>
-        {!! Form::select('gradoAnterior',$grados,null,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'gradoAnterior',  'style'=>'width: 100%']) !!}
+        {!! Form::select('gradoAnterior',$gradosAntiguos,null,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'gradoAnterior',  'style'=>'width: 100%']) !!}
         <span class="input-group-addon" id="basic-addon1">Centro Escolar Donde Cursó</span>
         {{Form::text('NombreEscuelaAnterior',null,['class'=>'form-control','value'=>'Colegio San Juan Bautista', 'placeholder'=>'Nombre Completo', 'ariadescribedby'=>'basic-addon1'])}}
     </div>

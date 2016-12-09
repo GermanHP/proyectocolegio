@@ -12,5 +12,9 @@ class Grado extends Model {
     protected $fillable = ['id', 'nombre', 'deleted_at'];
 
 
+    public function gradoseccions() {
+        return $this->hasMany('App\Models\Gradoseccion', 'idGrado', 'id');
+    }
+
 
 }

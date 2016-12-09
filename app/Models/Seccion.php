@@ -12,8 +12,8 @@ class Seccion extends Model {
     protected $fillable = ['id', 'nombre', 'deleted_at'];
 
 
-    public function matriculas() {
-        return $this->hasMany('App\Models\Matricula', 'idSeccion', 'id');
+    public function gradoseccions() {
+        return $this->hasMany('App\Models\Gradoseccion', 'idSeccion', 'id');
     }
 
 
