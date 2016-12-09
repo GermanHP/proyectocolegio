@@ -73,11 +73,7 @@
         <label class="radio-inline">{!! Form::radio('enfermedadRadio','1') !!}Si</label>
         <label class="radio-inline">{!! Form::radio('enfermedadRadio','2', true) !!}No</label>
         <span class="input-group-addon" id="nombreEnfermedad">Seleccione Enfermedad</span>
-        <select name="listadoEnfermedad" id="selectEnfermedad" class="js-example-basic-single form-control">
-            <option value="1">Alergia a pelos de gatos</option>
-            <option value="2">Sinusitis</option>
-            <option value="3">Miopía</option>
-        </select>
+
         <span class="input-group-addon" id="nombreEnfermedad">Agrege Enfermedad</span>
         {{Form::text('enfermedadEstudiante[]',null, ['class'=>'form-control', 'placeholder'=>'Nombre de la enfermedad', 'aria-describedby'=>'basic-addon1'])}}
         <button class="button form-control">Agregar</button>

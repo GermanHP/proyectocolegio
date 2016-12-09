@@ -83,7 +83,7 @@ class ValidacionMatriculaNueva extends Request
             'apellidoResponsable'=>'regex:/^([a-zA-ZñÑáéíóúÁÉÍÓÚ_-])+((\s*)+([a-zA-ZñÑáéíóúÁÉÍÓÚ_-]*)*)+$/',
             'correoResponsable'=>'email',
             'DUIResponsable'=>'unique:padredefamilia,DUI|size:9|regex:/^([0-9])+$/i',
-            'FechaNacimientoResponsable'=>'date',
+            'fechaNacimientoResponsable'=>'date',
             'oficioResponsable'=>'exists:oficios,id',
             'lugarTrabajoResponsable'=>'string',
             'telefonoTrabajoResponsable'=>'numeric|digits:8|min:0|integer',

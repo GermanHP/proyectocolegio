@@ -77,28 +77,28 @@
                     <th>Nombres</th>
                     <th>Apellidos</th>
                     <th>Encargado</th>
+                    <th>Grado</th>
+
                     <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
+
+                @foreach($estudiantes as $estudiante)
+
+
                 <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
+                    <td>{{$estudiante->user->nombre}}</td>
+                    <td>{{$estudiante->user->apellido}}</td>
+                    <td>@foreach($estudiante->padredefamilia as $padreDeFamilia)
+
+                    {{$padreDeFamilia->user->nombre}} {{$padreDeFamilia->user->apellido}}
+
+                    @endforeach</td>
+
                     <td><a href="{{url('/detalle_alumno')}}"><button class="btn btn-primary">Detalles</button></a></td>
                 </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                    <td><a href="{{url('/detalle_alumno')}}"><button class="btn btn-primary">Detalles</button></a></td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                    <td><a href="{{url('/detalle_alumno')}}"><button class="btn btn-primary">Detalles</button></a></td>
-                </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

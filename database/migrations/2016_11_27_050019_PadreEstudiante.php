@@ -14,7 +14,6 @@ class PadreEstudiante extends Migration
     {
         Schema::create('PadreEstudiante', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Tratamiento', 500);
             $table->integer('idEstudiante')->unsigned();
             $table->foreign('idEstudiante') ->references('id')->on('Estudiante');
             $table->integer('idPadre')->unsigned();

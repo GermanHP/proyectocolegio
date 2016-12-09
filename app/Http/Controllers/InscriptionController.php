@@ -13,6 +13,7 @@ use App\Models\Matriculadocumento;
 use App\Models\Municipio;
 use App\Models\Oficio;
 use App\Models\Padredefamilium;
+use App\Models\Padreestudiante;
 use App\Models\Sacramentousuario;
 use App\Models\Telefono;
 use App\Models\User;
@@ -244,6 +245,14 @@ class InscriptionController extends Controller
                     $sacramentosPadres->save();
                 }
             }
+
+            $padreEstudiante = new Padreestudiante();
+            $padreEstudiante->fill([
+                'idEstudiante'=>$estudiante->id,
+                'idPadre'=>$padreDeFamilia->id
+            ]);
+            $padreEstudiante->save();
+
         }
 
 
@@ -309,6 +318,13 @@ class InscriptionController extends Controller
                     $sacramentosPadres->save();
                 }
             }
+
+            $padreEstudiante = new Padreestudiante();
+            $padreEstudiante->fill([
+                'idEstudiante'=>$estudiante->id,
+                'idPadre'=>$padreDeFamilia->id
+            ]);
+            $padreEstudiante->save();
         }
 
 
@@ -332,7 +348,7 @@ class InscriptionController extends Controller
 
             $padreDeFamilia = new Padredefamilium();
             $padreDeFamilia->fill([
-                'fechaNacimiento'=>$request['FechaNacimientoResponsable'],
+                'fechaNacimiento'=>$request['fechaNacimientoResponsable'],
                 'DUI'=>$request['DUIResponsable'],
                 'nombreLugarTrabajo'=>$request['lugarTrabajoResponsable'],
                 'idUsuario'=>$usuarioPadre->id,
@@ -373,6 +389,13 @@ class InscriptionController extends Controller
                     $sacramentosPadres->save();
                 }
             }
+
+            $padreEstudiante = new Padreestudiante();
+            $padreEstudiante->fill([
+                'idEstudiante'=>$estudiante->id,
+                'idPadre'=>$padreDeFamilia->id
+            ]);
+            $padreEstudiante->save();
         }
 
 
@@ -395,7 +418,9 @@ class InscriptionController extends Controller
     }
 
     public function registro(){
-        return view('matricula.registro_matricula');
+        $estudiantes = Estudiante::all();
+
+        return view('matricula.registro_matricula',compact('estudiantes'));
     }
 
     public function detalleAlumno(){
@@ -446,6 +471,12 @@ class InscriptionController extends Controller
         if($request['apellidosPadre']==null&&$request['apellidoMadre']==null&&$request['apellidoResponsable']==null){
             $correcto = false;
         }
+
+        if($request['correoEstudiante']!=$request['correoPadre']
+            &&$request['correoEstudiante']!=$request['correoPadre']
+            &&$request['correoEstudiante']!=$request['correoPadre']
+            &&$request['correoEstudiante']!=$request['correoPadre']
+            &&$request['correoEstudiante']!=$request['correoPadre'])
 
         return $correcto;
     }
