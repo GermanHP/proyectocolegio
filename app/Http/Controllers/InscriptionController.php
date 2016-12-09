@@ -50,7 +50,7 @@ class InscriptionController extends Controller
     public function registrarEstudiante(Requests\ValidacionMatriculaNueva $request){
         $validado = $this->ValidarEncargado($request);
         if(!$validado){
-            return redirect()->back()->withInput()->withErrors("Se necesita ingresar datos completos de al menos un responsable");
+            return redirect()->back()->withInput()->withErrors("Se necesitan completar datos o son datos invalidos");
         }
         $action = new Action();
         $password = bcrypt($action->makePassword());
@@ -473,10 +473,13 @@ class InscriptionController extends Controller
         }
 
         if($request['correoEstudiante']!=$request['correoPadre']
-            &&$request['correoEstudiante']!=$request['correoPadre']
-            &&$request['correoEstudiante']!=$request['correoPadre']
-            &&$request['correoEstudiante']!=$request['correoPadre']
-            &&$request['correoEstudiante']!=$request['correoPadre'])
+            &&$request['correoEstudiante']!=$request['correoMadre']
+            &&$request['correoEstudiante']!=$request['correoResponsable']
+            &&$request['correoPadre']!=$request['correoMadre']
+            &&$request['correoPadre']!=$request['correoResponsable']
+            &&$request['correoMadre']!=$request['correoResponsable']){
+            $correcto = false;
+        }
 
         return $correcto;
     }
