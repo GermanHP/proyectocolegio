@@ -20,6 +20,10 @@ class Estudiante extends Model {
         return $this->belongsToMany('App\Models\Enfermedade', 'estudianteenfermedad', 'idEstudiante', 'idEnfermedad');
     }
 
+    public function grados() {
+        return $this->belongsToMany('App\Models\Grado', 'historicoestudiante', 'idEstudiante', 'GradoAnterior');
+    }
+
     public function padredefamilia() {
         return $this->belongsToMany('App\Models\Padredefamilium', 'padreestudiante', 'idEstudiante', 'idPadre');
     }

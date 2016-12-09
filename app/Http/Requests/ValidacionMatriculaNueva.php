@@ -45,7 +45,7 @@ class ValidacionMatriculaNueva extends Request
             'CasoEmergenciaNombre'=>'string',
             'residenciaEstudianteEmergencia'=>'string',
             'TelefonoEmergenciaNombre'=>'numeric|digits:8|min:0|integer',
-            'gradoAnterior'=>'required|exists:grados,id',
+            'gradoAnterior'=>'exists:grados,id',
             'NombreEscuelaAnterior'=>'required|string',
             'DocumentosEntregados'=>'array|exists:documentos,id',
             'observacionesMatricula'=>'string',
