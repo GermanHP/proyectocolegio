@@ -2,8 +2,6 @@
 @section('content')
 
     @include('includes.tab_formulario')
-
-        <main class="mdl-layout mdl-color--grey-100">
             <div class="panel panel-heading mdl-color--pink-900 container">
 
                 <img class="img-thumbnail center-block" src="img/indexes/logo.jpg"
@@ -262,8 +260,6 @@
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
 
     <!-- Modal Noticia 3-->
     <div class="modal fade" id="modalPrueba" role="dialog">
@@ -286,5 +282,4 @@
 
         </div>
     </div>
-    <script src="$$hosted_libs_prefix$$/$$version$$/material.min.js"></script>
 @endsection

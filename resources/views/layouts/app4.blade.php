@@ -90,11 +90,12 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
 
-    <link rel="stylesheet" href="css/material.min.css">
-    <link rel='stylesheet' href='css/main.css'>
-    <link rel="stylesheet" href="css/appblade.css">
-    <script src="js/material.min.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    {!! Html::style('css/material.min.css') !!}
+    {!! Html::style('css/main.css') !!}
+    {!! Html::style('css/appblade.css') !!}
+    {!! Html::script('js/material.min.js') !!}
+    {!! Html::script('http://code.jquery.com/jquery-latest.js') !!}
+
 </head>
 <body>
 
