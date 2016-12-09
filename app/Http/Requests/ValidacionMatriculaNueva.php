@@ -38,8 +38,7 @@ class ValidacionMatriculaNueva extends Request
             'DireccionEstudiante'=>'string',
             'municipioVivienda'=>'required|exists:municipios,id',
             'enfermedadRadio'=>'required|numeric|between:1,2',
-            'nombreEnfermedad'=>'array',
-            'TratamientoEnfermedad'=>'array',
+
             'salidaRadio'=>'required|numeric|between:1,2',
             'personaAutorizada'=>'string',
             'CasoEmergenciaNombre'=>'string',
