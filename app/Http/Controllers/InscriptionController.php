@@ -9,6 +9,7 @@ use App\Models\Grado;
 use App\Models\Gradoseccion;
 use App\Models\Historicoestudiante;
 use App\Models\Matricula;
+use App\Models\Matriculadocumento;
 use App\Models\Municipio;
 use App\Models\Oficio;
 use App\Models\Sacramentousuario;
@@ -19,6 +20,7 @@ use Exception;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use phpDocumentor\Reflection\Types\Null_;
 
 class InscriptionController extends Controller
 {
@@ -37,6 +39,7 @@ class InscriptionController extends Controller
             ->select('gradoseccion.id', DB::raw('concat(grados.nombre, " ", seccion.Nombre ) as nombre'))
             ->lists('nombre', 'id');
         $gradosAntiguos = Grado::all()->lists('nombre','id');
+
         $oficios = Oficio::orderBy('nombre', 'ASC')->lists('nombre', 'id');
 
         return view('matricula.formulario', compact('departamentos','grados','oficios','municipios','gradosAntiguos'));
@@ -70,13 +73,22 @@ class InscriptionController extends Controller
             'idTipousuario'=>1,
         ]);
         $usuarioEstudiante->save();
+        $personaAutorizada=$request['personaAutorizada'];
+        if($request['salidaRadio']==1){
+            $personaAutorizada =" ";
+        }
+
+        $casoEmergencia= $request['CasoEmergenciaNombre'];
+        if($casoEmergencia==NULL){
+            $casoEmergencia=" ";
+        }
         $estudiante = new Estudiante();
         $estudiante->fill([
             'fechaNacimiento'=>$request['fechaNacimientoEstudiante'],
             'parvularia'=>$request['estudioP'],
             'retirada'=>$request['salidaRadio'],
-            'PersonaAutorizada'=>$request['personaAutorizada'],
-            'PersonaEmergencia'=>$request['CasoEmergenciaNombre'],
+            'PersonaAutorizada'=>$personaAutorizada,
+            'PersonaEmergencia'=>$casoEmergencia,
             'Carnet'=>$carnetEstudiate,
             'idUsuario'=>$usuarioEstudiante->id,
         ]);
@@ -139,6 +151,32 @@ class InscriptionController extends Controller
         }
 
         $matricula = new Matricula();
+        $observaciones = $request['observacionesMatricula'];
+        if($observaciones==NULL){
+            $observaciones=" ";
+        }
+        $matricula->fill([
+            'Observaciones'=>$observaciones,
+            'idEstudiante'=>$estudiante->id,
+            'idGradoSeccion'=>$request['gradoNuevo']
+        ]);
+        $matricula->save();
+
+
+        if(count ($request['DocumentosEntregados'])>0){
+            foreach ($request['DocumentosEntregados'] as $documento){
+                $DocumentosMatricula = new Matriculadocumento();
+                $DocumentosMatricula->fill([
+                    'idMatricula'=>$matricula->id,
+                    'idDocumento'=>$documento
+                ]);
+                $DocumentosMatricula->save();
+            }
+        }
+
+
+
+
 
 
 
