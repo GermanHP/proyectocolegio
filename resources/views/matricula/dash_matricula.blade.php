@@ -44,51 +44,9 @@
     </style>
 </head>
 <body>
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
-        <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Inicio</span>
-            <div class="mdl-layout-spacer"></div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-                    <i class="material-icons">search</i>
-                </label>
-                <div class="mdl-textfield__expandable-holder">
-                    <input class="mdl-textfield__input" type="text" id="search">
-                    <label class="mdl-textfield__label" for="search">El query va aquí!!!</label>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-        <header class="demo-drawer-header">
-            <img src="img/user.jpg" class="demo-avatar">
-            <div class="demo-avatar-dropdown">
-                <span>hello@example.com</span>
-                <div class="mdl-layout-spacer"></div>
-                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                    <i class="material-icons" role="presentation">arrow_drop_down</i>
-                    <span class="visuallyhidden">Accounts</span>
-                </button>
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                    <li class="mdl-menu__item">Cerrar Sesión</li>
-                </ul>
-            </div>
-        </header>
-        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                       role="presentation" aria-selected="true">home</i>Inicio</a>
-            <a class="mdl-navigation__link" href="{{url('/nueva')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                       role="presentation">note_add</i>Nueva Matrícula</a>
-            <a class="mdl-navigation__link" href="{{url('/registro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                       role="presentation">description</i>Registro de Matrículas</a>
-            <a class="mdl-navigation__link" href="{{url('/noticias')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                       role="presentation">create</i>Sección Noticias</a>
-            <a class="mdl-navigation__link" href="{{ url('/') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                                     role="presentation">input</i>Página Principal</a>
-        </nav>
-    </div>
-    <main class="mdl-layout__content mdl-color--grey-100">
+<div/>
+
+    <main class="mdl-layout container mdl-color--grey-100">
         <h3>Aquí habrá contenido acerca de las matrículas</h3>
     </main>
 </div>
