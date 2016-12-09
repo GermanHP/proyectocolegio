@@ -379,7 +379,7 @@ class InscriptionController extends Controller
                 $direccioNpadre->save();
             }
 
-            if(count ($request['sacramentosMadre'])>0){
+            if(count ($request['sacramentosResponsable'])>0){
                 $sacramentosPadres = new Sacramentousuario();
                 foreach ($request['sacramentosResponsable'] as $sacramento){
                     $sacramentosPadres->fill([
@@ -423,8 +423,9 @@ class InscriptionController extends Controller
         return view('matricula.registro_matricula',compact('estudiantes'));
     }
 
-    public function detalleAlumno(){
-        return view('matricula.detalle_alumno');
+    public function detalleAlumno($id){
+        $estudiante = Estudiante::find($id);
+        return view('matricula.detalle_alumno',compact('estudiante'));
     }
 
     public function detallePadres(){

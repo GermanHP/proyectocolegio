@@ -24,7 +24,7 @@ Route::get('/nueva', 'InscriptionController@local_inscription');
 Route::get('/registro', 'InscriptionController@registro');
 Route::get('/noticias', 'InscriptionController@noticias');
 Route::get('/alumno_grado', 'InscriptionController@asignarGradoEstudiante');
-Route::get('/detalle_alumno/{id}', 'InscriptionController@detalleAlumno');
+Route::get('/detalle_alumno/{id}', 'InscriptionController@detalleAlumno')->name('Detalle.Alumno');
 Route::get('/detalle_padres', 'InscriptionController@detallePadres');
 
 Route::get('/teacher_profile', 'TeachersController@perfil');

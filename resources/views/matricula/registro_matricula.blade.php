@@ -95,8 +95,14 @@
                     {{$padreDeFamilia->user->nombre}} {{$padreDeFamilia->user->apellido}}
 
                     @endforeach</td>
+                <td>
+                    @foreach($estudiante->matriculas as $matriculas)
 
-                    <td><a href="{{url('/detalle_alumno')}}"><button class="btn btn-primary">Detalles</button></a></td>
+                    {{$matriculas->gradoseccion->grado->nombre}} {{$matriculas->gradoseccion->seccion->nombre}}
+                    @endforeach
+                </td>
+
+                    <td>{!!link_to_route('Detalle.Alumno', $title = 'Detalles', $parameters = $estudiante->id, $attributes = ['class'=>'btn btn-success','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}</td>
                 </tr>
                 @endforeach
                 </tbody>
