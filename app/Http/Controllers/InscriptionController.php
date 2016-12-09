@@ -188,7 +188,7 @@ class InscriptionController extends Controller
         if($request['nombrePadre']!=NULL&&$request['apellidosPadre']!=NULL && $request['DUIpadre']!=NULL ){
             $emailPadre= $request['correoPadre'];
             if($emailPadre==NULL){
-                $emailEstudiante = $carnetEstudiate.'@padrescolegiosjb.net';
+                $emailPadre = $carnetEstudiate.'@padrescolegiosjb.net';
             }
 
             $usuarioPadre = new User();
@@ -196,7 +196,7 @@ class InscriptionController extends Controller
                 'nombre'=>$request['nombrePadre'],
                 'apellido'=>$request['apellidosPadre'],
                 'genero'=>1,
-                'email'=>$emailEstudiante,
+                'email'=>$emailPadre,
                 'password'=>bcrypt($request['DUIpadre']),
                 'idTipousuario'=>2,
             ]);
@@ -261,7 +261,7 @@ class InscriptionController extends Controller
         if($request['nombreMadre']!=NULL&&$request['apellidoMadre']!=NULL && $request['DUIMadre']!=NULL ){
             $emailPadre= $request['correoMadre'];
             if($emailPadre==NULL){
-                $emailEstudiante = $carnetEstudiate.'@madrescolegiosjb.net';
+                $emailPadre = $carnetEstudiate.'@madrescolegiosjb.net';
             }
 
             $usuarioPadre = new User();
@@ -269,7 +269,7 @@ class InscriptionController extends Controller
                 'nombre'=>$request['nombreMadre'],
                 'apellido'=>$request['apellidoMadre'],
                 'genero'=>2,
-                'email'=>$emailEstudiante,
+                'email'=>$emailPadre,
                 'password'=>bcrypt($request['DUIMadre']),
                 'idTipousuario'=>2,
             ]);
@@ -332,7 +332,7 @@ class InscriptionController extends Controller
         if($request['nombreResponsable']!=NULL&&$request['apellidoResponsable']!=NULL && $request['DUIResponsable']!=NULL ){
             $emailPadre= $request['correoResponsable'];
             if($emailPadre==NULL){
-                $emailEstudiante = $carnetEstudiate.'@encargadocolegiosjb.net';
+                $emailPadre = $carnetEstudiate.'@encargadocolegiosjb.net';
             }
 
             $usuarioPadre = new User();
@@ -340,7 +340,7 @@ class InscriptionController extends Controller
                 'nombre'=>$request['nombreResponsable'],
                 'apellido'=>$request['apellidoResponsable'],
                 'genero'=>$request['generoResponsable'],
-                'email'=>$emailEstudiante,
+                'email'=>$emailPadre,
                 'password'=>bcrypt($request['DUIResponsable']),
                 'idTipousuario'=>2,
             ]);
