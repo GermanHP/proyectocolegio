@@ -112,6 +112,23 @@
             </nav>
         </div>
     </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">San Juan Bautista</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                     role="presentation">home</i>Inicio</a>
+            <a class="mdl-navigation__link" href="{{url('/nueva')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                        role="presentation">note_add</i>Nueva Matrícula</a>
+            <a class="mdl-navigation__link" href="{{url('/registro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                        role="presentation">description</i>Registro de Matrículas</a>
+            <a class="mdl-navigation__link" href="{{url('/noticias')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                           role="presentation">create</i>Sección Noticias</a>
+            <a class="mdl-navigation__link" href="{{ url('/') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                     role="presentation">input</i>Página Principal</a>
+        </nav>
+
+        <hr class="featurette-divider">
+    </div>
     <main class="mdl-layout__content">
         <div class="page-content">
         @yield('content')
