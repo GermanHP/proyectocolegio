@@ -3,94 +3,125 @@
     <div class="container">
         <div class="panel panel-body">
         <h2>Detalle del Alumno</h2>
-        <h4>Nombre del Alumno</h4>
+        <h4>{{$estudiante->user->nombre}}</h4>
 
         <table class="table table-hover" id="matriculados">
 
             <tbody>
             <tr>
                 <td>Lugar de Nacimiento</td>
-                <td>Detalle</td>
+                <td>
+                    @foreach($estudiante->user->direcciones as $direccion)
+                        @if($direccion->idTipoDireccion==1)
+                            {{$direccion->detalle}},
+                            @endif
+                    @endforeach
+                </td>
             </tr>
             <tr>
                 <td>Departamento</td>
-                <td>Detalle</td>
+                <td>
+                    @foreach($estudiante->user->direcciones as $direccion)
+                        @if($direccion->idTipoDireccion==1)
+                            {{$direccion->municipio->departamento->nombre}}
+                        @endif
+                    @endforeach
+                    </td>
             </tr>
             <tr>
                 <td>Municipio</td>
-                <td>Detalle</td>
+                <td>
+                    @foreach($estudiante->user->direcciones as $direccion)
+                        @if($direccion->idTipoDireccion==1)
+                            {{$direccion->municipio->nombre}}
+                        @endif
+                    @endforeach
+                    </td>
             </tr>
             <tr>
                 <td>Grado que cursa</td>
-                <td>Detalle</td>
+                <td> @foreach($estudiante->matriculas as $matriculas)
+
+                        {{$matriculas->gradoseccion->grado->nombre}} {{$matriculas->gradoseccion->seccion->nombre}}
+                    @endforeach</td>
             </tr>
             <tr>
                 <td>Sacramentos</td>
-                <td>Detalle</td>
+                <td>@foreach($estudiante->user->sacramentos as $sacramentos)
+                    {{$sacramentos->nombre}}
+                @endforeach</td>
             </tr>
             <tr>
                 <td>Estudió Parvularia</td>
-                <td>Detalle</td>
+                <td>@if($estudiante->parvularia==1)
+                    SI
+                    @else
+                        NO
+                    @endif
+                </td>
             </tr>
             <tr>
                 <td>Dirección de residencia</td>
-                <td>Detalle</td>
+                <td>@foreach($estudiante->user->direcciones as $direccion)
+                        @if($direccion->idTipoDireccion==2)
+                            {{$direccion->detalle}},
+                        @endif
+                    @endforeach</td>
             </tr>
             <tr>
                 <td>Departamento</td>
-                <td>Detalle</td>
+                <td>@foreach($estudiante->user->direcciones as $direccion)
+                        @if($direccion->idTipoDireccion==2)
+                            {{$direccion->municipio->departamento->nombre}}
+                        @endif
+                    @endforeach</td>
             </tr>
             <tr>
                 <td>Municipio</td>
-                <td>Detalle</td>
+                <td>                    @foreach($estudiante->user->direcciones as $direccion)
+                        @if($direccion->idTipoDireccion==2)
+                            {{$direccion->municipio->nombre}}
+                        @endif
+                    @endforeach
+                </td>
             </tr>
-            <tr>
-                <td>Padece Alguna Enfermedad</td>
-                <td>Detalle</td>
-            </tr>
-            <tr>
-                <td>Nombre de la Enfermedad</td>
-                <td>Detalle</td>
-            </tr>
-            <tr>
-                <td>Tratamiento Médico</td>
-                <td>Detalle</td>
-            </tr>
+
             <tr>
                 <td>El/La Estudiante se Retira a la Hora de Salida:</td>
-                <td>Detalle</td>
+                <td>@if($estudiante->retirada==1)
+                        Solo
+                @else
+                    Acompañado
+                    @endif
+                </td>
             </tr>
             <tr>
                 <td>Nombre de la Persona Autorizada</td>
-                <td>Detalle</td>
+                <td>{{$estudiante->PersonaAutorizada}}</td>
             </tr>
             <tr>
                 <td>En Caso de Emergencia comunicarse con:</td>
-                <td>Detalle</td>
+                <td>{{$estudiante->PersonaEmergencia}}</td>
             </tr>
             <tr>
                 <td>Dirección</td>
-                <td>Detalle</td>
+                <td>@foreach($estudiante->user->direcciones as $direccion)
+                        @if($direccion->idTipoDireccion==4)
+                            {{$direccion->detalle}},
+                        @endif
+                    @endforeach</td>
             </tr>
             <tr>
                 <td>Teléfono</td>
-                <td>Detalle</td>
-            </tr>
-            <tr>
-                <td>Último Grado Cursado</td>
-                <td>Detalle</td>
-            </tr>
-            <tr>
-                <td>Centro Escolar Donde lo Cursó</td>
-                <td>Detalle</td>
-            </tr>
-            <tr>
-                <td>Teléfono</td>
-                <td>Detalle</td>
+                <td>@foreach($estudiante->user->telefonos as $telefonos)
+                        @if($telefonos->idTipoTelefono==4)
+                            {{$telefonos->telefono}}
+                        @endif
+                    @endforeach</td>
             </tr>
             </tbody>
         </table>
-            <a href="{{url('/detalle_padres')}}"><button class="btn btn-primary btn-align">Ver Detalles de los Padres</button></a>
+
             <a href="{{url('/registro')}}"><button class="btn btn-danger btn-align">Regresar</button></a>
         </div>
         <script>
