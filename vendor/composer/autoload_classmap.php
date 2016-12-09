@@ -38,6 +38,7 @@ return array(
     'App\\Models\\Estudiante' => $baseDir . '/app/Models/Estudiante.php',
     'App\\Models\\Estudianteenfermedad' => $baseDir . '/app/Models/Estudianteenfermedad.php',
     'App\\Models\\Grado' => $baseDir . '/app/Models/Grado.php',
+    'App\\Models\\Gradoseccion' => $baseDir . '/app/Models/Gradoseccion.php',
     'App\\Models\\Historicoestudiante' => $baseDir . '/app/Models/Historicoestudiante.php',
     'App\\Models\\Matricula' => $baseDir . '/app/Models/Matricula.php',
     'App\\Models\\Matriculadocumento' => $baseDir . '/app/Models/Matriculadocumento.php',

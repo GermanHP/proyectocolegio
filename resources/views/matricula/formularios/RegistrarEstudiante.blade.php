@@ -72,11 +72,8 @@
         <span class="input-group-addon" id="basic-addon1">Padece Alguna Enfermedad: </span>
         <label class="radio-inline">{!! Form::radio('enfermedadRadio','1') !!}Si</label>
         <label class="radio-inline">{!! Form::radio('enfermedadRadio','2', true) !!}No</label>
-        <span class="input-group-addon" id="nombreEnfermedad">Seleccione Enfermedad</span>
-
-        <span class="input-group-addon" id="nombreEnfermedad">Agrege Enfermedad</span>
+        <span class="input-group-addon" id="nombreEnfermedad">Nombre de la Enfermedad</span>
         {{Form::text('enfermedadEstudiante[]',null, ['class'=>'form-control', 'placeholder'=>'Nombre de la enfermedad', 'aria-describedby'=>'basic-addon1'])}}
-        <button class="button form-control">Agregar</button>
     </div>
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">¿Posee Tratamiento Médico o Medicamentos?</span>

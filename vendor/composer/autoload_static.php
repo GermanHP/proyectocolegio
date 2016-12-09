@@ -474,6 +474,7 @@ class ComposerStaticInit24c5b24ed263f3122448a877556942eb
         'App\\Models\\Estudiante' => __DIR__ . '/../..' . '/app/Models/Estudiante.php',
         'App\\Models\\Estudianteenfermedad' => __DIR__ . '/../..' . '/app/Models/Estudianteenfermedad.php',
         'App\\Models\\Grado' => __DIR__ . '/../..' . '/app/Models/Grado.php',
+        'App\\Models\\Gradoseccion' => __DIR__ . '/../..' . '/app/Models/Gradoseccion.php',
         'App\\Models\\Historicoestudiante' => __DIR__ . '/../..' . '/app/Models/Historicoestudiante.php',
         'App\\Models\\Matricula' => __DIR__ . '/../..' . '/app/Models/Matricula.php',
         'App\\Models\\Matriculadocumento' => __DIR__ . '/../..' . '/app/Models/Matriculadocumento.php',
