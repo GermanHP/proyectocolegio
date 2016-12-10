@@ -30,8 +30,12 @@ Route::get('/detalle_alumno/{id}', 'InscriptionController@detalleAlumno')->name(
 Route::get('/detalle_padres', 'InscriptionController@detallePadres');
 Route::get('/listado_padres', 'InscriptionController@listadoPadres');
 
+//------Docentes--//
 Route::get('/teacher_profile', 'TeachersController@perfil');
 Route::get('/dash_teacher', 'TeachersController@dashboard');
+Route::get('/listado_maestros', 'TeachersController@listadoMaestros');
+Route::get('/materias_impartidas', 'TeachersController@materiasImpartidas');
+Route::get('/ingresar_materias', 'TeachersController@ingresarMateria');
 
 Route::auth();
 
