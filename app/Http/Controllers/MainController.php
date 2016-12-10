@@ -19,4 +19,8 @@ class MainController extends Controller
     public function historia(){
         return view('instalaciones.historia');
     }
+
+    public function error404(){
+        return view('errors.404');
+    }
 }

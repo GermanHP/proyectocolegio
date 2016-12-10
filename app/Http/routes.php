@@ -14,7 +14,9 @@
 Route::get('/', 'MainController@home');
 Route::get('/instalaciones', 'MainController@instalacion');
 Route::get('/historia', 'MainController@historia');
+Route::get('/error404', 'MainController@error404');
 
+//------Matriculas--//
 Route::get('/inscripcion', 'InscriptionController@inscription');
 Route::get('/formulario', 'InscriptionController@formulary');
 Route::post('/formulario', 'InscriptionController@registrarEstudiante')->name('Registrar.Estudiante');
@@ -26,6 +28,7 @@ Route::get('/noticias', 'InscriptionController@noticias');
 Route::get('/alumno_grado', 'InscriptionController@asignarGradoEstudiante');
 Route::get('/detalle_alumno/{id}', 'InscriptionController@detalleAlumno')->name('Detalle.Alumno');
 Route::get('/detalle_padres', 'InscriptionController@detallePadres');
+Route::get('/listado_padres', 'InscriptionController@listadoPadres');
 
 Route::get('/teacher_profile', 'TeachersController@perfil');
 Route::get('/dash_teacher', 'TeachersController@dashboard');
