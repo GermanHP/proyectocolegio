@@ -119,6 +119,10 @@
                         @endif
                     @endforeach</td>
             </tr>
+            <tr>
+                <td>Documentos Entregados</td>
+                <td>Documentos</td>
+            </tr>
             </tbody>
         </table>
 

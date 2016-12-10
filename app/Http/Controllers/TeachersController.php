@@ -27,4 +27,8 @@ class TeachersController extends Controller
     public function ingresarMateria(){
         return view('teachers.ingresar_materia');
     }
+
+    public function ingresarGrados(){
+        return view('teachers.ingresar_grado');
+    }
 }

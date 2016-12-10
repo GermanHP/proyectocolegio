@@ -36,6 +36,7 @@ Route::get('/dash_teacher', 'TeachersController@dashboard');
 Route::get('/listado_maestros', 'TeachersController@listadoMaestros');
 Route::get('/materias_impartidas', 'TeachersController@materiasImpartidas');
 Route::get('/ingresar_materias', 'TeachersController@ingresarMateria');
+Route::get('/ingresar_grado', 'TeachersController@ingresarGrados');
 
 Route::auth();
 
