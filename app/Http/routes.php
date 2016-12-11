@@ -10,8 +10,17 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use App\Utilities\MoodleEngine;
 
 Route::get('/', 'MainController@home');
+
+Route::get("/pruebaMoodle",function(){
+
+    $moodle = new MoodleEngine();
+   return  $moodle->addStudent('');
+    
+    
+});
 Route::get('/instalaciones', 'MainController@instalacion');
 Route::get('/historia', 'MainController@historia');
 
