@@ -10,8 +10,17 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use App\Utilities\MoodleEngine;
 
 Route::get('/', 'MainController@home');
+
+Route::get("/pruebaMoodle",function(){
+
+    $moodle = new MoodleEngine();
+   return  $moodle->addStudent('');
+
+
+});
 Route::get('/instalaciones', 'MainController@instalacion');
 Route::get('/historia', 'MainController@historia');
 Route::get('/error404', 'MainController@error404');
@@ -31,6 +40,8 @@ Route::get('/detalle_padres', 'InscriptionController@detallePadres');
 Route::get('/listado_padres', 'InscriptionController@listadoPadres');
 
 //------Docentes--//
+
+
 Route::get('/teacher_profile', 'TeachersController@perfil');
 Route::get('/dash_teacher', 'TeachersController@dashboard');
 Route::get('/listado_maestros', 'TeachersController@listadoMaestros');
