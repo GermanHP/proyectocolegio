@@ -1,7 +1,3 @@
-body{
-
-}
-
 .mdl-layout__header{
     background-color: #3422FF;
 }
@@ -15,7 +11,12 @@ body{
 .carousel{
     display: flex;
     height: 400px;
-    background-color: #2F2933;
+    /*Safari*/
+    background: -webkit-linear-gradient(#3422FF,#3422FF,#4E7AC7,#7FB2F0,#ADD5F7);
+    /*Opera*/
+    background: -o-linear-gradient(#3422FF,#3422FF,#4E7AC7,#7FB2F0,#ADD5F7);
+    /*Estandar*/
+    background: linear-gradient(#3422FF,#3422FF,#4E7AC7,#7FB2F0,#ADD5F7);
 }
 
 .carousel img{
@@ -51,7 +52,7 @@ body{
     background:#1E825F;
     padding:30px;
     border-radius:50%;
-    border: solid 3px #1E825F;
+    border: solid 3px #000;
 }
 
 .feature h3 {
@@ -68,13 +69,13 @@ body{
 }
 
 .feature:hover i{
-    color:#1E825F;
-    border-color:#1E825F;
+    color:#212121;
+    border-color:#212121;
     background:#FFFFFF;
 }
 
 .feature:hover .title_border {
-    background-color:#1E825F;
+    background-color:#212121;
     width:50%;
 }
 
@@ -118,7 +119,8 @@ body{
 }
 
 .container2{
-    margin-top: 60px;
+    margin-top: 13px;
+    height: 500px;
 }
 
 .container3{
@@ -161,3 +163,136 @@ img#slider{
     background:
             url('../img/indexes/LOGO.jpg') bottom right 15% no-repeat #46B6AC;
 }
+
+.floating{
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    z-index: 100;
+}
+
+.floating2{
+    position: fixed;
+    bottom: 5em;
+    right: 2em;
+    z-index: 100;
+}
+
+.seleccionada{
+    background-color: #0585C0;
+    color: white;
+}
+
+.no-margin{
+    margin: 0px;
+}
+
+.no-padding{
+    padding: 0px;
+}
+
+.site-footer{
+    background-color: #222;
+    color: #fff;
+    margin-top: -30px;
+    padding-top: -50px;
+}
+
+.bottom-footer{
+    border-top: 1px solid #b2b2b2;
+    margin-top: 10px;
+    padding-top: 10px;
+    color: #b2b2b2;
+}
+
+.footer-nav{
+    text-align: right;
+    list-style: none;
+}
+
+.footer-nav li{
+    display: inline;
+}
+
+.footer-nav li:not(:first-child):before{
+    content: '|';
+    padding: 0px 10px;
+}
+
+.footer-nav a{
+    color: #fff;
+}
+
+.footer-nav a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu{
+    width: 2.2rem;
+    height: 2.7rem;
+    background: white;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 0.3%;
+    font-family: Sans-Serif;
+    font-size: 1.5rem;
+    color: black;
+    text-align: center;
+    transition: left 0.5s;
+}
+
+.checkbox:checked ~ .menu{
+    left: 10%;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.left-panel{
+    width: 9%;
+    height: 60%;
+    /*Safari*/
+    background: -webkit-linear-gradient(#000000,#141414,#1C1919,#191716,#24201F);
+    /*Opera*/
+    background: -o-linear-gradient(#000000,#141414,#1C1919,#191716,#24201F);
+    /*Estandar*/
+    background: linear-gradient(#000000,#141414,#1C1919,#191716,#24201F);
+    position: absolute;
+    top: 20%;
+    left: -40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.4s;
+    border-style: dashed;
+}
+ .checkbox:checked ~ .left-panel{
+     left: 0;
+ }
+
+ .checkbox{
+     display: none;
+ }
+
+ ul a{
+     color: #f7f7f7;
+     text-decoration: none;
+ }
+
+ li{
+     list-style: none;
+     font-size: 1rem;
+     text-align: left;
+     padding: 0 0.5rem;
+     margin: 1rem 0;
+ }
+
+ li:hover{
+     color: white;
+     border: solid white;
+     border-width: 0 0.1rem;
+ }
+
+ .left-panel h4{
+     color: #F2FF00;
+ }

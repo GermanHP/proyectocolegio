@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Colegio San Juan Bautista</title>
     <!--Styles-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons" >
@@ -33,18 +34,8 @@
             <nav class="mdl-navigation ">
                 <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
                 <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
-                <a class="mdl-navigation__link" href="#">Actividades</a>
-                <li class="dropdown">
-                    <a href="" class="dropdown-toggle mdl-navigation__link" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Servicios<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Cuadro de honor</a></li>
-                        <li><a href="#">Comentarios</a></li>
-                        <li><a href="#">Encuesta</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Contáctanos</a></li>
-                    </ul>
-                </li>
+                <a class="mdl-navigation__link" data-toggle="modal" data-target="#myModal" href="#">Comentarios</a>
+                <a class="mdl-navigation__link" data-toggle="modal" data-target="#modalContacto" href="#">Contáctanos</a>
             </nav>
         </div>
     </header>
@@ -74,6 +65,70 @@
             @include('includes.footer')
         </div>
     </main>
+</div>
+
+<!-- Modal Comentarios-->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Comentarios</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group form-group">
+                    <span class="input-group-addon" id="basic-addon1">Comentario</span>
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Enviar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Contacto-->
+<div class="modal fade" id="modalContacto" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h4 class="modal-title"><i class="material-icons">mail</i>Correo electrónico.</h4>
+                <p class="list-group-item-text">sanjuanbautistacoleg@gmail.com</p>
+                <hr class="divider">
+                <h4 class="modal-title"><i class="material-icons">call</i>Teléfono</h4>
+                <p class="list-group-item-text">2330-6336</p>
+                <hr class="divider">
+                <h4 class="modal-title"><i class="material-icons">place</i>Dirección</h4>
+                <p class="list-group-item-text">Avenida San José, barrio el centro, Olocuilta.</p>
+                <hr class="divider">
+                <h4 class="modal-title"><i class="icon-facebook"></i>Facebook</h4>
+                <a href="https://www.facebook.com/colegioSJBOficial"><p class="list-group-item-text">
+                        https://www.facebook.com/colegioSJBOficial</p></a>
+                <hr class="divider">
+                <h4 class="modal-title"><i class="icon-twitter"></i>Twitter</h4>
+                <a href="https://www.twitter.com/colegioSJBSV"><p class="list-group-item-text">
+                        https://www.twitter.com/colegioSJBSV</p></a>
+                <hr class="divider">
+                <h4 class="modal-title"><i class="icon-youtube"></i>You Tube</h4>
+                <a href="https://www.youtube.com/channel/UCkWI9SYJt2y8AtTgrtcLJqQ"><p class="list-group-item-text">
+                        https://www.youtube.com/channel/UCkWI9SYJt2y8AtTgrtcLJqQ</p></a>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 </body>
