@@ -8,9 +8,13 @@
     <meta name="owner" content="Colegio San Juan Bautista">
     <title>Colegio San Juan Bautista</title>
     <!--Styles-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+{!! Html::script('assets/js/jquery.mask.min.js') !!}
 {!! Html::style('assets/css/bootstrap.css') !!}
+{!! Html::script('assets/plugins/slimScroll/jquery.slimscroll.min.js') !!}
+{!! Html::script('assets/plugins/datatables/jquery.dataTables.min.js') !!}
 <!-- Font Awesome -->
-
+{!! Html::script('http://code.jquery.com/jquery-latest.js') !!}
 {!! Html::style('assets/css/font-awesome.css') !!}
 {!! Html::style('dist/css/select2.css') !!}
 <!-- Ionicons -->
@@ -29,10 +33,10 @@
 <!-- Bootstrap 3.3.5 -->
 {!! Html::script('assets/js/bootstrap.min.js') !!}
 <!-- DataTables -->
-{!! Html::script('assets/plugins/datatables/jquery.dataTables.min.js') !!}
+
 {!! Html::script('assets/plugins/datatables/dataTables.bootstrap.min.js') !!}
 <!-- SlimScroll -->
-{!! Html::script('assets/plugins/slimScroll/jquery.slimscroll.min.js') !!}
+
 <!-- FastClick -->
 {!! Html::script('assets/plugins/fastclick/fastclick.min.js') !!}
 <!-- AdminLTE App -->
@@ -44,14 +48,14 @@
 
     {!! Html::script('assets/plugins/timepicker/bootstrap-timepicker.min.js') !!}
     {!! Html::script('assets/plugins/datepicker/locales/bootstrap-datepicker.es.js') !!}
-    {!! Html::script('assets/js/jquery.mask.min.js') !!}
+
 
     {!! Html::style('assets/plugins/datepicker/datepicker3.css') !!}
     {!! Html::script('assets/js/loading.js') !!}
     {!! Html::script('assets/js/SERO.js') !!}
     {!! Html::style('assets/css/SERO.css') !!}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
     {!! Html::script('dist/js/select2.full.js') !!}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
@@ -70,7 +74,7 @@
     {!! Html::style('css/main.css') !!}
     {!! Html::style('css/appblade.css') !!}
     {!! Html::script('js/material.min.js') !!}
-    {!! Html::script('http://code.jquery.com/jquery-latest.js') !!}
+
 
 
 </head>
