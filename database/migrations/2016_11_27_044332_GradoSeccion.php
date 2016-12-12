@@ -12,12 +12,12 @@ class GradoSeccion extends Migration
      */
     public function up()
     {
-        Schema::create('GradoSeccion', function (Blueprint $table) {
+        Schema::create('gradoseccion', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idGrado')->unsigned();
             $table->foreign('idGrado') ->references('id')->on('grados');
             $table->integer('idSeccion')->unsigned();
-            $table->foreign('idSeccion') ->references('id')->on('Seccion');
+            $table->foreign('idSeccion') ->references('id')->on('seccion');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +30,6 @@ class GradoSeccion extends Migration
      */
     public function down()
     {
-        Schema::drop('GradoSeccion');
+        Schema::drop('gradoseccion');
     }
 }

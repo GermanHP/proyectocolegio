@@ -12,11 +12,11 @@ class Municipios extends Migration
      */
     public function up()
     {
-        Schema::create('Municipios', function (Blueprint $table) {
+        Schema::create('municipios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre', 50);
             $table->integer('id_departamento')->unsigned();
-            $table->foreign('id_departamento') ->references('id')->on('Departamentos');
+            $table->foreign('id_departamento') ->references('id')->on('departamentos');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +29,6 @@ class Municipios extends Migration
      */
     public function down()
     {
-        Schema::drop('Municipios');
+        Schema::drop('municipios');
     }
 }

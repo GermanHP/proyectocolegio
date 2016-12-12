@@ -12,7 +12,7 @@ class Estudiante extends Migration
      */
     public function up()
     {
-        Schema::create('Estudiante', function (Blueprint $table) {
+        Schema::create('estudiante', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fechaNacimiento');
             $table->boolean('parvularia');
@@ -35,6 +35,6 @@ class Estudiante extends Migration
      */
     public function down()
     {
-        Schema::drop('Estudiante');
+        Schema::drop('estudiante');
     }
 }

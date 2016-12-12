@@ -11,7 +11,7 @@ class SeccionesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Seccion')->insert(array(
+        DB::table('seccion')->insert(array(
             'nombre' => 'A',
             'created_at' => new DateTime,
             'updated_at' => new DateTime

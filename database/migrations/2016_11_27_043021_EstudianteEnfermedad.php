@@ -12,13 +12,13 @@ class EstudianteEnfermedad extends Migration
      */
     public function up()
     {
-        Schema::create('EstudianteEnfermedad', function (Blueprint $table) {
+        Schema::create('estudianteenfermedad', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Tratamiento', 500);
             $table->integer('idEstudiante')->unsigned();
-            $table->foreign('idEstudiante') ->references('id')->on('Estudiante');
+            $table->foreign('idEstudiante') ->references('id')->on('estudiante');
             $table->integer('idEnfermedad')->unsigned();
-            $table->foreign('idEnfermedad') ->references('id')->on('Enfermedades');
+            $table->foreign('idEnfermedad') ->references('id')->on('enfermedades');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +31,6 @@ class EstudianteEnfermedad extends Migration
      */
     public function down()
     {
-        Schema::drop('EstudianteEnfermedad');
+        Schema::drop('estudianteenfermedad');
     }
 }

@@ -12,14 +12,14 @@ class Matricula extends Migration
      */
     public function up()
     {
-        Schema::create('Matriculas', function (Blueprint $table) {
+        Schema::create('matriculas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('idCurso',500)->nullable();
             $table->string('Observaciones')->nullable();
             $table->integer('idEstudiante')->unsigned();
-            $table->foreign('idEstudiante') ->references('id')->on('Estudiante');
+            $table->foreign('idEstudiante') ->references('id')->on('estudiante');
             $table->integer('idGradoSeccion')->unsigned();
-            $table->foreign('idGradoSeccion') ->references('id')->on('GradoSeccion');
+            $table->foreign('idGradoSeccion') ->references('id')->on('gradoseccion');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -32,6 +32,6 @@ class Matricula extends Migration
      */
     public function down()
     {
-        Schema::drop('Matriculas');
+        Schema::drop('matriculas');
     }
 }

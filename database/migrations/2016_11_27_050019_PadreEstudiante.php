@@ -12,12 +12,12 @@ class PadreEstudiante extends Migration
      */
     public function up()
     {
-        Schema::create('PadreEstudiante', function (Blueprint $table) {
+        Schema::create('padreestudiante', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idEstudiante')->unsigned();
-            $table->foreign('idEstudiante') ->references('id')->on('Estudiante');
+            $table->foreign('idEstudiante') ->references('id')->on('estudiante');
             $table->integer('idPadre')->unsigned();
-            $table->foreign('idPadre') ->references('id')->on('PadreDeFamilia');
+            $table->foreign('idPadre') ->references('id')->on('padredefamilia');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +30,6 @@ class PadreEstudiante extends Migration
      */
     public function down()
     {
-        Schema::drop('PadreEstudiante');
+        Schema::drop('padreestudiante');
     }
 }
