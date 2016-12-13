@@ -3,11 +3,15 @@
     <div class="container">
         <div class="panel panel-body">
         <h2>Detalle del Alumno</h2>
-        <h4>{{$estudiante->user->nombre}}</h4>
+        <h4>{{$estudiante->user->nombre}} {{$estudiante->user->apellido}} </h4>
 
         <table class="table table-hover" id="matriculados">
 
             <tbody>
+            <tr>
+                <td>Carnet</td>
+                <td><b>{{$estudiante->Carnet}}</b></td>
+            </tr>
             <tr>
                 <td>Lugar de Nacimiento</td>
                 <td>

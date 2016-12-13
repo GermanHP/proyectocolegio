@@ -8,7 +8,7 @@ class Estudiante extends Model {
      * Generated
      */
 
-    protected $table = 'Estudiante';
+    protected $table = 'estudiante';
     protected $fillable = ['id', 'fechaNacimiento', 'parvularia', 'repiteGrado', 'retirada', 'PersonaAutorizada', 'PersonaEmergencia', 'Carnet', 'idUsuario', 'deleted_at'];
 
 

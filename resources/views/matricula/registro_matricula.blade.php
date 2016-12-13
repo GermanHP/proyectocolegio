@@ -8,6 +8,7 @@
                 <tr>
                     <th>Nombres</th>
                     <th>Apellidos</th>
+                    <th>Carnet</th>
                     <th>Encargado</th>
                     <th>Grado</th>
 
@@ -22,11 +23,11 @@
                 <tr>
                     <td>{{$estudiante->user->nombre}}</td>
                     <td>{{$estudiante->user->apellido}}</td>
+                    <td>{{$estudiante->Carnet}}</td>
                     <td>@foreach($estudiante->padredefamilia as $padreDeFamilia)
-
                     {{$padreDeFamilia->user->nombre}} {{$padreDeFamilia->user->apellido}}
-
-                    @endforeach</td>
+                            <br>
+                        @endforeach</td>
                 <td>
                     @foreach($estudiante->matriculas as $matriculas)
 

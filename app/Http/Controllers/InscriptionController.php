@@ -235,9 +235,9 @@ class InscriptionController extends Controller
                 $direccioNpadre->save();
             }
 
-            if(count ($request['sacramentosPadre'])>0){
+            if(count ($request['sacramentoPadre'])>0){
                 $sacramentosPadres = new Sacramentousuario();
-                foreach ($request['sacramentosPadre'] as $sacramento){
+                foreach ($request['sacramentoPadre'] as $sacramento){
                     $sacramentosPadres->fill([
                         'idSacramento'=>$sacramento,
                         'idUsuario'=>$usuarioPadre->id,
@@ -288,19 +288,19 @@ class InscriptionController extends Controller
 
             $padreDeFamilia->save();
 
-            if($request['telefonoMadre']!=NULL){
+            if($request['telefonoTrabajoMadre']!=NULL){
                 $telefonoPadre = new Telefono();
                 $telefonoPadre->fill([
-                    'telefono'=>$request['telefonoMadre'],
+                    'telefono'=>$request['telefonoTrabajoMadre'],
                     'idTipoTelefono'=>2,
                     'idUsuario'=>$usuarioPadre->id,
                 ]);
                 $telefonoPadre->save();
             }
-            if($request['DirecciónMadre']!=NULL){
+            if($request['direccionTrabajoMadre']!=NULL){
                 $direccioNpadre = new Direccione();
                 $direccioNpadre->fill([
-                    'detalle'=>$request['DirecciónMadre'],
+                    'detalle'=>$request['direccionTrabajoMadre'],
                     'idMunicipio'=>$request['municipioTrabajoMadre'],
                     'idTipoDireccion'=>3,
                     'idUsuario'=>$usuarioPadre->id
@@ -308,9 +308,9 @@ class InscriptionController extends Controller
                 $direccioNpadre->save();
             }
 
-            if(count ($request['sacramentosMadre'])>0){
+            if(count ($request['sacramentoMadre'])>0){
                 $sacramentosPadres = new Sacramentousuario();
-                foreach ($request['sacramentosMadre'] as $sacramento){
+                foreach ($request['sacramentoMadre'] as $sacramento){
                     $sacramentosPadres->fill([
                         'idSacramento'=>$sacramento,
                         'idUsuario'=>$usuarioPadre->id,
@@ -359,7 +359,7 @@ class InscriptionController extends Controller
 
             $padreDeFamilia->save();
 
-            if($request['telefonoMadre']!=NULL){
+            if($request['telefonoTrabajoResponsable']!=NULL){
                 $telefonoPadre = new Telefono();
                 $telefonoPadre->fill([
                     'telefono'=>$request['telefonoTrabajoResponsable'],
@@ -368,10 +368,10 @@ class InscriptionController extends Controller
                 ]);
                 $telefonoPadre->save();
             }
-            if($request['DireccionTrabajoResponsable']!=NULL){
+            if($request['direccionTrabajoResponsable']!=NULL){
                 $direccioNpadre = new Direccione();
                 $direccioNpadre->fill([
-                    'detalle'=>$request['DireccionTrabajoResponsable'],
+                    'detalle'=>$request['direccionTrabajoResponsable'],
                     'idMunicipio'=>$request['municipioTrabajoResponsable'],
                     'idTipoDireccion'=>3,
                     'idUsuario'=>$usuarioPadre->id
@@ -379,9 +379,9 @@ class InscriptionController extends Controller
                 $direccioNpadre->save();
             }
 
-            if(count ($request['sacramentosResponsable'])>0){
+            if(count ($request['sacramentoResponsable'])>0){
                 $sacramentosPadres = new Sacramentousuario();
-                foreach ($request['sacramentosResponsable'] as $sacramento){
+                foreach ($request['sacramentoResponsable'] as $sacramento){
                     $sacramentosPadres->fill([
                         'idSacramento'=>$sacramento,
                         'idUsuario'=>$usuarioPadre->id,
@@ -428,12 +428,16 @@ class InscriptionController extends Controller
         return view('matricula.detalle_alumno',compact('estudiante'));
     }
 
-    public function detallePadres(){
-        return view('matricula.detalle_padres');
+    public function detallePadres($id){
+
+        $padre = Padredefamilium::find($id);
+        return view('matricula.detalle_padres',compact('padre'));
     }
 
     public function listadoPadres(){
-        return view('matricula.listado_padres');
+
+        $padresDeFamilia = Padredefamilium::all();
+        return view('matricula.listado_padres',compact('padresDeFamilia'));
     }
 
     public function noticias(){

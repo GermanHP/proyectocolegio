@@ -36,7 +36,7 @@ Route::get('/registro', 'InscriptionController@registro');
 Route::get('/noticias', 'InscriptionController@noticias');
 Route::get('/alumno_grado', 'InscriptionController@asignarGradoEstudiante');
 Route::get('/detalle_alumno/{id}', 'InscriptionController@detalleAlumno')->name('Detalle.Alumno');
-Route::get('/detalle_padres', 'InscriptionController@detallePadres');
+Route::get('/detalle_padre/{id}', 'InscriptionController@detallePadres')->name('Detalle.Padre');
 Route::get('/listado_padres', 'InscriptionController@listadoPadres');
 
 //------Docentes--//
