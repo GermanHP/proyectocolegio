@@ -58,6 +58,7 @@
         <label class="radio-inline">{!! Form::radio('estadoCivilPadre','4') !!}Viudo</label>
         <label class="radio-inline">{!! Form::radio('estadoCivilPadre','5') !!}Acompañado</label>
     </div>
+
     <h3>Datos de la Madre</h3>
     <div class="input-group form-group">
         {{Form::label('Nombres',null,['class'=>'input-group-addon'])}}
