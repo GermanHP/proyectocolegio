@@ -16,6 +16,10 @@ class MainController extends Controller
         return view('instalaciones.instalaciones');
     }
 
+    public function galery(){
+        return view('main.galeria');
+    }
+
     public function historia(){
         return view('instalaciones.historia');
     }

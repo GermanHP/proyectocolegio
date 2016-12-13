@@ -15,19 +15,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img id="slider" class="first-slide" src="img/slider/slide4.jpg" alt="First slide">
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-            <div class="item">
-                <img id="slider" class="size" src="img/indexes/inicio.jpg" alt="...">
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-            <div class="item">
-                <img id="slider" class="size" src="img/danza/danza.jpg" alt="...">
+                <img id="slider" class="first-slide" src="img/slider/slide1.jpg" alt="First slide">
                 <div class="carousel-caption">
 
                 </div>
@@ -40,6 +28,18 @@
             </div>
             <div class="item">
                 <img id="slider" class="size" src="img/slider/slide3.jpg" alt="...">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+            <div class="item">
+                <img id="slider" class="size" src="img/slider/slide4.jpg" alt="...">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+            <div class="item">
+                <img id="slider" class="size" src="img/slider/slide5.jpg" alt="...">
                 <div class="carousel-caption">
 
                 </div>
