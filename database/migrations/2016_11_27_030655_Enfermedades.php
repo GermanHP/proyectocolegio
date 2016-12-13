@@ -12,7 +12,7 @@ class Enfermedades extends Migration
      */
     public function up()
     {
-        Schema::create('Enfermedades', function (Blueprint $table) {
+        Schema::create('enfermedades', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombreEnfermedad', 50);
             $table->timestamps();
@@ -27,6 +27,6 @@ class Enfermedades extends Migration
      */
     public function down()
     {
-        Schema::drop('Enfermedades');
+        Schema::drop('enfermedades');
     }
 }

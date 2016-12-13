@@ -12,7 +12,7 @@ class Oficios extends Migration
      */
     public function up()
     {
-        Schema::create('Oficios', function (Blueprint $table) {
+        Schema::create('oficios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre', 50);
             $table->timestamps();
@@ -27,6 +27,6 @@ class Oficios extends Migration
      */
     public function down()
     {
-        Schema::drop('Oficios');
+        Schema::drop('oficios');
     }
 }

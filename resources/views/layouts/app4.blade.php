@@ -18,7 +18,7 @@
 {!! Html::style('assets/css/font-awesome.css') !!}
 {!! Html::style('dist/css/select2.css') !!}
 <!-- Ionicons -->
-
+{!! Html::script('http://code.jquery.com/jquery-latest.js') !!}
     <!-- DataTables -->
 {!! Html::style('assets/plugins/datatables/dataTables.bootstrap.css') !!}
 <!-- Theme style -->
@@ -67,8 +67,10 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="$$hosted_libs_prefix$$/$$version$$/material.cyan-light_blue.min.css">
-    <link rel="stylesheet" href="css/dash.css">
+
+
+    {!! Html::style('css/dash.css') !!}
+    {!! Html::style('$$hosted_libs_prefix$$/$$version$$/material.cyan-light_blue.min.css') !!}
     <style>
         #view-source {
             position: fixed;
@@ -94,7 +96,7 @@
     {!! Html::style('css/main.css') !!}
     {!! Html::style('css/appblade.css') !!}
     {!! Html::script('js/material.min.js') !!}
-    {!! Html::script('http://code.jquery.com/jquery-latest.js') !!}
+
 
 </head>
 <body>

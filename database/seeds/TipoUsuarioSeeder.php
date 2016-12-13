@@ -11,27 +11,27 @@ class TipoUsuarioSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tipoUsuario')->insert(array(
+        DB::table('tipousuario')->insert(array(
             'tipo' => 'Estudiante',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
-        DB::table('tipoUsuario')->insert(array(
+        DB::table('tipousuario')->insert(array(
             'tipo' => 'Padre',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
-        DB::table('tipoUsuario')->insert(array(
+        DB::table('tipousuario')->insert(array(
             'tipo' => 'Maestro',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
-        DB::table('tipoUsuario')->insert(array(
+        DB::table('tipousuario')->insert(array(
             'tipo' => 'Secretaria',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
-        DB::table('tipoUsuario')->insert(array(
+        DB::table('tipousuario')->insert(array(
             'tipo' => 'Director',
             'created_at' => new DateTime,
             'updated_at' => new DateTime

@@ -12,13 +12,13 @@ class HistoricoEstudianteNuevo extends Migration
      */
     public function up()
     {
-        Schema::create('HistoricoEstudiante', function (Blueprint $table) {
+        Schema::create('historicoestudiante', function (Blueprint $table) {
             $table->increments('id');
             $table->string('InstitucionAnteior',500);
             $table->integer('GradoAnterior')->unsigned()->nullable();
             $table->foreign('GradoAnterior') ->references('id')->on('grados');
             $table->integer('idEstudiante')->unsigned();
-            $table->foreign('idEstudiante') ->references('id')->on('Estudiante');
+            $table->foreign('idEstudiante') ->references('id')->on('estudiante');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +31,6 @@ class HistoricoEstudianteNuevo extends Migration
      */
     public function down()
     {
-        Schema::drop('HistoricoEstudiante');
+        Schema::drop('historicoestudiante');
     }
 }

@@ -12,11 +12,11 @@ class Telefonos extends Migration
      */
     public function up()
     {
-        Schema::create('Telefonos', function (Blueprint $table) {
+        Schema::create('telefonos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('telefono',9);
             $table->integer('idTipoTelefono')->unsigned();
-            $table->foreign('idTipoTelefono') ->references('id')->on('TipoTelefonos');
+            $table->foreign('idTipoTelefono') ->references('id')->on('tipotelefonos');
             $table->integer('idUsuario')->unsigned();
             $table->foreign('idUsuario')->references('id')->on('users');
             $table->timestamps();
@@ -31,6 +31,6 @@ class Telefonos extends Migration
      */
     public function down()
     {
-        Schema::drop('Telefonos');
+        Schema::drop('telefonos');
     }
 }

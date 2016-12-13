@@ -12,10 +12,10 @@ class SacramentoUsuario extends Migration
      */
     public function up()
     {
-        Schema::create('SacramentoUsuario', function (Blueprint $table) {
+        Schema::create('sacramentousuario', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idSacramento')->unsigned();
-            $table->foreign('idSacramento') ->references('id')->on('Sacramento');
+            $table->foreign('idSacramento') ->references('id')->on('sacramento');
             $table->integer('idUsuario')->unsigned();
             $table->foreign('idUsuario') ->references('id')->on('users');
             $table->timestamps();
@@ -30,6 +30,6 @@ class SacramentoUsuario extends Migration
      */
     public function down()
     {
-        Schema::drop('SacramentoUsuario');
+        Schema::drop('sacramentousuario');
     }
 }

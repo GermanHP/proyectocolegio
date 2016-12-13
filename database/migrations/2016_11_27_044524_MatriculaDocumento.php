@@ -12,12 +12,12 @@ class MatriculaDocumento extends Migration
      */
     public function up()
     {
-        Schema::create('MatriculaDocumento', function (Blueprint $table) {
+        Schema::create('matriculadocumento', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idMatricula')->unsigned();
-            $table->foreign('idMatricula') ->references('id')->on('Matriculas');
+            $table->foreign('idMatricula') ->references('id')->on('matriculas');
             $table->integer('idDocumento')->unsigned();
-            $table->foreign('idDocumento') ->references('id')->on('Documentos');
+            $table->foreign('idDocumento') ->references('id')->on('documentos');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +30,6 @@ class MatriculaDocumento extends Migration
      */
     public function down()
     {
-        Schema::drop('MatriculaDocumento');
+        Schema::drop('matriculadocumento');
     }
 }

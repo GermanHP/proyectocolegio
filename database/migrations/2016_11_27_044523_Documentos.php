@@ -12,7 +12,7 @@ class Documentos extends Migration
      */
     public function up()
     {
-        Schema::create('Documentos', function (Blueprint $table) {
+        Schema::create('documentos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',250);
             $table->timestamps();
@@ -27,6 +27,6 @@ class Documentos extends Migration
      */
     public function down()
     {
-        Schema::drop('Documentos');
+        Schema::drop('documentos');
     }
 }

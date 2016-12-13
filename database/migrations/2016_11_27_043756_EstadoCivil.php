@@ -12,7 +12,7 @@ class EstadoCivil extends Migration
      */
     public function up()
     {
-        Schema::create('EstadoCivil', function (Blueprint $table) {
+        Schema::create('estadocivil', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',50);
             $table->timestamps();
@@ -27,6 +27,6 @@ class EstadoCivil extends Migration
      */
     public function down()
     {
-        Schema::drop('EstadoCivil');
+        Schema::drop('estadocivil');
     }
 }

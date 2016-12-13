@@ -12,7 +12,7 @@ class TipoDireccion extends Migration
      */
     public function up()
     {
-        Schema::create('TipoDireccion', function (Blueprint $table) {
+        Schema::create('tipodireccion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre', 50);
             $table->timestamps();
@@ -27,6 +27,6 @@ class TipoDireccion extends Migration
      */
     public function down()
     {
-        Schema::drop('TipoDireccion');
+        Schema::drop('tipodireccion');
     }
 }

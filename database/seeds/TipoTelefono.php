@@ -11,22 +11,22 @@ class TipoTelefono extends Seeder
      */
     public function run()
     {
-        DB::table('TipoTelefonos')->insert(array(
+        DB::table('tipotelefonos')->insert(array(
             'tipo' => 'Casa',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
-        DB::table('TipoTelefonos')->insert(array(
+        DB::table('tipotelefonos')->insert(array(
             'tipo' => 'Celular',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
-        DB::table('TipoTelefonos')->insert(array(
+        DB::table('tipotelefonos')->insert(array(
             'tipo' => 'Trabajo',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
-        DB::table('TipoTelefonos')->insert(array(
+        DB::table('tipotelefonos')->insert(array(
             'tipo' => 'EmergenciaContacto',
             'created_at' => new DateTime,
             'updated_at' => new DateTime

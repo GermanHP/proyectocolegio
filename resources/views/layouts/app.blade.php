@@ -10,7 +10,7 @@
     <!--Styles-->
 {!! Html::style('assets/css/bootstrap.css') !!}
 <!-- Font Awesome -->
-
+{!! Html::script('http://code.jquery.com/jquery-latest.js') !!}
 {!! Html::style('assets/css/font-awesome.css') !!}
 {!! Html::style('dist/css/select2.css') !!}
 <!-- Ionicons -->
@@ -70,7 +70,7 @@
     {!! Html::style('css/main.css') !!}
     {!! Html::style('css/appblade.css') !!}
     {!! Html::script('js/material.min.js') !!}
-    {!! Html::script('http://code.jquery.com/jquery-latest.js') !!}
+
 
 
 </head>

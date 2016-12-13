@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class MunicipioSeeder extends Seeder
+class Municipioseeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -90,7 +90,7 @@ class MunicipioSeeder extends Seeder
             'updated_at' => new DateTime
         ));
 
-        //Municipios de Ahuachapan
+        //municipios de Ahuachapan
 
         DB::table('municipios')->insert(array(
             'nombre' => 'Ahuachapán ',
@@ -165,7 +165,7 @@ class MunicipioSeeder extends Seeder
             'updated_at' => new DateTime
         ));
 
-        //Municipios de Sonsonate
+        //municipios de Sonsonate
 
         DB::table('municipios')->insert(array(
             'nombre' => 'Acajutla ',
@@ -264,7 +264,7 @@ class MunicipioSeeder extends Seeder
             'updated_at' => new DateTime
         ));
 
-        //Municipios de Chalatenango
+        //municipios de Chalatenango
 
         DB::table('municipios')->insert(array(
             'nombre' => 'Agua Caliente',
@@ -465,7 +465,7 @@ class MunicipioSeeder extends Seeder
             'updated_at' => new DateTime
         ));
 
-        //Municipios de La Libertad
+        //municipios de La Libertad
 
         DB::table('municipios')->insert(array(
             'nombre' => 'Antiguo Cuscatlán',
@@ -599,7 +599,7 @@ class MunicipioSeeder extends Seeder
             'created_at' => new DateTime,
             'updated_at' => new DateTime
 
-            //Municipios de San Salvador
+            //municipios de San Salvador
         ));
         DB::table('municipios')->insert(array(
             'nombre' => 'Aguilares',
@@ -734,7 +734,7 @@ class MunicipioSeeder extends Seeder
             'updated_at' => new DateTime
         ));
 
-        //Municipios de Cuscatlán
+        //municipios de Cuscatlán
 
 
         DB::table('municipios')->insert(array(
@@ -849,7 +849,7 @@ class MunicipioSeeder extends Seeder
             'updated_at' => new DateTime
         ));
 
-        //Municipios de Cabañas
+        //municipios de Cabañas
 
         DB::table('municipios')->insert(array(
             'nombre' => 'Cinquera',
@@ -920,7 +920,7 @@ class MunicipioSeeder extends Seeder
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
-        //Municipios de La Paz
+        //municipios de La Paz
 
 
         DB::table('municipios')->insert(array(
@@ -1098,7 +1098,7 @@ class MunicipioSeeder extends Seeder
             'updated_at' => new DateTime
         ));
 
-        //Municipios de San Vicente
+        //municipios de San Vicente
 
 
         DB::table('municipios')->insert(array(
@@ -1204,7 +1204,7 @@ class MunicipioSeeder extends Seeder
             'updated_at' => new DateTime
         ));
 
-        //Municipios de San Miguel
+        //municipios de San Miguel
 
 
         DB::table('municipios')->insert(array(
@@ -1366,7 +1366,7 @@ class MunicipioSeeder extends Seeder
             'updated_at' => new DateTime
         ));
 
-        //Municipios de Usulutan
+        //municipios de Usulutan
 
 
         DB::table('municipios')->insert(array(
@@ -1552,7 +1552,7 @@ class MunicipioSeeder extends Seeder
             'updated_at' => new DateTime
         ));
 
-        //Municipios de La Unión
+        //municipios de La Unión
 
 
         DB::table('municipios')->insert(array(
@@ -1698,7 +1698,7 @@ class MunicipioSeeder extends Seeder
             'updated_at' => new DateTime
         ));
 
-        //Municipios de Morazán
+        //municipios de Morazán
 
 
         DB::table('municipios')->insert(array(
