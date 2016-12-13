@@ -18,6 +18,7 @@ Route::get('/historia', 'MainController@historia');
 Route::get('/error404', 'MainController@error404');
 Route::get('/galeria', 'MainController@galery');
 
+
 //------Matriculas--//
 Route::get('/inscripcion', 'InscriptionController@inscription');
 Route::get('/formulario', 'InscriptionController@formulary');
