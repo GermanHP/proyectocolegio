@@ -4,6 +4,50 @@
     <meta charset="UTF-8">
     <title>Colegio San Juan Bautista</title>
     <!--Styles-->
+
+{!! Html::style('assets/css/bootstrap.css') !!}
+<!-- Font Awesome -->
+{!! Html::script('http://code.jquery.com/jquery-latest.js') !!}
+{!! Html::style('assets/css/font-awesome.css') !!}
+{!! Html::style('dist/css/select2.css') !!}
+<!-- Ionicons -->
+
+    <!-- DataTables -->
+{!! Html::style('assets/plugins/datatables/dataTables.bootstrap.css') !!}
+<!-- Theme style -->
+{!! Html::style('assets/dist/css/AdminLTE.css') !!}
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+{!! Html::style('assets/dist/css/skins/_all-skins.css') !!}
+<!-- jQuery 2.1.4 -->
+{!! Html::script('assets/plugins/jQuery/jQuery-2.1.4.min.js') !!}
+
+
+<!-- Bootstrap 3.3.5 -->
+{!! Html::script('assets/js/bootstrap.min.js') !!}
+<!-- DataTables -->
+{!! Html::script('assets/plugins/datatables/jquery.dataTables.min.js') !!}
+{!! Html::script('assets/plugins/datatables/dataTables.bootstrap.min.js') !!}
+<!-- SlimScroll -->
+{!! Html::script('assets/plugins/slimScroll/jquery.slimscroll.min.js') !!}
+<!-- FastClick -->
+{!! Html::script('assets/plugins/fastclick/fastclick.min.js') !!}
+<!-- AdminLTE App -->
+{!! Html::script('assets/dist/js/app.min.js') !!}
+<!-- AdminLTE for demo purposes -->
+    {!! Html::script('assets/dist/js/demo.js') !!}
+
+    {!! Html::script('assets/plugins/datepicker/bootstrap-datepicker.js') !!}
+
+    {!! Html::script('assets/plugins/timepicker/bootstrap-timepicker.min.js') !!}
+    {!! Html::script('assets/plugins/datepicker/locales/bootstrap-datepicker.es.js') !!}
+    {!! Html::script('assets/js/jquery.mask.min.js') !!}
+
+    {!! Html::style('assets/plugins/datepicker/datepicker3.css') !!}
+    {!! Html::script('assets/js/loading.js') !!}
+    {!! Html::script('assets/js/SERO.js') !!}
+    {!! Html::style('assets/css/SERO.css') !!}
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
@@ -15,10 +59,10 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
 
-    <link rel="stylesheet" href="css/material.min.css">
-    <link rel="stylesheet" href="css/appblade.css">
-    <script src="js/material.min.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    {!! Html::style('css/material.min.css') !!}
+    {!! Html::style('css/main.css') !!}
+    {!! Html::style('css/appblade.css') !!}
+    {!! Html::script('js/material.min.js') !!}
 </head>
 <body>
 
@@ -27,6 +71,9 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
+            <a class="navbar-brand" href="#">
+                <img id="logoCSJB" src="img/logonav.jpg" alt="">
+            </a>
             <span class="mdl-layout-title">Colegio San Juan Bautista</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
@@ -35,17 +82,22 @@
                 <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
                 <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
                 <a class="mdl-navigation__link" data-toggle="modal" data-target="#myModal" href="#">Comentarios</a>
-                <a class="mdl-navigation__link" data-toggle="modal" data-target="#modalContacto" href="#">Contáctanos</a>
+                <a class="mdl-navigation__link" href="{{url('/galeria')}}">Galería</a>
             </nav>
         </div>
     </header>
     <div class="mdl-layout__drawer">
+        <a class="navbar-brand text-center" href="#">
+            <img id="logoCSJB2" src="img/indexes/logo.jpg" alt="">
+        </a> <br> <br>
         <span class="mdl-layout-title">San Juan Bautista</span>
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
             <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
-            <a class="mdl-navigation__link" href="#">Propuesta 2017</a>
+            <a class="mdl-navigation__link" href="{{url('/galeria')}}">Galería</a>
         </nav>
+
+        <hr class="featurette-divider">
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">

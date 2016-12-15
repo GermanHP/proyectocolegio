@@ -80,7 +80,10 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Colegio San Juan Bautista</span>
+            <a class="navbar-brand" href="#">
+                <img id="logoCSJB" src="img/logonav.jpg" alt="">
+            </a>
+           <span class="mdl-layout-title">Colegio San Juan Bautista</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
@@ -94,11 +97,14 @@
     </header>
 
 <div class="mdl-layout__drawer">
+    <a class="navbar-brand text-center" href="#">
+        <img id="logoCSJB2" src="img/indexes/logo.jpg" alt="">
+    </a> <br> <br>
     <span class="mdl-layout-title">San Juan Bautista</span>
     <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
         <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
-        <a class="mdl-navigation__link" href="#">Actividades</a>
+        <a class="mdl-navigation__link" href="{{url('/galeria')}}">Galería</a>
     </nav>
 
     <hr class="featurette-divider">
