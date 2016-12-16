@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layoutgaleria')
 @section('content')
     {!! Html::style('css/galeria.css') !!}
 
@@ -27,6 +27,13 @@
                     <img src="img/galeria/galeria4.jpg"  id="myImg4" width="300" height="200">
                 </a>
             </div>
+        </div>
+    </div>
+
+        <hr class="divider">
+
+        <div class="panel-body">
+            <div class="row">
             <div class="col-xs-6 col-md-3">
                 <a href="#" class="thumbnail">
                     <img src="img/galeria/galeria5.jpg"  id="myImg5" width="300" height="200">
@@ -47,6 +54,13 @@
                     <img src="img/galeria/galeria8.jpg"  id="myImg8" width="300" height="200">
                 </a>
             </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="panel-body">
+            <div class="row">
             <div class="col-xs-6 col-md-3">
                 <a href="#" class="thumbnail">
                     <img src="img/galeria/galeria9.jpg"  id="myImg9" width="300" height="200">
@@ -67,6 +81,13 @@
                     <img src="img/galeria/galeria12.jpg"  id="myImg12" width="300" height="200">
                 </a>
             </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="panel-body">
+            <div class="row">
             <div class="col-xs-6 col-md-3">
                 <a href="#" class="thumbnail">
                     <img src="img/galeria/galeria13.jpg"  id="myImg13" width="300" height="200">
@@ -87,6 +108,11 @@
                     <img src="img/galeria/galeria16.jpg"  id="myImg16" width="300" height="200">
                 </a>
             </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
             <div class="col-xs-6 col-md-3">
                 <a href="#" class="thumbnail">
                     <img src="img/galeria/galeria17.jpg"  id="myImg17" width="300" height="200">

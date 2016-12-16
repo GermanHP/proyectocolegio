@@ -81,7 +81,7 @@
         <div class="mdl-layout__header-row">
             <!-- Title -->
             <a class="navbar-brand" href="#">
-                <img id="logoCSJB" src="img/logonav.jpg" alt="">
+                {{Form::image('/img/logonav.jpg','logoCSJB',['id'=>'logoCSJB'])}}
             </a>
            <span class="mdl-layout-title">Colegio San Juan Bautista</span>
             <!-- Add spacer, to align navigation to the right -->
@@ -90,7 +90,7 @@
             <nav class="mdl-navigation ">
                 <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
                 <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
-                <a class="mdl-navigation__link" data-toggle="modal" data-target="#myModal" href="#">Comentarios</a>
+                <a class="mdl-navigation__link" data-toggle="modal" data-target="#modalComentario" href="#">Comentarios</a>
                 <a class="mdl-navigation__link" href="{{url('/galeria')}}">Galería</a>
             </nav>
         </div>
@@ -98,7 +98,7 @@
 
 <div class="mdl-layout__drawer">
     <a class="navbar-brand text-center" href="#">
-        <img id="logoCSJB2" src="img/indexes/logo.jpg" alt="">
+        {{Form::image('/img/indexes/logo.jpg','logoCSJB2',['class'=>'text-center','id'=>'logoCSJB2'])}}
     </a> <br> <br>
     <span class="mdl-layout-title">San Juan Bautista</span>
     <nav class="mdl-navigation">
@@ -126,7 +126,7 @@
 </div>
 
 <!-- Modal Comentarios-->
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="modalComentario" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->

@@ -107,7 +107,7 @@
         <div class="mdl-layout__header-row">
             <!-- Title -->
             <a class="navbar-brand" href="#">
-                <img id="logoCSJB" src="img/logonav.jpg" alt="">
+                {{Form::image('/img/logonav.jpg','logoCSJB',['id'=>'logoCSJB'])}}
             </a>
             <span class="mdl-layout-title">Colegio San Juan Bautista</span>
             <!-- Add spacer, to align navigation to the right -->
@@ -119,6 +119,9 @@
         </div>
     </header>
     <div class="mdl-layout__drawer">
+        <a class="navbar-brand text-center" href="#">
+            {{Form::image('/img/indexes/logo.jpg','logoCSJB2',['class'=>'text-center','id'=>'logoCSJB2'])}}
+        </a> <br> <br>
         <span class="mdl-layout-title">San Juan Bautista</span>
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
