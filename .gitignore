@@ -16,7 +16,7 @@ bootstrap/cache/
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
 
-/vendor/
+.vendor/
 .idea/ProyectoColegios.iml
 .idea/dataSources.local.xml
 .idea/dataSources.xml
@@ -28,3 +28,8 @@ bootstrap/cache/
 .idea/php.xml
 .idea/workspace.xml
 desktop.ini
+vendor
+
+
+!/vendor/composer/autoload_static.php
+/vendor/composer/autoload_static.php
