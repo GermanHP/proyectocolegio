@@ -249,7 +249,7 @@ img#slider{
 }
 
 .left-panel{
-    width: 9%;
+    width: 10%;
     height: 60%;
     /*Safari*/
     background: -webkit-linear-gradient(#000000,#141414,#1C1919,#191716,#24201F);
@@ -295,4 +295,13 @@ img#slider{
 
  .left-panel h4{
      color: #F2FF00;
+ }
+
+ #logoCSJB{
+     height: 50px;
+     margin-top: -15px;
+ }
+
+ #logoCSJB2{
+     height: 70px;
  }

@@ -12,6 +12,7 @@
 */
 use App\Utilities\MoodleEngine;
 
+//------Main--//
 Route::get('/', 'MainController@home');
 
 Route::get("/pruebaMoodle",function(){
@@ -24,6 +25,8 @@ Route::get("/pruebaMoodle",function(){
 Route::get('/instalaciones', 'MainController@instalacion');
 Route::get('/historia', 'MainController@historia');
 Route::get('/error404', 'MainController@error404');
+Route::get('/galeria', 'MainController@galery');
+
 
 //------Matriculas--//
 Route::get('/inscripcion', 'InscriptionController@inscription');

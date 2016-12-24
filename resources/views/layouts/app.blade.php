@@ -80,25 +80,31 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Colegio San Juan Bautista</span>
+            <a class="navbar-brand" href="#">
+                {{Form::image('/img/logonav.jpg','logoCSJB',['id'=>'logoCSJB'])}}
+            </a>
+           <span class="mdl-layout-title">Colegio San Juan Bautista</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation ">
                 <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
                 <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
-                <a class="mdl-navigation__link" data-toggle="modal" data-target="#myModal" href="#">Comentarios</a>
-                <a class="mdl-navigation__link" data-toggle="modal" data-target="#modalContacto" href="#">Contáctanos</a>
+                <a class="mdl-navigation__link" data-toggle="modal" data-target="#modalComentario" href="#">Comentarios</a>
+                <a class="mdl-navigation__link" href="{{url('/galeria')}}">Galería</a>
             </nav>
         </div>
     </header>
 
 <div class="mdl-layout__drawer">
+    <a class="navbar-brand text-center" href="#">
+        {{Form::image('/img/indexes/logo.jpg','logoCSJB2',['class'=>'text-center','id'=>'logoCSJB2'])}}
+    </a> <br> <br>
     <span class="mdl-layout-title">San Juan Bautista</span>
     <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
         <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
-        <a class="mdl-navigation__link" href="#">Actividades</a>
+        <a class="mdl-navigation__link" href="{{url('/galeria')}}">Galería</a>
     </nav>
 
     <hr class="featurette-divider">
@@ -120,7 +126,7 @@
 </div>
 
 <!-- Modal Comentarios-->
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="modalComentario" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->

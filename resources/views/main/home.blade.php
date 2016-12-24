@@ -15,19 +15,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img id="slider" class="first-slide" src="img/slider/slide4.jpg" alt="First slide">
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-            <div class="item">
-                <img id="slider" class="size" src="img/indexes/inicio.jpg" alt="...">
-                <div class="carousel-caption">
-
-                </div>
-            </div>
-            <div class="item">
-                <img id="slider" class="size" src="img/danza/danza.jpg" alt="...">
+                <img id="slider" class="first-slide" src="img/slider/slide1.jpg" alt="First slide">
                 <div class="carousel-caption">
 
                 </div>
@@ -44,8 +32,19 @@
 
                 </div>
             </div>
-        </div>
+            <div class="item">
+                <img id="slider" class="size" src="img/slider/slide4.jpg" alt="...">
+                <div class="carousel-caption">
 
+                </div>
+            </div>
+            <div class="item">
+                <img id="slider" class="size" src="img/slider/slide5.jpg" alt="...">
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+        </div>
 
         <!-- Controls -->
         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -165,7 +164,7 @@
     </div>
 
     <div class="center-map container list-group-item">
-        <h2>Ubicación Colegio San Juan Bautista</h2>
+        <h2 class="text-center">Ubicación Colegio San Juan Bautista</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3878.4537066065122!2d-89.11974768561723!3d13.569069390465966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6335143ad7b0ef%3A0x7a1250432086b07f!2sColegio+San+Juan+Bautista!5e0!3m2!1ses!2ses!4v1475113455948" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
     <footer class="site-footer">

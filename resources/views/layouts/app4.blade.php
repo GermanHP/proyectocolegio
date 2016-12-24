@@ -106,6 +106,9 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
+            <a class="navbar-brand" href="#">
+                {{Form::image('/img/logonav.jpg','logoCSJB',['id'=>'logoCSJB'])}}
+            </a>
             <span class="mdl-layout-title">Colegio San Juan Bautista</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
@@ -116,6 +119,9 @@
         </div>
     </header>
     <div class="mdl-layout__drawer">
+        <a class="navbar-brand text-center" href="#">
+            {{Form::image('/img/indexes/logo.jpg','logoCSJB2',['class'=>'text-center','id'=>'logoCSJB2'])}}
+        </a> <br> <br>
         <span class="mdl-layout-title">San Juan Bautista</span>
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
@@ -128,8 +134,8 @@
                                                                      role="presentation">supervisor_account</i>Listado de Padres</a>
             <a class="mdl-navigation__link" href="{{url('/noticias')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                            role="presentation">create</i>Sección Noticias</a>
-            <a class="mdl-navigation__link" href="{{ url('/') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                                     role="presentation">input</i>Página Principal</a>
+            <a class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                     role="presentation">input</i>Cerrar Sesión</a>
         </nav>
 
         <hr class="featurette-divider">
