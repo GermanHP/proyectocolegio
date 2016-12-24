@@ -32,14 +32,19 @@ Route::get('/galeria', 'MainController@galery');
 Route::get('/inscripcion', 'InscriptionController@inscription');
 Route::get('/formulario', 'InscriptionController@formulary');
 Route::post('/formulario', 'InscriptionController@registrarEstudiante')->name('Registrar.Estudiante');
+Route::post('/NuevoHijoRegistro/{id}', 'InscriptionController@registrarHijo')->name('Registrar.NuevoHijo');
 Route::get('/propuesta', 'InscriptionController@afiche');
 Route::get('/registro_matricula', 'InscriptionController@dash_inscription');
 Route::get('/nueva', 'InscriptionController@local_inscription');
 Route::get('/registro', 'InscriptionController@registro');
 Route::get('/noticias', 'InscriptionController@noticias');
-Route::get('/alumno_grado', 'InscriptionController@asignarGradoEstudiante');
+Route::get('/RegistrarGrado', 'InscriptionController@asignarGradoEstudiante')->name('NuevoGrado.View');
+Route::get('/GradosActivos','GradoSeccionController@GradosActivos');
+Route::get('DesactivarGrado/{id}','GradoSeccionController@DesactivarGrado')->name('Desactivar.Grado');
+Route::post('/RegistrarGradoNuevo','InscriptionController@NuevoGrado')->name('Nuevo.Grado');
 Route::get('/detalle_alumno/{id}', 'InscriptionController@detalleAlumno')->name('Detalle.Alumno');
 Route::get('/detalle_padre/{id}', 'InscriptionController@detallePadres')->name('Detalle.Padre');
+Route::get('NuevoHijo/{id}','InscriptionController@NuevoHijo')->name('Agregar.Hijo');
 Route::get('/listado_padres', 'InscriptionController@listadoPadres');
 
 //------Docentes--//
@@ -59,3 +64,13 @@ Route::get('/home', 'HomeController@index');
 Route::get('/download/{tipo}', 'PdfController@crear_prospecto');
 
 Route::post('getMunicipios', 'InscriptionController@getMunicipios')->name('getMun');
+
+Route::get('getHackeados/{email}',function($email){
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_URL, 'https://hesidohackeado.com/api?q='.$email);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    echo $result;
+});

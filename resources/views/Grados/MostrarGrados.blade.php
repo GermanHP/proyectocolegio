@@ -1,40 +1,42 @@
 @extends('layouts.app4')
 @section('content')
     <div class="container panel panel-body">
-        <h3>Listado de Padres</h3>
+        <h3>Registro de Matrículas</h3>
+        <h2># Grado</h2>
+
+        @include('alertas.flash')
+        @include('alertas.errores')
+        {!!link_to_route('NuevoGrado.View', $title = 'Adicionar Grado',  null, $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
         <table class="table table-striped" id="matriculados">
             <thead>
             <tr>
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>Correo Electronico</th>
-                <th>DUI</th>
-                <th>Hijos Inscritos</th>
-
-
+                <th>Grado</th>
+                <th>Seccion</th>
+                <th>Numero de Alumnos</th>
+                <th>Encargado</th>
                 <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($padresDeFamilia as $padre)
-            <tr>
-                <td>{{$padre->user->nombre}}</td>
-                <td>{{$padre->user->apellido}}</td>
-                <td>{{$padre->user->email}}</td>
-                <td>{{$padre->DUI}}</td>
-                <td>@foreach($padre->estudiantes as $hijos)
-                    {{$hijos->user->nombre}} {{$hijos->user->apellido}}<br>
-                @endforeach
-                </td>
+                @foreach($gradoSeccion as $grado)
+                    <tr>
+                        <td>{{$grado->grado->nombre}}</td>
+                        <td>{{$grado->seccion->nombre}}</td>
+                        <td>{{$grado->matriculas->count()}}</td>
+                        <td>                        </td>
 
-                <td>{!!link_to_route('Detalle.Padre', $title = 'Detalles', $parameters = $padre->id, $attributes = ['class'=>'btn btn-success','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
-                    <br>
-                    {!!link_to_route('Agregar.Hijo', $title = 'Agregar Hijo', $parameters = $padre->id, $attributes = ['class'=>'btn btn-success','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}</td>
-            </tr>
+                        <td>
+
+                            {!!link_to_route('Desactivar.Grado', $title = 'Desactivar Grado', $parameters = $grado->id, $attributes = ['class'=>'btn btn-warning','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+
+                        </td>
+                    </tr>
+
                 @endforeach
             </tbody>
         </table>
     </div>
+
     <script>
         $(document).ready(function () {
             $('#matriculados').DataTable({
@@ -78,4 +80,4 @@
             });
         })
     </script>
-    @stop
+@stop

@@ -15,6 +15,7 @@ use App\Models\Oficio;
 use App\Models\Padredefamilium;
 use App\Models\Padreestudiante;
 use App\Models\Sacramentousuario;
+use App\Models\Seccion;
 use App\Models\Telefono;
 use App\Models\User;
 use App\Utilities\Action;
@@ -40,7 +41,7 @@ class InscriptionController extends Controller
             ->join('grados', 'grados.id', '=', 'gradoseccion.idGrado')
             ->join('seccion', 'seccion.id', '=', 'gradoseccion.idSeccion')
             ->select('gradoseccion.id', DB::raw('concat(grados.nombre, " ", seccion.Nombre ) as nombre'))
-            ->lists('nombre', 'id');
+            ->whereNull('gradoseccion.deleted_at')->lists('nombre', 'id');
         $gradosAntiguos = Grado::all()->lists('nombre','id');
 
         $oficios = Oficio::orderBy('nombre', 'ASC')->lists('nombre', 'id');
@@ -469,7 +470,28 @@ class InscriptionController extends Controller
     }
 
     public function asignarGradoEstudiante(){
-        return view('matricula.formularios.alumno_grado');
+        $grados = Grado::orderBy('id', 'ASC')->lists('nombre', 'id');;
+        $secciones = Seccion::orderBy('nombre', 'ASC')->lists('nombre', 'id');
+        return view('matricula.formularios.alumno_grado',compact('grados','secciones'));
+    }
+
+    public function NuevoGrado(Requests\GradoSeccionRequest $request){
+
+        $gradosSeccionExistente = Gradoseccion::where('idGrado',$request['Grado'])->where('idSeccion',$request['Seccion'])->count();
+        if($gradosSeccionExistente>0){
+            flash('Grado ya existente','danger');
+        }else{
+            $nuevoGradoSeccion = new Gradoseccion();
+            $nuevoGradoSeccion->fill([
+                'idGrado'=>$request['Grado'],
+                'idSeccion'=>$request['Seccion']
+            ]);
+            $nuevoGradoSeccion->save();
+
+            flash('Grado Creado exitosamente','success');
+        }
+
+        return redirect('/GradosActivos');
     }
 
     private  function ValidarEncargado(Request $request){
@@ -493,5 +515,167 @@ class InscriptionController extends Controller
         return $correcto;
     }
 
+    public function NuevoHijo($id){
+        $departamentos = Departamento::orderBy('nombre', 'ASC')->lists('nombre', 'id');
+        $municipios = Municipio::where('id_departamento','=',9)->orderBy('nombre', 'ASC')->lists('nombre', 'id');
+
+
+        $grados = DB::table('gradoseccion')
+            ->join('grados', 'grados.id', '=', 'gradoseccion.idGrado')
+            ->join('seccion', 'seccion.id', '=', 'gradoseccion.idSeccion')
+            ->select('gradoseccion.id', DB::raw('concat(grados.nombre, " ", seccion.Nombre ) as nombre'))
+            ->lists('nombre', 'id');
+        $gradosAntiguos = Grado::all()->lists('nombre','id');
+
+        $oficios = Oficio::orderBy('nombre', 'ASC')->lists('nombre', 'id');
+
+        return view('matricula.AgregarHijo', compact('departamentos','grados','oficios','municipios','gradosAntiguos','id'));
+
+
+    }
+
+    public function registrarHijo(Requests\NuevoHijoRequest $request, $id){
+        $action = new Action();
+        $password = bcrypt($action->makePassword());
+
+
+        $carnetEstudiate = $action->generarCarnet($request['nombreEstudiante'],$request['apellido']);
+        $emailEstudiante =$request['correoEstudiante'];
+
+
+
+        if($request['correoEstudiante']==NULL){
+            $emailEstudiante = $carnetEstudiate.'@colegiosjb.net';
+        }
+        $usuarioEstudiante = new User();
+        $usuarioEstudiante->fill([
+            'nombre'=>$request['nombreEstudiante'],
+            'apellido'=>$request['apellido'],
+            'genero'=>1,
+            'email'=>$emailEstudiante,
+            'password'=>bcrypt($carnetEstudiate),
+            'idTipousuario'=>1,
+        ]);
+        $usuarioEstudiante->save();
+        $personaAutorizada=$request['personaAutorizada'];
+        if($request['salidaRadio']==1){
+            $personaAutorizada =" ";
+        }
+
+        $casoEmergencia= $request['CasoEmergenciaNombre'];
+        if($casoEmergencia==NULL){
+            $casoEmergencia=" ";
+        }
+        $estudiante = new Estudiante();
+        $estudiante->fill([
+            'fechaNacimiento'=>$request['fechaNacimientoEstudiante'],
+            'parvularia'=>$request['estudioP'],
+            'retirada'=>$request['salidaRadio'],
+            'PersonaAutorizada'=>$personaAutorizada,
+            'PersonaEmergencia'=>$casoEmergencia,
+            'Carnet'=>$carnetEstudiate,
+            'idUsuario'=>$usuarioEstudiante->id,
+        ]);
+        $estudiante->save();
+
+        if($request['lugarNacimiento']!=NULL){
+            $direccionNacimiento = new Direccione();
+            $direccionNacimiento->fill([
+                'detalle'=>$request['lugarNacimiento'],
+                'idMunicipio'=>$request['municipio'],
+                'idTipoDireccion'=>1,
+                'idUsuario'=>$usuarioEstudiante->id,
+            ]);
+            $direccionNacimiento->save();
+        }
+
+
+        if(count ($request['sacramentosEstudiante'])>0){
+            $sacramentosEstudiante = new Sacramentousuario();
+            foreach ($request['sacramentosEstudiante'] as $sacramento){
+                $sacramentosEstudiante->fill([
+                    'idSacramento'=>$sacramento,
+                    'idUsuario'=>$usuarioEstudiante->id,
+                ]);
+                $sacramentosEstudiante->save();
+            }
+        }
+        if($request['TelefonoEmergenciaNombre']!=NULL){
+            $telefonoEmergencia = new Telefono();
+            $telefonoEmergencia->fill([
+                'telefono'=>$request['TelefonoEmergenciaNombre'],
+                'idTipoTelefono'=>4,
+                'idUsuario'=>$usuarioEstudiante->id,
+            ]);
+            $telefonoEmergencia->save();
+        }
+
+        if($request['residenciaEstudianteEmergencia']!=NULL){
+            $direccionEmergencia = new Direccione();
+            $direccionEmergencia->fill([
+                'detalle'=>$request['residenciaEstudianteEmergencia'],
+                'idMunicipio'=>$request['municipioVivienda'],
+                'idTipoDireccion'=>4,
+                'idUsuario'=>$usuarioEstudiante->id,
+            ]);
+            $direccionEmergencia->save();
+        }
+
+        if($request['residenciaEstudiante']!=NULL){
+            $direccionResidenciaEstudiante = new Direccione();
+            $direccionResidenciaEstudiante->fill([
+                'detalle'=>$request['residenciaEstudiante'],
+                'idMunicipio'=>$request['municipioVivienda'],
+                'idTipoDireccion'=>2,
+                'idUsuario'=>$usuarioEstudiante->id,
+            ]);
+            $direccionResidenciaEstudiante->save();
+        }
+
+        if($request['NombreEscuelaAnterior']!=NULL && $request['gradoAnterior'] !=NULL){
+            $historialEstudiante = new Historicoestudiante();
+            $historialEstudiante->fill([
+                'InstitucionAnteior'=>$request['NombreEscuelaAnterior'],
+                'GradoAnterior'=>$request['gradoAnterior'],
+                'idEstudiante'=> $estudiante->id,
+            ]);
+            $historialEstudiante->save();
+        }
+
+        $matricula = new Matricula();
+        $observaciones = $request['observacionesMatricula'];
+        if($observaciones==NULL){
+            $observaciones=" ";
+        }
+        $matricula->fill([
+            'Observaciones'=>$observaciones,
+            'idEstudiante'=>$estudiante->id,
+            'idGradoSeccion'=>$request['gradoNuevo']
+        ]);
+        $matricula->save();
+
+
+        if(count ($request['DocumentosEntregados'])>0){
+            foreach ($request['DocumentosEntregados'] as $documento){
+                $DocumentosMatricula = new Matriculadocumento();
+                $DocumentosMatricula->fill([
+                    'idMatricula'=>$matricula->id,
+                    'idDocumento'=>$documento
+                ]);
+                $DocumentosMatricula->save();
+            }
+        }
+
+        $padreEstudiante = new Padreestudiante();
+        $padreEstudiante->fill([
+            'idEstudiante'=>$estudiante->id,
+            'idPadre'=>$id
+        ]);
+        $padreEstudiante->save();
+
+        flash('Registro Exitoso', 'success');
+        return redirect('listado_padres');
+
+    }
 
 }
