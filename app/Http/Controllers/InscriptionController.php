@@ -49,6 +49,9 @@ class InscriptionController extends Controller
         return view('matricula.formulario', compact('departamentos','grados','oficios','municipios','gradosAntiguos'));
     }
     public function registrarEstudiante(Requests\ValidacionMatriculaNueva $request){
+
+
+
         $validado = $this->ValidarEncargado($request);
         if(!$validado){
             return redirect()->back()->withInput()->withErrors("Se necesitan completar datos o son datos invalidos");
@@ -109,8 +112,9 @@ class InscriptionController extends Controller
 
 
         if(count ($request['sacramentosEstudiante'])>0){
-            $sacramentosEstudiante = new Sacramentousuario();
+
             foreach ($request['sacramentosEstudiante'] as $sacramento){
+                $sacramentosEstudiante = new Sacramentousuario();
                 $sacramentosEstudiante->fill([
                     'idSacramento'=>$sacramento,
                     'idUsuario'=>$usuarioEstudiante->id,
@@ -237,8 +241,9 @@ class InscriptionController extends Controller
             }
 
             if(count ($request['sacramentoPadre'])>0){
-                $sacramentosPadres = new Sacramentousuario();
+
                 foreach ($request['sacramentoPadre'] as $sacramento){
+                    $sacramentosPadres = new Sacramentousuario();
                     $sacramentosPadres->fill([
                         'idSacramento'=>$sacramento,
                         'idUsuario'=>$usuarioPadre->id,
@@ -310,8 +315,9 @@ class InscriptionController extends Controller
             }
 
             if(count ($request['sacramentoMadre'])>0){
-                $sacramentosPadres = new Sacramentousuario();
+
                 foreach ($request['sacramentoMadre'] as $sacramento){
+                    $sacramentosPadres = new Sacramentousuario();
                     $sacramentosPadres->fill([
                         'idSacramento'=>$sacramento,
                         'idUsuario'=>$usuarioPadre->id,
@@ -381,8 +387,9 @@ class InscriptionController extends Controller
             }
 
             if(count ($request['sacramentoResponsable'])>0){
-                $sacramentosPadres = new Sacramentousuario();
+
                 foreach ($request['sacramentoResponsable'] as $sacramento){
+                    $sacramentosPadres = new Sacramentousuario();
                     $sacramentosPadres->fill([
                         'idSacramento'=>$sacramento,
                         'idUsuario'=>$usuarioPadre->id,

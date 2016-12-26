@@ -47,6 +47,9 @@ Route::get('/detalle_alumno/{id}', 'InscriptionController@detalleAlumno')->name(
 Route::get('/detalle_padre/{id}', 'InscriptionController@detallePadres')->name('Detalle.Padre');
 Route::get('NuevoHijo/{id}','InscriptionController@NuevoHijo')->name('Agregar.Hijo');
 Route::get('/listado_padres', 'InscriptionController@listadoPadres');
+Route::get('ActualizarEstudiante/{id}','ControllerEstudiante@ActualizarEstudiante');
+Route::put('UpdatedeEstudiante/{id}','ControllerEstudiante@updateEstudiante')->name('update.estudiante');
+
 
 //------Docentes--//
 
