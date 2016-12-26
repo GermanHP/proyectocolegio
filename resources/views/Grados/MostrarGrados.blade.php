@@ -23,7 +23,7 @@
                         <td>{{$grado->grado->nombre}}</td>
                         <td>{{$grado->seccion->nombre}}</td>
                         <td>{{$grado->matriculas->count()}}</td>
-                        <td>                        </td>
+                        <td>                     </td>
 
                         <td>
 

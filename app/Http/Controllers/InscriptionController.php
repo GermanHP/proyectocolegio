@@ -678,4 +678,16 @@ class InscriptionController extends Controller
 
     }
 
+    public function registroGrado($id){
+
+        $estudiantes = Estudiante::whereHas('matriculas',function ($query) use ($id){
+            $query->where('idGradoSeccion',$id);
+        })->get();
+
+        return view('matricula.registro_matricula',compact('estudiantes'));
+
+
+
+    }
+
 }

@@ -37,6 +37,7 @@ Route::get('/propuesta', 'InscriptionController@afiche');
 Route::get('/registro_matricula', 'InscriptionController@dash_inscription');
 Route::get('/nueva', 'InscriptionController@local_inscription');
 Route::get('/registro', 'InscriptionController@registro');
+Route::get('/AlumnosPorGrado/{id}','InscriptionController@registroGrado')->name('Alumnos.Grado');
 Route::get('/noticias', 'InscriptionController@noticias');
 Route::get('/RegistrarGrado', 'InscriptionController@asignarGradoEstudiante')->name('NuevoGrado.View');
 Route::get('/GradosActivos','GradoSeccionController@GradosActivos');

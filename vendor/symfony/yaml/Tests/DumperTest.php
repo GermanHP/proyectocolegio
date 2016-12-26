@@ -11,8 +11,8 @@
 
 namespace Symfony\Component\Yaml\Tests;
 
-use Symfony\Component\Yaml\Parser;
 use Symfony\Component\Yaml\Dumper;
+use Symfony\Component\Yaml\Parser;
 use Symfony\Component\Yaml\Yaml;
 
 class DumperTest extends \PHPUnit_Framework_TestCase
@@ -35,21 +35,6 @@ class DumperTest extends \PHPUnit_Framework_TestCase
             ),
         ),
     );
-
-    protected function setUp()
-    {
-        $this->parser = new Parser();
-        $this->dumper = new Dumper();
-        $this->path = __DIR__.'/Fixtures';
-    }
-
-    protected function tearDown()
-    {
-        $this->parser = null;
-        $this->dumper = null;
-        $this->path = null;
-        $this->array = null;
-    }
 
     public function testIndentationInConstructor()
     {
@@ -342,7 +327,7 @@ EOF;
             ),
         );
 
-        $this->assertSame(file_get_contents(__DIR__.'/Fixtures/multiple_lines_as_literal_block.yml'), $this->dumper->dump($data, 3, 0, Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK));
+        $this->assertSame(file_get_contents(__DIR__ . '/Fixtures/multiple_lines_as_literal_block.yml'), $this->dumper->dump($data, 2, 0, Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK));
     }
 
     /**
@@ -361,6 +346,21 @@ EOF;
     public function testNegativeIndentationThrowsException()
     {
         new Dumper(-4);
+    }
+
+    protected function setUp()
+    {
+        $this->parser = new Parser();
+        $this->dumper = new Dumper();
+        $this->path = __DIR__ . '/Fixtures';
+    }
+
+    protected function tearDown()
+    {
+        $this->parser = null;
+        $this->dumper = null;
+        $this->path = null;
+        $this->array = null;
     }
 }
 
