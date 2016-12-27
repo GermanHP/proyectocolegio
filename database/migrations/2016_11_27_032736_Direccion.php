@@ -14,7 +14,7 @@ class Direccion extends Migration
     {
         Schema::create('direcciones', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('detalle', 50);
+            $table->string('detalle', 250);
             $table->integer('idMunicipio')->unsigned();
             $table->foreign('idMunicipio') ->references('id')->on('municipios');
             $table->integer('idTipoDireccion')->unsigned();

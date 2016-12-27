@@ -113,7 +113,7 @@
             </div>
             <div id="divmun" class="input-group form-group" >
                 {{ Form::label('Municipio',null,['class'=>'input-group-addon']) }}
-                {!! Form::select('municipioVivienda',$municipios,$direccion->idMunicipio,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipioVivienda',  'style'=>'width: 100%']) !!}
+                {!! Form::select('municipioVivienda',$municipiosEmergencia,$direccion->idMunicipio,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipioVivienda',  'style'=>'width: 100%']) !!}
             </div>
         @endif
         @endforeach
@@ -145,19 +145,37 @@
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Dirección:</span>
 
-        @foreach($estudiante->user->direcciones as $direccion)
-            @if($direccion->idTipoDireccion==4 )
-                {{Form::text('residenciaEstudianteEmergencia',$direccion->detalle,['class'=>'form-control', 'placeholder'=>'Dirección', 'aria-describedby'=>'basic-addon1'])}}
-            @endif
-        @endforeach
+            <?php $exiiste =0; ?>
+            @foreach($estudiante->user->direcciones as $direccion)
+                @if($direccion->idTipoDireccion==4 )
+                   <?php
+                    $direccionEstudianteEmergencia = $direccion->detalle;
+                $exiiste =1;
+                ?>
+                 @endif
+            @endforeach
+            @if($exiiste>0)
+            {{Form::text('residenciaEstudianteEmergencia',$direccionEstudianteEmergencia,['class'=>'form-control', 'placeholder'=>'Dirección', 'aria-describedby'=>'basic-addon1'])}}
+                @else
 
-
+            {{Form::text('residenciaEstudianteEmergencia',null,['class'=>'form-control', 'placeholder'=>'Dirección', 'aria-describedby'=>'basic-addon1'])}}
+                @endif
         <span class="input-group-addon" id="basic-addon1">Teléfono</span>
+        <?php $exiiste =0; ?>
         @foreach($estudiante->user->telefonos as $telefono)
             @if($telefono->idTipoTelefono==4 )
-                {{Form::text('TelefonoEmergenciaNombre',$telefono->telefono,['class'=>'form-control','pattern'=>'[0-9]{8}','placeholder'=>'12345678', 'maxlength'=>'8'])}}
+                <?php
+                $telefonoEstudianteEmergencia = $telefono->telefono;
+                $exiiste =1;
+                ?>
             @endif
         @endforeach
+        @if($exiiste>0)
+            {{Form::text('TelefonoEmergenciaNombre',$telefonoEstudianteEmergencia,['class'=>'form-control','pattern'=>'[0-9]{8}','placeholder'=>'12345678', 'maxlength'=>'8'])}}
+        @else
+
+            {{Form::text('TelefonoEmergenciaNombre',null,['class'=>'form-control','pattern'=>'[0-9]{8}','placeholder'=>'12345678', 'maxlength'=>'8'])}}
+        @endif
 
     </div>
     <h3>Documentos Entregados al Formalizar la Matrícula</h3>
