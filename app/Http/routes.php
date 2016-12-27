@@ -28,6 +28,8 @@ Route::get('/error404', 'MainController@error404');
 Route::get('/galeria', 'MainController@galery');
 
 
+
+
 //------Matriculas--//
 Route::get('/inscripcion', 'InscriptionController@inscription');
 Route::get('/formulario', 'InscriptionController@formulary');
@@ -49,6 +51,10 @@ Route::get('NuevoHijo/{id}','InscriptionController@NuevoHijo')->name('Agregar.Hi
 Route::get('/listado_padres', 'InscriptionController@listadoPadres');
 Route::get('ActualizarEstudiante/{id}','ControllerEstudiante@ActualizarEstudiante')->name('Actualizar.Estudiante');
 Route::put('UpdatedeEstudiante/{id}','ControllerEstudiante@updateEstudiante')->name('update.estudiante');
+Route::get('ActualizarPadre/{id}','ControllerPadresFamilia@ActualizarPadre')->name('Actualizar.Padre');
+Route::put('updatePadre/{id}','ControllerPadresFamilia@UpdatePadre')->name('Update.Padre');
+
+
 
 
 //------Docentes--//
