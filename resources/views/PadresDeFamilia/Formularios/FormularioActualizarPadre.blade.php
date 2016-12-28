@@ -12,6 +12,20 @@
         {{Form::label('Correo Electrónico',null,['class'=>'input-group-addon'])}}
         {{Form::email('correoPadre',$padreDeFamilia->user->email, ['class'=>'form-control', 'placeholder'=>'e-mail', 'id'=>'correoPadre', 'aria-describedby'=>'basic-addon1'])}}
     </div>
+    @if($padreDeFamilia->user->genero==1)
+        <div class="input-group form-group">
+            {{Form::label('Género',null,['class'=>'input-group-addon'])}}
+            <label class="radio-inline">{!! Form::radio('generoResponsable','1', true) !!}Masculino</label>
+            <label class="radio-inline">{!! Form::radio('generoResponsable','2') !!}Femenino</label>
+        </div>
+        @else
+        <div class="input-group form-group">
+            {{Form::label('Género',null,['class'=>'input-group-addon'])}}
+            <label class="radio-inline">{!! Form::radio('generoResponsable','1') !!}Masculino</label>
+            <label class="radio-inline">{!! Form::radio('generoResponsable','2',true) !!}Femenino</label>
+        </div>
+        @endif
+
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Numero de DUI</span>
         {{Form::text('DUIpadre',$padreDeFamilia->DUI,['class'=>'form-control','pattern'=>'[0-9]{9}','placeholder'=>'123456789', 'maxlength'=>'9'])}}
