@@ -56,6 +56,12 @@ Route::put('updatePadre/{id}','ControllerPadresFamilia@UpdatePadre')->name('Upda
 
 
 
+//--Materias--//
+
+Route::get('NuevaMateria','MateriasController@NuevaMateria')->name('Materia.Nueva');
+Route::post('InsertarMateria','MateriasController@InsertMateria')->name('Materia.Insertar');
+Route::get('Materias','MateriasController@MostrarMaterias');
+Route::get('EliminarMateria/{id}','MateriasController@EliminarMateria')->name('Materia.Eliminar');
 
 //------Docentes--//
 
