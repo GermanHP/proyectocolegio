@@ -20,7 +20,7 @@ class MateriasGrados extends Migration
             $table->integer('idMateria')->unsigned();
             $table->foreign('idMateria') ->references('id')->on('materias');
 
-            $table->integer('idMaestroResponsable')->unsigned();
+            $table->integer('idMaestroResponsable')->unsigned()->nullable();
             $table->foreign('idMaestroResponsable') ->references('id')->on('maestros');
 
             $table->string('Descripcion')->nullable();

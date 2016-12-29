@@ -62,6 +62,8 @@ Route::get('NuevaMateria','MateriasController@NuevaMateria')->name('Materia.Nuev
 Route::post('InsertarMateria','MateriasController@InsertMateria')->name('Materia.Insertar');
 Route::get('Materias','MateriasController@MostrarMaterias');
 Route::get('EliminarMateria/{id}','MateriasController@EliminarMateria')->name('Materia.Eliminar');
+Route::get('ImpartirMateria','MateriasController@ImpartirMateria');
+Route::post('InsertarImpartirMateria','MateriasController@InsertImpartirMateria')->name('Materia.InsertarImpartir');
 
 //------Docentes--//
 

@@ -3622,58 +3622,6 @@
         ]
     },
     {
-        "name": "user11001/eloquent-model-generator",
-        "version": "v1.0.2",
-        "version_normalized": "1.0.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/pepijnolivier/Eloquent-Model-Generator.git",
-            "reference": "719b4c9720f8e799355c2eabb83761da1001f789"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/pepijnolivier/Eloquent-Model-Generator/zipball/719b4c9720f8e799355c2eabb83761da1001f789",
-            "reference": "719b4c9720f8e799355c2eabb83761da1001f789",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/support": ">=4.1",
-            "php": ">=5.4.0",
-            "xethron/migrations-generator": "*"
-        },
-        "require-dev": {
-            "illuminate/cache": ">=4.1.0",
-            "illuminate/console": ">=4.1.0",
-            "mockery/mockery": ">=0.9.0",
-            "phpunit/phpunit": ">=4.0.0"
-        },
-        "time": "2015-12-08 14:17:15",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "User11001\\EloquentModelGenerator\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Pepijn Olivier",
-                "email": "olivier.pepijn@gmail.com"
-            }
-        ],
-        "description": "Auto-generates all Eloquent models from the database in a Laravel 5 project.",
-        "keywords": [
-            "artisan",
-            "eloquent",
-            "laravel",
-            "model"
-        ]
-    },
-    {
         "name": "classpreloader/classpreloader",
         "version": "3.1.0",
         "version_normalized": "3.1.0.0",
@@ -5182,6 +5130,58 @@
         "description": "Guzzle promises library",
         "keywords": [
             "promise"
+        ]
+    },
+    {
+        "name": "user11001/eloquent-model-generator",
+        "version": "v2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pepijnolivier/Eloquent-Model-Generator.git",
+            "reference": "bf3c645c42e6a9b2e7c4c26a0b524bfb52827c3c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/pepijnolivier/Eloquent-Model-Generator/zipball/bf3c645c42e6a9b2e7c4c26a0b524bfb52827c3c",
+            "reference": "bf3c645c42e6a9b2e7c4c26a0b524bfb52827c3c",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": ">=4.1",
+            "php": ">=5.4.0",
+            "xethron/migrations-generator": "*"
+        },
+        "require-dev": {
+            "illuminate/cache": ">=4.1.0",
+            "illuminate/console": ">=4.1.0",
+            "mockery/mockery": ">=0.9.0",
+            "phpunit/phpunit": ">=4.0.0"
+        },
+        "time": "2015-12-08 15:22:06",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "User11001\\EloquentModelGenerator\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Pepijn Olivier",
+                "email": "olivier.pepijn@gmail.com"
+            }
+        ],
+        "description": "Auto-generates all Eloquent models from the database in a Laravel 5 project.",
+        "keywords": [
+            "artisan",
+            "eloquent",
+            "laravel",
+            "model"
         ]
     }
 ]
