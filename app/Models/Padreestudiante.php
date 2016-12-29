@@ -9,7 +9,7 @@ class Padreestudiante extends Model {
      */
 
     protected $table = 'padreestudiante';
-    protected $fillable = ['id', 'Tratamiento', 'idEstudiante', 'idPadre', 'deleted_at'];
+    protected $fillable = ['id', 'idEstudiante', 'idPadre', 'deleted_at'];
 
 
     public function estudiante() {

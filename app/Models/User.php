@@ -32,6 +32,10 @@ class User extends Model {
         return $this->hasMany('App\Models\Estudiante', 'idUsuario', 'id');
     }
 
+    public function maestros() {
+        return $this->hasMany('App\Models\Maestro', 'idUsuario', 'id');
+    }
+
     public function padredefamilia() {
         return $this->hasMany('App\Models\Padredefamilium', 'idUsuario', 'id');
     }
