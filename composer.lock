@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7e5ecef0efcda9b54dabd5de4e2e2932",
-    "content-hash": "4491dbcb5298f9151f5b064ed5b7e1ac",
+    "hash": "d095b373ac8949541df6d8d003ddcc3b",
+    "content-hash": "70bd563f2a46b6ec9108712195424649",
     "packages": [
         {
             "name": "asachanfbd/laravel-push-notification",
@@ -4823,16 +4823,16 @@
         },
         {
             "name": "user11001/eloquent-model-generator",
-            "version": "v1.0.2",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pepijnolivier/Eloquent-Model-Generator.git",
-                "reference": "719b4c9720f8e799355c2eabb83761da1001f789"
+                "reference": "bf3c645c42e6a9b2e7c4c26a0b524bfb52827c3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pepijnolivier/Eloquent-Model-Generator/zipball/719b4c9720f8e799355c2eabb83761da1001f789",
-                "reference": "719b4c9720f8e799355c2eabb83761da1001f789",
+                "url": "https://api.github.com/repos/pepijnolivier/Eloquent-Model-Generator/zipball/bf3c645c42e6a9b2e7c4c26a0b524bfb52827c3c",
+                "reference": "bf3c645c42e6a9b2e7c4c26a0b524bfb52827c3c",
                 "shasum": ""
             },
             "require": {
@@ -4869,7 +4869,7 @@
                 "laravel",
                 "model"
             ],
-            "time": "2015-12-08 14:17:15"
+            "time": "2015-12-08 15:22:06"
         },
         {
             "name": "way/generators",

@@ -13,11 +13,11 @@ class Enfermedade extends Model {
 
 
     public function estudiantes() {
-        return $this->belongsToMany('App\Models\Estudiante', 'estudianteenfermedad', 'idEnfermedad', 'idEstudiante');
+        return $this->belongsToMany(\App\Models\Estudiante::class, 'estudianteenfermedad', 'idEnfermedad', 'idEstudiante');
     }
 
     public function estudianteenfermedads() {
-        return $this->hasMany('App\Models\Estudianteenfermedad', 'idEnfermedad', 'id');
+        return $this->hasMany(\App\Models\Estudianteenfermedad::class, 'idEnfermedad', 'id');
     }
 
 

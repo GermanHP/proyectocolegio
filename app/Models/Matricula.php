@@ -13,19 +13,19 @@ class Matricula extends Model {
 
 
     public function estudiante() {
-        return $this->belongsTo('App\Models\Estudiante', 'idEstudiante', 'id');
+        return $this->belongsTo(\App\Models\Estudiante::class, 'idEstudiante', 'id');
     }
 
     public function gradoseccion() {
-        return $this->belongsTo('App\Models\Gradoseccion', 'idGradoSeccion', 'id');
+        return $this->belongsTo(\App\Models\Gradoseccion::class, 'idGradoSeccion', 'id');
     }
 
     public function documentos() {
-        return $this->belongsToMany('App\Models\Documento', 'matriculadocumento', 'idMatricula', 'idDocumento');
+        return $this->belongsToMany(\App\Models\Documento::class, 'matriculadocumento', 'idMatricula', 'idDocumento');
     }
 
     public function matriculadocumentos() {
-        return $this->hasMany('App\Models\Matriculadocumento', 'idMatricula', 'id');
+        return $this->hasMany(\App\Models\Matriculadocumento::class, 'idMatricula', 'id');
     }
 
 

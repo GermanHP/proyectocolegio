@@ -13,11 +13,11 @@ class Sacramentousuario extends Model {
 
 
     public function sacramento() {
-        return $this->belongsTo('App\Models\Sacramento', 'idSacramento', 'id');
+        return $this->belongsTo(\App\Models\Sacramento::class, 'idSacramento', 'id');
     }
 
     public function user() {
-        return $this->belongsTo('App\Models\User', 'idUsuario', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'idUsuario', 'id');
     }
 
 

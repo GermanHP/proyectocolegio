@@ -13,15 +13,15 @@ class Grado extends Model {
 
 
     public function estudiantes() {
-        return $this->belongsToMany('App\Models\Estudiante', 'historicoestudiante', 'GradoAnterior', 'idEstudiante');
+        return $this->belongsToMany(\App\Models\Estudiante::class, 'historicoestudiante', 'GradoAnterior', 'idEstudiante');
     }
 
     public function gradoseccions() {
-        return $this->hasMany('App\Models\Gradoseccion', 'idGrado', 'id');
+        return $this->hasMany(\App\Models\Gradoseccion::class, 'idGrado', 'id');
     }
 
     public function historicoestudiantes() {
-        return $this->hasMany('App\Models\Historicoestudiante', 'GradoAnterior', 'id');
+        return $this->hasMany(\App\Models\Historicoestudiante::class, 'GradoAnterior', 'id');
     }
 
 

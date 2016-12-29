@@ -13,11 +13,11 @@ class Sacramento extends Model {
 
 
     public function users() {
-        return $this->belongsToMany('App\Models\User', 'sacramentousuario', 'idSacramento', 'idUsuario');
+        return $this->belongsToMany(\App\Models\User::class, 'sacramentousuario', 'idSacramento', 'idUsuario');
     }
 
     public function sacramentousuarios() {
-        return $this->hasMany('App\Models\Sacramentousuario', 'idSacramento', 'id');
+        return $this->hasMany(\App\Models\Sacramentousuario::class, 'idSacramento', 'id');
     }
 
 

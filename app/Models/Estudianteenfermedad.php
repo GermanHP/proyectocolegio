@@ -13,11 +13,11 @@ class Estudianteenfermedad extends Model {
 
 
     public function enfermedade() {
-        return $this->belongsTo('App\Models\Enfermedade', 'idEnfermedad', 'id');
+        return $this->belongsTo(\App\Models\Enfermedade::class, 'idEnfermedad', 'id');
     }
 
     public function estudiante() {
-        return $this->belongsTo('App\Models\Estudiante', 'idEstudiante', 'id');
+        return $this->belongsTo(\App\Models\Estudiante::class, 'idEstudiante', 'id');
     }
 
 

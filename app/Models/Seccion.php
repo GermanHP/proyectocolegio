@@ -13,7 +13,7 @@ class Seccion extends Model {
 
 
     public function gradoseccions() {
-        return $this->hasMany('App\Models\Gradoseccion', 'idSeccion', 'id');
+        return $this->hasMany(\App\Models\Gradoseccion::class, 'idSeccion', 'id');
     }
 
 

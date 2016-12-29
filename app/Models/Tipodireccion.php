@@ -13,7 +13,7 @@ class Tipodireccion extends Model {
 
 
     public function direcciones() {
-        return $this->hasMany('App\Models\Direccione', 'idTipoDireccion', 'id');
+        return $this->hasMany(\App\Models\Direccione::class, 'idTipoDireccion', 'id');
     }
 
 

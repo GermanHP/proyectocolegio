@@ -13,11 +13,11 @@ class Maestro extends Model {
 
 
     public function user() {
-        return $this->belongsTo('App\Models\User', 'idUsuario', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'idUsuario', 'id');
     }
 
     public function materiagrados() {
-        return $this->hasMany('App\Models\Materiagrado', 'idMaestroResponsable', 'id');
+        return $this->hasMany(\App\Models\Materiagrado::class, 'idMaestroResponsable', 'id');
     }
 
 

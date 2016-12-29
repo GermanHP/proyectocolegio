@@ -13,7 +13,7 @@ class Materia extends Model {
 
 
     public function materiagrados() {
-        return $this->hasMany('App\Models\Materiagrado', 'idMateria', 'id');
+        return $this->hasMany(\App\Models\Materiagrado::class, 'idMateria', 'id');
     }
 
 

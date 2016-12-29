@@ -13,11 +13,11 @@ class Documento extends Model {
 
 
     public function matriculas() {
-        return $this->belongsToMany('App\Models\Matricula', 'matriculadocumento', 'idDocumento', 'idMatricula');
+        return $this->belongsToMany(\App\Models\Matricula::class, 'matriculadocumento', 'idDocumento', 'idMatricula');
     }
 
     public function matriculadocumentos() {
-        return $this->hasMany('App\Models\Matriculadocumento', 'idDocumento', 'id');
+        return $this->hasMany(\App\Models\Matriculadocumento::class, 'idDocumento', 'id');
     }
 
 

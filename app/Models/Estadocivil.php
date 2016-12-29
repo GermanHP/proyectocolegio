@@ -13,7 +13,7 @@ class Estadocivil extends Model {
 
 
     public function padredefamilia() {
-        return $this->hasMany('App\Models\Padredefamilium', 'idEstadoCivil', 'id');
+        return $this->hasMany(\App\Models\Padredefamilium::class, 'idEstadoCivil', 'id');
     }
 
 

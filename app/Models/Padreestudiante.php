@@ -13,11 +13,11 @@ class Padreestudiante extends Model {
 
 
     public function estudiante() {
-        return $this->belongsTo('App\Models\Estudiante', 'idEstudiante', 'id');
+        return $this->belongsTo(\App\Models\Estudiante::class, 'idEstudiante', 'id');
     }
 
     public function padredefamilium() {
-        return $this->belongsTo('App\Models\Padredefamilium', 'idPadre', 'id');
+        return $this->belongsTo(\App\Models\Padredefamilium::class, 'idPadre', 'id');
     }
 
 

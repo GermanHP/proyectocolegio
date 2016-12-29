@@ -13,15 +13,15 @@ class Materiagrado extends Model {
 
 
     public function gradoseccion() {
-        return $this->belongsTo('App\Models\Gradoseccion', 'idGradoSeccion', 'id');
+        return $this->belongsTo(\App\Models\Gradoseccion::class, 'idGradoSeccion', 'id');
     }
 
     public function maestro() {
-        return $this->belongsTo('App\Models\Maestro', 'idMaestroResponsable', 'id');
+        return $this->belongsTo(\App\Models\Maestro::class, 'idMaestroResponsable', 'id');
     }
 
     public function materium() {
-        return $this->belongsTo('App\Models\Materia', 'idMateria', 'id');
+        return $this->belongsTo(\App\Models\Materia::class, 'idMateria', 'id');
     }
 
 
