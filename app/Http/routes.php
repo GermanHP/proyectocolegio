@@ -66,7 +66,12 @@ Route::get('ImpartirMateria','MateriasController@ImpartirMateria');
 Route::post('InsertarImpartirMateria','MateriasController@InsertImpartirMateria')->name('Materia.InsertarImpartir');
 
 //------Docentes--//
-
+Route::get('NuevoMaestro','MaestrosController@NuevoMaestro')->name('Maestro.Nuevo');
+Route::post('InsertarMaestro','MaestrosController@InsertarMaestro')->name('Maestro.Insert');
+Route::get('MostrarMaestros','MaestrosController@MostrarMaestros')->name('Maestros.Mostrar');
+Route::get('ActualizarMaestro/{id}','MaestrosController@ActualizarMaestro')->name('Maestros.Actualizar');
+Route::put('UpdateMaestro/{id}','MaestrosController@UpdateMaestro')->name('Maestro.Update');
+Route::get('EliminarMaestro/{id}','MaestrosController@EliminarMaestro')->name('Maestro.Delete');
 
 Route::get('/teacher_profile', 'TeachersController@perfil');
 Route::get('/dash_teacher', 'TeachersController@dashboard');
