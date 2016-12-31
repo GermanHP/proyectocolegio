@@ -146,4 +146,15 @@ class MaestrosController extends Controller
         return redirect()->back();
 
     }
+
+    public function DesactivarMaestroResponsable($id){
+        $materiaGrado = Materiagrado::find($id);
+        $materiaGrado->fill([
+            'idMaestroResponsable'=>NULL
+        ]);
+        $materiaGrado->save();
+
+        flash('Responsable de la materia eliminado','warning');
+        return redirect()->back();
+    }
 }

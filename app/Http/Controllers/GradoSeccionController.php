@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gradoseccion;
+use App\Models\Materiagrado;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -25,5 +26,11 @@ class GradoSeccionController extends Controller
         $gradoSeccion->delete();
         flash('Grado deshabilitado','danger');
         return redirect()->back();
+    }
+
+    public function MateriasPorGrado($id){
+        $grado = Gradoseccion::find($id);
+        $materias = Materiagrado::where('idGradoSeccion','=',$id)->get();
+        return view('Grados.MostrarMaterias',compact('grado','materias'));
     }
 }

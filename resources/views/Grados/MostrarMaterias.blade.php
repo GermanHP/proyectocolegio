@@ -1,39 +1,41 @@
 @extends('layouts.app4')
 @section('content')
     <div class="container panel panel-body">
-        <h3>Registro de Grados</h3>
-        <h2># Grado</h2>
+        <h3>Registro de Materias por Grado</h3>
+        <h2>{{$grado->grado->nombre}} {{$grado->seccion->nombre}}</h2>
 
         @include('alertas.flash')
         @include('alertas.errores')
-        {!!link_to_route('NuevoGrado.View', $title = 'Adicionar Grado',  null, $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+
+        {!!link_to_route('Maestros.MateriasAsignar', $title = 'Asignar Resposable', $parameters = $grado->id, $attributes = ['class'=>'btn btn-success','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
         <table class="table table-striped" id="matriculados">
             <thead>
             <tr>
-                <th>Grado</th>
-                <th>Seccion</th>
-                <th>Numero de Alumnos</th>
+                <th>Materia</th>
+                <th>Horarios</th>
                 <th>Encargado</th>
                 <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
-                @foreach($gradoSeccion as $grado)
-                    <tr>
-                        <td>{{$grado->grado->nombre}}</td>
-                        <td>{{$grado->seccion->nombre}}</td>
-                        <td>{{$grado->matriculas->count()}}</td>
-                        <td> {{$grado->maestro->user->nombre}} {{$grado->maestro->user->apellido}} </td>
+            @foreach($materias as $materia)
+                <tr>
+                    <td>{{$materia->materium->nombre}}</td>
+                    <td>No disponibles</td>
+                    <td>@if(isset($materia->maestro->user))
+                            {{$materia->maestro->user->nombre}} {{$materia->maestro->user->apellido}}
+                            @else
+                            Por Asignar
+                       @endif
+                    </td>
+                    <td>
+                        @if(isset($materia->maestro->user))
+                            {!!link_to_route('Desactivar.MaestroResponsable', $title = 'Desactivar Maestro Responsable', $parameters = $materia->id, $attributes = ['class'=>'btn btn-warning','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+                        @endif
+                    </td>
+                </tr>
 
-                        <td>
-
-                            {!!link_to_route('Desactivar.Grado', $title = 'Desactivar Grado', $parameters = $grado->id, $attributes = ['class'=>'btn btn-warning','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
-                            {!!link_to_route('GradoSeccion.Materias', $title = 'Materias Por Grado', $parameters = $grado->id, $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
-
-                        </td>
-                    </tr>
-
-                @endforeach
+            @endforeach
             </tbody>
         </table>
     </div>

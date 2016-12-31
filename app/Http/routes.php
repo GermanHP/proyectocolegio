@@ -54,7 +54,8 @@ Route::put('UpdatedeEstudiante/{id}','ControllerEstudiante@updateEstudiante')->n
 Route::get('ActualizarPadre/{id}','ControllerPadresFamilia@ActualizarPadre')->name('Actualizar.Padre');
 Route::put('updatePadre/{id}','ControllerPadresFamilia@UpdatePadre')->name('Update.Padre');
 
-
+Route::get('MateriasPorGrado/{id}','GradoSeccionController@MateriasPorGrado')->name('GradoSeccion.Materias');
+Route::get('DesactivarResposanble/{id}','MaestrosController@DesactivarMaestroResponsable')->name('Desactivar.MaestroResponsable');
 
 //--Materias--//
 

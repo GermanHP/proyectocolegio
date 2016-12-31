@@ -62,7 +62,7 @@
                 </tbody>
             </table>
 
-            <a href="{{url('/listado_padres')}}"><button class="btn btn-warning btn-align">Regresar a Tabla de Alumnos</button></a>
+            <a href="{{url('/listado_padres')}}"><button class="btn btn-warning btn-align">Regresar </button></a>
             {!!link_to_route('Actualizar.Padre', $title = 'Actualizar', $parameters = $padre->id, $attributes = ['class'=>'btn btn-success','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
         </div>
         <script>
