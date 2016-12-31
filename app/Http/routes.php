@@ -73,6 +73,11 @@ Route::get('ActualizarMaestro/{id}','MaestrosController@ActualizarMaestro')->nam
 Route::put('UpdateMaestro/{id}','MaestrosController@UpdateMaestro')->name('Maestro.Update');
 Route::get('EliminarMaestro/{id}','MaestrosController@EliminarMaestro')->name('Maestro.Delete');
 
+Route::get('MaestroGrado','MaestrosCOntroller@MaestroGrado')->name('Maestros.Grados');
+Route::post('InsertMaestroGrado','MaestrosController@InsertMaestroGrado')->name('Maestros.Grado.Insert');
+Route::get('MaestroMateria/{id}','MaestrosController@MaestroMateria')->name('Maestros.MateriasAsignar');
+Route::put('InsertMaestroMateria','MaestrosController@InsertMaestroMateria')->name('Maestros.MateriasInsert');
+
 Route::get('/teacher_profile', 'TeachersController@perfil');
 Route::get('/dash_teacher', 'TeachersController@dashboard');
 Route::get('/listado_maestros', 'TeachersController@listadoMaestros');

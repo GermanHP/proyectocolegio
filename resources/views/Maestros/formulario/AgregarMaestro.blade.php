@@ -1,5 +1,5 @@
 <div class="container panel panel-body">
-    <h3>Datos del Padre</h3>
+    <h3>Datos del Maestro</h3>
     <div class="input-group form-group">
         {{Form::label('Nombres',null,['class'=>'input-group-addon'])}}
         {{Form::text('nombre',null, ['class'=>'form-control', 'placeholder'=>'Nombres'])}}
