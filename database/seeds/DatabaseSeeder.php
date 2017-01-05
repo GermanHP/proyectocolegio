@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GradosSeeder::class);
         $this->call(SeccionesSeeder::class);
         $this->call(SeederUsuarioPrincipal::class);
+        $this->call(SeederDiasDisponibles::class);
 
     }
 }
