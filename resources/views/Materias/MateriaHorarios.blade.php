@@ -6,6 +6,19 @@
 
         @include('alertas.flash')
         @include('alertas.errores')
+<ol>
+        @foreach($horarios as $horario)
+
+            <lo>{{$horario->materiagrado->materium->nombre}} {{$horario->horasdisponible->horaInicio}} - {{$horario->horasdisponible->horaFin}} {{$horario->diasdisponible->nombre}}
+
+
+            </lo><br>
+
+        {!!link_to_route('Materias.EliminarHorario', $title = 'Eliminar Horario',  $horario->id, $attributes = ['class'=>'btn btn-warning','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+
+        <br>
+
+            @endforeach</ol>
         {!!Form::open(['route'=>['Materias.InsertHorario',$grado->id], 'method'=>'POST', 'onsubmit'=>"waitingDialog.show('Guardando Espere... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
 
         <div id="divmunVivienda" class="input-group form-group" >

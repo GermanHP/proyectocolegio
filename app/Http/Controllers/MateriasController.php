@@ -91,11 +91,27 @@ class MateriasController extends Controller
             ->where('idGradoSeccion','=',$id)
             ->select('materias.nombre','materiagrado.id')
             ->lists('nombre', 'id');
+        $horarios = Materiagradohorario::where('idGrado',$id)->orderBy('idDiasDisponibles','ASC')->get();
 
-        $horariosDisponibles = Horasdisponible::select(DB::raw('concat(horaInicio, " - ", horaFIN ) as nombre'),'id')->lists('nombre', 'id');
+        $horariosDisponibles = Horasdisponible::select(DB::raw('concat(horaInicio, " - ", horaFIN ) as nombre'),'id')
+            ->where('id','!=',4)
+            ->where('id','!=',6)
+            ->where('id','!=',9)
+            ->where('id','!=',12)
+            ->lists('nombre', 'id');
 
-        $diasDisponibles = Diasdisponible::whereNull('deleted_at')->lists('nombre', 'id');
-        return view('Materias.MateriaHorarios',compact('materias','horariosDisponibles','diasDisponibles','grado'));
+        $diasDisponibles = Diasdisponible::whereNull('deleted_at')
+            ->where('id','!=',7)->lists('nombre', 'id');
+        return view('Materias.MateriaHorarios',compact('materias','horariosDisponibles','diasDisponibles','grado','horarios'));
+    }
+    public function EliminarHorarioMateria($id){
+        $materiaHorario = Materiagradohorario::find($id);
+        if($materiaHorario->count()>0){
+            $materiaHorario->delete();
+        }
+        flash('Horario Eliminado exitosamente','warning');
+        return redirect()->back();
+
     }
 
     public function InsertHorarioMateria(Request $request,$id){
@@ -108,7 +124,6 @@ class MateriasController extends Controller
                 'idDiasDisponibles'=>$request['Dia'],
                 'idHorasDisponibles'=>$request['Horarios'],
                 'idMateriaGrado'=>$request['materia'],
-
             ]);
             $materiaGrado->save();
             flash('Horario almacenado exitosamente','info');

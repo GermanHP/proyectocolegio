@@ -30,7 +30,7 @@ class MaestrosController extends Controller
             'apellido'=>$request['apellido'],
             'genero'=> $request['genero'],
             'email'=>$request['email'],
-            'password'=>'colegio2017',
+            'password'=>bcrypt('colegio2017'),
             'idTipousuario'=>'3'
         ]);
         $usuarioMaestro->save();

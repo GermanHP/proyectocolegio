@@ -55,6 +55,22 @@ class AuthController extends Controller
         ]);
     }
 
+    protected function authenticated($request, $usuario)
+    {
+
+                if($usuario->idTipousuario==3){
+                    return redirect()->route('registro.index');
+                }else{
+                    return redirect('/logout');
+
+                }
+
+
+
+
+
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
