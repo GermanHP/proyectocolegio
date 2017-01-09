@@ -9,11 +9,15 @@ class Materiagradohorario extends Model {
      */
 
     protected $table = 'materiagradohorarios';
-    protected $fillable = ['id', 'idDiasDisponibles', 'idHorasDisponibles', 'idMateriaGrado', 'Descripcion', 'deleted_at'];
+    protected $fillable = ['id', 'idDiasDisponibles', 'idHorasDisponibles', 'idMateriaGrado', 'Descripcion', 'deleted_at', 'idGrado'];
 
 
     public function diasdisponible() {
         return $this->belongsTo(\App\Models\Diasdisponible::class, 'idDiasDisponibles', 'id');
+    }
+
+    public function gradoseccion() {
+        return $this->belongsTo(\App\Models\Gradoseccion::class, 'idGrado', 'id');
     }
 
     public function horasdisponible() {

@@ -8,7 +8,6 @@ class Gradoseccion extends Model {
     /**
      * Generated
      */
-
     use SoftDeletes;
 
     /**
@@ -17,7 +16,6 @@ class Gradoseccion extends Model {
      * @var array
      */
     protected $dates = ['deleted_at'];
-
     protected $table = 'gradoseccion';
     protected $fillable = ['id', 'idGrado', 'idSeccion', 'deleted_at', 'idMaestroEncargado'];
 
@@ -36,6 +34,10 @@ class Gradoseccion extends Model {
 
     public function materiagrados() {
         return $this->hasMany(\App\Models\Materiagrado::class, 'idGradoSeccion', 'id');
+    }
+
+    public function materiagradohorarios() {
+        return $this->hasMany(\App\Models\Materiagradohorario::class, 'idGrado', 'id');
     }
 
     public function matriculas() {

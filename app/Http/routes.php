@@ -11,6 +11,8 @@
 |
 */
 use App\Utilities\MoodleEngine;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 //------Main--//
 Route::get('/', 'MainController@home');
@@ -21,6 +23,20 @@ Route::get("/pruebaMoodle",function(){
    return  $moodle->addStudent('');
 
 
+});
+Route::get('TestExcel',function (){
+
+    Excel::create('Laravel Excel', function($excel) {
+
+        $excel->sheet('Productos', function($sheet) {
+
+            $products = \App\Models\User::where('idTipoUsuario','1')->with('estudiantes')->get();
+
+            $sheet->fromArray($products
+            );
+
+        });
+    })->export('xls');
 });
 Route::get('/instalaciones', 'MainController@instalacion');
 Route::get('/historia', 'MainController@historia');
@@ -65,6 +81,9 @@ Route::get('Materias','MateriasController@MostrarMaterias');
 Route::get('EliminarMateria/{id}','MateriasController@EliminarMateria')->name('Materia.Eliminar');
 Route::get('ImpartirMateria','MateriasController@ImpartirMateria');
 Route::post('InsertarImpartirMateria','MateriasController@InsertImpartirMateria')->name('Materia.InsertarImpartir');
+
+Route::get('NuevoHorario/{id}','MateriasController@NuevoHorario')->name('Materias.NuevoHorario');
+Route::post('InsertarHorarioMateria/{id}','MateriasController@InsertHorarioMateria')->name('Materias.InsertHorario');
 
 //------Docentes--//
 Route::get('NuevoMaestro','MaestrosController@NuevoMaestro')->name('Maestro.Nuevo');

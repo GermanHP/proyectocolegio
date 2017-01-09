@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Diasdisponible;
 use App\Models\Gradoseccion;
+use App\Models\Horasdisponible;
 use App\Models\Materia;
+use App\Models\Materiagradohorario;
 use DB;
 use Exception;
 use Illuminate\Http\Request;
@@ -78,6 +81,44 @@ class MateriasController extends Controller
 
     }
 
+    public function NuevoHorario($id) {
+
+        $grado = Gradoseccion::find($id);
+
+        $materias = DB::table('materiagrado')
+            ->join('materias','materias.id','=','materiagrado.idMateria')
+            ->whereNull('materiagrado.deleted_at')
+            ->where('idGradoSeccion','=',$id)
+            ->select('materias.nombre','materiagrado.id')
+            ->lists('nombre', 'id');
+
+        $horariosDisponibles = Horasdisponible::select(DB::raw('concat(horaInicio, " - ", horaFIN ) as nombre'),'id')->lists('nombre', 'id');
+
+        $diasDisponibles = Diasdisponible::whereNull('deleted_at')->lists('nombre', 'id');
+        return view('Materias.MateriaHorarios',compact('materias','horariosDisponibles','diasDisponibles','grado'));
+    }
+
+    public function InsertHorarioMateria(Request $request,$id){
+
+        $materiasgradoHorario= Materiagradohorario::where('idDiasDisponibles',$request['Dia'])->where('idHorasDisponibles',$request['Horarios'])->where('idGrado',$id)->get();
+        if($materiasgradoHorario->count()==0){
+            $materiaGrado = new Materiagradohorario();
+            $materiaGrado->fill([
+                'idGrado'=>$id,
+                'idDiasDisponibles'=>$request['Dia'],
+                'idHorasDisponibles'=>$request['Horarios'],
+                'idMateriaGrado'=>$request['materia'],
+
+            ]);
+            $materiaGrado->save();
+            flash('Horario almacenado exitosamente','info');
+        }else{
+            flash('Horario ya ocupado','danger');
+        }
+        return redirect()->back();
+
+
+    }
     public function getGrados(Request $request){
 //en Progreso
         try {

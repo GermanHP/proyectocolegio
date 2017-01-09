@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SeccionesSeeder::class);
         $this->call(SeederUsuarioPrincipal::class);
         $this->call(SeederDiasDisponibles::class);
+        $this->call(SeederHorariosDisponibles::class);
 
     }
 }
