@@ -19,7 +19,7 @@
 {!! Html::style('dist/css/select2.css') !!}
 <!-- Ionicons -->
 {!! Html::script('http://code.jquery.com/jquery-latest.js') !!}
-    <!-- DataTables -->
+<!-- DataTables -->
 {!! Html::style('assets/plugins/datatables/dataTables.bootstrap.css') !!}
 <!-- Theme style -->
 {!! Html::style('assets/dist/css/AdminLTE.css') !!}
@@ -114,7 +114,7 @@
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation ">
-                <a class="mdl-navigation__link" href="{{ url('/registro_matricula') }}">Inicio</a>
+                <a class="mdl-navigation__link" href="{{ url('/MisMaterias') }}">Inicio</a>
             </nav>
         </div>
     </header>
@@ -124,18 +124,18 @@
         </a> <br> <br>
         <span class="mdl-layout-title">San Juan Bautista</span>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+            <a class="mdl-navigation__link" href="{{url('/MisMaterias')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                      role="presentation">home</i>Inicio</a>
             <a class="mdl-navigation__link" href="{{url('/formulario')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                                        role="presentation">note_add</i>Nueva Matrícula</a>
+                                                                             role="presentation">note_add</i>Nueva Matrícula</a>
             <a class="mdl-navigation__link" href="{{url('/registro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                        role="presentation">description</i>Registro de Matrículas</a>
+                                                                           role="presentation">description</i>Registro de Matrículas</a>
             <a class="mdl-navigation__link" href="{{ url('/listado_padres') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                                     role="presentation">supervisor_account</i>Listado de Padres</a>
+                                                                                   role="presentation">supervisor_account</i>Listado de Padres</a>
             <a class="mdl-navigation__link" href="{{url('/noticias')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                            role="presentation">create</i>Sección Noticias</a>
             <a class="mdl-navigation__link" href="../logout"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                                     role="presentation">input</i>Cerrar Sesión</a>
+                                                                role="presentation">input</i>Cerrar Sesión</a>
         </nav>
 
         <hr class="featurette-divider">

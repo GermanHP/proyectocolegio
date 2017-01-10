@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestInsertarMaestro;
+use App\Models\Estudiante;
 use App\Models\Grado;
 use App\Models\Gradoseccion;
 use App\Models\Maestro;
@@ -156,5 +157,21 @@ class MaestrosController extends Controller
 
         flash('Responsable de la materia eliminado','warning');
         return redirect()->back();
+    }
+
+    public function  ResetearContraseñaAlumno($id){
+        $estudiante = Estudiante::find($id);
+        $estudiante->user->fill([
+           'password'=>bcrypt($estudiante->Carnet)
+        ]);
+        $estudiante->user->save();
+        flash('Contraseña Reiniciada exitosamente','info');
+        return redirect()->back();
+    }
+
+    public function MisMaterias(){
+
+        $usuario = User::find(\Auth::user()->id);
+        return view('Maestros.MateriasImpartidas',compact('usuario'));
     }
 }

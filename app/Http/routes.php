@@ -85,6 +85,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/materias_impartidas', 'TeachersController@materiasImpartidas');
     Route::get('/ingresar_materias', 'TeachersController@ingresarMateria');
     Route::get('/ingresar_grado', 'TeachersController@ingresarGrados');
+
+
+    Route::get('ResetearContraseñaAlumno/{id}','MaestrosController@ResetearContraseñaAlumno')->name('ResetearPassword.Alumno');
+    Route::get('MisMaterias','MaestrosController@MisMaterias')->name('MisMaterias.Maestro');
+
     });
 });
 

@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'comentario.csjb@gmail.com', 'name' => 'Colegio San Juan Bautista'],
 
     /*
     |--------------------------------------------------------------------------
