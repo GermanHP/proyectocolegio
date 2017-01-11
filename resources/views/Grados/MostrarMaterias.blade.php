@@ -9,6 +9,8 @@
 
 
         {!!link_to_route('Materias.NuevoHorario', $title = 'Asignar Horarios', $parameters = $grado->id, $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+        {!!link_to_route('ImpartirMateria.View', $title = 'Impartir Materia', $parameters = $grado->id, $attributes = ['class'=>'btn btn-warning','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+
         <table class="table table-striped" id="matriculados">
             <thead>
             <tr>

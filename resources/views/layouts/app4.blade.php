@@ -139,8 +139,6 @@
                                                                                  role="presentation">supervisor_account</i>Listado de Materias</a>
                 <a class="mdl-navigation__link" href="{{ url('/MostrarMaestros') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                         role="presentation">supervisor_account</i>Listado de Maestros</a>
-                <a class="mdl-navigation__link" href="{{ url('/ImpartirMateria') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                                                        role="presentation">supervisor_account</i>Impartir Materias</a>
                 <a class="mdl-navigation__link" href="{{url('/NuevaMateria')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                    role="presentation">create</i>Nueva Materia</a>
                 <a class="mdl-navigation__link" href="{{url('/MaestroGrado')}}"><i class="mdl-color-text--blue-grey-400 material-icons"

@@ -48,11 +48,12 @@ class MateriasController extends Controller
 
     }
 
-    public function ImpartirMateria(Request $request){
+    public function ImpartirMateria($id){
         $materias = Materia::orderBy('nombre', 'ASC')->lists('nombre', 'id');
         $gradoSeccion = DB::table('gradoseccion')
             ->join('grados', 'grados.id', '=', 'gradoseccion.idGrado')
             ->join('seccion', 'seccion.id', '=', 'gradoseccion.idSeccion')
+            ->where('gradoseccion.id','=',$id)
             ->select('gradoseccion.id', DB::raw('concat(grados.nombre, " ", seccion.Nombre ) as nombre'))
             ->whereNull('gradoseccion.deleted_at')->lists('nombre', 'id');
 

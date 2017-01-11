@@ -60,7 +60,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('InsertarMateria','MateriasController@InsertMateria')->name('Materia.Insertar');
     Route::get('Materias','MateriasController@MostrarMaterias');
     Route::get('EliminarMateria/{id}','MateriasController@EliminarMateria')->name('Materia.Eliminar');
-    Route::get('ImpartirMateria','MateriasController@ImpartirMateria');
+    Route::get('ImpartirMateria/{id}','MateriasController@ImpartirMateria')->name('ImpartirMateria.View');
     Route::post('InsertarImpartirMateria','MateriasController@InsertImpartirMateria')->name('Materia.InsertarImpartir');
 
     Route::get('NuevoHorario/{id}','MateriasController@NuevoHorario')->name('Materias.NuevoHorario');

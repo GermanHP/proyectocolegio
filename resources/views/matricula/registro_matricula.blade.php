@@ -2,7 +2,10 @@
 @section('content')
          <div class="container panel panel-body">
         <h3>Registro de Alumnos</h3>
-            <h2>{{$grado->grado->nombre}} {{$grado->seccion->nombre}} </h2>
+
+            @if(isset($grado))<h2>
+                {{$grado->grado->nombre}} {{$grado->seccion->nombre}} </h2>
+             @endif
             <table class="table table-striped" id="matriculados">
                 <thead>
                 <tr>
