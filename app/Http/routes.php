@@ -86,7 +86,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/ingresar_materias', 'TeachersController@ingresarMateria');
     Route::get('/ingresar_grado', 'TeachersController@ingresarGrados');
 
-    Route::get('CambiarContraseña','InscriptionController@CambiarPassowrd')->name('cambiar.Password');
+    Route::get('/CambiarPassword','InscriptionController@CambiarPassowrd')->name('cambiar.Password');
     Route::post('CambiarCotraseñaUpdate','InscriptionController@PasswordNuevo')->name('cambiar.Password.Nuevo');
     Route::get('ResetearContraseñaAlumno/{id}','MaestrosController@ResetearContraseñaAlumno')->name('ResetearPassword.Alumno');
     Route::get('MisMaterias','MaestrosController@MisMaterias')->name('MisMaterias.Maestro');

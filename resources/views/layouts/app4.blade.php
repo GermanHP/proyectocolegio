@@ -163,7 +163,9 @@
                 @endif
 
 
-            <a class="mdl-navigation__link" href="../logout"><i class="mdl-color-text--blue-grey-400 material-icons"
+            <a class="mdl-navigation__link" href="{{url('/CambiarPassword')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                     role="presentation">input</i>Cambiar Contraseña</a>
+                <a class="mdl-navigation__link" href="../logout"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                      role="presentation">input</i>Cerrar Sesión</a>
         </nav>
 
