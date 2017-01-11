@@ -58,11 +58,18 @@ class AuthController extends Controller
     protected function authenticated($request, $usuario)
     {
 
-                if($usuario->idTipousuario==3){
+                if($usuario->idTipousuario==5){
+                    if($usuario->resetPassword==1){
+                        return redirect()->route('cambiar.Password');
+                    }
                     return redirect()->route('registro.index');
+                }else if($usuario->idTipousuario==3) {
+                    if($usuario->resetPassword==1){
+                        return redirect()->route('cambiar.Password');
+                    }
+                    return redirect()->route('MisMaterias.Maestro');
                 }else{
                     return redirect('/logout');
-
                 }
 
 

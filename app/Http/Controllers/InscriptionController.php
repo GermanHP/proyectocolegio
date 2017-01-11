@@ -686,15 +686,50 @@ class InscriptionController extends Controller
     }
 
     public function registroGrado($id){
+        $grado = Gradoseccion::find($id);
 
         $estudiantes = Estudiante::whereHas('matriculas',function ($query) use ($id){
             $query->where('idGradoSeccion',$id);
         })->get();
 
-        return view('matricula.registro_matricula',compact('estudiantes'));
+        return view('matricula.registro_matricula',compact('estudiantes','grado'));
 
 
 
+    }
+
+    public function CambiarPassowrd(){
+        return view('Maestros.ResetearPassword');
+    }
+
+    public function PasswordNuevo(Request $request){
+        if($request['password']==null || $request['password_confirmation']==null){
+            flash('Contraseña no puede ser un campo vacio','danger');
+            return redirect()->back();
+        }
+        if($request['password']!=$request['password_confirmation']){
+            flash('Contraseñas No coiciden','danger');
+            return redirect()->back();
+        }
+
+        $usuario = User::find(\Auth::user()->id);
+
+        $usuario->fill([
+            'password'=>bcrypt($request['password']),
+            'resetPassword'=>'0'
+        ]);
+
+        $usuario->save();
+
+        if($usuario->idTipousuario==5){
+
+            return redirect()->route('registro.index');
+        }else if($usuario->idTipousuario==3) {
+
+            return redirect()->route('MisMaterias.Maestro');
+        }else{
+            return redirect('/logout');
+        }
     }
 
 }

@@ -171,6 +171,7 @@ class MaestrosController extends Controller
 
     public function MisMaterias(){
 
+        setcookie('MoodleSession','',time()-1000000);
         $usuario = User::find(\Auth::user()->id);
         return view('Maestros.MateriasImpartidas',compact('usuario'));
     }

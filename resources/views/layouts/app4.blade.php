@@ -124,16 +124,45 @@
         </a> <br> <br>
         <span class="mdl-layout-title">San Juan Bautista</span>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                                                     role="presentation">home</i>Inicio</a>
-            <a class="mdl-navigation__link" href="{{url('/formulario')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                                        role="presentation">note_add</i>Nueva Matrícula</a>
-            <a class="mdl-navigation__link" href="{{url('/registro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                        role="presentation">description</i>Registro de Matrículas</a>
-            <a class="mdl-navigation__link" href="{{ url('/listado_padres') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                                     role="presentation">supervisor_account</i>Listado de Padres</a>
-            <a class="mdl-navigation__link" href="{{url('/noticias')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                                           role="presentation">create</i>Sección Noticias</a>
+            @if(Auth::user()->idTipousuario==5)
+                <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                         role="presentation">home</i>Inicio</a>
+                <a class="mdl-navigation__link" href="{{url('/formulario')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                 role="presentation">note_add</i>Nueva Matrícula</a>
+                <a class="mdl-navigation__link" href="{{url('/registro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                               role="presentation">description</i>Registro de Matrículas</a>
+                <a class="mdl-navigation__link" href="{{ url('/listado_padres') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                       role="presentation">supervisor_account</i>Listado de Padres</a>
+                <a class="mdl-navigation__link" href="{{ url('/GradosActivos') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                      role="presentation">supervisor_account</i>Listado de Grados</a>
+                <a class="mdl-navigation__link" href="{{ url('/Materias') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                 role="presentation">supervisor_account</i>Listado de Materias</a>
+                <a class="mdl-navigation__link" href="{{ url('/MostrarMaestros') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                        role="presentation">supervisor_account</i>Listado de Maestros</a>
+                <a class="mdl-navigation__link" href="{{ url('/ImpartirMateria') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                        role="presentation">supervisor_account</i>Impartir Materias</a>
+                <a class="mdl-navigation__link" href="{{url('/NuevaMateria')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                   role="presentation">create</i>Nueva Materia</a>
+                <a class="mdl-navigation__link" href="{{url('/MaestroGrado')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                   role="presentation">create</i>Maestro Resposable</a>
+                @endif
+
+
+                @if(Auth::user()->idTipousuario==3)
+
+                    <a class="mdl-navigation__link" href="{{url('/MisMaterias')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                      role="presentation">home</i>Inicio</a>
+                    <a class="mdl-navigation__link" href="{{url('/formulario')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                     role="presentation">note_add</i>Nueva Matrícula</a>
+                    <a class="mdl-navigation__link" href="{{url('/registro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                   role="presentation">description</i>Registro de Matrículas</a>
+                    <a class="mdl-navigation__link" href="{{ url('/listado_padres') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                           role="presentation">supervisor_account</i>Listado de Padres</a>
+                    <a class="mdl-navigation__link" href="{{url('/noticias')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                   role="presentation">create</i>Sección Noticias</a>
+                @endif
+
+
             <a class="mdl-navigation__link" href="../logout"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                      role="presentation">input</i>Cerrar Sesión</a>
         </nav>

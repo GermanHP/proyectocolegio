@@ -23,8 +23,9 @@
                         <td>{{$grado->grado->nombre}}</td>
                         <td>{{$grado->seccion->nombre}}</td>
                         <td>{{$grado->matriculas->count()}}</td>
-                        <td> {{$grado->maestro->user->nombre}} {{$grado->maestro->user->apellido}} </td>
-
+                        <td>@if($grado->maestro!=null)
+                            {{$grado->maestro->user->nombre}} {{$grado->maestro->user->apellido}} </td>
+                            @endif
                         <td>
 
                             {!!link_to_route('Desactivar.Grado', $title = 'Desactivar Grado', $parameters = $grado->id, $attributes = ['class'=>'btn btn-warning','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}

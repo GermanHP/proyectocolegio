@@ -135,7 +135,7 @@
             </tbody>
         </table>
 
-            <a href="{{url('/registro')}}"><button class="btn btn-danger btn-align">Regresar</button></a>
+            <a href="javascript:history.back()"><button class="btn btn-danger btn-align">Regresar</button></a>
             {!!link_to_route('Actualizar.Estudiante', $title = 'Actualizar', $parameters = $estudiante->id, $attributes = ['class'=>'btn btn-success','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
             {!!link_to_route('ResetearPassword.Alumno', $title = 'Resetear Contraseña', $parameters = $estudiante->id, $attributes = ['class'=>'btn btn-warning','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
         </div>

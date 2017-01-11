@@ -1,4 +1,4 @@
-@extends('layouts.MaestrosAdmin')
+@extends('layouts.app4')
 @section('content')
     <div class="container panel panel-body">
         <h3>{{Auth::user()->nombre}} {{Auth::user()->apellido}}</h3>
@@ -9,7 +9,7 @@
 
         <form action="http://moodle.colegiosjb.net/login/index.php" id="login" method="post">
             <input class="input"  style="display:none" id="username" name="username" type="text" value="{{$usuario->maestros[0]->usuarioMoodle}}" />
-            <input class="input"  style="display:none" id="password" name="password" type="password" value="colegio2017" />
+            <input class="input"  style="display:none" id="password" name="password" type="password" value="{{$usuario->maestros[0]->passwordMoodle}}" />
             {!!Form::submit('Moodle Virtual', ['class'=>'btn btn-primary','name'=>'btnMoodle'])!!}
         </form>
         <table class="table table-striped" id="mestros">

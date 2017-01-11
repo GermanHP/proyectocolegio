@@ -14,6 +14,7 @@ class ColumnaUsuarioMaestroMoodle extends Migration
     {
         Schema::table('maestros', function (Blueprint $table) {
             $table->string('usuarioMoodle')->nullable();
+            $table->string('passwordMoodle')->nullable();
 
         });
     }
@@ -28,6 +29,7 @@ class ColumnaUsuarioMaestroMoodle extends Migration
         Schema::table('maestros', function (Blueprint $table) {
 
             $table->dropColumn('usuarioMoodle');
+            $table->dropColumn('passwordMoodle');
         });
     }
 }

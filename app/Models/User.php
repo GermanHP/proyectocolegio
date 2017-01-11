@@ -9,7 +9,7 @@ class User extends Model {
      */
 
     protected $table = 'users';
-    protected $fillable = ['id', 'nombre', 'apellido', 'genero', 'email', 'password', 'passwordMoodle', 'idTipousuario', 'remember_token', 'deleted_at'];
+    protected $fillable = ['id', 'nombre', 'apellido', 'genero', 'email', 'password', 'passwordMoodle','resetPassword', 'idTipousuario', 'remember_token', 'deleted_at'];
 
 
     public function tipousuario() {

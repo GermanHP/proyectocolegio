@@ -7,7 +7,8 @@
         @include('alertas.flash')
         @include('alertas.errores')
 
-        {!!link_to_route('Maestros.MateriasAsignar', $title = 'Asignar Resposable', $parameters = $grado->id, $attributes = ['class'=>'btn btn-success','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+
+        {!!link_to_route('Materias.NuevoHorario', $title = 'Asignar Horarios', $parameters = $grado->id, $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
         <table class="table table-striped" id="matriculados">
             <thead>
             <tr>
@@ -21,7 +22,16 @@
             @foreach($materias as $materia)
                 <tr>
                     <td>{{$materia->materium->nombre}}</td>
-                    <td>No disponibles</td>
+                    <td>
+                        @if($materia->materiagradohorarios->count()>0)
+                            @foreach($materia->materiagradohorarios as $horarios)
+                                {{$horarios->horasdisponible->horaInicio}} - {{$horarios->horasdisponible->horaFin}} {{$horarios->diasdisponible->nombre}}<br>
+                            @endforeach
+                            @else
+                            Por Asignar
+                            @endif
+
+                    </td>
                     <td>@if(isset($materia->maestro->user))
                             {{$materia->maestro->user->nombre}} {{$materia->maestro->user->apellido}}
                             @else
@@ -31,6 +41,8 @@
                     <td>
                         @if(isset($materia->maestro->user))
                             {!!link_to_route('Desactivar.MaestroResponsable', $title = 'Desactivar Maestro Responsable', $parameters = $materia->id, $attributes = ['class'=>'btn btn-warning','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+                        @else
+                            {!!link_to_route('Maestros.MateriasAsignar', $title = 'Asignar Resposable', $parameters = $grado->id, $attributes = ['class'=>'btn btn-success','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
                         @endif
                     </td>
                 </tr>

@@ -1,8 +1,8 @@
 @extends('layouts.app4')
 @section('content')
          <div class="container panel panel-body">
-        <h3>Registro de Matrículas</h3>
-            <h2># Grado</h2>
+        <h3>Registro de Alumnos</h3>
+            <h2>{{$grado->grado->nombre}} {{$grado->seccion->nombre}} </h2>
             <table class="table table-striped" id="matriculados">
                 <thead>
                 <tr>

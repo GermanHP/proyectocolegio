@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-01-10.
+    * Generated on 2017-01-08.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -56,14 +56,6 @@ namespace PHPSTORM_META {
             'command.models.generate' instanceof \User11001\EloquentModelGenerator\Console\GenerateModelsCommand,
             'Laracasts\Flash\SessionStore' instanceof \Laracasts\Flash\LaravelSessionStore,
             'flash' instanceof \Laracasts\Flash\FlashNotifier,
-            'excel.identifier' instanceof \Maatwebsite\Excel\Classes\FormatIdentifier,
-            'excel.parsers.css' instanceof \Maatwebsite\Excel\Parsers\CssParser,
-            'excel.reader' instanceof \Maatwebsite\Excel\Readers\LaravelExcelReader,
-            'excel.readers.html' instanceof \Maatwebsite\Excel\Readers\Html,
-            'excel.parsers.view' instanceof \Maatwebsite\Excel\Parsers\ViewParser,
-            'phpexcel' instanceof \Maatwebsite\Excel\Classes\PHPExcel,
-            'excel.writer' instanceof \Maatwebsite\Excel\Writers\LaravelExcelWriter,
-            'excel' instanceof \Maatwebsite\Excel\Excel,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
@@ -191,14 +183,6 @@ namespace PHPSTORM_META {
             'command.models.generate' instanceof \User11001\EloquentModelGenerator\Console\GenerateModelsCommand,
             'Laracasts\Flash\SessionStore' instanceof \Laracasts\Flash\LaravelSessionStore,
             'flash' instanceof \Laracasts\Flash\FlashNotifier,
-            'excel.identifier' instanceof \Maatwebsite\Excel\Classes\FormatIdentifier,
-            'excel.parsers.css' instanceof \Maatwebsite\Excel\Parsers\CssParser,
-            'excel.reader' instanceof \Maatwebsite\Excel\Readers\LaravelExcelReader,
-            'excel.readers.html' instanceof \Maatwebsite\Excel\Readers\Html,
-            'excel.parsers.view' instanceof \Maatwebsite\Excel\Parsers\ViewParser,
-            'phpexcel' instanceof \Maatwebsite\Excel\Classes\PHPExcel,
-            'excel.writer' instanceof \Maatwebsite\Excel\Writers\LaravelExcelWriter,
-            'excel' instanceof \Maatwebsite\Excel\Excel,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
@@ -326,14 +310,6 @@ namespace PHPSTORM_META {
             'command.models.generate' instanceof \User11001\EloquentModelGenerator\Console\GenerateModelsCommand,
             'Laracasts\Flash\SessionStore' instanceof \Laracasts\Flash\LaravelSessionStore,
             'flash' instanceof \Laracasts\Flash\FlashNotifier,
-            'excel.identifier' instanceof \Maatwebsite\Excel\Classes\FormatIdentifier,
-            'excel.parsers.css' instanceof \Maatwebsite\Excel\Parsers\CssParser,
-            'excel.reader' instanceof \Maatwebsite\Excel\Readers\LaravelExcelReader,
-            'excel.readers.html' instanceof \Maatwebsite\Excel\Readers\Html,
-            'excel.parsers.view' instanceof \Maatwebsite\Excel\Parsers\ViewParser,
-            'phpexcel' instanceof \Maatwebsite\Excel\Classes\PHPExcel,
-            'excel.writer' instanceof \Maatwebsite\Excel\Writers\LaravelExcelWriter,
-            'excel' instanceof \Maatwebsite\Excel\Excel,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
@@ -461,14 +437,6 @@ namespace PHPSTORM_META {
             'command.models.generate' instanceof \User11001\EloquentModelGenerator\Console\GenerateModelsCommand,
             'Laracasts\Flash\SessionStore' instanceof \Laracasts\Flash\LaravelSessionStore,
             'flash' instanceof \Laracasts\Flash\FlashNotifier,
-            'excel.identifier' instanceof \Maatwebsite\Excel\Classes\FormatIdentifier,
-            'excel.parsers.css' instanceof \Maatwebsite\Excel\Parsers\CssParser,
-            'excel.reader' instanceof \Maatwebsite\Excel\Readers\LaravelExcelReader,
-            'excel.readers.html' instanceof \Maatwebsite\Excel\Readers\Html,
-            'excel.parsers.view' instanceof \Maatwebsite\Excel\Parsers\ViewParser,
-            'phpexcel' instanceof \Maatwebsite\Excel\Classes\PHPExcel,
-            'excel.writer' instanceof \Maatwebsite\Excel\Writers\LaravelExcelWriter,
-            'excel' instanceof \Maatwebsite\Excel\Excel,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
