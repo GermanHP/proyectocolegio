@@ -68,11 +68,11 @@
         {!! Form::select('municipioVivienda',$municipios,145,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipioVivienda',  'style'=>'width: 100%']) !!}
     </div>
 
-    <div class="input-group form-group">
+<!--  <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Padece Alguna Enfermedad: </span>
         <label class="radio-inline">{!! Form::radio('enfermedadRadio','1') !!}Si</label>
         <label class="radio-inline">{!! Form::radio('enfermedadRadio','2', true) !!}No</label>
-    <!--  <span class="input-group-addon" id="nombreEnfermedad">Nombre de la Enfermedad</span>
+     <span class="input-group-addon" id="nombreEnfermedad">Nombre de la Enfermedad</span>
         {{Form::text('nombreEnfermedad',null, ['class'=>'form-control', 'placeholder'=>'Nombre de la enfermedad', 'aria-describedby'=>'basic-addon1'])}}
     </div>
     <div class="input-group form-group">

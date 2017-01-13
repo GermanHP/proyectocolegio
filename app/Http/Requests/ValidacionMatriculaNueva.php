@@ -37,7 +37,7 @@ class ValidacionMatriculaNueva extends Request
             'repeatG'=>'required|numeric|between:1,2',
             'DireccionEstudiante'=>'string',
             'municipioVivienda'=>'required|exists:municipios,id',
-            'enfermedadRadio'=>'required|numeric|between:1,2',
+
 
             'salidaRadio'=>'required|numeric|between:1,2',
             'personaAutorizada'=>'string',
