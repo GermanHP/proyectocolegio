@@ -68,7 +68,7 @@
         {!! Form::select('municipioVivienda',$municipios,145,['class'=>'js-example-basic-single form-control ',"describedby"=>"basic-addon1",'required', 'id'=>'municipioVivienda',  'style'=>'width: 100%']) !!}
     </div>
 
-    <div class="input-group form-group">
+    <!--<div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">Padece Alguna Enfermedad: </span>
         <label class="radio-inline">{!! Form::radio('enfermedadRadio','1') !!}Si</label>
         <label class="radio-inline">{!! Form::radio('enfermedadRadio','2', true) !!}No</label>
@@ -78,7 +78,7 @@
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">¿Posee Tratamiento Médico o Medicamentos?</span>
         {{Form::text('TratamientoEnfermedad',null, ['class'=>'form-control', 'placeholder'=>'Tratamiento/Medicamento', 'aria-describedby'=>'basic-addon1'])}}
-    </div>
+    </div>!-->
     <div class="input-group form-group">
         <span class="input-group-addon" id="basic-addon1">EL/LA ESTUDIANTE SE RETIRA DE LA INSTITUCIÓN A LA HORA DE SALIDA: </span>
         <label class="radio-inline">{!! Form::radio('salidaRadio','1') !!}Solo</label>

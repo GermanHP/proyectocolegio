@@ -1,16 +1,31 @@
 <?php namespace App\Models;
 
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 
-class User extends Model {
+class User extends Model implements AuthenticatableContract,
+    AuthorizableContract,
+    CanResetPasswordContract {
 
     /**
      * Generated
      */
+    public $timestamps = true;
+    use Authenticatable, Authorizable, CanResetPassword, SoftDeletes;
 
     protected $table = 'users';
     protected $fillable = ['id', 'nombre', 'apellido', 'genero', 'email', 'password', 'passwordMoodle','resetPassword', 'idTipousuario', 'remember_token', 'deleted_at'];
+    protected $guarded = [];
 
+    protected $dates = ['deleted_at'];
+
+    protected $hidden = ['password', 'remember_token'];
 
     public function tipousuario() {
         return $this->belongsTo(\App\Models\Tipousuario::class, 'idTipousuario', 'id');

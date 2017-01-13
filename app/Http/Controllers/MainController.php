@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Cookie;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -9,7 +10,9 @@ use App\Http\Requests;
 class MainController extends Controller
 {
     public function home (){
-        return view('main.home');
+        //Borrar Cookie de Moodle
+        //setcookie("MoodleSession", "Todociber", time()-80600, "/", ".colegiosjb.net", 1);
+   return view('main.home');
     }
 
     public function instalacion(){

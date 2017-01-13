@@ -24,6 +24,7 @@ Route::get("/pruebaMoodle",function(){
 
 
 });
+Route::resource('Login','LoginController');
 Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['middleware' => 'PersonalAdministrativo'], function () {

@@ -107,7 +107,12 @@
                 virtual, que es el espacio en donde los miembros de la comunidad educativa pueden obtener acceso a
                 materiales, trabajos, eventos y toda información institucional  referente al grado y sección en el que
                 se ha matriculado.</p>
-            <a class="btn btn-info" href="{{ url('/login') }}" role="button">Ingresar</a>
+                @if(Auth::check())
+                    <a class="btn btn-info" href="{{ url('/MisMaterias') }}" role="button">Ingresar</a>
+                    @else
+                    <a class="btn btn-info" href="{{ url('/login') }}" role="button">Ingresar</a>
+                    @endif
+
             </div>
         </div><!-- /.col-lg-4 -->
 
