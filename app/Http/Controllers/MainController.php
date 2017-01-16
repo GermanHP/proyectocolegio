@@ -30,4 +30,8 @@ class MainController extends Controller
     public function error404(){
         return view('errors.404');
     }
+
+    public function dash_admin(){
+        return view('admin.dash_admin');
+    }
 }

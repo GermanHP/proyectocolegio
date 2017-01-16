@@ -92,7 +92,7 @@
                     </div>
                     <h3>Ana Elizabeth García de Rubio</h3>
                     <h4>Responsable de Primer Grado</h4>
-                    <h5>Profesora en educación básica para primero y segundo ciclo con 6 años de experiencia en
+                    <h5>Licenciada en educación básica para primero y segundo ciclo con 8 años de experiencia en
                     el área de la educación.</h5>
                 </div>
             </div>

@@ -1,6 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.app4')
 @section('content')
-
 
     <div class="panel panel-heading mdl-color--pink-900 container">
 
@@ -12,7 +11,7 @@
 
 
             {!!Form::model($padreDeFamilia, ['route'=>['Update.Padre', $padreDeFamilia->id], 'method'=>'PUT', 'onsubmit'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
-            <div class="container panel panel-body">
+            <div>
                 @include('alertas.errores')
                 @include('alertas.flash')
 
