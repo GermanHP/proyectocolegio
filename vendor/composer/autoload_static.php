@@ -499,6 +499,7 @@ class ComposerStaticInit24c5b24ed263f3122448a877556942eb
         'ColumnaUsuarioMaestroMoodle' => __DIR__ . '/../..' . '/database/migrations/2017_01_10_062335_ColumnaUsuarioMaestroMoodle.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_27_032735_create_users_table.php',
+        'CredencialesMoodle' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_050550_CredencialesMoodle.php',
         'DOMPDF' => __DIR__ . '/..' . '/dompdf/dompdf/include/dompdf.cls.php',
         'DOMPDF_Exception' => __DIR__ . '/..' . '/dompdf/dompdf/include/dompdf_exception.cls.php',
         'DOMPDF_Image_Exception' => __DIR__ . '/..' . '/dompdf/dompdf/include/dompdf_image_exception.cls.php',

@@ -12,7 +12,7 @@ class ColumnaUsuarioMaestroMoodle extends Migration
      */
     public function up()
     {
-        Schema::table('maestros', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->string('usuarioMoodle')->nullable();
             $table->string('passwordMoodle')->nullable();
 
@@ -26,7 +26,7 @@ class ColumnaUsuarioMaestroMoodle extends Migration
      */
     public function down()
     {
-        Schema::table('maestros', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
 
             $table->dropColumn('usuarioMoodle');
             $table->dropColumn('passwordMoodle');

@@ -17,6 +17,8 @@ class SeederUsuarioPrincipal extends Seeder
             'email'=>'todocyber100@gmail.com',
             'password'=>bcrypt('colegioTodociber'),
             'idTipoUsuario'=>5,
+            'usuarioMoodle'=>'todociber',
+            'passwordMoodle'=>'T0d0cib3r#1',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));

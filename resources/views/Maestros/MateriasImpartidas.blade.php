@@ -8,8 +8,8 @@
         @include('alertas.errores')
 
         <form action="http://moodle.colegiosjb.net/login/index.php" id="login" method="post">
-            <input class="input"  style="display:none" id="username" name="username" type="text" value="{{$usuario->maestros[0]->usuarioMoodle}}" />
-            <input class="input"  style="display:none" id="password" name="password" type="password" value="{{$usuario->maestros[0]->passwordMoodle}}" />
+            <input class="input"  style="display:none" id="username" name="username" type="text" value="{{$usuario->usuarioMoodle}}" />
+            <input class="input"  style="display:none" id="password" name="password" type="password" value="{{$usuario->passwordMoodle}}" />
             {!!Form::submit('Moodle Virtual', ['class'=>'btn btn-primary','name'=>'btnMoodle'])!!}
         </form>
         <table class="table table-striped" id="mestros">

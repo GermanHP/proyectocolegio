@@ -160,7 +160,11 @@
                                                                                    role="presentation">create</i>Sección Noticias</a>
                 @endif
 
-
+                <form action="http://moodle.colegiosjb.net/login/index.php" id="login" method="post">
+                    <input class="input"  style="display:none" id="username" name="username" type="text" value="{{Auth::user()->usuarioMoodle}}" />
+                    <input class="input"  style="display:none" id="password" name="password" type="password" value="{{Auth::user()->passwordMoodle}}" />
+                    {!!Form::submit('Moodle Virtual', ['class'=>'mdl-navigation__link','name'=>'btnMoodle'])!!}
+                </form>
             <a class="mdl-navigation__link" href="{{url('/CambiarPassword')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                      role="presentation">input</i>Cambiar Contraseña</a>
                 <a class="mdl-navigation__link" href="../logout"><i class="mdl-color-text--blue-grey-400 material-icons"

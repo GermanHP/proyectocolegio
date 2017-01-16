@@ -17,7 +17,7 @@ class Maestro extends Model {
      */
     protected $dates = ['deleted_at'];
     protected $table = 'maestros';
-    protected $fillable = ['id', 'titulo', 'descripcion', 'foto', 'idUsuario','usuarioMoodle','passwordMoodle', 'deleted_at'];
+    protected $fillable = ['id', 'titulo', 'descripcion', 'foto', 'idUsuario', 'deleted_at'];
 
 
     public function user() {

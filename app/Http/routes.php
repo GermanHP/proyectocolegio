@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use App\Models\User;
 use App\Utilities\MoodleEngine;
 
 
@@ -23,6 +24,42 @@ Route::get("/pruebaMoodle",function(){
    return  $moodle->addStudent('');
 
 
+});
+
+Route::get('ActualizarEstudiantes',function(){
+   $usuarios = User::all();
+    $contador=0;
+   foreach ($usuarios as $estudiante){
+
+       if($estudiante->idTipousuario==1){
+           $contador++;
+           $estudiante->fill([
+               'usuarioMoodle'=>$estudiante->estudiantes[0]->Carnet,
+               'passwordMoodle'=>$estudiante->created_at,
+           ]);
+           $estudiante->save();
+       }
+   }
+   echo $contador;
+});
+
+Route::get('ActualizarPadres',function(){
+   $usuarios = User::all();
+    $contador=0;
+   foreach ($usuarios as $estudiante){
+
+       if($estudiante->idTipousuario==2){
+           $usergenetator = new \App\Utilities\GenerarToken();
+
+           $contador++;
+           $estudiante->fill([
+               'usuarioMoodle'=>$usergenetator->usergenerator(),
+               'passwordMoodle'=>$estudiante->created_at,
+           ]);
+           $estudiante->save();
+       }
+   }
+   echo $contador;
 });
 Route::resource('Login','LoginController');
 Route::group(['middleware' => 'auth'], function () {

@@ -36,6 +36,6 @@ class MateriasGrados extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('materiagrado');
     }
 }
