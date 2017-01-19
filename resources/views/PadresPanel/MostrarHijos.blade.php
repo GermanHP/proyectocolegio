@@ -2,7 +2,13 @@
 @section('content')
     <div class="container panel panel-body">
         <h3>Registro de Hijos</h3>
-        <h2>Bienvenido {{Auth::user()->nombre}} {{Auth::user()->apellido}}</h2>
+
+        @if(Auth::user()->genero == 1)
+            <h2>Bienvenido {{Auth::user()->nombre}} {{Auth::user()->apellido}}</h2>
+            @else
+            <h2>Bienvenida {{Auth::user()->nombre}} {{Auth::user()->apellido}}</h2>
+            @endif
+
 
         @include('alertas.flash')
         @include('alertas.errores')
