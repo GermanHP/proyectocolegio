@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AlumnosMiddleware;
+use App\Http\Middleware\PadresMiddleware;
 use App\Http\Middleware\UsuariosMaestrosYAdmin;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -51,5 +53,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'PersonalAdministrativo'=>UsuariosMaestrosYAdmin::class,
+        'AlumnosMiddleware'=>AlumnosMiddleware::class,
+        'PadresDeFamiliaMiddleware'=>PadresMiddleware::class,
     ];
 }

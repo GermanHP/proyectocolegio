@@ -1,7 +1,7 @@
-@extends('layouts.app5')
+@extends('layouts.app6')
 @section('content')
     <div class="container panel panel-body">
-        <h3>Registro de Materias</h3>
+        <h3>Registro de Hijos</h3>
         <h2>Bienvenido {{Auth::user()->nombre}} {{Auth::user()->apellido}}</h2>
 
         @include('alertas.flash')
@@ -15,21 +15,23 @@
             <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Horarios</th>
+                <th>Grado</th>
                 <th>Maestro Encargado</th>
-
                 <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($materias as $materia)
+            @foreach($hijos as $hijo)
                 <tr>
-                    <td>{{$materia->materium->nombre}}</td>
-                    <td>@foreach($materia->materiagradohorarios as $horario)
-                    {{$horario->diasdisponible->nombre}} {{$horario->horasdisponible->horaInicio}} - {{$horario->horasdisponible->horaFin}}
-                    @endforeach</td>
-                    <td>{{$materia->maestro->user->nombre}} {{$materia->maestro->user->apellido}}</td>
+                    <td>{{$hijo->estudiante->user->nombre}} {{$hijo->estudiante->user->apellido}}</td>
+                    <td>
+                        {{$hijo->estudiante->matriculas[0]->gradoseccion->grado->nombre}} {{$hijo->estudiante->matriculas[0]->gradoseccion->seccion->nombre}}
 
+                    </td>
+                    <td>
+                        @if($hijo->estudiante->matriculas[0]->gradoseccion->maestro!=null)
+                            {{$hijo->estudiante->matriculas[0]->gradoseccion->maestro->user->nombre}} {{$hijo->estudiante->matriculas[0]->gradoseccion->maestro->user->apellido}}</td>
+                        @endif
                     <td>
 
                         Notas... Proximamente

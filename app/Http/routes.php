@@ -63,7 +63,7 @@ Route::get('ActualizarPadres',function(){
 });
 Route::resource('Login','LoginController');
 Route::group(['middleware' => 'auth'], function () {
-
+    //Rutas de Maestros y Personal Administrativo
     Route::group(['middleware' => 'PersonalAdministrativo'], function () {
     //------Matriculas--//
 
@@ -130,6 +130,26 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('MisMaterias','MaestrosController@MisMaterias')->name('MisMaterias.Maestro');
 
     });
+
+
+
+
+    //Rutas para Alumno
+    Route::group(['middleware' => 'AlumnosMiddleware'], function () {
+
+        Route::get('MisAsignaturas','AlumnoController@MisClases')->name('Alumno.MisClases');
+    });
+
+
+    //Rutas para Padres de Familia
+    Route::group(['middleware' => 'PadresDeFamiliaMiddleware'], function () {
+    Route::get('MisHijos','PadresPanelController@Hijos')->name('Padres.MisHijos');
+
+    });
+    //Rutas Comunes para todos los Usuarios
+
+    Route::get('/CambiarPassword','InscriptionController@CambiarPassowrd')->name('cambiar.Password');
+    Route::post('CambiarCotraseñaUpdate','InscriptionController@PasswordNuevo')->name('cambiar.Password.Nuevo');
 });
 
 

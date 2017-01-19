@@ -68,8 +68,18 @@ class AuthController extends Controller
                         return redirect()->route('cambiar.Password');
                     }
                     return redirect()->route('MisMaterias.Maestro');
+                }else if($usuario->idTipousuario==1) {
+                    if($usuario->resetPassword==1){
+                        return redirect()->route('cambiar.Password');
+                    }
+                    return redirect()->route('Alumno.MisClases');
+                }else if($usuario->idTipousuario==2) {
+                    if($usuario->resetPassword==1){
+                        return redirect()->route('cambiar.Password');
+                    }
+                    return redirect()->route('Padres.MisHijos');
                 }else{
-                    return redirect('/logout');
+                   return redirect('/logout');
                 }
 
 
