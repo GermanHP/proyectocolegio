@@ -144,6 +144,7 @@ Route::group(['middleware' => 'auth'], function () {
     //Rutas para Padres de Familia
     Route::group(['middleware' => 'PadresDeFamiliaMiddleware'], function () {
     Route::get('MisHijos','PadresPanelController@Hijos')->name('Padres.MisHijos');
+    Route::get('MateriasPorHIjo/{id}','PadresPanelController@MateriasHijo')->name('Padres.MateriasHijos');
 
     });
     //Rutas Comunes para todos los Usuarios

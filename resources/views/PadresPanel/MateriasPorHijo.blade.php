@@ -1,7 +1,7 @@
 @extends('layouts.app6')
 @section('content')
     <div class="container panel panel-body">
-        <h3>Registro de Hijos</h3>
+        <h3>Materias de {{$estudiante->user->nombre}} {{$estudiante->user->apellido}}</h3>
         <h2>Bienvenido {{Auth::user()->nombre}} {{Auth::user()->apellido}}</h2>
 
         @include('alertas.flash')
@@ -15,26 +15,24 @@
             <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Grado</th>
+                <th>Horarios</th>
                 <th>Maestro Encargado</th>
+
                 <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($hijos as $hijo)
+            @foreach($materias as $materia)
                 <tr>
-                    <td>{{$hijo->estudiante->user->nombre}} {{$hijo->estudiante->user->apellido}}</td>
-                    <td>
-                        {{$hijo->estudiante->matriculas[0]->gradoseccion->grado->nombre}} {{$hijo->estudiante->matriculas[0]->gradoseccion->seccion->nombre}}
+                    <td>{{$materia->materium->nombre}}</td>
+                    <td>@foreach($materia->materiagradohorarios as $horario)
+                            {{$horario->diasdisponible->nombre}} {{$horario->horasdisponible->horaInicio}} - {{$horario->horasdisponible->horaFin}}
+                        @endforeach</td>
+                    <td>{{$materia->maestro->user->nombre}} {{$materia->maestro->user->apellido}}</td>
 
-                    </td>
-                    <td>
-                        @if($hijo->estudiante->matriculas[0]->gradoseccion->maestro!=null)
-                            {{$hijo->estudiante->matriculas[0]->gradoseccion->maestro->user->nombre}} {{$hijo->estudiante->matriculas[0]->gradoseccion->maestro->user->apellido}}</td>
-                        @endif
                     <td>
 
-                        {!!link_to_route('Padres.MateriasHijos', $title = 'Materias Inscritas',  $hijo->estudiante->id, $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+                        Notas... Proximamente
 
                     </td>
                 </tr>
