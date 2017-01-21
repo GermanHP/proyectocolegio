@@ -159,6 +159,26 @@
                     <a class="mdl-navigation__link" href="{{url('/noticias')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                    role="presentation">create</i>Sección Noticias</a>
                 @endif
+                @if(Auth::user()->id==18)
+                    <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                             role="presentation">home</i>Inicio</a>
+                    <a class="mdl-navigation__link" href="{{url('/formulario')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                     role="presentation">note_add</i>Nueva Matrícula</a>
+                    <a class="mdl-navigation__link" href="{{url('/registro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                   role="presentation">description</i>Registro de Matrículas</a>
+                    <a class="mdl-navigation__link" href="{{ url('/listado_padres') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                           role="presentation">supervisor_account</i>Listado de Padres</a>
+                    <a class="mdl-navigation__link" href="{{ url('/GradosActivos') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                          role="presentation">supervisor_account</i>Listado de Grados</a>
+                    <a class="mdl-navigation__link" href="{{ url('/Materias') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                     role="presentation">supervisor_account</i>Listado de Materias</a>
+                    <a class="mdl-navigation__link" href="{{ url('/MostrarMaestros') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                            role="presentation">supervisor_account</i>Listado de Maestros</a>
+                    <a class="mdl-navigation__link" href="{{url('/NuevaMateria')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                       role="presentation">create</i>Nueva Materia</a>
+                    <a class="mdl-navigation__link" href="{{url('/MaestroGrado')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                       role="presentation">create</i>Maestro Resposable</a>
+                    @endif
 
                 <form action="http://moodle.colegiosjb.net/login/index.php" id="login" method="post">
                     <input class="input"  style="display:none" id="username" name="username" type="text" value="{{Auth::user()->usuarioMoodle}}" />
