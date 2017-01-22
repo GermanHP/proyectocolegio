@@ -33,9 +33,10 @@ Route::get('ActualizarEstudiantes',function(){
 
        if($estudiante->idTipousuario==1){
            $contador++;
+           $usergenetator = new \App\Utilities\GenerarToken();
            $estudiante->fill([
-               'usuarioMoodle'=>$estudiante->estudiantes[0]->Carnet,
-               'passwordMoodle'=>$estudiante->created_at,
+               'usuarioMoodle'=>$usergenetator->usergenerator(),
+               'passwordMoodle'=>$usergenetator->usergenerator(),
            ]);
            $estudiante->save();
        }
@@ -46,17 +47,17 @@ Route::get('ActualizarEstudiantes',function(){
 Route::get('ActualizarPadres',function(){
    $usuarios = User::all();
     $contador=0;
-   foreach ($usuarios as $estudiante){
+   foreach ($usuarios as $padre){
 
-       if($estudiante->idTipousuario==2){
+       if($padre->idTipousuario==2){
            $usergenetator = new \App\Utilities\GenerarToken();
 
            $contador++;
-           $estudiante->fill([
+           $padre->fill([
                'usuarioMoodle'=>$usergenetator->usergenerator(),
-               'passwordMoodle'=>$estudiante->created_at,
+               'passwordMoodle'=>$usergenetator->usergenerator(),
            ]);
-           $estudiante->save();
+           $padre->save();
        }
    }
    echo $contador;
