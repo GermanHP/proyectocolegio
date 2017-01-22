@@ -26,47 +26,78 @@ Route::get("/pruebaMoodle",function(){
 
 });
 
-Route::get('ActualizarEstudiantes',function(){
-   $usuarios = User::all();
-    $contador=0;
-   foreach ($usuarios as $estudiante){
 
-       if($estudiante->idTipousuario==1){
-           $contador++;
-           $usergenetator = new \App\Utilities\GenerarToken();
-           $estudiante->fill([
-               'usuarioMoodle'=>$usergenetator->usergenerator(),
-               'passwordMoodle'=>$usergenetator->usergenerator(),
-           ]);
-           $estudiante->save();
-       }
-   }
-   echo $contador;
-});
-
-Route::get('ActualizarPadres',function(){
-   $usuarios = User::all();
-    $contador=0;
-   foreach ($usuarios as $padre){
-
-       if($padre->idTipousuario==2){
-           $usergenetator = new \App\Utilities\GenerarToken();
-
-           $contador++;
-           $padre->fill([
-               'usuarioMoodle'=>$usergenetator->usergenerator(),
-               'passwordMoodle'=>$usergenetator->usergenerator(),
-           ]);
-           $padre->save();
-       }
-   }
-   echo $contador;
-});
 Route::resource('Login','LoginController');
 Route::group(['middleware' => 'auth'], function () {
     //Rutas de Maestros y Personal Administrativo
     Route::group(['middleware' => 'PersonalAdministrativo'], function () {
     //------Matriculas--//
+        Route::get('ActualizarEstudiantes',function(){
+            $usuarios = User::all();
+            $contador=0;
+            foreach ($usuarios as $estudiante){
+
+                if($estudiante->idTipousuario==1){
+                    $contador++;
+                    $usergenetator = new \App\Utilities\GenerarToken();
+                    $estudiante->fill([
+                        'usuarioMoodle'=>$usergenetator->usergenerator(),
+                        'passwordMoodle'=>$usergenetator->usergenerator(),
+                    ]);
+                    $estudiante->save();
+                }
+            }
+            echo $contador;
+        });
+
+        Route::get('ActualizarPadres',function(){
+            $usuarios = User::all();
+            $contador=0;
+            foreach ($usuarios as $padre){
+
+                if($padre->idTipousuario==2){
+                    $usergenetator = new \App\Utilities\GenerarToken();
+
+                    $contador++;
+                    $padre->fill([
+                        'usuarioMoodle'=>$usergenetator->usergenerator(),
+                        'passwordMoodle'=>$usergenetator->usergenerator(),
+                    ]);
+                    $padre->save();
+                }
+            }
+            echo $contador;
+        });
+        Route::get('DataEstudiantes/{id}',function ($id){
+            $grado = \App\Models\Gradoseccion::find($id);
+            echo '<h1> Alumnos de '.$grado->grado->nombre.' '.$grado->seccion->nombre.'</h1><br>';
+            echo 'UsuarioMoodle<br>';
+            foreach ($grado->matriculas as $matricula){
+                echo $matricula->estudiante->user->usuarioMoodle.'<br>';
+
+            }
+            echo '<br>';
+            echo 'PasswordMoodle<br>';
+            foreach ($grado->matriculas as $matricula){
+                echo $matricula->estudiante->user->passwordMoodle.'<br>';
+
+            }echo '<br>';
+            echo 'Nombres<br>';
+            foreach ($grado->matriculas as $matricula){
+                echo $matricula->estudiante->user->nombre.'<br>';
+
+            }echo '<br>';
+            echo 'Apellidos<br>';
+            foreach ($grado->matriculas as $matricula){
+                echo $matricula->estudiante->user->apellido.'<br>';
+
+            }echo '<br>';
+            echo 'Email<br>';
+            foreach ($grado->matriculas as $matricula){
+                echo $matricula->estudiante->user->email.'<br>';
+
+            }
+        });
 
     Route::get('/formulario', 'InscriptionController@formulary');
     Route::post('/formulario', 'InscriptionController@registrarEstudiante')->name('Registrar.Estudiante');
@@ -114,7 +145,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('UpdateMaestro/{id}','MaestrosController@UpdateMaestro')->name('Maestro.Update');
     Route::get('EliminarMaestro/{id}','MaestrosController@EliminarMaestro')->name('Maestro.Delete');
 
-    Route::get('MaestroGrado','MaestrosCOntroller@MaestroGrado')->name('Maestros.Grados');
+    Route::get('MaestroGrado','MaestrosController@MaestroGrado')->name('Maestros.Grados');
     Route::post('InsertMaestroGrado','MaestrosController@InsertMaestroGrado')->name('Maestros.Grado.Insert');
     Route::get('MaestroMateria/{id}','MaestrosController@MaestroMateria')->name('Maestros.MateriasAsignar');
     Route::put('InsertMaestroMateria','MaestrosController@InsertMaestroMateria')->name('Maestros.MateriasInsert');
