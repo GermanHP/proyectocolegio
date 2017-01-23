@@ -13,11 +13,11 @@ class Telefono extends Model {
 
 
     public function tipotelefono() {
-        return $this->belongsTo('App\Models\Tipotelefono', 'idTipoTelefono', 'id');
+        return $this->belongsTo(\App\Models\Tipotelefono::class, 'idTipoTelefono', 'id');
     }
 
     public function user() {
-        return $this->belongsTo('App\Models\User', 'idUsuario', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'idUsuario', 'id');
     }
 
 

@@ -13,7 +13,7 @@ class Oficio extends Model {
 
 
     public function padredefamilia() {
-        return $this->hasMany('App\Models\Padredefamilium', 'idOficio', 'id');
+        return $this->hasMany(\App\Models\Padredefamilium::class, 'idOficio', 'id');
     }
 
 

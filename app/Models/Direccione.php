@@ -13,15 +13,15 @@ class Direccione extends Model {
 
 
     public function municipio() {
-        return $this->belongsTo('App\Models\Municipio', 'idMunicipio', 'id');
+        return $this->belongsTo(\App\Models\Municipio::class, 'idMunicipio', 'id');
     }
 
     public function tipodireccion() {
-        return $this->belongsTo('App\Models\Tipodireccion', 'idTipoDireccion', 'id');
+        return $this->belongsTo(\App\Models\Tipodireccion::class, 'idTipoDireccion', 'id');
     }
 
     public function user() {
-        return $this->belongsTo('App\Models\User', 'idUsuario', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'idUsuario', 'id');
     }
 
 

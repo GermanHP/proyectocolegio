@@ -13,11 +13,11 @@ class Matriculadocumento extends Model {
 
 
     public function documento() {
-        return $this->belongsTo('App\Models\Documento', 'idDocumento', 'id');
+        return $this->belongsTo(\App\Models\Documento::class, 'idDocumento', 'id');
     }
 
     public function matricula() {
-        return $this->belongsTo('App\Models\Matricula', 'idMatricula', 'id');
+        return $this->belongsTo(\App\Models\Matricula::class, 'idMatricula', 'id');
     }
 
 

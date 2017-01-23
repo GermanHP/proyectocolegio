@@ -13,11 +13,11 @@ class Historicoestudiante extends Model {
 
 
     public function grado() {
-        return $this->belongsTo('App\Models\Grado', 'GradoAnterior', 'id');
+        return $this->belongsTo(\App\Models\Grado::class, 'GradoAnterior', 'id');
     }
 
     public function estudiante() {
-        return $this->belongsTo('App\Models\Estudiante', 'idEstudiante', 'id');
+        return $this->belongsTo(\App\Models\Estudiante::class, 'idEstudiante', 'id');
     }
 
 

@@ -37,7 +37,7 @@ class ValidacionMatriculaNueva extends Request
             'repeatG'=>'required|numeric|between:1,2',
             'DireccionEstudiante'=>'string',
             'municipioVivienda'=>'required|exists:municipios,id',
-            'enfermedadRadio'=>'required|numeric|between:1,2',
+
 
             'salidaRadio'=>'required|numeric|between:1,2',
             'personaAutorizada'=>'string',
@@ -60,7 +60,7 @@ class ValidacionMatriculaNueva extends Request
             'telefonoTrabajoPadre'=>'numeric|digits:8|min:0|integer',
             'municipioTrabajoPadre'=>'exists:municipios,id',
             'DirecciónPadre'=>'string',
-            'sacramentosPadre'=>'array|exists:sacramento,id',
+            'sacramentoPadre'=>'array|exists:sacramento,id',
             'estadoCivilPadre'=>'exists:estadocivil,id',
 
 
@@ -74,7 +74,7 @@ class ValidacionMatriculaNueva extends Request
             'telefonoMadre'=>'numeric|digits:8|min:0|integer',
             'municipioTrabajoMadre'=>'exists:municipios,id',
             'DirecciónMadre'=>'string',
-            'sacramentosMadre'=>'array|exists:sacramento,id',
+            'sacramentoMadre'=>'array|exists:sacramento,id',
             'estadoCivilMadre'=>'exists:estadocivil,id',
 
 
@@ -88,7 +88,7 @@ class ValidacionMatriculaNueva extends Request
             'telefonoTrabajoResponsable'=>'numeric|digits:8|min:0|integer',
             'municipioTrabajoResponsable'=>'exists:municipios,id',
             'DireccionTrabajoResponsable'=>'string',
-            'sacramentosResponsable'=>'array|exists:sacramento,id',
+            'sacramentoResponsable'=>'array|exists:sacramento,id',
             'estadoCivilResponsable'=>'exists:estadocivil,id',
 
 

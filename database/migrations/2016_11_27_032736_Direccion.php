@@ -12,13 +12,13 @@ class Direccion extends Migration
      */
     public function up()
     {
-        Schema::create('Direcciones', function (Blueprint $table) {
+        Schema::create('direcciones', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('detalle', 50);
+            $table->string('detalle', 250);
             $table->integer('idMunicipio')->unsigned();
-            $table->foreign('idMunicipio') ->references('id')->on('Municipios');
+            $table->foreign('idMunicipio') ->references('id')->on('municipios');
             $table->integer('idTipoDireccion')->unsigned();
-            $table->foreign('idTipoDireccion') ->references('id')->on('TipoDireccion');
+            $table->foreign('idTipoDireccion') ->references('id')->on('tipodireccion');
             $table->integer('idUsuario')->unsigned();
             $table->foreign('idUsuario') ->references('id')->on('users');
             $table->timestamps();
@@ -33,6 +33,6 @@ class Direccion extends Migration
      */
     public function down()
     {
-        Schema::drop('Direcciones');
+        Schema::drop('direcciones');
     }
 }

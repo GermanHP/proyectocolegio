@@ -12,7 +12,7 @@ class PadreDeFamilia extends Migration
      */
     public function up()
     {
-        Schema::create('PadreDeFamilia', function (Blueprint $table) {
+        Schema::create('padredefamilia', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fechaNacimiento');
             $table->string('DUI',10);
@@ -20,11 +20,11 @@ class PadreDeFamilia extends Migration
             $table->integer('idUsuario')->unsigned();
             $table->foreign('idUsuario') ->references('id')->on('users');
             $table->integer('idOficio')->unsigned();
-            $table->foreign('idOficio') ->references('id')->on('Oficios');
+            $table->foreign('idOficio') ->references('id')->on('oficios');
             $table->integer('idTipoPadre')->unsigned();
-            $table->foreign('idTipoPadre') ->references('id')->on('TipoPadre');
+            $table->foreign('idTipoPadre') ->references('id')->on('tipopadre');
             $table->integer('idEstadoCivil')->unsigned();
-            $table->foreign('idEstadoCivil') ->references('id')->on('EstadoCivil');
+            $table->foreign('idEstadoCivil') ->references('id')->on('estadocivil');
 
             $table->timestamps();
             $table->softDeletes();
@@ -38,6 +38,6 @@ class PadreDeFamilia extends Migration
      */
     public function down()
     {
-        Schema::drop('PadreDeFamilia');
+        Schema::drop('padredefamilia');
     }
 }

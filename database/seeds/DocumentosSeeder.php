@@ -11,22 +11,22 @@ class DocumentosSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Documentos')->insert(array(
+        DB::table('documentos')->insert(array(
             'nombre' => 'Partida de Nacimiento Original',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
-        DB::table('Documentos')->insert(array(
+        DB::table('documentos')->insert(array(
             'nombre' => 'Certificado de Último Grado Aprobado',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
-        DB::table('Documentos')->insert(array(
+        DB::table('documentos')->insert(array(
             'nombre' => 'Fotocopia de los Padres o Responsable',
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));
-        DB::table('Documentos')->insert(array(
+        DB::table('documentos')->insert(array(
             'nombre' => '2 Fotografías Recientes',
             'created_at' => new DateTime,
             'updated_at' => new DateTime

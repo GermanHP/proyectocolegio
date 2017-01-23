@@ -12,7 +12,7 @@ class Seccion extends Migration
      */
     public function up()
     {
-        Schema::create('Seccion', function (Blueprint $table) {
+        Schema::create('seccion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre', 50);
             $table->timestamps();
@@ -27,6 +27,6 @@ class Seccion extends Migration
      */
     public function down()
     {
-        Schema::drop('Seccion');
+        Schema::drop('seccion');
     }
 }

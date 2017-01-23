@@ -12,7 +12,7 @@ class TipoPadre extends Migration
      */
     public function up()
     {
-        Schema::create('TipoPadre', function (Blueprint $table) {
+        Schema::create('tipopadre', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tipo', 50);
             $table->timestamps();
@@ -27,6 +27,6 @@ class TipoPadre extends Migration
      */
     public function down()
     {
-        Schema::drop('TipoPadre');
+        Schema::drop('tipopadre');
     }
 }

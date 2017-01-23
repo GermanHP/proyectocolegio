@@ -13,11 +13,11 @@ class Tipotelefono extends Model {
 
 
     public function users() {
-        return $this->belongsToMany('App\Models\User', 'telefonos', 'idTipoTelefono', 'idUsuario');
+        return $this->belongsToMany(\App\Models\User::class, 'telefonos', 'idTipoTelefono', 'idUsuario');
     }
 
     public function telefonos() {
-        return $this->hasMany('App\Models\Telefono', 'idTipoTelefono', 'id');
+        return $this->hasMany(\App\Models\Telefono::class, 'idTipoTelefono', 'id');
     }
 
 

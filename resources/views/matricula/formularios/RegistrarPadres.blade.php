@@ -54,10 +54,11 @@
     <div class="input-group form-group">
         <label class="radio-inline">{!! Form::radio('estadoCivilPadre','1') !!}Soltero</label>
         <label class="radio-inline">{!! Form::radio('estadoCivilPadre','2', true) !!}Casado</label>
-        <label class="radio-inline">{!! Form::radio('estadiCivilpadre','3') !!}Divorciado</label>
+        <label class="radio-inline">{!! Form::radio('estadoCivilPadre','3') !!}Divorciado</label>
         <label class="radio-inline">{!! Form::radio('estadoCivilPadre','4') !!}Viudo</label>
         <label class="radio-inline">{!! Form::radio('estadoCivilPadre','5') !!}Acompañado</label>
     </div>
+
     <h3>Datos de la Madre</h3>
     <div class="input-group form-group">
         {{Form::label('Nombres',null,['class'=>'input-group-addon'])}}
@@ -111,7 +112,7 @@
     <div class="input-group form-group">
         <label class="radio-inline">{!! Form::radio('estadoCivilMadre','1') !!}Soltero</label>
         <label class="radio-inline">{!! Form::radio('estadoCivilMadre','2', true) !!}Casado</label>
-        <label class="radio-inline">{!! Form::radio('estadiCivilMadre','3') !!}Divorciado</label>
+        <label class="radio-inline">{!! Form::radio('estadoCivilMadre','3') !!}Divorciado</label>
         <label class="radio-inline">{!! Form::radio('estadoCivilMadre','4') !!}Viudo</label>
         <label class="radio-inline">{!! Form::radio('estadoCivilMadre','5') !!}Acompañado</label>
     </div>
@@ -172,7 +173,7 @@
     <div class="input-group form-group">
         <label class="radio-inline">{!! Form::radio('estadoCivilResponsable','1') !!}Soltero</label>
         <label class="radio-inline">{!! Form::radio('estadoCivilResponsable','2', true) !!}Casado</label>
-        <label class="radio-inline">{!! Form::radio('estadiCivilResponsable','3') !!}Divorciado</label>
+        <label class="radio-inline">{!! Form::radio('estadoCivilResponsable','3') !!}Divorciado</label>
         <label class="radio-inline">{!! Form::radio('estadoCivilResponsable','4') !!}Viudo</label>
         <label class="radio-inline">{!! Form::radio('estadoCivilResponsable','5') !!}Acompañado</label>
     </div>

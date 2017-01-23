@@ -12,7 +12,7 @@ class TipoTelefonos extends Migration
      */
     public function up()
     {
-        Schema::create('TipoTelefonos', function (Blueprint $table) {
+        Schema::create('tipotelefonos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tipo',50);
             $table->timestamps();
@@ -27,6 +27,6 @@ class TipoTelefonos extends Migration
      */
     public function down()
     {
-        Schema::drop('TipoTelefonos');
+        Schema::drop('tipotelefonos');
     }
 }

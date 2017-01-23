@@ -7,31 +7,31 @@
             <tr>
                 <th>Nombres</th>
                 <th>Apellidos</th>
-                <th>Hijos Matriculados</th>
+                <th>Correo Electronico</th>
+                <th>DUI</th>
+                <th>Hijos Inscritos</th>
 
 
                 <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
+            @foreach($padresDeFamilia as $padre)
             <tr>
-                <td>Nombres</td>
-                <td>Apellidos</td>
-                <td>Número de Hijos</td>
-                <td><a href="#"><button class="btn btn-success">Detalles</button></a></td>
+                <td>{{$padre->user->nombre}}</td>
+                <td>{{$padre->user->apellido}}</td>
+                <td>{{$padre->user->email}}</td>
+                <td>{{$padre->DUI}}</td>
+                <td>@foreach($padre->estudiantes as $hijos)
+                    {{$hijos->user->nombre}} {{$hijos->user->apellido}}<br>
+                @endforeach
+                </td>
+
+                <td>{!!link_to_route('Detalle.Padre', $title = 'Detalles', $parameters = $padre->id, $attributes = ['class'=>'btn btn-success','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+                    <br>
+                    {!!link_to_route('Agregar.Hijo', $title = 'Agregar Hijo', $parameters = $padre->id, $attributes = ['class'=>'btn btn-success','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}</td>
             </tr>
-            <tr>
-                <td>Nombres</td>
-                <td>Apellidos</td>
-                <td>Número de Hijos</td>
-                <td><a href="#"><button class="btn btn-success">Detalles</button></a></td>
-            </tr>
-            <tr>
-                <td>Nombres</td>
-                <td>Apellidos</td>
-                <td>Número de Hijos</td>
-                <td><a href="#"><button class="btn btn-success">Detalles</button></a></td>
-            </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

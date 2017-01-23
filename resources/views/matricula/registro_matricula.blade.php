@@ -1,13 +1,17 @@
 @extends('layouts.app4')
 @section('content')
          <div class="container panel panel-body">
-        <h3>Registro de Matrículas</h3>
-            <h2># Grado</h2>
+        <h3>Registro de Alumnos</h3>
+
+            @if(isset($grado))<h2>
+                {{$grado->grado->nombre}} {{$grado->seccion->nombre}} </h2>
+             @endif
             <table class="table table-striped" id="matriculados">
                 <thead>
                 <tr>
                     <th>Nombres</th>
                     <th>Apellidos</th>
+                    <th>Carnet</th>
                     <th>Encargado</th>
                     <th>Grado</th>
 
@@ -22,11 +26,11 @@
                 <tr>
                     <td>{{$estudiante->user->nombre}}</td>
                     <td>{{$estudiante->user->apellido}}</td>
+                    <td>{{$estudiante->Carnet}}</td>
                     <td>@foreach($estudiante->padredefamilia as $padreDeFamilia)
-
                     {{$padreDeFamilia->user->nombre}} {{$padreDeFamilia->user->apellido}}
-
-                    @endforeach</td>
+                            <br>
+                        @endforeach</td>
                 <td>
                     @foreach($estudiante->matriculas as $matriculas)
 

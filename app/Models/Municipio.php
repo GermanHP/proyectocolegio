@@ -13,11 +13,11 @@ class Municipio extends Model {
 
 
     public function departamento() {
-        return $this->belongsTo('App\Models\Departamento', 'id_departamento', 'id');
+        return $this->belongsTo(\App\Models\Departamento::class, 'id_departamento', 'id');
     }
 
     public function direcciones() {
-        return $this->hasMany('App\Models\Direccione', 'idMunicipio', 'id');
+        return $this->hasMany(\App\Models\Direccione::class, 'idMunicipio', 'id');
     }
 
 

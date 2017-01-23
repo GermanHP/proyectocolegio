@@ -12,7 +12,7 @@ class Sacramentos extends Migration
      */
     public function up()
     {
-        Schema::create('Sacramento', function (Blueprint $table) {
+        Schema::create('sacramento', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre', 50);
             $table->timestamps();
@@ -27,6 +27,6 @@ class Sacramentos extends Migration
      */
     public function down()
     {
-        Schema::drop('Sacramento');
+        Schema::drop('sacramento');
     }
 }

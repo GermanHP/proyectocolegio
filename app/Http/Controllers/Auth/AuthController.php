@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -28,7 +28,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+   protected $redirectTo = '/MisMaterias';
 
     /**
      * Create a new authentication controller instance.
@@ -53,6 +53,39 @@ class AuthController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
+    }
+
+    protected function authenticated($request, $usuario)
+    {
+
+                if($usuario->idTipousuario==5){
+                    if($usuario->resetPassword==1){
+                        return redirect()->route('cambiar.Password');
+                    }
+                    return redirect()->route('registro.index');
+                }else if($usuario->idTipousuario==3) {
+                    if($usuario->resetPassword==1){
+                        return redirect()->route('cambiar.Password');
+                    }
+                    return redirect()->route('MisMaterias.Maestro');
+                }else if($usuario->idTipousuario==1) {
+                    if($usuario->resetPassword==1){
+                        return redirect()->route('cambiar.Password');
+                    }
+                    return redirect()->route('Alumno.MisClases');
+                }else if($usuario->idTipousuario==2) {
+                    if($usuario->resetPassword==1){
+                        return redirect()->route('cambiar.Password');
+                    }
+                    return redirect()->route('Padres.MisHijos');
+                }else{
+                   return redirect('/logout');
+                }
+
+
+
+
+
     }
 
     /**

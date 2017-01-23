@@ -13,7 +13,7 @@ class Departamento extends Model {
 
 
     public function municipios() {
-        return $this->hasMany('App\Models\Municipio', 'id_departamento', 'id');
+        return $this->hasMany(\App\Models\Municipio::class, 'id_departamento', 'id');
     }
 
 
