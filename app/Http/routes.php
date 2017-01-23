@@ -27,6 +27,7 @@ Route::get('/historia', 'MainController@historia');
 Route::get('/error404', 'MainController@error404');
 Route::get('/galeria', 'MainController@galery');
 Route::get('/admin_panel', 'MainController@dash_admin');
+Route::get('/calendario', 'MainController@calendar');
 
 
 
