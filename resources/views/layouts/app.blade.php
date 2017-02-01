@@ -214,30 +214,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Primera Reuni&oacute;n de Padres de Familia.</h4>
-            </div>
-            <div class="modal-body">
-                <p class="list-group-item-text">Programada para el d&iacute;a 28 de enero, en las instalaciones del
-                    colegio.</p><br>
-                <p class="list-group-item-text"></p>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<!-- Modal Noticia 4-->
-<div class="modal fade" id="modalNoticia4" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Paquete de Libros.</h4><br>
             </div>
             <div class="modal-body">

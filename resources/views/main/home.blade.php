@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    <link rel="stylesheet" href="css/home.css">
 
     <link rel="stylesheet" href="css/fonts.css">
     <div>
@@ -59,6 +60,74 @@
          </div>
     </div>
 
+    <div id="contenedor" class="container">
+        <h3 class="text-center">Noticias Colegio San Juan Bautista</h3>
+    <div class="row container panel panel-body">
+        <div class="col-lg-4">
+            <img class="img-circle" src="img/indexes/logonoticia.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Inicio de Matrícula</h2>
+            <p>Ya está abierta la matícula para el año escolar 2017.</p>
+            <p><a class="btn btn-info" href="#" role="button" data-toggle="modal" data-target="#modalNoticia1">Ver detalles &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="img-circle" src="img/indexes/logonoticia.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Conoce nuestro sitio web</h2>
+            <p>De la mano con la excelencia, la tecnología ahora está con nosotros.</p>
+            <p><a class="btn btn-info" href="#" role="button" data-toggle="modal" data-target="#modalNoticia2">Ver detalles &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="img-circle" src="img/indexes/logonoticia.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Paquete de Libros</h2>
+            <p>Ya se encuentran disponibles para adquirir en las oficinas del colegio.</p>
+            <p><a class="btn btn-info" href="#" role="button" data-toggle="modal" data-target="#modalNoticia3">Ver detalles &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+    </div>
+
+    <div id="principal" class="container"></div>
+    <div id="contenedor" class="container">
+        <div class="container">
+        <div class="row container margin-cont">
+            <div class="col-lg-4 list-group-item  panel panel-primary">
+                <div class="panel-heading">
+                    <img class="img-circle" src="img/aulavirtual.png"
+                         alt="Generic placeholder image" width="140" height="140">
+                    <h2>Aula Virtual</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Cómo parte de la innovación y la excelencia académica que nos caracteriza, ofrecemos nuestra Aula
+                        virtual, que es el espacio en donde los miembros de la comunidad educativa pueden obtener acceso a
+                        materiales, trabajos, eventos y toda información institucional  referente al grado y sección en el que
+                        se ha matriculado.</p>
+                    @if(Auth::check())
+                        <a class="btn btn-info" href="{{ url('/MisMaterias') }}" role="button">Ingresar</a>
+                    @else
+                        <a class="btn btn-info" href="{{ url('/login') }}" role="button">Ingresar</a>
+                    @endif
+
+                </div>
+            </div><!-- /.col-lg-4 -->
+
+
+            <div class="col-lg-4 list-group-item  panel panel-primary">
+                <div class="panel-heading">
+                    <img class="img-circle" src="img/matricula.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Matrícula</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Es el espacio en el que se registra toda la información  del estudiante y de sus responsables, y que le
+                        acredita en la matrícula oficial de nuestra institución. Además, se presentan los poasos a seguir para
+                        poder efectuar la reserva de la matrícula en línea.</p>
+                    <p><a class="btn btn-info" href="{{ url('/inscripcion') }}" role="button">Ingresar</a></p>
+                </div>
+            </div><!-- /.col-lg-4 -->
+            <img class="img-circle" src="img/indexes/logo.jpg" alt="Generic placeholder image" width="300" height="300">
+
+        </div><!-- /.row -->
+        </div>
+    </div>
+
+    <!--
     <input type="checkbox" class="checkbox" id="check">
     <label class="menu" for="check">|||</label>
     <div class="left-panel container">
@@ -69,8 +138,11 @@
             <a href="https://www.youtube.com/channel/UCkWI9SYJt2y8AtTgrtcLJqQ" target="_blank"><li class="icon-youtube">You Tube</li></a>
         </ul>
     </div>
+    -->
 
-    <div class="container">
+
+
+        <!--
     <aside class="col-md-4">
         <div class="panel panel-primary">
         <h4 class="panel-heading">Noticias SJB</h4>
@@ -94,47 +166,11 @@
         </a>
         </div>
         </div>
-    </aside>
+    </aside>-->
 
-    <div class="row container margin-cont">
-        <div class="col-lg-4 list-group-item  panel panel-primary">
-            <div class="panel-heading">
-            <img class="img-circle" src="img/aulavirtual.png"
-                 alt="Generic placeholder image" width="140" height="140">
-            <h2>Aula Virtual</h2>
-            </div>
-            <div class="panel-body">
-            <p>Cómo parte de la innovación y la excelencia académica que nos caracteriza, ofrecemos nuestra Aula
-                virtual, que es el espacio en donde los miembros de la comunidad educativa pueden obtener acceso a
-                materiales, trabajos, eventos y toda información institucional  referente al grado y sección en el que
-                se ha matriculado.</p>
-                @if(Auth::check())
-                    <a class="btn btn-info" href="{{ url('/MisMaterias') }}" role="button">Ingresar</a>
-                    @else
-                    <a class="btn btn-info" href="{{ url('/login') }}" role="button">Ingresar</a>
-                    @endif
-
-            </div>
-        </div><!-- /.col-lg-4 -->
-
-        <div class="col-lg-4 list-group-item  panel panel-primary">
-            <div class="panel-heading">
-            <img class="img-circle" src="img/matricula.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>Matrícula</h2>
-            </div>
-            <div class="panel-body">
-            <p>Es el espacio en el que se registra toda la información  del estudiante y de sus responsables, y que le
-                acredita en la matrícula oficial de nuestra institución. Además, se presentan los poasos a seguir para
-            poder efectuar la reserva de la matrícula en línea.</p>
-            <p><a class="btn btn-info" href="{{ url('/inscripcion') }}" role="button">Ingresar</a></p>
-            </div>
-        </div><!-- /.col-lg-4 -->
-
-    </div><!-- /.row -->
-    </div>
 
     <!-- features -->
-
+    <div id="contenedor" class="container">
     <div class="container" id="features">
         <div class="row">
             <a href="{{ url('/teacher_profile') }}" class="mdl-navigation__link">
@@ -167,6 +203,7 @@
                 </div>
             </a>
         </div>
+    </div>
     </div>
 
     <div class="center-map container list-group-item">
