@@ -21,7 +21,7 @@ return [
     |
     */
 
-    'secret' => env('JWT_SECRET', 'U6VYSYJVk7r4rRrhdhRaCXmiXXGaOure'),
+    'secret' => env('JWT_SECRET', 'NhksHZwsrHNS3TYgkpnEwN4s9RFAl8LM'),
 
     /*
     |--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ return [
     |
     */
 
-    'ttl' => 60,
+    'ttl' => 800000,
 
     /*
     |--------------------------------------------------------------------------
@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'user' => 'App\User',
+    'user' => 'App\Models\User',
 
     /*
     |--------------------------------------------------------------------------
@@ -105,7 +105,7 @@ return [
     | Blacklist Enabled
     |--------------------------------------------------------------------------
     |
-    | In order to invalidate tokens, you must have the blacklist enabled.
+    | In order to invalidate tokens, you must have the the blacklist enabled.
     | If you do not want or need this functionality, then set this to false.
     |
     */

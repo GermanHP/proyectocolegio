@@ -57,7 +57,7 @@ class AuthController extends Controller
 
     protected function authenticated($request, $usuario)
     {
-
+        setcookie('MoodleSession','',time()-1000000, "/", ".colegiosjb.net");
                 if($usuario->idTipousuario==5){
                     if($usuario->resetPassword==1){
                         return redirect()->route('cambiar.Password');

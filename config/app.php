@@ -164,7 +164,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
+        'Tymon\JWTAuth\Providers\JWTAuthServiceProvider'
 
     ],
 

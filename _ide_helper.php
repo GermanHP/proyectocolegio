@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.2.45 on 2017-02-01.
+ * Generated for Laravel 5.2.45 on 2017-01-25.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -11513,12 +11513,11 @@ namespace {
          * @param string $name
          * @param string $value
          * @param array $options
-         * @param bool $escape_html
          * @return \Illuminate\Support\HtmlString 
          * @static 
          */
-        public static function label($name, $value = null, $options = array(), $escape_html = true){
-            return \Collective\Html\FormBuilder::label($name, $value, $options, $escape_html);
+        public static function label($name, $value = null, $options = array()){
+            return \Collective\Html\FormBuilder::label($name, $value, $options);
         }
         
         /**
@@ -12089,12 +12088,11 @@ namespace {
          * @param string $title
          * @param array $attributes
          * @param bool $secure
-         * @param bool $escape
          * @return \Illuminate\Support\HtmlString 
          * @static 
          */
-        public static function link($url, $title = null, $attributes = array(), $secure = null, $escape = true){
-            return \Collective\Html\HtmlBuilder::link($url, $title, $attributes, $secure, $escape);
+        public static function link($url, $title = null, $attributes = array(), $secure = null){
+            return \Collective\Html\HtmlBuilder::link($url, $title, $attributes, $secure);
         }
         
         /**
@@ -12171,12 +12169,11 @@ namespace {
          * @param string $email
          * @param string $title
          * @param array $attributes
-         * @param bool $escape
          * @return \Illuminate\Support\HtmlString 
          * @static 
          */
-        public static function mailto($email, $title = null, $attributes = array(), $escape = true){
-            return \Collective\Html\HtmlBuilder::mailto($email, $title, $attributes, $escape);
+        public static function mailto($email, $title = null, $attributes = array()){
+            return \Collective\Html\HtmlBuilder::mailto($email, $title, $attributes);
         }
         
         /**
@@ -12188,17 +12185,6 @@ namespace {
          */
         public static function email($email){
             return \Collective\Html\HtmlBuilder::email($email);
-        }
-        
-        /**
-         * Generates non-breaking space entities based on number supplied.
-         *
-         * @param int $num
-         * @return string 
-         * @static 
-         */
-        public static function nbsp($num = 1){
-            return \Collective\Html\HtmlBuilder::nbsp($num);
         }
         
         /**
@@ -12611,6 +12597,163 @@ namespace {
          */
         public static function getFilters($key = false){
             return \Maatwebsite\Excel\Excel::getFilters($key);
+        }
+        
+    }
+
+
+    class JWTAuth extends \Tymon\JWTAuth\Facades\JWTAuth{
+        
+        /**
+         * Find a user using the user identifier in the subject claim.
+         *
+         * @param bool|string $token
+         * @return mixed 
+         * @static 
+         */
+        public static function toUser($token = false){
+            return \Tymon\JWTAuth\JWTAuth::toUser($token);
+        }
+        
+        /**
+         * Generate a token using the user identifier as the subject claim.
+         *
+         * @param mixed $user
+         * @param array $customClaims
+         * @return string 
+         * @static 
+         */
+        public static function fromUser($user, $customClaims = array()){
+            return \Tymon\JWTAuth\JWTAuth::fromUser($user, $customClaims);
+        }
+        
+        /**
+         * Attempt to authenticate the user and return the token.
+         *
+         * @param array $credentials
+         * @param array $customClaims
+         * @return false|string 
+         * @static 
+         */
+        public static function attempt($credentials = array(), $customClaims = array()){
+            return \Tymon\JWTAuth\JWTAuth::attempt($credentials, $customClaims);
+        }
+        
+        /**
+         * Authenticate a user via a token.
+         *
+         * @param mixed $token
+         * @return mixed 
+         * @static 
+         */
+        public static function authenticate($token = false){
+            return \Tymon\JWTAuth\JWTAuth::authenticate($token);
+        }
+        
+        /**
+         * Refresh an expired token.
+         *
+         * @param mixed $token
+         * @return string 
+         * @static 
+         */
+        public static function refresh($token = false){
+            return \Tymon\JWTAuth\JWTAuth::refresh($token);
+        }
+        
+        /**
+         * Invalidate a token (add it to the blacklist).
+         *
+         * @param mixed $token
+         * @return bool 
+         * @static 
+         */
+        public static function invalidate($token = false){
+            return \Tymon\JWTAuth\JWTAuth::invalidate($token);
+        }
+        
+        /**
+         * Get the token.
+         *
+         * @return bool|string 
+         * @static 
+         */
+        public static function getToken(){
+            return \Tymon\JWTAuth\JWTAuth::getToken();
+        }
+        
+        /**
+         * Get the raw Payload instance.
+         *
+         * @param mixed $token
+         * @return \Tymon\JWTAuth\Payload 
+         * @static 
+         */
+        public static function getPayload($token = false){
+            return \Tymon\JWTAuth\JWTAuth::getPayload($token);
+        }
+        
+        /**
+         * Parse the token from the request.
+         *
+         * @param string $query
+         * @return \JWTAuth 
+         * @static 
+         */
+        public static function parseToken($method = 'bearer', $header = 'authorization', $query = 'token'){
+            return \Tymon\JWTAuth\JWTAuth::parseToken($method, $header, $query);
+        }
+        
+        /**
+         * Set the identifier.
+         *
+         * @param string $identifier
+         * @return $this 
+         * @static 
+         */
+        public static function setIdentifier($identifier){
+            return \Tymon\JWTAuth\JWTAuth::setIdentifier($identifier);
+        }
+        
+        /**
+         * Get the identifier.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getIdentifier(){
+            return \Tymon\JWTAuth\JWTAuth::getIdentifier();
+        }
+        
+        /**
+         * Set the token.
+         *
+         * @param string $token
+         * @return $this 
+         * @static 
+         */
+        public static function setToken($token){
+            return \Tymon\JWTAuth\JWTAuth::setToken($token);
+        }
+        
+        /**
+         * Set the request instance.
+         *
+         * @param \Request $request
+         * @static 
+         */
+        public static function setRequest($request){
+            return \Tymon\JWTAuth\JWTAuth::setRequest($request);
+        }
+        
+        /**
+         * Get the JWTManager instance.
+         *
+         * @return \Tymon\JWTAuth\JWTManager 
+         * @static 
+         */
+        public static function manager(){
+            return \Tymon\JWTAuth\JWTAuth::manager();
         }
         
     }

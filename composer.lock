@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f8cff4e14ed776eda89476ec847b8618",
+    "hash": "3361cd41bd72592630878a57e2174478",
     "content-hash": "9d2ea10fd938b6b3e5aac8a226c6adbd",
     "packages": [
         {
@@ -724,16 +724,16 @@
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.2.5",
+            "version": "v5.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "8956f004753d7b1bc793076f6adfb678e31d1250"
+                "reference": "3a312d39ffe37da0f57b602618b61fd07c1fcec5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/8956f004753d7b1bc793076f6adfb678e31d1250",
-                "reference": "8956f004753d7b1bc793076f6adfb678e31d1250",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/3a312d39ffe37da0f57b602618b61fd07c1fcec5",
+                "reference": "3a312d39ffe37da0f57b602618b61fd07c1fcec5",
                 "shasum": ""
             },
             "require": {
@@ -774,20 +774,20 @@
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "http://laravelcollective.com",
-            "time": "2016-12-13 14:28:46"
+            "time": "2016-01-27 22:29:54"
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.34",
+            "version": "1.0.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "469ad53c13ea19a0e54e3e5d70f61227ddcc0299"
+                "reference": "5c7f98498b12d47f9de90ec9186a90000125777c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/469ad53c13ea19a0e54e3e5d70f61227ddcc0299",
-                "reference": "469ad53c13ea19a0e54e3e5d70f61227ddcc0299",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/5c7f98498b12d47f9de90ec9186a90000125777c",
+                "reference": "5c7f98498b12d47f9de90ec9186a90000125777c",
                 "shasum": ""
             },
             "require": {
@@ -857,7 +857,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-01-30 17:41:17"
+            "time": "2017-01-23 10:32:09"
         },
         {
             "name": "maatwebsite/excel",
@@ -2633,16 +2633,16 @@
         },
         {
             "name": "tymon/jwt-auth",
-            "version": "0.5.10",
+            "version": "0.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tymondesigns/jwt-auth.git",
-                "reference": "754448bbedccb1ce5fba16914482c6a6e0871e1d"
+                "reference": "18b2add90de2315d549664b4d4a062db07e8b080"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tymondesigns/jwt-auth/zipball/754448bbedccb1ce5fba16914482c6a6e0871e1d",
-                "reference": "754448bbedccb1ce5fba16914482c6a6e0871e1d",
+                "url": "https://api.github.com/repos/tymondesigns/jwt-auth/zipball/18b2add90de2315d549664b4d4a062db07e8b080",
+                "reference": "18b2add90de2315d549664b4d4a062db07e8b080",
                 "shasum": ""
             },
             "require": {
@@ -2692,7 +2692,7 @@
                 "laravel",
                 "tymon"
             ],
-            "time": "2017-01-24 22:20:55"
+            "time": "2016-02-18 09:22:36"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -2790,16 +2790,16 @@
         },
         {
             "name": "zendframework/zend-http",
-            "version": "2.6.0",
+            "version": "2.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-http.git",
-                "reference": "09f4d279f46d86be63171ff62ee0f79eca878678"
+                "reference": "98b1cac0bc7a91497c5898184281abcd0e24c8d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-http/zipball/09f4d279f46d86be63171ff62ee0f79eca878678",
-                "reference": "09f4d279f46d86be63171ff62ee0f79eca878678",
+                "url": "https://api.github.com/repos/zendframework/zend-http/zipball/98b1cac0bc7a91497c5898184281abcd0e24c8d6",
+                "reference": "98b1cac0bc7a91497c5898184281abcd0e24c8d6",
                 "shasum": ""
             },
             "require": {
@@ -2810,15 +2810,15 @@
                 "zendframework/zend-validator": "^2.5"
             },
             "require-dev": {
+                "fabpot/php-cs-fixer": "1.7.*",
                 "phpunit/phpunit": "^4.0",
-                "zendframework/zend-coding-standard": "~1.0.0",
                 "zendframework/zend-config": "^2.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev",
-                    "dev-develop": "2.7-dev"
+                    "dev-master": "2.5-dev",
+                    "dev-develop": "2.6-dev"
                 }
             },
             "autoload": {
@@ -2836,7 +2836,7 @@
                 "http",
                 "zf2"
             ],
-            "time": "2017-01-31 14:41:02"
+            "time": "2016-08-08 15:01:54"
         },
         {
             "name": "zendframework/zend-json",
@@ -3031,16 +3031,16 @@
         },
         {
             "name": "zendframework/zend-validator",
-            "version": "2.8.2",
+            "version": "2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-validator.git",
-                "reference": "99b528e01276054458da9553b587cfb959dfa436"
+                "reference": "8ec9f57a717dd37340308aa632f148a2c2be1cfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-validator/zipball/99b528e01276054458da9553b587cfb959dfa436",
-                "reference": "99b528e01276054458da9553b587cfb959dfa436",
+                "url": "https://api.github.com/repos/zendframework/zend-validator/zipball/8ec9f57a717dd37340308aa632f148a2c2be1cfc",
+                "reference": "8ec9f57a717dd37340308aa632f148a2c2be1cfc",
                 "shasum": ""
             },
             "require": {
@@ -3098,7 +3098,7 @@
                 "validator",
                 "zf2"
             ],
-            "time": "2017-01-29 17:24:24"
+            "time": "2016-06-23 13:44:31"
         },
         {
             "name": "zendframework/zendservice-apple-apns",
@@ -4552,16 +4552,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.34",
+            "version": "4.8.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "7eb45205d27edd94bd2b3614085ea158bd1e2bca"
+                "reference": "f5e1941a8dacf0d904753ff2895c6f68e54bcee1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7eb45205d27edd94bd2b3614085ea158bd1e2bca",
-                "reference": "7eb45205d27edd94bd2b3614085ea158bd1e2bca",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f5e1941a8dacf0d904753ff2895c6f68e54bcee1",
+                "reference": "f5e1941a8dacf0d904753ff2895c6f68e54bcee1",
                 "shasum": ""
             },
             "require": {
@@ -4620,7 +4620,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-01-26 16:15:36"
+            "time": "2017-01-22 08:37:05"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -4730,16 +4730,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "1.2.4",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "2b7424b55f5047b47ac6e5ccb20b2aea4011d9be"
+                "reference": "6a1ed12e8b2409076ab22e3897126211ff8b1f7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/2b7424b55f5047b47ac6e5ccb20b2aea4011d9be",
-                "reference": "2b7424b55f5047b47ac6e5ccb20b2aea4011d9be",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/6a1ed12e8b2409076ab22e3897126211ff8b1f7f",
+                "reference": "6a1ed12e8b2409076ab22e3897126211ff8b1f7f",
                 "shasum": ""
             },
             "require": {
@@ -4790,7 +4790,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2017-01-29 09:50:25"
+            "time": "2016-11-19 09:18:40"
         },
         {
             "name": "sebastian/diff",
