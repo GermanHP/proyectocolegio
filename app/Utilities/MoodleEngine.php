@@ -84,13 +84,13 @@ class MoodleEngine
 
        $responseStudent = $this->ConsumeMoodleService("core_user_create_users","POST",["users"=>[$userMoodle]]);
 
-/*
+
 
         if (isset($responseStudent->id)){
 
            return $this->createRole($responseStudent->id,5);
 
-        }*/
+        }
 
     }
 
