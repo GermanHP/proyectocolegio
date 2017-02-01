@@ -97,6 +97,7 @@ Route::group(['middleware' => 'auth'], function () {
 
             }
         });
+
     Route::get('/formulario', 'InscriptionController@formulary');
     Route::post('/formulario', 'InscriptionController@registrarEstudiante')->name('Registrar.Estudiante');
     Route::post('/NuevoHijoRegistro/{id}', 'InscriptionController@registrarHijo')->name('Registrar.NuevoHijo');
@@ -193,6 +194,9 @@ Route::get('/instalaciones', 'MainController@instalacion');
 Route::get('/historia', 'MainController@historia');
 Route::get('/error404', 'MainController@error404');
 Route::get('/galeria', 'MainController@galery');
+Route::get('/calendario', 'MainController@calendar');
+Route::get('/moodle', 'MainController@ingresar');
+
 Route::get('/Credenciales','PadresPanelController@Credenciales')->name('Credenciales.Buscar');
 Route::post('DatosLogin','PadresPanelController@DatosLogin')->name('Credenciales.Acceso');
 

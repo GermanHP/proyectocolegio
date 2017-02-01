@@ -34,4 +34,12 @@ class MainController extends Controller
     public function dash_admin(){
         return view('admin.dash_admin');
     }
+
+    public function calendar(){
+        return view('includes.calendario');
+    }
+
+    public function ingresar(){
+        return view('main.moodle');
+    }
 }

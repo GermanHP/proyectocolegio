@@ -105,6 +105,7 @@
         <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
         <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
         <a class="mdl-navigation__link" href="{{url('/galeria')}}">Galería</a>
+        <a class="mdl-navigation__link" href="{{url('/calendario')}}">Calendario Anual CSJB</a>
     </nav>
 
     <hr class="featurette-divider">
@@ -157,10 +158,12 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Inicio de Matrícula</h4>
+                <h4 class="modal-title">Contin&uacute;a la Matrícula</h4>
             </div>
             <div class="modal-body">
-                <p class="list-group-item-text">Ya está abierta la matícula para el año escolar 2017.</p>
+                <p class="list-group-item-text">La matr&iacute;la contin&uacute;a abierta todo este mes.</p><br>
+
+                <p class="list-group-item-text">Para mayor informaci&oacute;n acercarse a las oficinas del Colegio.</p>
 
                 <a href="{{url('/propuesta')}}"><img class="size" src="img/propuesta/prospecto1.jpg" height="300" width="532"></a>
 
@@ -211,11 +214,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Ceremonia de graduación.</h4>
+                <h4 class="modal-title">Primera Reuni&oacute;n de Padres de Familia.</h4>
             </div>
             <div class="modal-body">
-                <p class="list-group-item-text">Ceremonia de graduación para alumnos de preparatoria y
-                    noveno grado.</p><br>
+                <p class="list-group-item-text">Programada para el d&iacute;a 28 de enero, en las instalaciones del
+                    colegio.</p><br>
                 <p class="list-group-item-text"></p>
             </div>
 
@@ -235,11 +238,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Clausura del año escolar 2016.</h4>
+                <h4 class="modal-title">Paquete de Libros.</h4><br>
             </div>
             <div class="modal-body">
-                <p class="list-group-item-text">Para parvularia miércoles 16 de noviembre, hora 8:00 am. Para primero,
-                    segundo y tercer ciclo, martes 22 de noviembre, hora 8:00 am.</p>
+                <p class="list-group-item-text">Para parvularia el costo es de: $30</p><br>
+                <p class="list-group-item-text">De primero a quinto grado el costo es de: $63</p><br>
+                <p class="list-group-item-text">Para sexto grado el costo es de: $65</p><br>
+                <p class="list-group-item-text">Para séptimo, octavo y noveno el costo es de: $15</p>
             </div>
 
             <div class="modal-footer">
