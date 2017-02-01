@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
     <link rel="stylesheet" href="css/fonts.css">
     <div>
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

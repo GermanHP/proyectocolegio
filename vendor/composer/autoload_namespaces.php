@@ -24,7 +24,6 @@ return array(
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
-    'Cron' => array($vendorDir . '/mtdowling/cron-expression/src'),
     'Barryvdh' => array($vendorDir . '/barryvdh/reflection-docblock/src'),
     'Asachanfbd\\LaravelPushNotification' => array($vendorDir . '/asachanfbd/laravel-push-notification/src'),
 );
