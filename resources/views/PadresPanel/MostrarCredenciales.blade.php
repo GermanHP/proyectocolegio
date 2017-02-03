@@ -15,7 +15,7 @@
             <h3>Credenciales de Acceso</h3>
             @include('alertas.flash')
             @include('alertas.errores')
-            <h5>Para obtener las credenciales de acceso al sistema por favor ingrese su número de DUI</h5>
+            <h5>Para obtener las credenciales de acceso al sistema por favor ingrese su número de DUI sin guiones ni espacios</h5>
             {!!Form::open(['route'=>'Credenciales.Acceso', 'method'=>'POST', 'onsubmit'=>"waitingDialog.show('Guardando Espere... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
             <div class="input-group form-group">
                 {{Form::label('DUI',null,['class'=>'input-group-addon'])}}

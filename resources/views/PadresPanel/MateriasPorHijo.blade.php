@@ -10,7 +10,7 @@
 
         @include('alertas.flash')
         @include('alertas.errores')
-        <form action="http://moodle.colegiosjb.net/login/index.php" id="login" method="post">
+        <form >
             <input class="input"  style="display:none" id="username" name="username" type="text" value="{{Auth::user()->usuarioMoodle}}" />
             <input class="input"  style="display:none" id="password" name="password" type="password" value="{{Auth::user()->passwordMoodle}}" />
             {!!Form::submit('Aula Virtual', ['class'=>'btn btn-info','name'=>'btnMoodle'])!!}
@@ -30,9 +30,14 @@
                 <tr>
                     <td>{{$materia->materium->nombre}}</td>
                     <td>@foreach($materia->materiagradohorarios as $horario)
-                            {{$horario->diasdisponible->nombre}} {{$horario->horasdisponible->horaInicio}} - {{$horario->horasdisponible->horaFin}}
+                            {{$horario->diasdisponible->nombre}} {{$horario->horasdisponible->horaInicio}} - {{$horario->horasdisponible->horaFin}}<br>
                         @endforeach</td>
-                    <td>{{$materia->maestro->user->nombre}} {{$materia->maestro->user->apellido}}</td>
+                    <td>@if($materia->maestro!=null)
+                            {{$materia->maestro->user->nombre}} {{$materia->maestro->user->apellido}}
+                            @else
+                            Pendiente de Asignacion
+                    @endif
+                    </td>
 
                     <td>
 

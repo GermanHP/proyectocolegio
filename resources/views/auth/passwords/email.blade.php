@@ -34,11 +34,13 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-envelope"></i> Send Password Reset Link
+                                    <i class="fa fa-btn fa-envelope"></i> Solicitar reseteo de Password
                                 </button>
                             </div>
                         </div>
                     </form>
+                        Si no haz cambiado el Email de acceso a la plataforma por favor escribe a nuestro correo de soporte para un reseteo de contraseña:
+                        Correo de soporte todocyber100@gmail.com <a href="mailto:todocyber100@gmail.com?Subject=Resetear?Password" target="_top">Enviar Email</a>
                 </div>
             </div>
         </div>

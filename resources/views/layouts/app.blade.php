@@ -92,6 +92,8 @@
                 <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
                 <a class="mdl-navigation__link" data-toggle="modal" data-target="#modalComentario" href="#">Comentarios</a>
                 <a class="mdl-navigation__link" href="{{url('/galeria')}}">Galería</a>
+                <a class="mdl-navigation__link" href="{{url('/Credenciales')}}">Credenciales</a>
+
             </nav>
         </div>
     </header>

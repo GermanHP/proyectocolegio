@@ -735,4 +735,25 @@ class InscriptionController extends Controller
         }
     }
 
+    public function cambiarEmail(){
+        return view('auth.emails.CambiarEmail');
+    }
+
+    public function updateEmail(Requests\UpdateEmail $request){
+        if($request['email']!=null && $request['emailConfirmacion']!=null &&$request['email']==$request['emailConfirmacion'] ){
+            $usuario = User::find(\Auth::user()->id);
+            if($usuario!=null){
+                $usuario->fill([
+                    'email'=>$request['email']
+                ]);
+                $usuario->save();
+                flash('Email Actualizado Exitosamente','info');
+                return redirect()->back();
+            }
+        }else{
+            flash('Error datos inconsitentes','danger');
+            return redirect()->back()->withErrors();
+        }
+    }
+
 }
