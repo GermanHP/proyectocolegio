@@ -62,7 +62,7 @@
 
     <div id="contenedor" class="container">
         <h3 class="text-center">Noticias Colegio San Juan Bautista</h3>
-    <div class="row container panel panel-body">
+    <div class="row container panel panel-body ">
         <div class="col-lg-4">
             <img class="img-circle" src="img/indexes/logonoticia.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>Inicio de Matrícula</h2>
@@ -229,6 +229,8 @@
                         <li><a href="https://www.facebook.com/colegioSJBOficial" target="_blank" class="icon-facebook"></a></li>
                         <li><a href="https://www.twitter.com/colegioSJBSV" target="_blank" class="icon-twitter"></a></li>
                         <li><a href="https://www.youtube.com/channel/UCkWI9SYJt2y8AtTgrtcLJqQ" target="_blank" class="icon-youtube"></a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.todociber.colegiosanjuanbautista&rdid=com.todociber.colegiosanjuanbautista" target="_blank"><img
+                                        src="img/google-play-2.png" alt="" height="100" width="150"></a></li>
                     </ul>
                 </div>
             </div>
