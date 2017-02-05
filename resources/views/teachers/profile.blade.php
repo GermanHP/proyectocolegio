@@ -250,9 +250,10 @@
                         <img class="img-circle" src="img/perfildocente/perfil12.jpg"
                              alt="Generic placeholder image" width="240" height="240">
                     </div>
-                    <h3>Wilfredo Molina Ayala</h3>
+                    <h3>Rene Danilo Alegría</h3>
                     <h4>Profesor de Informática desde Parvularia hasta Noveno Grado</h4>
-                    <h5>Licenciado en Sistemas Informáticos, con 3 años de experiencia en el área de la educación.</h5>
+                    <h5>Estudiante de Ingeniería en Sistemas de la Universidad Tecnológica, con 10 años de experiencia
+                        en el área de la educación.</h5>
 
                 </div>
             </div>

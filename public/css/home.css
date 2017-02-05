@@ -1,0 +1,30 @@
+body{
+    background-image: url('../img/indexes/instalacion.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+div#contenedor{
+    margin-top: -10px;
+    opacity: 0.95;
+    filter:alpha(opacity=20);
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 99;
+}
+
+div#cuerpo{
+    margin: auto;
+    width: 960px;
+}
+
+.size-principal{
+    width: 1500px;
+    height: 500px;
+}
+
+.margen-cuerpo{
+    margin-left: -100px;
+}

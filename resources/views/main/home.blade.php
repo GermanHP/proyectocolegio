@@ -59,15 +59,28 @@
          </div>
     </div>
 
-    <input type="checkbox" class="checkbox" id="check">
-    <label class="menu" for="check">|||</label>
-    <div class="left-panel container">
-        <ul>
-            <a href="#"><li><h4>Nuestras Redes Oficiales</h4></li></a>
-            <a href="https://www.facebook.com/colegioSJBOficial" target="_blank"><li class="icon-facebook">Facebook</li></a>
-            <a href="https://www.twitter.com/colegioSJBSV" target="_blank"><li class="icon-twitter">Twitter</li></a>
-            <a href="https://www.youtube.com/channel/UCkWI9SYJt2y8AtTgrtcLJqQ" target="_blank"><li class="icon-youtube">You Tube</li></a>
-        </ul>
+    <div id="contenedor" class="container">
+        <h3 class="text-center">Noticias Colegio San Juan Bautista</h3>
+    <div class="row container panel panel-body ">
+        <div class="col-lg-4">
+            <img class="img-circle" src="img/indexes/logonoticia.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Inicio de Matrícula</h2>
+            <p>Ya está abierta la matícula para el año escolar 2017.</p>
+            <p><a class="btn btn-info" href="#" role="button" data-toggle="modal" data-target="#modalNoticia1">Ver detalles &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="img-circle" src="img/indexes/logonoticia.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Conoce nuestro sitio web</h2>
+            <p>De la mano con la excelencia, la tecnología ahora está con nosotros.</p>
+            <p><a class="btn btn-info" href="#" role="button" data-toggle="modal" data-target="#modalNoticia2">Ver detalles &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="img-circle" src="img/indexes/logonoticia.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Paquete de Libros</h2>
+            <p>Ya se encuentran disponibles para adquirir en las oficinas del colegio.</p>
+            <p><a class="btn btn-info" href="#" role="button" data-toggle="modal" data-target="#modalNoticia3">Ver detalles &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
     </div>
 
     <div class="container">
@@ -110,27 +123,72 @@
                 @if(Auth::check())
                     <a class="btn btn-info" href="{{ url('/Redireccionador') }}" role="button">Ingresar</a>
                     @else
-                    <a class="btn btn-info" href="{{ url('/login') }}" role="button">Ingresar</a>
+                        <a class="btn btn-info" href="{{ url('/login') }}" role="button">Ingresar</a>
                     @endif
 
-            </div>
-        </div><!-- /.col-lg-4 -->
+                </div>
+            </div><!-- /.col-lg-4 -->
 
-        <div class="col-lg-4 list-group-item  panel panel-primary">
-            <div class="panel-heading">
-            <img class="img-circle" src="img/matricula.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>Matrícula</h2>
-            </div>
-            <div class="panel-body">
-            <p>Es el espacio en el que se registra toda la información  del estudiante y de sus responsables, y que le
-                acredita en la matrícula oficial de nuestra institución. Además, se presentan los poasos a seguir para
-            poder efectuar la reserva de la matrícula en línea.</p>
-            <p><a class="btn btn-info" href="{{ url('/inscripcion') }}" role="button">Ingresar</a></p>
-            </div>
-        </div><!-- /.col-lg-4 -->
 
-    </div><!-- /.row -->
+            <div class="col-lg-4 list-group-item  panel panel-primary">
+                <div class="panel-heading">
+                    <img class="img-circle" src="img/matricula.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Matrícula</h2>
+                </div>
+                <div class="panel-body">
+                    <p>Es el espacio en el que se registra toda la información  del estudiante y de sus responsables, y que le
+                        acredita en la matrícula oficial de nuestra institución. Además, se presentan los poasos a seguir para
+                        poder efectuar la reserva de la matrícula en línea.</p>
+                    <p><a class="btn btn-info" href="{{ url('/inscripcion') }}" role="button">Ingresar</a></p>
+                </div>
+            </div><!-- /.col-lg-4 -->
+            <img class="img-circle" src="img/indexes/logo.jpg" alt="Generic placeholder image" width="300" height="300">
+
+        </div><!-- /.row -->
+        </div>
     </div>
+
+    <!--
+    <input type="checkbox" class="checkbox" id="check">
+    <label class="menu" for="check">|||</label>
+    <div class="left-panel container">
+        <ul>
+            <a href="#"><li><h4>Nuestras Redes Oficiales</h4></li></a>
+            <a href="https://www.facebook.com/colegioSJBOficial" target="_blank"><li class="icon-facebook">Facebook</li></a>
+            <a href="https://www.twitter.com/colegioSJBSV" target="_blank"><li class="icon-twitter">Twitter</li></a>
+            <a href="https://www.youtube.com/channel/UCkWI9SYJt2y8AtTgrtcLJqQ" target="_blank"><li class="icon-youtube">You Tube</li></a>
+        </ul>
+    </div>
+    -->
+
+
+
+        <!--
+    <aside class="col-md-4">
+        <div class="panel panel-primary">
+        <h4 class="panel-heading">Noticias SJB</h4>
+        <div class="panel-body">
+        <a href="#" data-toggle="modal" data-target="#modalNoticia1" class="list-group-item">
+            <h4 class="list-group-item-heading">Inicio de matrícula</h4>
+            <p class="list-group-item-text">Ya está abierta la matícula para el año escolar 2017.</p>
+        </a>
+        <a href="#"  data-toggle="modal" data-target="#modalNoticia2" class="list-group-item">
+            <h4 class="list-group-item-heading">Conoce nuestro sitio web</h4>
+            <p class="list-group-item-text">De la mano con la excelencia, la tecnología ahora está con nosotros.</p>
+        </a>
+        <a href="#"  data-toggle="modal" data-target="#modalNoticia3" class="list-group-item">
+            <h4 class="list-group-item-heading">Ceremonia de Graduación.</h4>
+            <p class="list-group-item-text">Ceremonia de graduación para alumnos de preparatoria y noveno grado.</p>
+        </a>
+        <a href="#"  data-toggle="modal" data-target="#modalNoticia4" class="list-group-item">
+            <h4 class="list-group-item-heading">Clausura del año escolar 2016</h4>
+            <p class="list-group-item-text">Para parvularia miércoles 16 de noviembre, hora 8:00 am. Para primero,
+                segundo y tercer ciclo, martes 22 de noviembre, hora 8:00 am.</p>
+        </a>
+        </div>
+        </div>
+    </aside>-->
+
 
     <!-- features -->
 

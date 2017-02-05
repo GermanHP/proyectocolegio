@@ -1,3 +1,6 @@
+*{
+    margin: 0;
+}
 .mdl-layout__header{
     background-color: #3422FF;
 }
@@ -11,12 +14,13 @@
 .carousel{
     display: flex;
     height: 400px;
+
     /*Safari*/
-    background: -webkit-linear-gradient(#3422FF,#3422FF,#4E7AC7,#7FB2F0,#ADD5F7);
+    background: -webkit-linear-gradient(#4A1A2C,#8E3557,#4A1A2C);
     /*Opera*/
-    background: -o-linear-gradient(#3422FF,#3422FF,#4E7AC7,#7FB2F0,#ADD5F7);
+    background: -o-linear-gradient(#4A1A2C,#8E3557,#4A1A2C);
     /*Estandar*/
-    background: linear-gradient(#3422FF,#3422FF,#4E7AC7,#7FB2F0,#ADD5F7);
+    background: linear-gradient(#4A1A2C,#8E3557,#4A1A2C);
 }
 
 .carousel img{
