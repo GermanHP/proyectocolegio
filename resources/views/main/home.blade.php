@@ -76,21 +76,20 @@
         <h4 class="panel-heading">Noticias SJB</h4>
         <div class="panel-body">
         <a href="#" data-toggle="modal" data-target="#modalNoticia1" class="list-group-item">
-            <h4 class="list-group-item-heading">Inicio de matrícula</h4>
-            <p class="list-group-item-text">Ya está abierta la matícula para el año escolar 2017.</p>
+            <h4 class="list-group-item-heading">Contin&uacute;a la Matr&iacute;cula</h4>
+            <p class="list-group-item-text">La matr&iacute;cula se ampl&iacute;a y sigue abierta todo este mes.</p>
         </a>
         <a href="#"  data-toggle="modal" data-target="#modalNoticia2" class="list-group-item">
             <h4 class="list-group-item-heading">Conoce nuestro sitio web</h4>
             <p class="list-group-item-text">De la mano con la excelencia, la tecnología ahora está con nosotros.</p>
         </a>
         <a href="#"  data-toggle="modal" data-target="#modalNoticia3" class="list-group-item">
-            <h4 class="list-group-item-heading">Ceremonia de Graduación.</h4>
-            <p class="list-group-item-text">Ceremonia de graduación para alumnos de preparatoria y noveno grado.</p>
+            <h4 class="list-group-item-heading">Primera Reuni&oacute;n de Padres.</h4>
+            <p class="list-group-item-text">Programada para el d&iacute;a 28 de enero.</p>
         </a>
         <a href="#"  data-toggle="modal" data-target="#modalNoticia4" class="list-group-item">
-            <h4 class="list-group-item-heading">Clausura del año escolar 2016</h4>
-            <p class="list-group-item-text">Para parvularia miércoles 16 de noviembre, hora 8:00 am. Para primero,
-                segundo y tercer ciclo, martes 22 de noviembre, hora 8:00 am.</p>
+            <h4 class="list-group-item-heading">Paquete de libros a la venta.</h4>
+            <p class="list-group-item-text">Ya se encuentran disponibles para adquirir en las oficinas del colegio.</p>
         </a>
         </div>
         </div>
