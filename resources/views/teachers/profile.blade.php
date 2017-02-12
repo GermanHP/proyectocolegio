@@ -247,7 +247,7 @@
             <div class=" container">
                 <div class="panel-body">
                     <div class="col-lg-4">
-                        <img class="img-circle" src="img/perfildocente/perfil12.jpg"
+                        <img class="img-circle" src="img/perfildocente/perfil122.jpg"
                              alt="Generic placeholder image" width="240" height="240">
                     </div>
                     <h3>Rene Danilo Alegría</h3>

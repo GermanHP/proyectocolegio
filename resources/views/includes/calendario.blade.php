@@ -115,41 +115,41 @@
                             <td>4</td>
                         </tr>
                         <tr>
-                            <td class="success"></td>
-                            <td>5</td>
+                            <td class="success">5</td>
                             <td>6. <br>Acto Cívico 9°<br>
-                            Acto Cívico 6°</td>
+                                Acto Cívico 6°</td>
                             <td>7</td>
                             <td>8</td>
                             <td>9</td>
                             <td>10</td>
+                            <td>11</td>
                         </tr>
                         <tr>
-                            <td class="success">11</td>
-                            <td>12</td>
+                            <td class="success">12</td>
                             <td>13. <br>Acto Cívico 8°<br>
                                 Acto Cívico 5°</td>
-                            <td>14</td>
+                            <td>14. Convivio de la Amistad.</td>
                             <td>15</td>
                             <td>16</td>
                             <td>17</td>
+                            <td>18</td>
                         </tr>
                         <tr>
-                            <td class="success">18</td>
-                            <td>19</td>
+                            <td class="success">19</td>
                             <td>20. <br>Acto Cívico 7°<br>
                                 Acto Cívico 4°"A"</td>
                             <td>21</td>
                             <td>22</td>
                             <td>23</td>
                             <td>24</td>
+                            <td>25</td>
                         </tr>
                         <tr>
-                            <td class="success">25</td>
-                            <td>26</td>
+                            <td class="success">26</td>
                             <td>27. <br>Acto Cívico 3°<br>
                                 Acto Cívico 4°"B"</td>
                             <td>28</td>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
