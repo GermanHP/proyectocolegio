@@ -26,9 +26,56 @@ Route::get("/pruebaMoodle",function(){
 
 });
 
+Route::group(['middleware' => ['api'], 'prefix' => 'api'], function () {
+    Route::post('login', 'LoginAPI@LoginUser');
+    Route::post('loginG','Api@LoginUser');
+    /*Route::group(['middleware' => 'jwt-auth'], function () {
+        Route::get('getOrdenes/{id}', 'OrdenesAPI@getOrdenes');
+        Route::get('getOrdenesPadre/{id}/{idCliente}', 'OrdenesAPI@getOrdenesPadre');
+        Route::post('makeOrder', 'OrdenesAPI@makeOrder');
+        Route::put('modifyOrder', 'OrdenesAPI@ModifyOrder');
+        Route::put('cancelOrder', 'OrdenesAPI@CancelOrder');
+        Route::put('executeOrder', 'OrdenesAPI@ExecuteOrder');
+        Route::post('makemessage', 'OrdenesAPI@makeMessage');
+        Route::get('getCasasAfiliado/{idCliente}', 'OrdenesAPI@getCasasAfiliado');
+        Route::get('getCasasProceso/{idCliente}', 'OrdenesAPI@getCasasAfiliadoProcess');
+        Route::get('getCedevales/{idCliente}', 'OrdenesAPI@getCedevales');
+        Route::get('getOrdenesByClienteCasa/{idCliente}/{idCasa}', 'OrdenesAPI@getOrdenesByCasa');
+    });*/
+});
 
 Route::resource('Login','LoginController');
 Route::group(['middleware' => 'auth'], function () {
+
+
+
+    Route::get('Redireccionador',function(){
+        setcookie('MoodleSession','',time()-1000000, "/", ".colegiosjb.net");
+        $usuario = User::find(Auth::user()->id);
+        if($usuario->idTipousuario==5){
+            if($usuario->resetPassword==1){
+                return redirect()->route('cambiar.Password');
+            }
+            return redirect()->route('registro.index');
+        }else if($usuario->idTipousuario==3) {
+            if($usuario->resetPassword==1){
+                return redirect()->route('cambiar.Password');
+            }
+            return redirect()->route('MisMaterias.Maestro');
+        }else if($usuario->idTipousuario==1) {
+            if($usuario->resetPassword==1){
+                return redirect()->route('cambiar.Password');
+            }
+            return redirect()->route('Alumno.MisClases');
+        }else if($usuario->idTipousuario==2) {
+            if($usuario->resetPassword==1){
+                return redirect()->route('cambiar.Password');
+            }
+            return redirect()->route('Padres.MisHijos');
+        }else{
+            return redirect('/logout');
+        }
+    });
     //Rutas de Maestros y Personal Administrativo
     Route::group(['middleware' => 'PersonalAdministrativo'], function () {
     //------Matriculas--//
@@ -37,7 +84,7 @@ Route::group(['middleware' => 'auth'], function () {
             $contador=0;
             foreach ($usuarios as $estudiante){
 
-                if($estudiante->idTipousuario==1){
+                if($estudiante->idTipousuario==1 && $estudiante->usuarioMoodle ==null){
                     $contador++;
                     $usergenetator = new \App\Utilities\GenerarToken();
                     $estudiante->fill([
@@ -54,8 +101,7 @@ Route::group(['middleware' => 'auth'], function () {
             $usuarios = User::all();
             $contador=0;
             foreach ($usuarios as $padre){
-
-                if($padre->idTipousuario==2){
+                if($padre->idTipousuario==2 &&$padre->usuarioMoodle==null){
                     $usergenetator = new \App\Utilities\GenerarToken();
 
                     $contador++;
@@ -180,7 +226,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     });
     //Rutas Comunes para todos los Usuarios
-
+    Route::get('CambiarEmail','InscriptionController@cambiarEmail')->name('cambiar.email');
+    Route::post('UpdateEmail','InscriptionController@updateEmail')->name('cambiar.updateEmail');
     Route::get('/CambiarPassword','InscriptionController@CambiarPassowrd')->name('cambiar.Password');
     Route::post('CambiarCotraseñaUpdate','InscriptionController@PasswordNuevo')->name('cambiar.Password.Nuevo');
 });
@@ -198,6 +245,8 @@ Route::get('/galeria', 'MainController@galery');
 Route::get('/calendario', 'MainController@calendar');
 Route::get('/moodle', 'MainController@ingresar');
 
+Route::get('/Credenciales','PadresPanelController@Credenciales')->name('Credenciales.Buscar');
+Route::post('DatosLogin','PadresPanelController@DatosLogin')->name('Credenciales.Acceso');
 
 
 

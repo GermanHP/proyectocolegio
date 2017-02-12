@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
     <link rel="stylesheet" href="css/home.css">
 
     <link rel="stylesheet" href="css/fonts.css">
@@ -101,7 +100,7 @@
                             materiales, trabajos, eventos y toda información institucional  referente al grado y sección en el que
                             se ha matriculado.</p>
                         @if(Auth::check())
-                            <a class="btn btn-info" href="{{ url('/MisMaterias') }}" role="button">Ingresar</a>
+                            <a class="btn btn-info" href="{{ url('/Redireccionador') }}" role="button">Ingresar</a>
                         @else
                             <a class="btn btn-info" href="{{ url('/login') }}" role="button">Ingresar</a>
                         @endif
@@ -239,4 +238,3 @@
     </footer>
 
 @endsection
-

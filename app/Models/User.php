@@ -20,7 +20,7 @@ class User extends Model implements AuthenticatableContract,
     use Authenticatable, Authorizable, CanResetPassword, SoftDeletes;
 
     protected $table = 'users';
-    protected $fillable = ['id', 'nombre', 'apellido', 'genero', 'email', 'password', 'usuarioMoodle','passwordMoodle', 'resetPassword', 'idTipousuario', 'remember_token', 'deleted_at'];
+    protected $fillable = ['id', 'nombre', 'apellido', 'genero', 'email', 'password', 'usuarioMoodle','passwordMoodle','TokenPushNotification', 'resetPassword', 'idTipousuario', 'remember_token', 'deleted_at'];
     protected $guarded = [];
 
     protected $dates = ['deleted_at'];

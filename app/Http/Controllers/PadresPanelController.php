@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Estudiante;
 use App\Models\Materiagrado;
+use App\Models\Padredefamilium;
 use App\Models\Padreestudiante;
 use Auth;
 use Illuminate\Http\Request;
@@ -29,5 +30,18 @@ class PadresPanelController extends Controller
        else{
             return view('errors.404');
        }
+    }
+
+    public function Credenciales(){
+        return view('PadresPanel.MostrarCredenciales');
+    }
+    public function DatosLogin(Request $request){
+        $datos = Padredefamilium::where('DUI',$request['DUI'])->get();
+        if($datos->count()==0){
+            flash('Registro no encontrado o cuenta no activada intente más tarde','danger');
+            return redirect()->back();
+        }
+        return view('PadresPanel.CredencialesObtenidas',compact('datos'));
+
     }
 }

@@ -64,7 +64,7 @@ class ControllerEstudiante extends Controller
         $estudiante->user->fill([
             'nombre'=>$request['nombreEstudiante'],
             'apellido'=>$request['apellido'],
-            'genero'=>1,
+            'genero'=>$request['generoEstudiante'],
             'email'=>$request['correoEstudiante'],
             'idTipousuario'=>1,
         ]);
@@ -102,24 +102,31 @@ class ControllerEstudiante extends Controller
                 }
             }
         }
-
-        foreach ($estudiante->user->sacramentousuarios as $sacramentos){
-            $sacramentos->delete();
-        }
-        foreach ($request['sacramentosEstudiante'] as $sacramento){
-            $sacramentosEstudiante = new Sacramentousuario();
-            $sacramentosEstudiante->fill([
-                'idSacramento'=>$sacramento,
-                'idUsuario'=>$estudiante->user->id,
-            ]);
-            $sacramentosEstudiante->save();
-        }
-
-        foreach ($estudiante->user->telefonos as $telefono){
-            if($telefono->idTipoTelefono==4){
-                $telefono->delete();
+        if($estudiante->user->sacramentousuarios !=null){
+            foreach ($estudiante->user->sacramentousuarios as $sacramentos){
+                $sacramentos->delete();
             }
         }
+
+        if($request['sacramentosEstudiante']!=null){
+            foreach ($request['sacramentosEstudiante'] as $sacramento){
+                $sacramentosEstudiante = new Sacramentousuario();
+                $sacramentosEstudiante->fill([
+                    'idSacramento'=>$sacramento,
+                    'idUsuario'=>$estudiante->user->id,
+                ]);
+                $sacramentosEstudiante->save();
+            }
+        }
+
+        if($estudiante->user->telefonos!=null){
+            foreach ($estudiante->user->telefonos as $telefono){
+                if($telefono->idTipoTelefono==4){
+                    $telefono->delete();
+                }
+            }
+        }
+
         if($request['TelefonoEmergenciaNombre']!=NULL) {
             $telefonoEmergencia = new Telefono();
             $telefonoEmergencia->fill([
@@ -130,29 +137,31 @@ class ControllerEstudiante extends Controller
             $telefonoEmergencia->save();
         }
 
+        if($estudiante->user->direcciones !=null){
+            foreach ($estudiante->user->direcciones as $direccion){
+                if($direccion->idTipoDireccion ==4){
+                    $direccion->fill([
+                        'detalle'=>$request['residenciaEstudianteEmergencia'],
+                        'idMunicipio'=>$request['municipioVivienda'],
+                        'idTipoDireccion'=>4,
+                        'idUsuario'=>$estudiante->user->id,
+                    ]);
+                    $direccion->save();
+                }
+            }
+            foreach ($estudiante->user->direcciones as $direccion){
+                if($direccion->idTipoDireccion ==2){
+                    $direccion->fill([
+                        'detalle'=>$request['residenciaEstudiante'],
+                        'idMunicipio'=>$request['municipioVivienda'],
+                        'idTipoDireccion'=>2,
+                        'idUsuario'=>$estudiante->user->id,
+                    ]);
+                    $direccion->save();
+                }
+            }
+        }
 
-        foreach ($estudiante->user->direcciones as $direccion){
-            if($direccion->idTipoDireccion ==4){
-                $direccion->fill([
-                    'detalle'=>$request['residenciaEstudianteEmergencia'],
-                    'idMunicipio'=>$request['municipioVivienda'],
-                    'idTipoDireccion'=>4,
-                    'idUsuario'=>$estudiante->user->id,
-                ]);
-                $direccion->save();
-            }
-        }
-        foreach ($estudiante->user->direcciones as $direccion){
-            if($direccion->idTipoDireccion ==2){
-                $direccion->fill([
-                    'detalle'=>$request['residenciaEstudiante'],
-                    'idMunicipio'=>$request['municipioVivienda'],
-                    'idTipoDireccion'=>2,
-                    'idUsuario'=>$estudiante->user->id,
-                ]);
-                $direccion->save();
-            }
-        }
 
 
         $matricula = $estudiante->matriculas[0];
@@ -167,10 +176,12 @@ class ControllerEstudiante extends Controller
         ]);
         $matricula->save();
 
-
-        foreach ($matricula->matriculadocumentos as $documentoMatricula){
-            $documentoMatricula->delete();
+        if($matricula->matriculadocumentos !=null){
+            foreach ($matricula->matriculadocumentos as $documentoMatricula){
+                $documentoMatricula->delete();
+            }
         }
+
         foreach ($request['DocumentosEntregados'] as $documento){
             $DocumentosMatricula = new Matriculadocumento();
             $DocumentosMatricula->fill([
