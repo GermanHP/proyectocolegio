@@ -84,11 +84,11 @@
     {!! Html::script('js/material.min.js') !!}
 
 
-
 </head>
 <body>
 <!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
@@ -99,7 +99,7 @@
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
-            <nav class="mdl-navigation ">
+            <nav class="mdl-navigation right-align">
                 <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
                 <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
                 <a class="mdl-navigation__link" data-toggle="modal" data-target="#modalComentario" href="#">Comentarios</a>
@@ -116,13 +116,15 @@
     </a> <br> <br>
     <span class="mdl-layout-title">San Juan Bautista</span>
     <nav class="mdl-navigation">
+        <hr class="featurette-divider">
+        <br>
         <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
         <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
         <a class="mdl-navigation__link" href="{{url('/galeria')}}">Galería</a>
         <a class="mdl-navigation__link" href="{{url('/calendario')}}">Calendario Anual CSJB</a>
     </nav>
 
-    <hr class="featurette-divider">
+
 </div>
 
 <main class="mdl-layout__content">
