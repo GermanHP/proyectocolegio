@@ -184,10 +184,8 @@
         <div class="row">
             <div class="col l6 s12">
                 <h5 class="white-text">Colegio San Juan Bautista</h5>
-                <p class="grey-text text-lighten-4">Somos una institución educativa católica que propicia en los estudiantes
-                    el desarrollo de las competencias que les permitan resolver con éxito los problemas de la vida diaria,
-                    fomentando la práctica de valores y generando un ambiente de respeto por la dignidad humana y la sana
-                    convivencia.</p>
+                <p class="grey-text text-lighten-4"> Tel. 2330-6336, <br>
+                    Avenida San José, barrio el centro, Olocuilta, La Paz, El Salvador.</p>
 
 
             </div>
