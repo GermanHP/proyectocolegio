@@ -135,7 +135,7 @@
             {{Form::image('/img/indexes/logo.jpg','logoCSJB2',['class'=>'text-center','id'=>'logoCSJB2'])}}
         </a> <br> <br>
         <span class="mdl-layout-title">San Juan Bautista</span>
-        <nav class="mdl-navigation">
+        <nav class="mdl-navigation mdl-color-nav">
 
             <a class="mdl-navigation__link" href="{{url('/CambiarPassword')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                   role="presentation">input</i>Cambiar Contraseña</a>

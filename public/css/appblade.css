@@ -8,6 +8,10 @@
 .mdl-navigation{
     background-color: #3422FF;
 }
+
+.mdl-color-nav{
+    background-color: transparent;
+}
 .material-icons.md-48{
     font-size: 50px;
     width: 210px;

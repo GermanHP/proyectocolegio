@@ -112,7 +112,7 @@
             <img id="logoCSJB2" src="img/indexes/logo.jpg" alt="">
         </a> <br> <br>
         <span class="mdl-layout-title">San Juan Bautista</span>
-        <nav class="mdl-navigation">
+        <nav class="mdl-navigation mdl-color-nav">
             <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
             <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
             <a class="mdl-navigation__link" href="{{url('/galeria')}}">Galería</a>

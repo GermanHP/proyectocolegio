@@ -103,7 +103,7 @@
             {{Form::image('/img/indexes/logo.jpg','logoCSJB2',['class'=>'text-center','id'=>'logoCSJB2'])}}
         </a> <br> <br>
         <span class="mdl-layout-title">San Juan Bautista</span>
-        <nav class="mdl-navigation">
+        <nav class="mdl-navigation mdl-color-nav">
             <a class="mdl-navigation__link" href="{{ url('/') }}">Inicio</a>
             <a class="mdl-navigation__link" href="{{ url('/instalaciones') }}">Instalaciones</a>
             <a class="mdl-navigation__link" href="{{url('/galeria')}}">Galería</a>
