@@ -79,6 +79,35 @@ Route::group(['middleware' => 'auth'], function () {
     //Rutas de Maestros y Personal Administrativo
     Route::group(['middleware' => 'PersonalAdministrativo'], function () {
     //------Matriculas--//
+
+
+        Route::get('CorregirHijos',function(){
+            $padres = \App\Models\Padredefamilium::all();
+            $cont=0;
+            foreach ($padres as $padre){
+
+                if($padre->padreestudiantes->count()>1){
+                    $cont++;
+                    foreach ($padre->padreestudiantes as $padreestudiante){
+                        $estudiantesconpadres = \App\Models\Padreestudiante::where('idEstudiante',$padreestudiante->idEstudiante)->get();
+
+                        foreach ($estudiantesconpadres as $estudiantesconpadre){
+                            $estudianteID= "";
+                            if($estudiantesconpadre->idEstudiante ==$padreestudiante->idEstudiante){
+                                $estudianteID = $estudiantesconpadre->idEstudiante;
+
+                            }
+                            echo "Relacionar ". $estudianteID." con  $estudiantesconpadre->idPadre<br>";
+                        }
+
+                            echo "___________________________________<br>";
+
+                    }
+                }
+            }
+            echo "$cont";
+
+        });
         Route::get('ActualizarEstudiantes',function(){
             $usuarios = User::all();
             $contador=0;

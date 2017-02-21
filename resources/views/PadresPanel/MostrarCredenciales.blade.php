@@ -26,6 +26,9 @@
             {!!Form::submit('Obtener Credenciales', ['class'=>'btn btn-primary','name'=>'btnCrearUsuario'])!!}
             {!!Form::close()!!}
 
+            <br>Si tu Cuenta aun no esta activa te invitamos a revisar nuevamente el dia Miércoles 15 de febrero si tienes problemas puedes escribirnos a nuestros contactos de soporte<br>
+            todocyber100@gmail.com<br>
+            gdhernandezp@gmail.com<br>
         </div>
     </div>
 

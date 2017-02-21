@@ -8,6 +8,7 @@ use App\Models\Estudiante;
 use App\Models\Grado;
 use App\Models\Gradoseccion;
 use App\Models\Historicoestudiante;
+use App\Models\Materiagrado;
 use App\Models\Matricula;
 use App\Models\Matriculadocumento;
 use App\Models\Municipio;
@@ -19,6 +20,7 @@ use App\Models\Seccion;
 use App\Models\Telefono;
 use App\Models\User;
 use App\Utilities\Action;
+use Auth;
 use DB;
 use Exception;
 use Illuminate\Http\Request;
@@ -449,7 +451,20 @@ class InscriptionController extends Controller
     }
 
     public function noticias(){
-        return view('matricula.noticias');
+        $maestro = Auth::user()->maestros[0]->id;
+
+        $grados = DB::table('gradoseccion')
+            ->join('grados','grados.id','=','gradoseccion.idGrado')
+            ->join('seccion','seccion.id','=','gradoseccion.idSeccion')
+            ->join('materiagrado','materiagrado.idGradoseccion','=','gradoseccion.id')
+            ->where('materiagrado.idMaestroResponsable','=',$maestro)
+            ->select('gradoseccion.id', DB::raw('concat(grados.nombre, " ", seccion.Nombre ) as nombre'))
+            ->whereNull('gradoseccion.deleted_at')
+            ->whereNull('materiagrado.deleted_at')
+            ->lists('nombre', 'id');
+
+
+        return view('matricula.noticias', compact('grados'));
     }
 
     public function getMunicipios(Request $request)
