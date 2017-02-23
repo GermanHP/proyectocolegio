@@ -48,17 +48,17 @@
                                   $revEn = 1;
                                   ?>
 
-                                    {{Form::number('Revision[]',$nota->nota, ['class'=>'form-control','tabindex'=>'1','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                                    {{Form::number('Revision[]',$nota->nota, ['class'=>'form-control','tabindex'=>'1','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
 
                                 @endif
 
                             @endforeach
                             @if($revEn ==0)
-                                  {{Form::number('Revision[]',0, ['class'=>'form-control','tabindex'=>'1','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                                  {{Form::number('Revision[]',0, ['class'=>'form-control','tabindex'=>'1','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
                                 @endif
 
                             @else
-                            {{Form::number('Revision[]',0, ['class'=>'form-control','tabindex'=>'1','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                            {{Form::number('Revision[]',0, ['class'=>'form-control','tabindex'=>'1','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
 
                     @endif
                     </td>
@@ -69,14 +69,14 @@
                                 @if($nota->idTipoNota ==2 && $nota->idMateriaGrado ==$idM)
                                     <?php $actividadesComplementarias = $nota->nota*0.20;
                                     $actCEN = 1;?>
-                                    {{Form::number('ActividadesComplementarias[]',$nota->nota, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                                    {{Form::number('ActividadesComplementarias[]',$nota->nota, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
                                 @endif
                             @endforeach
                                 @if($actCEN ==0)
-                                    {{Form::number('ActividadesComplementarias[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                                    {{Form::number('ActividadesComplementarias[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
                                 @endif
                         @else
-                            {{Form::number('ActividadesComplementarias[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                            {{Form::number('ActividadesComplementarias[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
 
                         @endif
                     </td>
@@ -88,14 +88,14 @@
                             @if($nota->idTipoNota ==3 && $nota->idMateriaGrado ==$idM)
                                     <?php $actividadesIntegradores = $nota->nota*0.35 ;
                                     $actIEn=1?>
-                                {{Form::number('ActividadesIntegradoras[]',$nota->nota, ['class'=>'form-control','tabindex'=>'3','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                                {{Form::number('ActividadesIntegradoras[]',$nota->nota, ['class'=>'form-control','tabindex'=>'3','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
                     @endif
                     @endforeach
                             @if($actIEn ==0)
-                                {{Form::number('ActividadesIntegradoras[]',0, ['class'=>'form-control','tabindex'=>'3','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                                {{Form::number('ActividadesIntegradoras[]',0, ['class'=>'form-control','tabindex'=>'3','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
                             @endif
                     @else
-                    {{Form::number('ActividadesIntegradoras[]',0, ['class'=>'form-control','tabindex'=>'3','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                    {{Form::number('ActividadesIntegradoras[]',0, ['class'=>'form-control','tabindex'=>'3','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
 
                     @endif
 
@@ -108,14 +108,14 @@
                             @if($nota->idTipoNota ==4 && $nota->idMateriaGrado ==$idM)
                                     <?php $pruebaObtetiva = $nota->nota*0.30;
                                     $pruebEN=1;?>
-                                {{Form::number('PruebaObjetiva[]',$nota->nota, ['class'=>'form-control','tabindex'=>'4','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                                {{Form::number('PruebaObjetiva[]',$nota->nota, ['class'=>'form-control','tabindex'=>'4','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
                             @endif
                         @endforeach
                             @if($pruebEN ==0)
-                                {{Form::number('PruebaObjetiva[]',0, ['class'=>'form-control','tabindex'=>'4','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                                {{Form::number('PruebaObjetiva[]',0, ['class'=>'form-control','tabindex'=>'4','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
                             @endif
                         @else
-                                {{Form::number('PruebaObjetiva[]',0, ['class'=>'form-control','tabindex'=>'4','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                                {{Form::number('PruebaObjetiva[]',0, ['class'=>'form-control','tabindex'=>'4','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
 
                         @endif
 
