@@ -20,6 +20,7 @@ class Gradoseccion extends Model {
     protected $fillable = ['id', 'idGrado', 'idSeccion', 'deleted_at', 'idMaestroEncargado'];
 
 
+
     public function grado() {
         return $this->belongsTo(\App\Models\Grado::class, 'idGrado', 'id');
     }

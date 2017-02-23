@@ -2,14 +2,14 @@
 @section('content')
     <div class="container panel panel-body">
         <h3>Notas para la materia de {{$materia->materium->nombre}}</h3>
-        <h3>Grado:  {{$materia->gradoseccion->grado->nombre}} {{$materia->gradoseccion->seccion->nombre}}</h3>
+        <h3>Grado:  {{$materia->gradoseccion->grado->nombre}} {{$materia->gradoseccion->seccion->nombre}} </h3>
         @include('alertas.flash')
         @include('alertas.errores')
 
         <table class="table table-striped" id="messdsdasdasdasdasdadsstros">
             <thead>
             <tr>
-
+                <th>N°</th>
                 <th>Alumnos</th>
                 <th>Revision de Cuarderno (15%)</th>
                 <th>Actividades Complementarias (20%)</th>
@@ -19,20 +19,117 @@
             </tr>
             </thead>
             <tbody>
-            {!!Form::open(['route'=>['Notas.Insertar'], 'method'=>'POST', 'onsubmit'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+            {!!Form::open(['route'=>['Notas.Insertar',$materia->id], 'method'=>'POST', 'onsubmit'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
 
-            @foreach($alumnos as $alumno)
+
+            <?php $contador = 0; ?>
+            @foreach($materia->gradoseccion->matriculas as $matricula)
                 <tr>
+                    <td><?php
+                        $contador++ ;
+                        $revision =0;
+                        $actividadesComplementarias=0;
+                        $actividadesIntegradores = 0;
+                        $pruebaObtetiva = 0;
 
-                    <td>{{$alumno->apellido}} {{$alumno->nombre}}</td>
-                    <td>{{Form::number('Revision[]',0, ['class'=>'form-control','tabindex'=>'1','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
-                    <td>{{Form::number('ActividadesComplementarias[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
-                    <td>{{Form::number('ActividadesIntegradoras[]',0, ['class'=>'form-control','tabindex'=>'3','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
-                    <td>{{Form::number('PruebaObjetiva[]',0, ['class'=>'form-control','tabindex'=>'4','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
-                    <td>0</td>
+                        $revEn = 0;
+                        $actCEN = 0;
+                        $actIEn = 0;
+                        $pruebEN = 0;
+
+                        ?>{{$contador}}</td>
+                    <td>{{$matricula->estudiante->user->apellido}} {{$matricula->estudiante->user->nombre}}</td>
+                    <td>
+                        @if($matricula->estudiante->notas!=NULL &&$matricula->estudiante->notas->count()!=0)
+
+                          @foreach($matricula->estudiante->notas as $nota)
+                              @if($nota->idTipoNota ==1 && $nota->idMateriaGrado ==$idM)
+                                  <?php $revision = $nota->nota*0.15 ;
+                                  $revEn = 1;
+                                  ?>
+
+                                    {{Form::number('Revision[]',$nota->nota, ['class'=>'form-control','tabindex'=>'1','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+
+                                @endif
+
+                            @endforeach
+                            @if($revEn ==0)
+                                  {{Form::number('Revision[]',0, ['class'=>'form-control','tabindex'=>'1','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                                @endif
+
+                            @else
+                            {{Form::number('Revision[]',0, ['class'=>'form-control','tabindex'=>'1','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+
+                    @endif
+                    </td>
+                    <td>
+                        @if($matricula->estudiante->notas!=NULL &&$matricula->estudiante->notas->count()!=0)
+
+                            @foreach($matricula->estudiante->notas as $nota)
+                                @if($nota->idTipoNota ==2 && $nota->idMateriaGrado ==$idM)
+                                    <?php $actividadesComplementarias = $nota->nota*0.20;
+                                    $actCEN = 1;?>
+                                    {{Form::number('ActividadesComplementarias[]',$nota->nota, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                                @endif
+                            @endforeach
+                                @if($actCEN ==0)
+                                    {{Form::number('ActividadesComplementarias[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                                @endif
+                        @else
+                            {{Form::number('ActividadesComplementarias[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+
+                        @endif
+                    </td>
+
+
+                    <td>
+                        @if($matricula->estudiante->notas!=NULL &&$matricula->estudiante->notas->count()!=0)
+                        @foreach($matricula->estudiante->notas as $nota)
+                            @if($nota->idTipoNota ==3 && $nota->idMateriaGrado ==$idM)
+                                    <?php $actividadesIntegradores = $nota->nota*0.35 ;
+                                    $actIEn=1?>
+                                {{Form::number('ActividadesIntegradoras[]',$nota->nota, ['class'=>'form-control','tabindex'=>'3','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                    @endif
+                    @endforeach
+                            @if($actIEn ==0)
+                                {{Form::number('ActividadesIntegradoras[]',0, ['class'=>'form-control','tabindex'=>'3','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                            @endif
+                    @else
+                    {{Form::number('ActividadesIntegradoras[]',0, ['class'=>'form-control','tabindex'=>'3','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+
+                    @endif
+
+
+
+                    </td>
+                    <td>
+                        @if($matricula->estudiante->notas!=NULL &&$matricula->estudiante->notas->count()!=0)
+                        @foreach($matricula->estudiante->notas as $nota)
+                            @if($nota->idTipoNota ==4 && $nota->idMateriaGrado ==$idM)
+                                    <?php $pruebaObtetiva = $nota->nota*0.30;
+                                    $pruebEN=1;?>
+                                {{Form::number('PruebaObjetiva[]',$nota->nota, ['class'=>'form-control','tabindex'=>'4','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                            @endif
+                        @endforeach
+                            @if($pruebEN ==0)
+                                {{Form::number('PruebaObjetiva[]',0, ['class'=>'form-control','tabindex'=>'4','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+                            @endif
+                        @else
+                                {{Form::number('PruebaObjetiva[]',0, ['class'=>'form-control','tabindex'=>'4','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'any', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
+
+                        @endif
+
+
+
+
+
+                    </td>
+                    <td><?php $promedio= $revision+$actividadesComplementarias+$actividadesIntegradores+$pruebaObtetiva;
+                        $promedio = round($promedio,2);
+
+                    ?>{{$promedio}} </td>
                 </tr>
-                @endforeach
-
+            @endforeach
 
 
 

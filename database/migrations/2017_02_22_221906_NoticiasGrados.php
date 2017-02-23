@@ -32,6 +32,6 @@ class NoticiasGrados extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('noticiasgrados');
     }
 }

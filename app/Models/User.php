@@ -26,7 +26,6 @@ class User extends Model implements AuthenticatableContract,
     protected $dates = ['deleted_at'];
 
     protected $hidden = ['password', 'remember_token'];
-
     public function tipousuario() {
         return $this->belongsTo(\App\Models\Tipousuario::class, 'idTipousuario', 'id');
     }

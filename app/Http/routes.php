@@ -238,7 +238,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('MisMaterias','MaestrosController@MisMaterias')->name('MisMaterias.Maestro');
 
         Route::get('Notas/{id}','NotasController@IngresarNotas')->name('Notas.Ingresar');
-        Route::post('NotasUpdate','NotasController@GuardarNotas')->name('Notas.Insertar');
+        Route::post('NotasUpdate/{id}','NotasController@GuardarNotas')->name('Notas.Insertar');
     });
 
 

@@ -11,7 +11,6 @@ class Estudiante extends Model {
     protected $table = 'estudiante';
     protected $fillable = ['id', 'fechaNacimiento', 'parvularia', 'repiteGrado', 'retirada', 'PersonaAutorizada', 'PersonaEmergencia', 'Carnet', 'idUsuario', 'deleted_at'];
 
-
     public function user() {
         return $this->belongsTo(\App\Models\User::class, 'idUsuario', 'id');
     }
@@ -38,6 +37,10 @@ class Estudiante extends Model {
 
     public function matriculas() {
         return $this->hasMany(\App\Models\Matricula::class, 'idEstudiante', 'id');
+    }
+
+    public function notas() {
+        return $this->hasMany(\App\Models\Nota::class, 'idEstudiante', 'id');
     }
 
     public function padreestudiantes() {
