@@ -183,6 +183,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/registro', 'InscriptionController@registro')->name('registro.index');
     Route::get('/AlumnosPorGrado/{id}','InscriptionController@registroGrado')->name('Alumnos.Grado');
     Route::get('/noticias', 'InscriptionController@noticias');
+    Route::post('GuardarNoticias','InscriptionController@guardarNoticia')->name('Noticias.Guardar');
     Route::get('/RegistrarGrado', 'InscriptionController@asignarGradoEstudiante')->name('NuevoGrado.View');
     Route::get('/GradosActivos','GradoSeccionController@GradosActivos');
     Route::get('DesactivarGrado/{id}','GradoSeccionController@DesactivarGrado')->name('Desactivar.Grado');
@@ -236,6 +237,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('ResetearContraseñaAlumno/{id}','MaestrosController@ResetearContraseñaAlumno')->name('ResetearPassword.Alumno');
     Route::get('MisMaterias','MaestrosController@MisMaterias')->name('MisMaterias.Maestro');
 
+        Route::get('Notas/{id}','NotasController@IngresarNotas')->name('Notas.Ingresar');
+        Route::post('NotasUpdate','NotasController@GuardarNotas')->name('Notas.Insertar');
     });
 
 

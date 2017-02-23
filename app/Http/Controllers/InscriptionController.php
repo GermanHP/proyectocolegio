@@ -12,6 +12,7 @@ use App\Models\Materiagrado;
 use App\Models\Matricula;
 use App\Models\Matriculadocumento;
 use App\Models\Municipio;
+use App\Models\Noticiasgrado;
 use App\Models\Oficio;
 use App\Models\Padredefamilium;
 use App\Models\Padreestudiante;
@@ -418,6 +419,18 @@ class InscriptionController extends Controller
     public function afiche(){
         return view('matricula.propuesta');
     }
+    public function guardarNoticia(Requests\NoticiasRequest $request){
+        $noticia = new Noticiasgrado();
+        $noticia->fill([
+            'Titulo'=>$request['titulo'],
+            'Cuerpo'=>$request['cuerpo'],
+            'idGradoSeccion'=>$request['gradoseccion'],
+            'idUsuarioPublicado'=>Auth::user()->id
+        ]);
+        $noticia->save();
+        flash('Noticia Guardada exitosamente','info');
+        return redirect()->back();
+    }
 
     public function dash_inscription(){
         return view('matricula.dash_matricula');
@@ -462,9 +475,9 @@ class InscriptionController extends Controller
             ->whereNull('gradoseccion.deleted_at')
             ->whereNull('materiagrado.deleted_at')
             ->lists('nombre', 'id');
+        $noticias = Noticiasgrado::where('idUsuarioPublicado',Auth::user()->id)->get();
 
-
-        return view('matricula.noticias', compact('grados'));
+        return view('matricula.noticias', compact('grados','noticias'));
     }
 
     public function getMunicipios(Request $request)

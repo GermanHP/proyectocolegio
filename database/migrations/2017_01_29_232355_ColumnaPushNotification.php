@@ -12,7 +12,7 @@ class ColumnaPushNotification extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+       Schema::table('users', function (Blueprint $table) {
             $table->string('TokenPushNotification',500)->nullable();
 
 
