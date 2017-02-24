@@ -28,5 +28,9 @@ class Materiagrado extends Model {
         return $this->hasMany(\App\Models\Materiagradohorario::class, 'idMateriaGrado', 'id');
     }
 
+    public function notas() {
+        return $this->hasMany(\App\Models\Nota::class, 'idMateriaGrado', 'id');
+    }
+
 
 }

@@ -47,6 +47,7 @@ class LoginAPI extends Controller
                     "padredefamilia.padreestudiantes.estudiante.matriculas.gradoseccion.materiagrados.materium",
                     "padredefamilia.padreestudiantes.estudiante.matriculas.gradoseccion.grado",
                     "padredefamilia.padreestudiantes.estudiante.matriculas.gradoseccion.seccion",
+                    "padredefamilia.padreestudiantes.estudiante.matriculas.gradoseccion.noticiasgrados.user",
                     "padredefamilia.padreestudiantes.estudiante.matriculas.gradoseccion.materiagrados.materiagradohorarios.diasdisponible"
                     ,"padredefamilia.padreestudiantes.estudiante.matriculas.gradoseccion.materiagrados.materiagradohorarios.horasdisponible")->get();
                 return response()->json(['ErrorCode' => '0', 'token' => $token, 'usuario' => $usuario,

@@ -79,6 +79,35 @@ Route::group(['middleware' => 'auth'], function () {
     //Rutas de Maestros y Personal Administrativo
     Route::group(['middleware' => 'PersonalAdministrativo'], function () {
     //------Matriculas--//
+
+
+        Route::get('CorregirHijos',function(){
+            $padres = \App\Models\Padredefamilium::all();
+            $cont=0;
+            foreach ($padres as $padre){
+
+                if($padre->padreestudiantes->count()>1){
+                    $cont++;
+                    foreach ($padre->padreestudiantes as $padreestudiante){
+                        $estudiantesconpadres = \App\Models\Padreestudiante::where('idEstudiante',$padreestudiante->idEstudiante)->get();
+
+                        foreach ($estudiantesconpadres as $estudiantesconpadre){
+                            $estudianteID= "";
+                            if($estudiantesconpadre->idEstudiante ==$padreestudiante->idEstudiante){
+                                $estudianteID = $estudiantesconpadre->idEstudiante;
+
+                            }
+                            echo "Relacionar ". $estudianteID." con  $estudiantesconpadre->idPadre<br>";
+                        }
+
+                            echo "___________________________________<br>";
+
+                    }
+                }
+            }
+            echo "$cont";
+
+        });
         Route::get('ActualizarEstudiantes',function(){
             $usuarios = User::all();
             $contador=0;
@@ -154,6 +183,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/registro', 'InscriptionController@registro')->name('registro.index');
     Route::get('/AlumnosPorGrado/{id}','InscriptionController@registroGrado')->name('Alumnos.Grado');
     Route::get('/noticias', 'InscriptionController@noticias');
+    Route::post('GuardarNoticias','InscriptionController@guardarNoticia')->name('Noticias.Guardar');
     Route::get('/RegistrarGrado', 'InscriptionController@asignarGradoEstudiante')->name('NuevoGrado.View');
     Route::get('/GradosActivos','GradoSeccionController@GradosActivos');
     Route::get('DesactivarGrado/{id}','GradoSeccionController@DesactivarGrado')->name('Desactivar.Grado');
@@ -207,6 +237,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('ResetearContraseñaAlumno/{id}','MaestrosController@ResetearContraseñaAlumno')->name('ResetearPassword.Alumno');
     Route::get('MisMaterias','MaestrosController@MisMaterias')->name('MisMaterias.Maestro');
 
+        Route::get('Notas/{id}','NotasController@IngresarNotas')->name('Notas.Ingresar');
+        Route::post('NotasUpdate/{id}','NotasController@GuardarNotas')->name('Notas.Insertar');
     });
 
 

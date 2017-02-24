@@ -8,9 +8,11 @@ use App\Models\Estudiante;
 use App\Models\Grado;
 use App\Models\Gradoseccion;
 use App\Models\Historicoestudiante;
+use App\Models\Materiagrado;
 use App\Models\Matricula;
 use App\Models\Matriculadocumento;
 use App\Models\Municipio;
+use App\Models\Noticiasgrado;
 use App\Models\Oficio;
 use App\Models\Padredefamilium;
 use App\Models\Padreestudiante;
@@ -19,6 +21,7 @@ use App\Models\Seccion;
 use App\Models\Telefono;
 use App\Models\User;
 use App\Utilities\Action;
+use Auth;
 use DB;
 use Exception;
 use Illuminate\Http\Request;
@@ -416,6 +419,18 @@ class InscriptionController extends Controller
     public function afiche(){
         return view('matricula.propuesta');
     }
+    public function guardarNoticia(Requests\NoticiasRequest $request){
+        $noticia = new Noticiasgrado();
+        $noticia->fill([
+            'Titulo'=>$request['titulo'],
+            'Cuerpo'=>$request['cuerpo'],
+            'idGradoSeccion'=>$request['gradoseccion'],
+            'idUsuarioPublicado'=>Auth::user()->id
+        ]);
+        $noticia->save();
+        flash('Noticia Guardada exitosamente','info');
+        return redirect()->back();
+    }
 
     public function dash_inscription(){
         return view('matricula.dash_matricula');
@@ -449,7 +464,20 @@ class InscriptionController extends Controller
     }
 
     public function noticias(){
-        return view('matricula.noticias');
+        $maestro = Auth::user()->maestros[0]->id;
+
+        $grados = DB::table('gradoseccion')
+            ->join('grados','grados.id','=','gradoseccion.idGrado')
+            ->join('seccion','seccion.id','=','gradoseccion.idSeccion')
+            ->join('materiagrado','materiagrado.idGradoseccion','=','gradoseccion.id')
+            ->where('materiagrado.idMaestroResponsable','=',$maestro)
+            ->select('gradoseccion.id', DB::raw('concat(grados.nombre, " ", seccion.Nombre ) as nombre'))
+            ->whereNull('gradoseccion.deleted_at')
+            ->whereNull('materiagrado.deleted_at')
+            ->lists('nombre', 'id');
+        $noticias = Noticiasgrado::where('idUsuarioPublicado',Auth::user()->id)->get();
+
+        return view('matricula.noticias', compact('grados','noticias'));
     }
 
     public function getMunicipios(Request $request)

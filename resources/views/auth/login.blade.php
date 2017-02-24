@@ -58,6 +58,10 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">¿Olvidaste tu contraseña?</a>
+
+                                Si tienes problemas para acceder puedes escribir a cualquiera de nuestros correos de contacto
+                                <br>Correo de soporte todocyber100@gmail.com <a href="mailto:todocyber100@gmail.com?Subject=Problemas Login" target="_top">Enviar Email</a>
+                                <br>Correo de soporte gdhernandezp@gmail.com <a href="mailto:gdhernandezp@gmail.com?Subject=Problemas Login" target="_top">Enviar Email</a>
                             </div>
                         </div>
                     </form>

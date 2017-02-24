@@ -20,6 +20,7 @@ class Gradoseccion extends Model {
     protected $fillable = ['id', 'idGrado', 'idSeccion', 'deleted_at', 'idMaestroEncargado'];
 
 
+
     public function grado() {
         return $this->belongsTo(\App\Models\Grado::class, 'idGrado', 'id');
     }
@@ -32,6 +33,10 @@ class Gradoseccion extends Model {
         return $this->belongsTo(\App\Models\Seccion::class, 'idSeccion', 'id');
     }
 
+    public function users() {
+        return $this->belongsToMany(\App\Models\User::class, 'noticiasgrados', 'idGradoSeccion', 'idUsuarioPublicado');
+    }
+
     public function materiagrados() {
         return $this->hasMany(\App\Models\Materiagrado::class, 'idGradoSeccion', 'id');
     }
@@ -42,6 +47,10 @@ class Gradoseccion extends Model {
 
     public function matriculas() {
         return $this->hasMany(\App\Models\Matricula::class, 'idGradoSeccion', 'id');
+    }
+
+    public function noticiasgrados() {
+        return $this->hasMany(\App\Models\Noticiasgrado::class, 'idGradoSeccion', 'id');
     }
 
 

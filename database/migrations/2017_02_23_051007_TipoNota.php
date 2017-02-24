@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ColumnaPushNotification extends Migration
+class TipoNota extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,12 @@ class ColumnaPushNotification extends Migration
      */
     public function up()
     {
-       Schema::table('users', function (Blueprint $table) {
-            $table->string('TokenPushNotification',500)->nullable();
-
-
+        Schema::create('tiponota', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nombre');
+            $table->string('porcentaje')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,8 +28,6 @@ class ColumnaPushNotification extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('TokenPushNotification');
-        });
+        Schema::drop('tiponota');
     }
 }
