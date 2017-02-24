@@ -15,20 +15,32 @@ use Mockery\Matcher\Not;
 
 class NotasController extends Controller
 {
-    public function IngresarNotas($id){
+    public function IngresarNotas($id)
+    {
 
-        $materia = Materiagrado::where('id',$id)->where('idMaestroResponsable',Auth::user()->maestros[0]->id)->with(['materium','gradoseccion.matriculas.estudiante.user'=> function($query){
+        $materia = Materiagrado::where('id', $id)->where('idMaestroResponsable', Auth::user()->maestros[0]->id)->with(['materium', 'gradoseccion.matriculas.estudiante.user' => function ($query) {
             $query->orderBy('apellido', 'DESC');
         }])->first();
-        if($materia->count()==0){
+        if ($materia->count() == 0) {
             return redirect('404');
         }
 
-$idM = $id;
+        $idM = $id;
+
+        $alumnos = DB::table('users')
+            ->join('estudiante', 'estudiante.idUsuario', '=', 'users.id')
+            ->join('matriculas', 'matriculas.idEstudiante', '=', 'estudiante.id')
+            ->join('gradoseccion', 'gradoseccion.id', '=', 'matriculas.idGradoSeccion')
+            ->join('materiagrado', 'materiagrado.idGradoSeccion', '=', 'gradoseccion.id')
+            ->where('materiagrado.id',$id)
+            ->whereNull('users.deleted_at')
+            ->whereNull('gradoseccion.deleted_at')
+            ->select('users.nombre','users.apellido','estudiante.id')
+            ->orderBy('users.apellido','ASC')
+            ->get();
 
 
-
-        return view('Maestros.Notas.NuevasNotas',compact('materia','idM'));
+        return view('Maestros.Notas.NuevasNotas',compact('materia','idM','alumnos'));
     }
 
     public function GuardarNotas($id,Request $request){
@@ -41,7 +53,17 @@ $idM = $id;
         $materia = Materiagrado::where('id',$id)->where('idMaestroResponsable',Auth::user()->maestros[0]->id)->with(['materium','gradoseccion.matriculas.estudiante.user'=> function($query){
             $query->orderBy('apellido', 'DESC');
         }])->first();
-        $alumnos = $materia->gradoseccion->matriculas;
+        $alumnos = DB::table('users')
+            ->join('estudiante', 'estudiante.idUsuario', '=', 'users.id')
+            ->join('matriculas', 'matriculas.idEstudiante', '=', 'estudiante.id')
+            ->join('gradoseccion', 'gradoseccion.id', '=', 'matriculas.idGradoSeccion')
+            ->join('materiagrado', 'materiagrado.idGradoSeccion', '=', 'gradoseccion.id')
+            ->where('materiagrado.id',$id)
+            ->whereNull('users.deleted_at')
+            ->whereNull('gradoseccion.deleted_at')
+            ->select('users.nombre','users.apellido','estudiante.id as idEstudiante')
+            ->orderBy('users.apellido','ASC')
+            ->get();
 
 
         if(count($revision)!=count($ActividadesComplementarias) || count($ActividadesComplementarias) !=count($ActividadesIntegradoras)  ||

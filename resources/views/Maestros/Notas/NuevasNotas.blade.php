@@ -5,8 +5,8 @@
         <h3>Grado:  {{$materia->gradoseccion->grado->nombre}} {{$materia->gradoseccion->seccion->nombre}} </h3>
         @include('alertas.flash')
         @include('alertas.errores')
-
-        <table class="table table-striped" id="messdsdasdasdasdasdadsstros">
+        {!!link_to_route('MisMaterias.Maestro', $title = 'Regresar',  $parameters =[], $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+        <table class="table table-striped" id="mestrddos">
             <thead>
             <tr>
                 <th>N°</th>
@@ -23,7 +23,13 @@
 
 
             <?php $contador = 0; ?>
+            @foreach($alumnos as $alumno)
+
+
+
             @foreach($materia->gradoseccion->matriculas as $matricula)
+                @if($matricula->estudiante->id==$alumno->id)
+
                 <tr>
                     <td><?php
                         $contador++ ;
@@ -38,7 +44,15 @@
                         $pruebEN = 0;
 
                         ?>{{$contador}}</td>
-                    <td>{{$matricula->estudiante->user->apellido}} {{$matricula->estudiante->user->nombre}}</td>
+                    <td>
+
+                            @if($matricula->estudiante->id == $alumno->id)
+                            {{$alumno->apellido}} {{$alumno->nombre}}
+                            @endif
+
+
+
+                    </td>
                     <td>
                         @if($matricula->estudiante->notas!=NULL &&$matricula->estudiante->notas->count()!=0)
 
@@ -129,6 +143,8 @@
 
                     ?>{{$promedio}} </td>
                 </tr>
+                @endif
+            @endforeach
             @endforeach
 
 

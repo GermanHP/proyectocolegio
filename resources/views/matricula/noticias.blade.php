@@ -21,16 +21,9 @@
                 {!!Form::submit('Guardar Noticia', ['class'=>'btn btn-primary','name'=>'btnCrearUsuario'])!!}
                 {!! Form::close() !!}
             </div>
-
-
-
         </div>
-
-
         <div class="container panel panel-body">
             <h3>Registro de Noticias</h3>
-
-
             @include('alertas.flash')
             @include('alertas.errores')
 
@@ -47,11 +40,12 @@
                 <tbody>
 
                 @foreach($noticias as $noticia)
-
+                    <tr>
                     <td>{{$noticia->Titulo}}</td>
                     <td>{{$noticia->Cuerpo}}</td>
                     <td>{{$noticia->gradoseccion->grado->nombre}} {{$noticia->gradoseccion->seccion->nombre}}</td>
                     <td><b>No hay Acciones Permitidas</b></td>
+                    </tr>
                     @endforeach
 
                 </tbody>
@@ -68,7 +62,7 @@
                     responsive: true,
                     "autoWidth": true,
 
-                    "order": [[3, 'asc'], [2, 'desc']],
+
                     "language": {
 
 
