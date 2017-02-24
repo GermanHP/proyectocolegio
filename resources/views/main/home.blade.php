@@ -67,6 +67,7 @@
         </div>
     </div>
 
+
 <div class="container">
     <div class="section">
 
@@ -173,6 +174,11 @@
     </div>
 </div>
 
+    <!-- Barra social -->
+
+    <button href="#barsocial" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored floating">
+        +
+    </button>
 
 <div class="parallax-container valign-wrapper grey darken-4 container panel panel-body">
 
