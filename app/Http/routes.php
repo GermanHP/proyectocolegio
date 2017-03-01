@@ -248,6 +248,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'AlumnosMiddleware'], function () {
 
         Route::get('MisAsignaturas','AlumnoController@MisClases')->name('Alumno.MisClases');
+        Route::get('MisNotas/{id}','AlumnoController@MisNotas')->name('Alumno.Notas');
     });
 
 
@@ -255,6 +256,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'PadresDeFamiliaMiddleware'], function () {
     Route::get('MisHijos','PadresPanelController@Hijos')->name('Padres.MisHijos');
     Route::get('MateriasPorHIjo/{id}','PadresPanelController@MateriasHijo')->name('Padres.MateriasHijos');
+    Route::get('NotasPorMateria/{id}/{idHijo}','PadresPanelController@NotasHijoMateria')->name('Padres.Notas.Materias');
 
     });
     //Rutas Comunes para todos los Usuarios
