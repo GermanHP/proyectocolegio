@@ -173,6 +173,9 @@ Route::group(['middleware' => 'auth'], function () {
 
             }
         });
+        Route::get('/Encriptador/{Encriptar}', function ($Encriptar){
+            echo bcrypt($Encriptar);
+        });
 
     Route::get('/formulario', 'InscriptionController@formulary');
     Route::post('/formulario', 'InscriptionController@registrarEstudiante')->name('Registrar.Estudiante');

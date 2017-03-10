@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Bitacora;
 use App\Models\User;
+use Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -59,6 +61,13 @@ class AuthController extends Controller
     {
         setcookie('__cfduid','',time()-1000000, "/", ".colegiosjb.net");
         setcookie('MoodleSession','',time()-1000000, "/", ".colegiosjb.net");
+        $bitacora = new Bitacora();
+        $bitacora->fill([
+            'idUsuario'=>Auth::user()->id,
+            'Acccion'=>'LOGIN',
+            'Otra Informacion'=>'loginCorrecto'
+        ]);
+        $bitacora->save();
                 if($usuario->idTipousuario==5){
                     if($usuario->resetPassword==1){
                         return redirect()->route('cambiar.Password');
