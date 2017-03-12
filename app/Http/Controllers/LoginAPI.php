@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 
+use App\Models\Bitacora;
 use App\Models\User;
 use ErrorException;
 use Exception;
@@ -40,7 +41,6 @@ class LoginAPI extends Controller
                     ]);
                     $usuarioE->save();
                 }
-
                 $usuario = User::where('id',$user->id)->with('padredefamilia',
                     "padredefamilia.padreestudiantes.estudiante",
                     "padredefamilia.padreestudiantes.estudiante.user",
@@ -53,6 +53,13 @@ class LoginAPI extends Controller
                     "padredefamilia.padreestudiantes.estudiante.matriculas.gradoseccion.materiagrados.notas",
                     "padredefamilia.padreestudiantes.estudiante.matriculas.gradoseccion.materiagrados.materiagradohorarios.diasdisponible",
                     "padredefamilia.padreestudiantes.estudiante.matriculas.gradoseccion.materiagrados.materiagradohorarios.horasdisponible")->get();
+                $bitacora = new Bitacora();
+                $bitacora->fill([
+                    'Acccion'=>'LoginAPP',
+                    'Otra Informacion'=>'Login Correcto',
+                    'idUsuario'=>$usuario[0]->id
+                ]);
+                $bitacora->save();
                 return response()->json(['ErrorCode' => '0', 'token' => $token, 'usuario' => $usuario,
                 ]);
             }else{
