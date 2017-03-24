@@ -10,7 +10,7 @@
 
         @include('alertas.flash')
         @include('alertas.errores')
-        <form action="http://moodle.colegiosjb.net/login/index.php" id="login" method="post">
+        <form action="https://moodle.colegiosjb.net/login/index.php" id="login" method="post">
             <input class="input"  style="display:none" id="username" name="username" type="text" value="{{Auth::user()->usuarioMoodle}}" />
             <input class="input"  style="display:none" id="password" name="password" type="password" value="{{Auth::user()->passwordMoodle}}" />
             {!!Form::submit('Aula Virtual', ['class'=>'btn btn-info','name'=>'btnMoodle'])!!}
@@ -32,11 +32,17 @@
                     <td>@foreach($materia->materiagradohorarios as $horario)
                     {{$horario->diasdisponible->nombre}} {{$horario->horasdisponible->horaInicio}} - {{$horario->horasdisponible->horaFin}}
                     @endforeach</td>
-                    <td>{{$materia->maestro->user->nombre}} {{$materia->maestro->user->apellido}}</td>
+                    <td>@if($materia->maestro != NULL)
+                            {{$materia->maestro->user->nombre}} {{$materia->maestro->user->apellido}}
+                        @else
+                            No Disponible
+                        @endif
+
+                    </td>
 
                     <td>
 
-                        Notas... Proximamente
+                        {!!link_to_route('Alumno.Notas', $title = 'Notas',  $parameters =$materia->id, $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
 
                     </td>
                 </tr>

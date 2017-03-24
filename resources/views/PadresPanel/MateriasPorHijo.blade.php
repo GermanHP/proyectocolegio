@@ -10,11 +10,7 @@
 
         @include('alertas.flash')
         @include('alertas.errores')
-        <form >
-            <input class="input"  style="display:none" id="username" name="username" type="text" value="{{Auth::user()->usuarioMoodle}}" />
-            <input class="input"  style="display:none" id="password" name="password" type="password" value="{{Auth::user()->passwordMoodle}}" />
-            {!!Form::submit('Aula Virtual', ['class'=>'btn btn-info','name'=>'btnMoodle'])!!}
-        </form>
+
         <table class="table table-striped" id="matriculados">
             <thead>
             <tr>
@@ -41,7 +37,7 @@
 
                     <td>
 
-                        Notas... Proximamente
+                        {!!link_to_route('Padres.Notas.Materias', $title = 'Notas',  $parameters =[$materia->id, $estudiante->id], $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
 
                     </td>
                 </tr>

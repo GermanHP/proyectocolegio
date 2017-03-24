@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Estudiante;
 use App\Models\Materiagrado;
+use App\Models\Nota;
 use App\Models\Padredefamilium;
 use App\Models\Padreestudiante;
+use App\Models\Periodo;
+use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -43,5 +46,24 @@ class PadresPanelController extends Controller
         }
         return view('PadresPanel.CredencialesObtenidas',compact('datos'));
 
+    }
+
+    public function NotasHijoMateria($id,$idHijo){
+
+
+        $hijoEncontrado=0;
+        $userPadre = User::where('id',Auth::user()->id)->get();
+        foreach (Auth::user()->padredefamilia[0]->padreestudiantes as $hijos){
+            if($hijos->idEstudiante==$idHijo){
+                $hijoEncontrado =1;
+            }
+        }
+        if($hijoEncontrado==0){
+            return view('errors.404');
+        }
+
+        $notas = Nota::where('idMateriaGrado',$id)->where('idEstudiante',$idHijo)->where('year','2017')->get();
+        $periodos = Periodo::all();
+        return view('Alumno.Notas',compact('notas','periodos'));
     }
 }

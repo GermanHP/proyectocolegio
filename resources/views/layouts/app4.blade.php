@@ -119,7 +119,7 @@
         <div class="mdl-layout__header-row">
             <!-- Title -->
             <a class="navbar-brand" href="#">
-                {{Form::image('/img/logonav.jpg','logoCSJB',['id'=>'logoCSJB'])}}
+                <img id="logoCSJB" src="img/logonav.jpg" alt="">
             </a>
             <span class="mdl-layout-title">Colegio San Juan Bautista</span>
             <!-- Add spacer, to align navigation to the right -->
@@ -132,7 +132,7 @@
     </header>
     <div class="mdl-layout__drawer">
         <a class="navbar-brand text-center" href="#">
-            {{Form::image('/img/indexes/logo.jpg','logoCSJB2',['class'=>'text-center','id'=>'logoCSJB2'])}}
+            <img id="logoCSJB2" src="img/indexes/logo.jpg" alt="">
         </a> <br> <br>
         <span class="mdl-layout-title">San Juan Bautista</span>
         <nav class="mdl-navigation mdl-color-nav">
@@ -192,7 +192,7 @@
                                                                                        role="presentation">create</i>Maestro Resposable</a>
                     @endif
 
-                <form action="http://moodle.colegiosjb.net/login/index.php" id="login" method="post">
+                <form action="https://moodle.colegiosjb.net/login/index.php" id="login" method="post">
                     <input class="input"  style="display:none" id="username" name="username" type="text" value="{{Auth::user()->usuarioMoodle}}" />
                     <input class="input"  style="display:none" id="password" name="password" type="password" value="{{Auth::user()->passwordMoodle}}" />
                     {!!Form::submit('Moodle Virtual', ['class'=>'mdl-navigation__link','name'=>'btnMoodle'])!!}

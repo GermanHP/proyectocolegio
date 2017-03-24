@@ -7,7 +7,7 @@
         @include('alertas.flash')
         @include('alertas.errores')
 
-        <form action="http://moodle.colegiosjb.net/login/index.php" id="login" method="post">
+        <form action="https://moodle.colegiosjb.net/login/index.php" id="login" method="post">
             <input class="input"  style="display:none" id="username" name="username" type="text" value="{{$usuario->usuarioMoodle}}" />
             <input class="input"  style="display:none" id="password" name="password" type="password" value="{{$usuario->passwordMoodle}}" />
             {!!Form::submit('Moodle Virtual', ['class'=>'btn btn-primary','name'=>'btnMoodle'])!!}
