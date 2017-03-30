@@ -231,6 +231,8 @@ Route::group(['middleware' => ['SSL']], function () {
 
             Route::get('Notas/{id}','NotasController@IngresarNotas')->name('Notas.Ingresar');
             Route::post('NotasUpdate/{id}','NotasController@GuardarNotas')->name('Notas.Insertar');
+            Route::get('NotasPrepa/{id}','NotasPreparatoria@ingresarNotas')->name('Notas.Prepara');
+            Route::post('NotasPrepaInser/{id}','NotasPreparatoria@insertNotas')->name('Notas.InsertarPrepa');
         });
 
 

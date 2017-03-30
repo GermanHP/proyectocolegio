@@ -44,6 +44,7 @@ class PadresPanelController extends Controller
         if($datos->count()==0){
             $bitacora = new Bitacora();
             $bitacora->fill([
+                'idUsuario'=>'0',
                 'Acccion'=>'BusquedaCredenciales',
                 'Otra Informacion'=>'DUI '.$request['DUI']
             ]);
@@ -53,6 +54,7 @@ class PadresPanelController extends Controller
         }
         $bitacora = new Bitacora();
         $bitacora->fill([
+            'idUsuario'=>'0',
             'Acccion'=>'BusquedaCredenciales',
             'Otra Informacion'=>'DUI  '.$request['DUI']
         ]);

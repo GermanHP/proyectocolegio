@@ -16,5 +16,9 @@ class Tiponotum extends Model {
         return $this->hasMany(\App\Models\Nota::class, 'idTipoNota', 'id');
     }
 
+    public function regristronotasprepas() {
+        return $this->hasMany(\App\Models\Regristronotasprepa::class, 'idTipoNota', 'id');
+    }
+
 
 }

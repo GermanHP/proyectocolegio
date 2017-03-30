@@ -32,5 +32,9 @@ class Materiagrado extends Model {
         return $this->hasMany(\App\Models\Nota::class, 'idMateriaGrado', 'id');
     }
 
+    public function regristronotasprepas() {
+        return $this->hasMany(\App\Models\Regristronotasprepa::class, 'idMateriaGrado', 'id');
+    }
+
 
 }
