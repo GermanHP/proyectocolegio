@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bitacora;
 use App\Models\Estudiante;
 use App\Models\Materiagrado;
 use App\Models\Nota;
@@ -41,9 +42,21 @@ class PadresPanelController extends Controller
     public function DatosLogin(Request $request){
         $datos = Padredefamilium::where('DUI',$request['DUI'])->get();
         if($datos->count()==0){
+            $bitacora = new Bitacora();
+            $bitacora->fill([
+                'Acccion'=>'BusquedaCredenciales',
+                'Otra Informacion'=>'DUI '.$request['DUI']
+            ]);
+            $bitacora->save();
             flash('Registro no encontrado o cuenta no activada intente más tarde','danger');
             return redirect()->back();
         }
+        $bitacora = new Bitacora();
+        $bitacora->fill([
+            'Acccion'=>'BusquedaCredenciales',
+            'Otra Informacion'=>'DUI  '.$request['DUI']
+        ]);
+        $bitacora->save();
         return view('PadresPanel.CredencialesObtenidas',compact('datos'));
 
     }
