@@ -42,7 +42,7 @@
 
 
         position: relative;
-        left:80px;
+        left:70px;
 
 
     }
