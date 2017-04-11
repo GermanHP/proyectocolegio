@@ -28,6 +28,39 @@
 
 
 </style>
+
+<style>
+    .Rotate-90
+    {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+
+
+
+
+        position: relative;
+        left:80px;
+
+
+    }
+    .ajustar{
+        height: 200px;
+        width: 80px;
+        float: left;
+        white-space: pre; /* CSS 2.0 */
+        white-space: pre-wrap; /* CSS 2.1 */
+        white-space: pre-line; /* CSS 3.0 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: -moz-pre-wrap; /* Mozilla */
+        white-space: -hp-pre-wrap; /* HP */
+        word-wrap: break-word; /* IE 5+ */
+    }
+</style>
+
 <body style="height: 300px;!important; background: white;">
 
     <div class="row teacherPage">
@@ -42,7 +75,7 @@
                             <thead>
                             <tr>
                                 <th>Asignatura</th>
-                                <th>Revisión de Cuaderno</th>
+                                <th rowspan="0"><label class="Rotate-90 ajustar">Revision de Cuaderno</label></th>
                                 <th>Puntaje</th>
                                 <th>Act. Complementarias</th>
                                 <th>Puntaje</th>
