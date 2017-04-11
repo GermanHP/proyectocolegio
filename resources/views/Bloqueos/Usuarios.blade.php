@@ -1,52 +1,52 @@
-@extends('layouts.app5')
+@extends('layouts.app4')
 @section('content')
     <div class="container panel panel-body">
-        <h3>Registro de Materias</h3>
-        @if(Auth::user()->genero == 1)
-            <h2>Bienvenido {{Auth::user()->nombre}} {{Auth::user()->apellido}}</h2>
-        @else
-            <h2>Bienvenida {{Auth::user()->nombre}} {{Auth::user()->apellido}}</h2>
-        @endif
+        <h3>Registro de Alumnos</h3>
 
         @include('alertas.flash')
         @include('alertas.errores')
-        <form action="https://moodle.colegiosjb.net/login/index.php" id="login" method="post">
-            <input class="input"  style="display:none" id="username" name="username" type="text" value="{{Auth::user()->usuarioMoodle}}" />
-            <input class="input"  style="display:none" id="password" name="password" type="password" value="{{Auth::user()->passwordMoodle}}" />
-            {!!Form::submit('Aula Virtual', ['class'=>'btn btn-info','name'=>'btnMoodle'])!!}
-        </form>
         <table class="table table-striped" id="matriculados">
             <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Horarios</th>
-                <th>Maestro Encargado</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Carnet</th>
+                <th>Encargado</th>
+                <th>Grado</th>
 
                 <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($materias as $materia)
-                <tr>
-                    <td>{{$materia->materium->nombre}}</td>
-                    <td>@foreach($materia->materiagradohorarios as $horario)
-                    {{$horario->diasdisponible->nombre}} {{$horario->horasdisponible->horaInicio}} - {{$horario->horasdisponible->horaFin}}<br>
-                    @endforeach</td>
-                    <td>@if($materia->maestro != NULL)
-                            {{$materia->maestro->user->nombre}} {{$materia->maestro->user->apellido}}
-                        @else
-                            No Disponible
-                        @endif
 
+            @foreach($estudiantes as $estudiante)
+
+
+                <tr>
+                    <td>{{$estudiante->user->nombre}}</td>
+                    <td>{{$estudiante->user->apellido}}</td>
+                    <td>{{$estudiante->Carnet}}</td>
+                    <td>@foreach($estudiante->padredefamilia as $padreDeFamilia)
+                            {{$padreDeFamilia->user->nombre}} {{$padreDeFamilia->user->apellido}}
+                            <br>
+                        @endforeach</td>
+                    <td>
+                        @foreach($estudiante->matriculas as $matriculas)
+
+                            {{$matriculas->gradoseccion->grado->nombre}} {{$matriculas->gradoseccion->seccion->nombre}}
+                        @endforeach
                     </td>
 
-                    <td>
+                    <td>@if($estudiante->user->usuariosbloqueados->count()==0)
+                            {!!link_to_route('Bloquear.Bloquear', $title = 'Bloquear', $parameters = $estudiante->id, $attributes = ['class'=>'btn btn-danger','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+                            @else
+                            {!!link_to_route('Bloquear.Desbloquear', $title = 'Desbloquear', $parameters = $estudiante->id, $attributes = ['class'=>'btn btn-warning','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+                            @endif
 
-                        {!!link_to_route('Alumno.Notas', $title = 'Notas',  $parameters =$materia->id, $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+
 
                     </td>
                 </tr>
-
             @endforeach
             </tbody>
         </table>

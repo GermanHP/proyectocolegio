@@ -5,6 +5,7 @@ namespace App\Http;
 use App\Http\Middleware\AlumnosMiddleware;
 use App\Http\Middleware\ForzarSSL;
 use App\Http\Middleware\PadresMiddleware;
+use App\Http\Middleware\UsuarioBloqueadoMiddleware;
 use App\Http\Middleware\UsuariosMaestrosYAdmin;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -58,5 +59,6 @@ class Kernel extends HttpKernel
         'PadresDeFamiliaMiddleware'=>PadresMiddleware::class,
         'jwt-auth' => \App\Http\Middleware\authJWT::class,
         'SSL'=>ForzarSSL::class,
+        'BloqueadoUsuarioMiddlewares'=>UsuarioBloqueadoMiddleware::class,
     ];
 }

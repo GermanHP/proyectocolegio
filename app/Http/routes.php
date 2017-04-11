@@ -19,7 +19,7 @@ use App\Utilities\MoodleEngine;
 
 Route::group(['middleware' => ['SSL']], function () {
     //------Main--//
-    Route::get('/', 'MainController@home');
+    Route::get('/', 'MainController@home')->name('Principal');
 
     Route::get("/pruebaMoodle",function(){
 
@@ -231,26 +231,32 @@ Route::group(['middleware' => ['SSL']], function () {
 
             Route::get('Notas/{id}','NotasController@IngresarNotas')->name('Notas.Ingresar');
             Route::post('NotasUpdate/{id}','NotasController@GuardarNotas')->name('Notas.Insertar');
+            Route::get('NotasPrepa/{id}','NotasPreparatoria@ingresarNotas')->name('Notas.Prepara');
+            Route::post('NotasPrepaInser/{id}','NotasPreparatoria@insertNotas')->name('Notas.InsertarPrepa');
+            Route::get('BloquearUsuarios','BloquearUsuariosController@MostrarAlumnos')->name('Bloquear.Mostrar');
+            Route::get('BloquearAlumno/{id}','BloquearUsuariosController@BloquearUsuarios')->name('Bloquear.Bloquear');
+            Route::get('Desbloquear/{id}','BloquearUsuariosController@DesBloquearUsuarios')->name('Bloquear.Desbloquear');
+        });
+
+        Route::group(['middleware'=>'BloqueadoUsuarioMiddlewares'],function (){
+            //Rutas para Alumno
+            Route::group(['middleware' => 'AlumnosMiddleware'], function () {
+
+                Route::get('MisAsignaturas','AlumnoController@MisClases')->name('Alumno.MisClases');
+                Route::get('MisNotas/{id}','AlumnoController@MisNotas')->name('Alumno.Notas');
+            });
+
+
+            //Rutas para Padres de Familia
+            Route::group(['middleware' => 'PadresDeFamiliaMiddleware'], function () {
+                Route::get('MisHijos','PadresPanelController@Hijos')->name('Padres.MisHijos');
+                Route::get('MateriasPorHIjo/{id}','PadresPanelController@MateriasHijo')->name('Padres.MateriasHijos');
+                Route::get('NotasPorMateria/{id}/{idHijo}','PadresPanelController@NotasHijoMateria')->name('Padres.Notas.Materias');
+
+            });
         });
 
 
-
-
-        //Rutas para Alumno
-        Route::group(['middleware' => 'AlumnosMiddleware'], function () {
-
-            Route::get('MisAsignaturas','AlumnoController@MisClases')->name('Alumno.MisClases');
-            Route::get('MisNotas/{id}','AlumnoController@MisNotas')->name('Alumno.Notas');
-        });
-
-
-        //Rutas para Padres de Familia
-        Route::group(['middleware' => 'PadresDeFamiliaMiddleware'], function () {
-            Route::get('MisHijos','PadresPanelController@Hijos')->name('Padres.MisHijos');
-            Route::get('MateriasPorHIjo/{id}','PadresPanelController@MateriasHijo')->name('Padres.MateriasHijos');
-            Route::get('NotasPorMateria/{id}/{idHijo}','PadresPanelController@NotasHijoMateria')->name('Padres.Notas.Materias');
-
-        });
         //Rutas Comunes para todos los Usuarios
         Route::get('CambiarEmail','InscriptionController@cambiarEmail')->name('cambiar.email');
         Route::post('UpdateEmail','InscriptionController@updateEmail')->name('cambiar.updateEmail');
@@ -282,6 +288,7 @@ Route::group(['middleware' => ['SSL']], function () {
     Route::get('/home', 'HomeController@index');
 
     Route::get('/download/{tipo}', 'PdfController@crear_prospecto');
+    Route::get('Bloqueado','BloquearUsuariosController@Bloqueado')->name('Bloquear.bloqueado');
 
     Route::post('getMunicipios', 'InscriptionController@getMunicipios')->name('getMun');
 });

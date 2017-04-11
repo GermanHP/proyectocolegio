@@ -70,5 +70,9 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasMany(\App\Models\Telefono::class, 'idUsuario', 'id');
     }
 
+    public function usuariosbloqueados() {
+        return $this->hasMany(\App\Models\Usuariosbloqueado::class, 'idUsuario', 'id');
+    }
+
 
 }

@@ -16,5 +16,9 @@ class Periodo extends Model {
         return $this->hasMany(\App\Models\Nota::class, 'idPeriodos', 'id');
     }
 
+    public function regristronotasprepas() {
+        return $this->hasMany(\App\Models\Regristronotasprepa::class, 'idPeriodos', 'id');
+    }
+
 
 }

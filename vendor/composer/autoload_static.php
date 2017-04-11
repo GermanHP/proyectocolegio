@@ -723,9 +723,11 @@ class ComposerStaticInit85d82810049b3fc75c3e235c9dda4a10
         'MateriasGrados' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_060530_MateriasGrados.php',
         'Matricula' => __DIR__ . '/../..' . '/database/migrations/2016_11_27_044334_Matricula.php',
         'MatriculaDocumento' => __DIR__ . '/../..' . '/database/migrations/2016_11_27_044524_MatriculaDocumento.php',
+        'MigracionBitacora' => __DIR__ . '/../..' . '/database/migrations/2017_03_01_220308_MigracionBitacora.php',
         'MunicipioSeeder' => __DIR__ . '/../..' . '/database/seeds/MunicipioSeeder.php',
         'Municipios' => __DIR__ . '/../..' . '/database/migrations/2016_11_27_025945_Municipios.php',
         'Notas' => __DIR__ . '/../..' . '/database/migrations/2017_02_23_051027_Notas.php',
+        'NotasPrepa' => __DIR__ . '/../..' . '/database/migrations/2017_03_30_164214_NotasPrepa.php',
         'NoticiasGrados' => __DIR__ . '/../..' . '/database/migrations/2017_02_22_221906_NoticiasGrados.php',
         'Null_Frame_Decorator' => __DIR__ . '/..' . '/dompdf/dompdf/include/null_frame_decorator.cls.php',
         'Null_Frame_Reflower' => __DIR__ . '/..' . '/dompdf/dompdf/include/null_frame_reflower.cls.php',
@@ -1138,6 +1140,7 @@ class ComposerStaticInit85d82810049b3fc75c3e235c9dda4a10
         'Page_Frame_Reflower' => __DIR__ . '/..' . '/dompdf/dompdf/include/page_frame_reflower.cls.php',
         'Periodos' => __DIR__ . '/../..' . '/database/migrations/2017_02_23_050935_Periodos.php',
         'Positioner' => __DIR__ . '/..' . '/dompdf/dompdf/include/positioner.cls.php',
+        'RegistroNotasPrepa' => __DIR__ . '/../..' . '/database/migrations/2017_03_30_165101_RegistroNotasPrepa.php',
         'RelacionGradoMaestro' => __DIR__ . '/../..' . '/database/migrations/2016_12_30_172709_RelacionGradoMaestro.php',
         'Renderer' => __DIR__ . '/..' . '/dompdf/dompdf/include/renderer.cls.php',
         'SacramentoUsuario' => __DIR__ . '/../..' . '/database/migrations/2016_11_27_040339_SacramentoUsuario.php',
@@ -1214,6 +1217,7 @@ class ComposerStaticInit85d82810049b3fc75c3e235c9dda4a10
         'TipoTelefonos' => __DIR__ . '/../..' . '/database/migrations/2016_11_27_045032_TipoTelefonos.php',
         'TipoUsuario' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_231308_TipoUsuario.php',
         'TipoUsuarioSeeder' => __DIR__ . '/../..' . '/database/seeds/TipoUsuarioSeeder.php',
+        'UsuariosBloqueados' => __DIR__ . '/../..' . '/database/migrations/2017_04_10_211718_UsuariosBloqueados.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

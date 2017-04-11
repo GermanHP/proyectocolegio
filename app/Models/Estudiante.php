@@ -47,5 +47,9 @@ class Estudiante extends Model {
         return $this->hasMany(\App\Models\Padreestudiante::class, 'idEstudiante', 'id');
     }
 
+    public function regristronotasprepas() {
+        return $this->hasMany(\App\Models\Regristronotasprepa::class, 'idEstudiante', 'id');
+    }
+
 
 }
