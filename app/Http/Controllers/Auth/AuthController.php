@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\Bitacora;
 use App\Models\User;
+use App\Utilities\UsuariosBloqueadosUtils;
 use Auth;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -68,6 +69,11 @@ class AuthController extends Controller
             'Otra Informacion'=>'loginCorrecto'
         ]);
         $bitacora->save();
+        $bloqueado = new UsuariosBloqueadosUtils();
+
+                if($bloqueado->UsuariosBloqueados(Auth::user()->id)){
+                    return redirect()->route('Bloquear.bloqueado');
+                }
                 if($usuario->idTipousuario==5){
                     if($usuario->resetPassword==1){
                         return redirect()->route('cambiar.Password');

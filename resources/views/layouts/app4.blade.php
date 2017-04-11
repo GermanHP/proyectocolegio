@@ -139,6 +139,8 @@
             @if(Auth::user()->idTipousuario==5)
                 <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                          role="presentation">home</i>Inicio</a>
+                <a class="mdl-navigation__link" href="{{url('/BloquearUsuarios')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                         role="presentation">supervisor_account</i>Bloquear Usuarios</a>
                 <a class="mdl-navigation__link" href="{{url('/formulario')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                  role="presentation">note_add</i>Nueva Matrícula</a>
                 <a class="mdl-navigation__link" href="{{url('/registro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
@@ -174,6 +176,8 @@
                 @if(Auth::user()->id==18)
                     <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                              role="presentation">home</i>Inicio</a>
+                    <a class="mdl-navigation__link" href="{{url('/BloquearUsuarios')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                           role="presentation">supervisor_account</i>Bloquear Usuarios</a>
                     <a class="mdl-navigation__link" href="{{url('/formulario')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                      role="presentation">note_add</i>Nueva Matrícula</a>
                     <a class="mdl-navigation__link" href="{{url('/registro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"

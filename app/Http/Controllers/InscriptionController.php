@@ -758,6 +758,10 @@ class InscriptionController extends Controller
         }else if($usuario->idTipousuario==1) {
 
             return redirect()->route('Alumno.MisClases');
+
+        }
+        else if($usuario->idTipousuario==2) {
+            return redirect()->route('Padres.MisHijos');
         }else{
             return redirect('/logout');
         }

@@ -1217,6 +1217,7 @@ class ComposerStaticInit85d82810049b3fc75c3e235c9dda4a10
         'TipoTelefonos' => __DIR__ . '/../..' . '/database/migrations/2016_11_27_045032_TipoTelefonos.php',
         'TipoUsuario' => __DIR__ . '/../..' . '/database/migrations/2016_11_20_231308_TipoUsuario.php',
         'TipoUsuarioSeeder' => __DIR__ . '/../..' . '/database/seeds/TipoUsuarioSeeder.php',
+        'UsuariosBloqueados' => __DIR__ . '/../..' . '/database/migrations/2017_04_10_211718_UsuariosBloqueados.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -705,4 +705,5 @@ return array(
     'TipoTelefonos' => $baseDir . '/database/migrations/2016_11_27_045032_TipoTelefonos.php',
     'TipoUsuario' => $baseDir . '/database/migrations/2016_11_20_231308_TipoUsuario.php',
     'TipoUsuarioSeeder' => $baseDir . '/database/seeds/TipoUsuarioSeeder.php',
+    'UsuariosBloqueados' => $baseDir . '/database/migrations/2017_04_10_211718_UsuariosBloqueados.php',
 );
