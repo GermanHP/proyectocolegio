@@ -40,6 +40,6 @@ class MainController extends Controller
     }
 
     public function ingresar(){
-        return view('main.moodle');
+        return view('main.boleta');
     }
 }

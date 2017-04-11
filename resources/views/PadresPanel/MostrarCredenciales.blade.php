@@ -16,15 +16,15 @@
             @include('alertas.flash')
             @include('alertas.errores')
             <h5>Para obtener las credenciales de acceso al sistema por favor ingrese su número de DUI sin guiones ni espacios</h5>
-            {!!Form::open(['route'=>'Credenciales.Acceso', 'method'=>'POST', 'onsubmit'=>"waitingDialog.show('Guardando Espere... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
-            <div class="input-group form-group">
+            <form method="POST" action="https://colegiosjb.net/DatosLogin" accept-charset="UTF-8" onsubmit="waitingDialog.show('Guardando Espere... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);">
+             <div class="input-group form-group">
                 {{Form::label('DUI',null,['class'=>'input-group-addon'])}}
                 {{Form::text('DUI',null,['class'=>'form-control','pattern'=>'[0-9]{9}','placeholder'=>'Ingrese el número de DUI','required', 'maxlength'=>'9'])}}
             </div>
 
 
             {!!Form::submit('Obtener Credenciales', ['class'=>'btn btn-primary','name'=>'btnCrearUsuario'])!!}
-            {!!Form::close()!!}
+            </form>
 
             <br>Si tu Cuenta aun no esta activa te invitamos a revisar nuevamente el dia Miércoles 15 de febrero si tienes problemas puedes escribirnos a nuestros contactos de soporte<br>
             todocyber100@gmail.com<br>
