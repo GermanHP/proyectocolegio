@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <!-- Bootstrap 3.3.5 -->
 <style>
+
     <?php include(public_path() . '/assets/css/bootstrap.css');?>
     <?php include(public_path() . '/assets/dist/css/AdminLTE.css');?>
     <?php include(public_path() . '/assets/dist/css/skins/_all-skins.css');?>
@@ -65,11 +66,11 @@
 
     <div class="row teacherPage">
         <div class="col-md-12">
-            <div class="invoice">
-                <h2 class="text-center"><img src="img/indexes/logo.jpg" alt="" height="100" width="100"><br></h2>
+
+                <h2 class="text-center"><img src="http://colegiolocal.com/img/indexes/logo.jpg" alt="" height="100" width="100"><br></h2>
                 <h2 class="page-header text-center" id="titulo">Colegio San Juan Bautista<br><br></h2>
 
-                <div class="row invoice-info">
+
                     <div class="container">
                         <table class="table table-bordered">
                             <thead>
@@ -111,8 +112,8 @@
                 </div><!-- /.col -->
             </div><!-- /.col -->
         </div><!-- /.row -->
-    </div>
-    </div>
+
+
 
 
 

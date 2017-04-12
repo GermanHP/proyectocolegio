@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-02-12.
+    * Generated on 2017-04-12.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -86,6 +86,10 @@ namespace PHPSTORM_META {
             'Tymon\JWTAuth\PayloadFactory' instanceof \Tymon\JWTAuth\PayloadFactory,
             'Tymon\JWTAuth\Claims\Factory' instanceof \Tymon\JWTAuth\Claims\Factory,
             'Tymon\JWTAuth\Validators\PayloadValidator' instanceof \Tymon\JWTAuth\Validators\PayloadValidator,
+            'snappy.pdf' instanceof \Barryvdh\Snappy\IlluminateSnappyPdf,
+            'snappy.pdf.wrapper' instanceof \Barryvdh\Snappy\PdfWrapper,
+            'snappy.image' instanceof \Barryvdh\Snappy\IlluminateSnappyImage,
+            'snappy.image.wrapper' instanceof \Barryvdh\Snappy\ImageWrapper,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
             'cache' instanceof \Illuminate\Cache\CacheManager,
@@ -242,6 +246,10 @@ namespace PHPSTORM_META {
             'Tymon\JWTAuth\PayloadFactory' instanceof \Tymon\JWTAuth\PayloadFactory,
             'Tymon\JWTAuth\Claims\Factory' instanceof \Tymon\JWTAuth\Claims\Factory,
             'Tymon\JWTAuth\Validators\PayloadValidator' instanceof \Tymon\JWTAuth\Validators\PayloadValidator,
+            'snappy.pdf' instanceof \Barryvdh\Snappy\IlluminateSnappyPdf,
+            'snappy.pdf.wrapper' instanceof \Barryvdh\Snappy\PdfWrapper,
+            'snappy.image' instanceof \Barryvdh\Snappy\IlluminateSnappyImage,
+            'snappy.image.wrapper' instanceof \Barryvdh\Snappy\ImageWrapper,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
             'cache' instanceof \Illuminate\Cache\CacheManager,
@@ -398,6 +406,10 @@ namespace PHPSTORM_META {
             'Tymon\JWTAuth\PayloadFactory' instanceof \Tymon\JWTAuth\PayloadFactory,
             'Tymon\JWTAuth\Claims\Factory' instanceof \Tymon\JWTAuth\Claims\Factory,
             'Tymon\JWTAuth\Validators\PayloadValidator' instanceof \Tymon\JWTAuth\Validators\PayloadValidator,
+            'snappy.pdf' instanceof \Barryvdh\Snappy\IlluminateSnappyPdf,
+            'snappy.pdf.wrapper' instanceof \Barryvdh\Snappy\PdfWrapper,
+            'snappy.image' instanceof \Barryvdh\Snappy\IlluminateSnappyImage,
+            'snappy.image.wrapper' instanceof \Barryvdh\Snappy\ImageWrapper,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
             'cache' instanceof \Illuminate\Cache\CacheManager,
@@ -554,6 +566,10 @@ namespace PHPSTORM_META {
             'Tymon\JWTAuth\PayloadFactory' instanceof \Tymon\JWTAuth\PayloadFactory,
             'Tymon\JWTAuth\Claims\Factory' instanceof \Tymon\JWTAuth\Claims\Factory,
             'Tymon\JWTAuth\Validators\PayloadValidator' instanceof \Tymon\JWTAuth\Validators\PayloadValidator,
+            'snappy.pdf' instanceof \Barryvdh\Snappy\IlluminateSnappyPdf,
+            'snappy.pdf.wrapper' instanceof \Barryvdh\Snappy\PdfWrapper,
+            'snappy.image' instanceof \Barryvdh\Snappy\IlluminateSnappyImage,
+            'snappy.image.wrapper' instanceof \Barryvdh\Snappy\ImageWrapper,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
             'Illuminate\Bus\Dispatcher' instanceof \Illuminate\Bus\Dispatcher,
             'cache' instanceof \Illuminate\Cache\CacheManager,
