@@ -27,10 +27,19 @@
        -moz-transform: rotate(-90deg);
    }
 
+   .docente{
+       margin-left: 4%;
+   }
 
-</style>
+   .director{
+       margin-top: -4.5%;
+   }
 
-<style>
+    .director2{
+        margin-top: -4%;
+        margin-right: 11%;
+    }
+
     .Rotate-90
     {
         -webkit-transform: rotate(-90deg);
@@ -39,17 +48,15 @@
         -o-transform: rotate(-90deg);
         transform: rotate(-90deg);
 
-
-
-
         position: relative;
         left:75px;
 
 
     }
+
     .ajustar{
         height: 200px;
-        width: 80px;
+        width: 100px;
         float: left;
         white-space: pre; /* CSS 2.0 */
         white-space: pre-wrap; /* CSS 2.1 */
@@ -79,21 +86,31 @@
                 <h2 class="text-center"><img src="http://colegiolocal.com/img/indexes/logo.jpg" alt="" height="100" width="100"><br></h2>
                 <h2 class="page-header text-center" id="titulo">Colegio San Juan Bautista<br><br></h2>
                     <h5>{{$alumno->user->nombre}} {{$alumno->user->apellido}}</h5>
+            <h3 class="text-center" id="titulo">INFORME DE CALIFICACIONES 2017<br></h3>
+                <h3 class="text-center" id="titulo">COLEGIO "SAN JUAN BAUTISTA"<br></h3>
+            <h3 class="text-center" id="titulo">GRADO<br><br></h3>
+
 
                     <div class="container">
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-                                <th>Asignatura</th>
+                                <td colspan="10"><h4 class="text-center">ALUMNO/A:</h4></td>
+                            </tr>
+                            <tr>
+                                <td colspan="10"><h4 class="text-center">PRIMER PERIODO</h4></td>
+                            </tr>
+                            <tr>
+                                <th>Asignaturas</th>
                                 <th rowspan="0"><label class="Rotate-90 ajustar">Revision de Cuaderno</label></th>
-                                <th>Puntaje</th>
-                                <th>Act. Complementarias</th>
-                                <th>Puntaje</th>
-                                <th>Act. Integradora</th>
-                                <th>Puntaje</th>
-                                <th>Prueba Objetiva Examen 30%</th>
-                                <th>Puntaje</th>
-                                <th>Promedio del Periodo</th>
+                                <th rowspan="0"><label class="Rotate-90 ajustar">Puntaje</label></th>
+                                <th rowspan="0"><label class="Rotate-90 ajustar">Act. Complementarias</label></th>
+                                <th rowspan="0"><label class="Rotate-90 ajustar">Puntaje</label></th>
+                                <th rowspan="0"><label class="Rotate-90 ajustar">Act. Integradora</label></th>
+                                <th rowspan="0"><label class="Rotate-90 ajustar">Puntaje</label></th>
+                                <th rowspan="0"><label class="Rotate-90 ajustar">Prueba Objetiva <br> Exámen 30%</label></th>
+                                <th rowspan="0"><label class="Rotate-90 ajustar">Puntaje</label></th>
+                                <th rowspan="0"><label class="Rotate-90 ajustar">Promedio Periodo</label></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -175,13 +192,28 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td>Conducta</td>
+                                <td>CONDUCTA</td>
                                 <td colspan="8"></td>
-
+                                <td>0%</td>
+                            </tr>
+                            <tr>
+                                <td colspan="9">PROMEDIO GLOBAL</td>
+                                <td>0</td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td colspan="3">PORCENTAJE DE ASISTENCIAS</td>
                                 <td>0%</td>
                             </tr>
                             </tbody>
                         </table>
+
+                        <h4>OBSERVACIONES</h4>
+                        <textarea name="observaciones" id="observacion" cols="164" rows="5"></textarea><br><br><br><br><br>
+                        <h4>__________________________________</h4>
+                        <h6 class="docente">DOCENTE RESPONSABLE DE SECCIÓN</h6>
+                        <h4 class="pull-right director">__________________________________</h4><br>
+                        <h6 class="pull-right director2">DIRECTOR/A</h6>
                     </div>
                 </div><!-- /.col -->
             </div><!-- /.col -->
