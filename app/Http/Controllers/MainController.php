@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Periodo;
 use Cookie;
+use Estudiante;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -40,6 +42,9 @@ class MainController extends Controller
     }
 
     public function ingresar(){
-        return view('main.boleta');
+
+        $alumnos = \App\Models\Estudiante::where('deleted_at',NULL)->with('user','matriculas.gradoseccion.materiagrados.materium','matriculas.gradoseccion.materiagrados.notas')->get();
+        $periodos = Periodo::all();
+        return view('main.boleta',compact('periodos','alumnos'));
     }
 }
