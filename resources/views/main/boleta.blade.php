@@ -85,17 +85,17 @@
 
                 <h2 class="text-center"><img src="http://colegiolocal.com/img/indexes/logo.jpg" alt="" height="100" width="100"><br></h2>
                 <h2 class="page-header text-center" id="titulo">Colegio San Juan Bautista<br><br></h2>
-                    <h5>{{$alumno->user->nombre}} {{$alumno->user->apellido}}</h5>
+
             <h3 class="text-center" id="titulo">INFORME DE CALIFICACIONES 2017<br></h3>
                 <h3 class="text-center" id="titulo">COLEGIO "SAN JUAN BAUTISTA"<br></h3>
-            <h3 class="text-center" id="titulo">GRADO<br><br></h3>
+            <h3 class="text-center" id="titulo">GRADO {{$alumno->matriculas[0]->gradoseccion->grado->nombre}} {{$alumno->matriculas[0]->gradoseccion->seccion->nombre}}<br><br></h3>
 
 
                     <div class="container">
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-                                <td colspan="10"><h4 class="text-center">ALUMNO/A:</h4></td>
+                                <td colspan="10"><h4 class="text-center">ALUMNO/A: {{$alumno->user->nombre}} {{$alumno->user->apellido}}</h4></td>
                             </tr>
                             <tr>
                                 <td colspan="10"><h4 class="text-center">PRIMER PERIODO</h4></td>
@@ -114,6 +114,7 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php $promedioGlobal =0?>
                             @foreach($alumno->matriculas[0]->gradoseccion->materiagrados as $materiagrado)
                             <tr>
                                 <td>{{$materiagrado->materium->nombre}}</td>
@@ -185,6 +186,7 @@
                                     <td><b>0</b></td>
                                 @else
                                     <td><b><?php $promedio = $revision+$complementarias+$integradoras+$examen;
+                                            $promedioGlobal=$promedioGlobal+$promedio;
                                         echo $promedio?></b>
                                 @endif
 
@@ -194,22 +196,48 @@
                             <tr>
                                 <td>CONDUCTA</td>
                                 <td colspan="8"></td>
-                                <td>0%</td>
+                                <td>
+                                    <?php $nvueltas =0?>
+                                    @foreach($alumno->datosboleta as $boleta)
+                                        @if($boleta->idPeriodo=1)
+                                            <?php $nvueltas++;
+                                                $promedioGlobal=$promedioGlobal+$boleta->notaConducta;
+                                             ?>
+                                            {{$boleta->notaConducta}}
+                                        @endif
+                                    @endforeach
+                                    @if($nvueltas==0)
+                                        0
+                                    @endif
+                                    </td>
                             </tr>
                             <tr>
                                 <td colspan="9">PROMEDIO GLOBAL</td>
-                                <td>0</td>
+                                <td>{{$promedioGlobal}}</td>
                             </tr>
                             <br>
                             <tr>
                                 <td colspan="3">PORCENTAJE DE ASISTENCIAS</td>
-                                <td>0%</td>
+
+                                <td>
+                                    <?php $nvueltas =0?>
+                                    @foreach($alumno->datosboleta as $boleta)
+                                        @if($boleta->idPeriodo=1)
+                                                <?php $nvueltas++;?>
+                                            {{$boleta->porcentajeAsistencia}}
+
+                                        @endif
+                                    @endforeach
+                                        @if($nvueltas==0)
+                                            0
+                                        @endif
+                                    %</td>
                             </tr>
                             </tbody>
                         </table>
 
                         <h4>OBSERVACIONES</h4>
-                        <textarea name="observaciones" id="observacion" cols="164" rows="5"></textarea><br><br><br><br><br>
+                        <textarea name="observaciones" id="observacion" cols="164" rows="8">@foreach($alumno->datosboleta as $boleta)@if($boleta->idPeriodo=1){{$boleta->Observaciones}}@endif @endforeach</textarea><br><br><br><br><br>
                         <h4>__________________________________</h4>
                         <h6 class="docente">DOCENTE RESPONSABLE DE SECCIÓN</h6>
                         <h4 class="pull-right director">__________________________________</h4><br>

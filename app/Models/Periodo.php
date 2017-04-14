@@ -21,4 +21,11 @@ class Periodo extends Model {
     }
 
 
+    public function estudiantes() {
+        return $this->belongsToMany(\App\Models\Estudiante::class, 'datosboleta', 'idPeriodo', 'idEstudiante');
+    }
+
+    public function datosboleta() {
+        return $this->hasMany(\App\Models\Datosboletum::class, 'idPeriodo', 'id');
+    }
 }

@@ -236,6 +236,8 @@ Route::group(['middleware' => ['SSL']], function () {
             Route::get('BloquearUsuarios','BloquearUsuariosController@MostrarAlumnos')->name('Bloquear.Mostrar');
             Route::get('BloquearAlumno/{id}','BloquearUsuariosController@BloquearUsuarios')->name('Bloquear.Bloquear');
             Route::get('Desbloquear/{id}','BloquearUsuariosController@DesBloquearUsuarios')->name('Bloquear.Desbloquear');
+            Route::get('BoletasInformacion/{id}','BoletaController@AgregarDatosBoleta')->name('Boleta.Datos');
+            Route::post('BoletasGuardarInformacion/{id}','BoletaController@GuardarDatosBoleta')->name('Boletas.GuardarInformacion');
         });
 
         Route::group(['middleware'=>'BloqueadoUsuarioMiddlewares'],function (){

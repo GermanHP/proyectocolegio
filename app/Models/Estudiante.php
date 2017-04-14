@@ -51,5 +51,11 @@ class Estudiante extends Model {
         return $this->hasMany(\App\Models\Regristronotasprepa::class, 'idEstudiante', 'id');
     }
 
+    public function datosboleta() {
+        return $this->hasMany(\App\Models\Datosboletum::class, 'idEstudiante', 'id');
+    }
+    public function periodos() {
+        return $this->belongsToMany(\App\Models\Periodo::class, 'datosboleta', 'idEstudiante', 'idPeriodo');
+    }
 
 }
