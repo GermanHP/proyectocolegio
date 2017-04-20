@@ -13,8 +13,8 @@
     <?php include(public_path() . '/assets/css/font-awesome.css');?>
 
 @page teacher {
-        size: A4 portrait;
-        margin: 2cm;
+        size: A4 ;
+        margin: 1cm;
     }
 
     .teacherPage {
@@ -83,7 +83,7 @@
     <div class="row teacherPage">
         <div class="col-md-12">
 
-                <h2 class="text-center"><img src="http://colegiolocal.com/img/indexes/logo.jpg" alt="" height="100" width="100"><br></h2>
+                <h2 class="text-center"><img src="https://colegiosjb.net/img/indexes/logo.jpg" alt="" height="100" width="100"><br></h2>
                 <h2 class="page-header text-center" id="titulo">Colegio San Juan Bautista<br><br></h2>
 
             <h3 class="text-center" id="titulo">INFORME DE CALIFICACIONES 2017<br></h3>
@@ -223,8 +223,10 @@
                                     <?php $nvueltas =0?>
                                     @foreach($alumno->datosboleta as $boleta)
                                         @if($boleta->idPeriodo=1)
-                                                <?php $nvueltas++;?>
-                                            {{$boleta->porcentajeAsistencia}}
+                                                <?php $nvueltas++;
+                                                $nasistncia = $boleta->porcentajeAsistencia*10;
+                                                ?>
+                                                {{$nasistncia}}
 
                                         @endif
                                     @endforeach

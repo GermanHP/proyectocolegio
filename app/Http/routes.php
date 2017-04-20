@@ -236,8 +236,13 @@ Route::group(['middleware' => ['SSL']], function () {
             Route::get('BloquearUsuarios','BloquearUsuariosController@MostrarAlumnos')->name('Bloquear.Mostrar');
             Route::get('BloquearAlumno/{id}','BloquearUsuariosController@BloquearUsuarios')->name('Bloquear.Bloquear');
             Route::get('Desbloquear/{id}','BloquearUsuariosController@DesBloquearUsuarios')->name('Bloquear.Desbloquear');
+            Route::get('GradosBoleta','BoletaController@MostrarGrados')->name('Boleta.Mostrar.Grados');
             Route::get('BoletasInformacion/{id}','BoletaController@AgregarDatosBoleta')->name('Boleta.Datos');
             Route::post('BoletasGuardarInformacion/{id}','BoletaController@GuardarDatosBoleta')->name('Boletas.GuardarInformacion');
+            Route::get('/moodle', 'MainController@ingresar');
+            Route::get('/DescargarBoleta','BoletaController@DescargarBoleta');
+            Route::get('/DescargarBoleta/{id}','BoletaController@DescargarBoletaGradoo')->name('Descargar.BoletaGrado');
+
         });
 
         Route::group(['middleware'=>'BloqueadoUsuarioMiddlewares'],function (){
@@ -277,8 +282,7 @@ Route::group(['middleware' => ['SSL']], function () {
     Route::get('/error404', 'MainController@error404');
     Route::get('/galeria', 'MainController@galery');
     Route::get('/calendario', 'MainController@calendar');
-    Route::get('/moodle', 'MainController@ingresar');
-    Route::get('/DescargarBoleta','BoletaController@DescargarBoleta');
+
 
     Route::get('/Credenciales','PadresPanelController@Credenciales')->name('Credenciales.Buscar');
     Route::post('DatosLogin','PadresPanelController@DatosLogin')->name('Credenciales.Acceso');

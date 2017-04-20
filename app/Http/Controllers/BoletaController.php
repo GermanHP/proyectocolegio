@@ -15,6 +15,11 @@ use PDF;
 
 class BoletaController extends Controller
 {
+
+    public function MostrarGrados(){
+        $gradoSeccion =  Gradoseccion::all();
+        return view('Maestros.GradosBoleta',compact('gradoSeccion'));
+    }
     public function DescargarBoleta(){
         $alumnos = \App\Models\Estudiante::where('deleted_at',NULL)->with('user','matriculas.gradoseccion','matriculas.gradoseccion.grado','matriculas.gradoseccion.seccion','matriculas.gradoseccion.materiagrados.materium','matriculas.gradoseccion.materiagrados.notas','datosboleta')->get();
         $periodos = Periodo::all();
@@ -105,8 +110,21 @@ class BoletaController extends Controller
             }
             flash('Datos Guardados Exitosamente', 'info');
         }else{
-            flash('Error al Guardar Datos', 'info');
+            flash('Error al Guardar Datos', 'danger');
         }
         return redirect()->back();
+    }
+    public function DescargarBoletaGradoo($id){
+        $alumnos = \App\Models\Estudiante::where('deleted_at',NULL)->with('user','matriculas.gradoseccion','matriculas.gradoseccion.grado','matriculas.gradoseccion.seccion','matriculas.gradoseccion.materiagrados.materium','matriculas.gradoseccion.materiagrados.notas','datosboleta')->get();
+        $periodos = Periodo::all();
+
+        $pdf = PDF::loadView('main.BoletaGrado',compact('alumnos','periodos','id'));
+        return $pdf->download('Boletas.pdf');
+
+
+        /* $view = \View::make('main.boleta')->render();
+         $pdf = \App::make('dompdf.wrapper');
+         $pdf->loadHTML($view);
+         return $pdf->stream('ReporteOrdenes.pdf');*/
     }
 }

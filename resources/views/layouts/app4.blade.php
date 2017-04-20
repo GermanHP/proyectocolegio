@@ -126,7 +126,7 @@
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation ">
-                <a class="mdl-navigation__link" href="{{ url('/registro_matricula') }}">Inicio</a>
+                <a class="mdl-navigation__link" href="{{ url('/Redireccionador') }}">Inicio</a>
             </nav>
         </div>
     </header>
@@ -137,7 +137,7 @@
         <span class="mdl-layout-title">San Juan Bautista</span>
         <nav class="mdl-navigation mdl-color-nav">
             @if(Auth::user()->idTipousuario==5)
-                <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                <a class="mdl-navigation__link" href="{{url('/Redireccionador')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                          role="presentation">home</i>Inicio</a>
                 <a class="mdl-navigation__link" href="{{url('/BloquearUsuarios')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                          role="presentation">supervisor_account</i>Bloquear Usuarios</a>
@@ -174,7 +174,7 @@
                                                                                    role="presentation">create</i>Sección Noticias</a>
                 @endif
                 @if(Auth::user()->id==18)
-                    <a class="mdl-navigation__link" href="{{url('/registro_matricula')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                    <a class="mdl-navigation__link" href="{{url('/Redireccionador')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                              role="presentation">home</i>Inicio</a>
                     <a class="mdl-navigation__link" href="{{url('/BloquearUsuarios')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                            role="presentation">supervisor_account</i>Bloquear Usuarios</a>
@@ -194,8 +194,10 @@
                                                                                        role="presentation">create</i>Nueva Materia</a>
                     <a class="mdl-navigation__link" href="{{url('/MaestroGrado')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                        role="presentation">create</i>Maestro Resposable</a>
-                    @endif
 
+                    @endif
+                <a class="mdl-navigation__link" href="{{url('/GradosBoleta')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                   role="presentation">create</i>Boletas</a>
                 <form action="https://moodle.colegiosjb.net/login/index.php" id="login" method="post">
                     <input class="input"  style="display:none" id="username" name="username" type="text" value="{{Auth::user()->usuarioMoodle}}" />
                     <input class="input"  style="display:none" id="password" name="password" type="password" value="{{Auth::user()->passwordMoodle}}" />
