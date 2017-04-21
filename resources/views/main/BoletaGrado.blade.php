@@ -54,6 +54,14 @@
 
     }
 
+    img#logoboleta{
+        margin-left: 40px;
+    }
+
+    .ajuste-margen{
+        margin-top: -35px;
+    }
+
     .ajustar{
         height: 200px;
         width: 100px;
@@ -83,35 +91,36 @@
     @endif
     <div class="row teacherPage">
         <div class="col-md-12">
+            <div class="col s12">
+            <h4><img src="https://colegiosjb.net/img/indexes/logo.jpg" alt="" height="150" width="150" id="logoboleta"></h4>
+            </div>
 
-            <h2 class="text-center"><img src="https://colegiosjb.net/img/indexes/logo.jpg" alt="" height="100" width="100"><br></h2>
-            <h2 class="page-header text-center" id="titulo">Colegio San Juan Bautista<br><br></h2>
-
+            <div class="col s12 ajuste-margen">
             <h3 class="text-center" id="titulo">INFORME DE CALIFICACIONES 2017<br></h3>
             <h3 class="text-center" id="titulo">COLEGIO "SAN JUAN BAUTISTA"<br></h3>
-            <h3 class="text-center" id="titulo">GRADO {{$alumno->matriculas[0]->gradoseccion->grado->nombre}} {{$alumno->matriculas[0]->gradoseccion->seccion->nombre}}<br><br></h3>
-
+            <h3 class="text-center" id="titulo">GRADO {{$alumno->matriculas[0]->gradoseccion->grado->nombre}} {{$alumno->matriculas[0]->gradoseccion->seccion->nombre}}<br></h3>
+            </div>
 
             <div class="container">
                 <table class="table" border="1" bordercolor="#0000">
                     <thead>
                     <tr>
-                        <td colspan="10"><h4 class="text-center">ALUMNO/A: {{$alumno->user->nombre}} {{$alumno->user->apellido}}</h4></td>
+                        <td colspan="10"><h3 class="text-center"><strong>ALUMNO/A: {{$alumno->user->nombre}} {{$alumno->user->apellido}}</strong></h3></td>
                     </tr>
                     <tr>
                         <td colspan="10"><h4 class="text-center">PRIMER PERIODO</h4></td>
                     </tr>
                     <tr>
                         <th>Asignaturas</th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Revision de Cuaderno</label></th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Puntaje</label></th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Act. Complementarias</label></th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Puntaje</label></th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Act. Integradora</label></th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Puntaje</label></th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Prueba Objetiva <br> Exámen 30%</label></th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Puntaje</label></th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Promedio Periodo</label></th>
+                        <th rowspan="0"><h4 class="Rotate-90 ajustar">Revision de Cuaderno</h4></th>
+                        <th rowspan="0"><h4 class="Rotate-90 ajustar">Puntaje</h4></th>
+                        <th rowspan="0"><h4 class="Rotate-90 ajustar">Act. Complementarias</h4></th>
+                        <th rowspan="0"><h4 class="Rotate-90 ajustar">Puntaje</h4></th>
+                        <th rowspan="0"><h4 class="Rotate-90 ajustar">Act. Integradora</h4></th>
+                        <th rowspan="0"><h4 class="Rotate-90 ajustar">Puntaje</h4></th>
+                        <th rowspan="0"><h4 class="Rotate-90 ajustar">Prueba Objetiva <br> Exámen 30%</h4></th>
+                        <th rowspan="0"><h4 class="Rotate-90 ajustar">Puntaje</h4></th>
+                        <th rowspan="0"><h4 class="Rotate-90 ajustar">Promedio Periodo</h4></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -121,7 +130,7 @@
 
 
                         <tr>
-                            <td>{{$materiagrado->materium->nombre}}</td>
+                            <td><h4>{{$materiagrado->materium->nombre}}</h4></td>
 
                             <?php
                             $rev = false;
@@ -138,38 +147,38 @@
                                     @if($nota->idEstudiante == $alumno->id)
                                         @if($nota->idTipoNota==1)
 
-                                            <td>{{$nota->nota}}</td>
-                                            <td><?php
+                                            <td><h4>{{$nota->nota}}</h4></td>
+                                            <td><h4><?php
                                                 $rev=true;
-                                                $revision= round($nota->nota*0.15,2);
-                                                echo $revision?></td>
+                                                $revision= round($nota->nota*0.15,1);
+                                                echo $revision?></h4></td>
 
                                         @endif
                                         @if($nota->idTipoNota==2)
 
-                                            <td>{{$nota->nota}}</td>
-                                            <td><?php
+                                            <td><h4>{{$nota->nota}}</h4></td>
+                                            <td><h4><?php
                                                 $com= true;
-                                                $complementarias=round($nota->nota*0.20,2);
-                                                echo $complementarias ;?></td>
+                                                $complementarias=round($nota->nota*0.20,1);
+                                                echo $complementarias ;?></h4></td>
 
                                         @endif
                                         @if($nota->idTipoNota==3)
 
-                                            <td>{{$nota->nota}}</td>
-                                            <td><?php
+                                            <td><h4>{{$nota->nota}}</h4></td>
+                                            <td><h4><?php
                                                 $int= true;
-                                                $integradoras =round($nota->nota*0.35,2);
-                                                echo $integradoras;?></td>
+                                                $integradoras =round($nota->nota*0.35,1);
+                                                echo $integradoras;?></h4></td>
 
                                         @endif
                                         @if($nota->idTipoNota==4)
 
-                                            <td>{{$nota->nota}}</td>
-                                            <td><?php
+                                            <td><h4>{{$nota->nota}}</h4></td>
+                                            <td><h4><?php
                                                 $exa=true;
-                                                $examen =round($nota->nota*0.30,2);
-                                                echo $examen?></td>
+                                                $examen =round($nota->nota*0.30,1);
+                                                echo $examen?></h4></td>
 
                                         @endif
 
@@ -189,9 +198,9 @@
                                 <td>0</td>
                                 <td><b>0</b></td>
                             @else
-                                <td><b><?php $promedio = $revision+$complementarias+$integradoras+$examen;
+                                <td><h4><b><?php $promedio = $revision+$complementarias+$integradoras+$examen;
                                         $promedioGlobal=$promedioGlobal+$promedio;
-                                        echo $promedio?></b>
+                                        echo $promedio?></b></h4>
                                     @endif
 
                                 </td>
@@ -199,9 +208,9 @@
                         @endif
                     @endforeach
                     <tr>
-                        <td>CONDUCTA</td>
-                        <td colspan="8"></td>
-                        <td>
+                        <td><h4>CONDUCTA</h4></td>
+                        <td colspan="8"><h4></h4></td>
+                        <td><h4>
                             <?php $nvueltas =0?>
                             @foreach($alumno->datosboleta as $boleta)
                                 @if($boleta->idPeriodo=1)
@@ -214,17 +223,17 @@
                             @if($nvueltas==0)
                                 0
                             @endif
-                        </td>
+                            </h4></td>
                     </tr>
                     <tr>
-                        <td colspan="9">PROMEDIO GLOBAL</td>
-                        <td>{{$promedioGlobal}}</td>
+                        <td colspan="9"><h4>PROMEDIO GLOBAL</h4></td>
+                        <td><h4>{!! round(($promedioGlobal/13),1) !!}</h4></td>
                     </tr>
                     <br>
                     <tr>
-                        <td colspan="3">PORCENTAJE DE ASISTENCIAS</td>
+                        <td colspan="3"><h4>PORCENTAJE DE ASISTENCIAS</h4></td>
 
-                        <td>
+                        <td><h4>
                             <?php $nvueltas =0?>
                             @foreach($alumno->datosboleta as $boleta)
                                 @if($boleta->idPeriodo=1)
@@ -238,13 +247,13 @@
                             @if($nvueltas==0)
                                 --
                             @endif
-                            %</td>
+                            %</h4></td>
                     </tr>
                     </tbody>
                 </table>
 
                 <h4>OBSERVACIONES</h4>
-                <textarea name="observaciones" id="observacion" cols="164" rows="8">@foreach($alumno->datosboleta as $boleta)@if($boleta->idPeriodo=1){{$boleta->Observaciones}}@endif @endforeach</textarea><br><br><br><br><br>
+                <textarea name="observaciones" id="observacion" cols="164" rows="5">@foreach($alumno->datosboleta as $boleta)@if($boleta->idPeriodo=1){{$boleta->Observaciones}}@endif @endforeach</textarea><br><br><br><br><br>
                 <h4>__________________________________</h4>
                 <h6 class="docente">DOCENTE RESPONSABLE DE SECCIÓN</h6>
                 <h4 class="pull-right director">__________________________________</h4><br>
