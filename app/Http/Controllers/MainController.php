@@ -47,4 +47,8 @@ class MainController extends Controller
         $periodos = Periodo::all();
         return view('main.boleta',compact('periodos','alumnos'));
     }
+
+    public function verBoleta(){
+        return view('main.boletatest');
+    }
 }

@@ -54,6 +54,9 @@
 
     }
 
+    @table-border-color{
+        table-border-color-dark: #000;
+    }
     .ajustar{
         height: 200px;
         width: 100px;
@@ -92,7 +95,7 @@
 
 
                     <div class="container">
-                        <table class="table table-bordered">
+                        <table class="table" border="1" bordercolor="#0000">
                             <thead>
                             <tr>
                                 <td colspan="10"><h4 class="text-center">ALUMNO/A: {{$alumno->user->nombre}} {{$alumno->user->apellido}}</h4></td>

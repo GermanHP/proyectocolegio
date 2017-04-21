@@ -283,6 +283,8 @@ Route::group(['middleware' => ['SSL']], function () {
     Route::get('/galeria', 'MainController@galery');
     Route::get('/calendario', 'MainController@calendar');
 
+    Route::get('verBoleta', 'MainController@verBoleta');
+
 
     Route::get('/Credenciales','PadresPanelController@Credenciales')->name('Credenciales.Buscar');
     Route::post('DatosLogin','PadresPanelController@DatosLogin')->name('Credenciales.Acceso');
