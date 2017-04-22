@@ -64,7 +64,7 @@
 
     .ajustar{
         height: 200px;
-        width: 100px;
+        width: 110px;
         float: left;
         white-space: pre; /* CSS 2.0 */
         white-space: pre-wrap; /* CSS 2.1 */

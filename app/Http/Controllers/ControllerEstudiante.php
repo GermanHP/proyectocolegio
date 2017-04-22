@@ -180,16 +180,20 @@ class ControllerEstudiante extends Controller
             foreach ($matricula->matriculadocumentos as $documentoMatricula){
                 $documentoMatricula->delete();
             }
+            if($request['DocumentosEntregados']!=null){
+                foreach ($request['DocumentosEntregados'] as $documento){
+                    $DocumentosMatricula = new Matriculadocumento();
+                    $DocumentosMatricula->fill([
+                        'idMatricula'=>$matricula->id,
+                        'idDocumento'=>$documento
+                    ]);
+                    $DocumentosMatricula->save();
+                }
+            }
+
         }
 
-        foreach ($request['DocumentosEntregados'] as $documento){
-            $DocumentosMatricula = new Matriculadocumento();
-            $DocumentosMatricula->fill([
-                'idMatricula'=>$matricula->id,
-                'idDocumento'=>$documento
-            ]);
-            $DocumentosMatricula->save();
-        }
+
 
 
 

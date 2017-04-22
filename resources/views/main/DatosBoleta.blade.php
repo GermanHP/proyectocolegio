@@ -19,24 +19,47 @@
             <tbody>
             {!!Form::open(['route'=>['Boletas.GuardarInformacion',$id], 'method'=>'POST', 'onsubmit'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
             <?php $contador =0;?>
-            @foreach($alumnos as $alumno)
-                <?php $contador++?>
-                <tr>
-                    <td>{{$contador}}</td>
-                    <td>{{$alumno->apellido}} {{$alumno->nombre}}</td>
-                    @if(isset($alumno->notaConducta))
-                        <td> {{Form::number('Conducta[]',$alumno->notaConducta, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
-                        <td>  {{Form::number('Asistencia[]',$alumno->porcentajeAsistencia, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
-                        <td>  {{Form::text('Observaciones[]',$alumno->Observaciones, ['class'=>'form-control','tabindex'=>'2', 'placeholder'=>'Observaciones','aria-describedby'=>'basic-addon1'])}}</td>
-                     @else
-                        <td> {{Form::number('Conducta[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
-                        <td>  {{Form::number('Asistencia[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
-                        <td>  {{Form::text('Observaciones[]',null, ['class'=>'form-control','tabindex'=>'2', 'placeholder'=>'Observaciones','aria-describedby'=>'basic-addon1'])}}</td>
+            @foreach($alumnosDisponibles as $alumnosDisponible)
+                <?php $existente  = 0;?>
+                @foreach($alumnos as $alumno)
+                    @if($alumnosDisponible->id == $alumno->id)
+                        <?php $existente=1;?>
+                        <?php $contador++?>
+                        <tr>
+                            <td>{{$contador}}</td>
+                            <td>{{$alumno->apellido}} {{$alumno->nombre}}</td>
+                            @if(isset($alumno->notaConducta))
+                                <td> {{Form::number('Conducta[]',$alumno->notaConducta, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
+                                <td>  {{Form::number('Asistencia[]',$alumno->porcentajeAsistencia, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
+                                <td>  {{Form::text('Observaciones[]',$alumno->Observaciones, ['class'=>'form-control','tabindex'=>'2', 'placeholder'=>'Observaciones','aria-describedby'=>'basic-addon1'])}}</td>
+                            @else
+                                <td> {{Form::number('Conducta[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
+                                <td>  {{Form::number('Asistencia[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
+                                <td>  {{Form::text('Observaciones[]',null, ['class'=>'form-control','tabindex'=>'2', 'placeholder'=>'Observaciones','aria-describedby'=>'basic-addon1'])}}</td>
 
-                     @endif
+                            @endif
 
-                </tr>
+                        </tr>
+                    @endif
+
             @endforeach
+
+                @if($existente==0)
+                    <?php $contador++?>
+                    <tr>
+                        <td>{{$contador}}</td>
+                        <td>{{$alumnosDisponible->apellido}} {{$alumnosDisponible->nombre}}</td>
+
+                            <td> {{Form::number('Conducta[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
+                            <td>  {{Form::number('Asistencia[]',0, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
+                            <td>  {{Form::text('Observaciones[]',null, ['class'=>'form-control','tabindex'=>'2', 'placeholder'=>'Observaciones','aria-describedby'=>'basic-addon1'])}}</td>
+
+
+
+                    </tr>
+                 @endif
+             @endforeach
+
             {!!Form::submit('Guardar Informacion', ['class'=>'btn btn-primary','name'=>'btnCrearUsuario'])!!}
             {!! Form::close() !!}
 

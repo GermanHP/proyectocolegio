@@ -36,6 +36,17 @@ class BoletaController extends Controller
 
     public function AgregarDatosBoleta($id){
         $gradpSeccion = Gradoseccion::find($id);
+
+        $alumnosDisponibles = DB::table('users')
+            ->join('estudiante', 'estudiante.idUsuario', '=', 'users.id')
+            ->join('matriculas', 'matriculas.idEstudiante', '=', 'estudiante.id')
+            ->join('gradoseccion', 'gradoseccion.id', '=', 'matriculas.idGradoSeccion')
+            ->where('gradoseccion.id',$id)
+            ->whereNull('users.deleted_at')
+            ->whereNull('gradoseccion.deleted_at')
+            ->select('users.nombre','users.apellido','estudiante.id')
+            ->orderBy('users.apellido','ASC')
+            ->get();
         $alumnos = DB::table('users')
             ->join('estudiante', 'estudiante.idUsuario', '=', 'users.id')
             ->join('matriculas', 'matriculas.idEstudiante', '=', 'estudiante.id')
@@ -64,7 +75,7 @@ class BoletaController extends Controller
         }
 
 
-        return view('main.DatosBoleta',compact('gradpSeccion','id','alumnos'));
+        return view('main.DatosBoleta',compact('gradpSeccion','id','alumnos','alumnosDisponibles'));
     }
 
     public function GuardarDatosBoleta($id, Request $request){
