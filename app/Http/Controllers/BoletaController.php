@@ -46,6 +46,8 @@ class BoletaController extends Controller
             ->whereNull('gradoseccion.deleted_at')
             ->select('users.nombre','users.apellido','estudiante.id')
             ->orderBy('users.apellido','ASC')
+            ->orderBy('users.nombre','ASC')
+            ->orderBy('id','DESC')
             ->get();
         $alumnos = DB::table('users')
             ->join('estudiante', 'estudiante.idUsuario', '=', 'users.id')
@@ -58,6 +60,8 @@ class BoletaController extends Controller
             ->where('datosboleta.idPeriodo',1)
             ->select('users.nombre','users.apellido','estudiante.id','datosboleta.Observaciones','datosboleta.porcentajeAsistencia','datosboleta.notaConducta')
             ->orderBy('users.apellido','ASC')
+            ->orderBy('users.nombre','ASC')
+            ->orderBy('id','DESC')
             ->get();
 
 
@@ -71,6 +75,8 @@ class BoletaController extends Controller
                 ->whereNull('gradoseccion.deleted_at')
                 ->select('users.nombre','users.apellido','estudiante.id')
                 ->orderBy('users.apellido','ASC')
+                ->orderBy('users.nombre','ASC')
+                ->orderBy('id','DESC')
                 ->get();
         }
 
@@ -92,6 +98,8 @@ class BoletaController extends Controller
             ->whereNull('gradoseccion.deleted_at')
             ->select('users.nombre','users.apellido','estudiante.id')
             ->orderBy('users.apellido','ASC')
+            ->orderBy('users.nombre','ASC')
+            ->orderBy('id','DESC')
             ->get();
         $posicion =0;
         if(count($conducta)==count($observaciones) && count($observaciones)== count($asistencia)&& count($asistencia)==count($alumnos)){

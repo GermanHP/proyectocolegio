@@ -37,6 +37,8 @@ class NotasController extends Controller
             ->whereNull('gradoseccion.deleted_at')
             ->select('users.nombre','users.apellido','estudiante.id')
             ->orderBy('users.apellido','ASC')
+            ->orderBy('users.nombre','ASC')
+            ->orderBy('id','DESC')
             ->get();
 
 
@@ -63,6 +65,8 @@ class NotasController extends Controller
             ->whereNull('gradoseccion.deleted_at')
             ->select('users.nombre','users.apellido','estudiante.id as idEstudiante')
             ->orderBy('users.apellido','ASC')
+            ->orderBy('users.nombre','ASC')
+            ->orderBy('idEstudiante','DESC')
             ->get();
 
 
