@@ -136,9 +136,12 @@
         </a> <br> <br>
         <span class="mdl-layout-title">San Juan Bautista</span>
         <nav class="mdl-navigation mdl-color-nav">
+
             @if(Auth::user()->idTipousuario==5)
                 <a class="mdl-navigation__link" href="{{url('/Redireccionador')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                          role="presentation">home</i>Inicio</a>
+                <a class="mdl-navigation__link" href="{{url('/MateriasALL')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                  role="presentation">home</i>Todas las materias</a>
                 <a class="mdl-navigation__link" href="{{url('/BloquearUsuarios')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                          role="presentation">supervisor_account</i>Bloquear Usuarios</a>
                 <a class="mdl-navigation__link" href="{{url('/formulario')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
@@ -174,8 +177,12 @@
                                                                                    role="presentation">create</i>Sección Noticias</a>
                 @endif
                 @if(Auth::user()->id==18)
+
                     <a class="mdl-navigation__link" href="{{url('/Redireccionador')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                              role="presentation">home</i>Inicio</a>
+
+                    <a class="mdl-navigation__link" href="{{url('/MateriasALL')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                             role="presentation">home</i>Todas las materias</a>
                     <a class="mdl-navigation__link" href="{{url('/BloquearUsuarios')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                            role="presentation">supervisor_account</i>Bloquear Usuarios</a>
                     <a class="mdl-navigation__link" href="{{url('/formulario')}}"><i class="mdl-color-text--blue-grey-400 material-icons"

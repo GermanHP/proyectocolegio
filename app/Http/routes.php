@@ -229,6 +229,10 @@ Route::group(['middleware' => ['SSL']], function () {
             Route::get('ResetearContraseñaAlumno/{id}','MaestrosController@ResetearContraseñaAlumno')->name('ResetearPassword.Alumno');
             Route::get('MisMaterias','MaestrosController@MisMaterias')->name('MisMaterias.Maestro');
 
+            //MATERIAS GENRALES
+            Route::get('MateriasALL','MaestrosController@MateriasGenerales');
+            Route::get('NotasAll/{id}','NotasController@NotasGenerales')->name('Notas.ALL');
+
             Route::get('Notas/{id}','NotasController@IngresarNotas')->name('Notas.Ingresar');
             Route::post('NotasUpdate/{id}','NotasController@GuardarNotas')->name('Notas.Insertar');
             Route::get('NotasPrepa/{id}','NotasPreparatoria@ingresarNotas')->name('Notas.Prepara');

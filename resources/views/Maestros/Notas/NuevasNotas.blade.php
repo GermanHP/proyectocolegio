@@ -5,7 +5,6 @@
         <h3>Grado:  {{$materia->gradoseccion->grado->nombre}} {{$materia->gradoseccion->seccion->nombre}} </h3>
         @include('alertas.flash')
         @include('alertas.errores')
-        {!!link_to_route('MisMaterias.Maestro', $title = 'Regresar',  $parameters =[], $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
         <table class="table table-striped" id="mestrddos">
             <thead>
             <tr>
