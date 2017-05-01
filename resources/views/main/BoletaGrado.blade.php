@@ -40,7 +40,7 @@
 
     .director2{
         margin-top: -4%;
-        margin-right: 11%;
+        margin-right: 10%;
     }
 
     .Rotate-90
@@ -266,9 +266,9 @@
 
                 <h4>OBSERVACIONES</h4>
                 <textarea name="observaciones" id="observacion" cols="170" rows="2">@foreach($alumno->datosboleta as $boleta)@if($boleta->idPeriodo=1){{$boleta->Observaciones}}@endif @endforeach</textarea><br><br><br><br><br>
-                <h4>__________________________________</h4>
+                <h4>_______________________________________</h4>
                 <h6 class="docente">DOCENTE RESPONSABLE DE SECCIÓN</h6>
-                <h4 class="pull-right director">__________________________________</h4><br>
+                <h4 class="pull-right director">_______________________________________</h4><br>
                 <h6 class="pull-right director2">DIRECTOR/A</h6>
             </div>
         </div><!-- /.col -->
