@@ -37,7 +37,7 @@ class Gradoseccion extends Model {
     }
 
     public function materiagrados() {
-        return $this->hasMany(\App\Models\Materiagrado::class, 'idGradoSeccion', 'id')->orderBy('idMateria', 'ASC');
+        return $this->hasMany(\App\Models\Materiagrado::class, 'idGradoSeccion', 'id');
     }
 
     public function materiagradohorarios() {

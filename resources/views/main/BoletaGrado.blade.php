@@ -132,88 +132,93 @@
                     </thead>
                     <tbody>
                     <?php $promedioGlobal =0?>
-                    @foreach($alumno->matriculas[0]->gradoseccion->materiagrados as $materiagrado)
-                        @if($materiagrado->idMateria!=14)
+                    @foreach($orderMaterias as $orderMateria)
+                        @foreach($alumno->matriculas[0]->gradoseccion->materiagrados as $materiagrado)
+                            @if($materiagrado->idMateria==$orderMateria->id)
+                            @if($materiagrado->idMateria!=14)
 
 
-                        <tr>
-                            <td><h3>{{$materiagrado->materium->nombre}}</h3></td>
+                                <tr>
+                                    <td><h3>{{$materiagrado->materium->nombre}}</h3></td>
 
-                            <?php
-                            $rev = false;
-                            $com= false;
-                            $int= false;
-                            $exa= false;
-                            $revision=NULL;
-                            $complementarias =NULL;
-                            $integradoras=NULL;
-                            $examen =NULL;?>
-                            @foreach($materiagrado->notas as $nota)
+                                    <?php
+                                    $rev = false;
+                                    $com= false;
+                                    $int= false;
+                                    $exa= false;
+                                    $revision=NULL;
+                                    $complementarias =NULL;
+                                    $integradoras=NULL;
+                                    $examen =NULL;?>
+                                    @foreach($materiagrado->notas as $nota)
 
-                                @if($nota->idMateriaGrado == $materiagrado->id)
-                                    @if($nota->idEstudiante == $alumno->id)
-                                        @if($nota->idTipoNota==1)
+                                        @if($nota->idMateriaGrado == $materiagrado->id)
+                                            @if($nota->idEstudiante == $alumno->id)
+                                                @if($nota->idTipoNota==1)
 
-                                            <td><h3 class="text-center">{{$nota->nota}}</h3></td>
-                                            <td><h3 class="text-center"><?php
-                                                $rev=true;
-                                                $revision= round($nota->nota*0.15,1);
-                                                echo $revision?></h3></td>
+                                                    <td><h3 class="text-center">{{$nota->nota}}</h3></td>
+                                                    <td><h3 class="text-center"><?php
+                                                            $rev=true;
+                                                            $revision= round($nota->nota*0.15,1);
+                                                            echo $revision?></h3></td>
 
+                                                @endif
+                                                @if($nota->idTipoNota==2)
+
+                                                    <td><h3 class="text-center">{{$nota->nota}}</h3></td>
+                                                    <td><h3 class="text-center"><?php
+                                                            $com= true;
+                                                            $complementarias=round($nota->nota*0.20,1);
+                                                            echo $complementarias ;?></h3></td>
+
+                                                @endif
+                                                @if($nota->idTipoNota==3)
+
+                                                    <td><h3 class="text-center">{{$nota->nota}}</h3></td>
+                                                    <td><h3 class="text-center"><?php
+                                                            $int= true;
+                                                            $integradoras =round($nota->nota*0.35,1);
+                                                            echo $integradoras;?></h3></td>
+
+                                                @endif
+                                                @if($nota->idTipoNota==4)
+
+                                                    <td><h3 class="text-center">{{$nota->nota}}</h3></td>
+                                                    <td><h3 class="text-center"><?php
+                                                            $exa=true;
+                                                            $examen =round($nota->nota*0.30,1);
+                                                            echo $examen?></h3></td>
+
+                                                @endif
+
+                                            @endif
                                         @endif
-                                        @if($nota->idTipoNota==2)
-
-                                            <td><h3 class="text-center">{{$nota->nota}}</h3></td>
-                                            <td><h3 class="text-center"><?php
-                                                $com= true;
-                                                $complementarias=round($nota->nota*0.20,1);
-                                                echo $complementarias ;?></h3></td>
-
-                                        @endif
-                                        @if($nota->idTipoNota==3)
-
-                                            <td><h3 class="text-center">{{$nota->nota}}</h3></td>
-                                            <td><h3 class="text-center"><?php
-                                                $int= true;
-                                                $integradoras =round($nota->nota*0.35,1);
-                                                echo $integradoras;?></h3></td>
-
-                                        @endif
-                                        @if($nota->idTipoNota==4)
-
-                                            <td><h3 class="text-center">{{$nota->nota}}</h3></td>
-                                            <td><h3 class="text-center"><?php
-                                                $exa=true;
-                                                $examen =round($nota->nota*0.30,1);
-                                                echo $examen?></h3></td>
-
-                                        @endif
-
-                                    @endif
-                                @endif
 
 
-                            @endforeach
-                            @if($rev==false && $com==false && $int==false && $exa==false)
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td><b>0</b></td>
-                            @else
-                                <td><h3 class="text-center"><b><?php $promedio = $revision+$complementarias+$integradoras+$examen;
-                                        $promedioGlobal=$promedioGlobal+$promedio;
-                                        echo $promedio?></b></h3>
-                                    @endif
+                                    @endforeach
+                                    @if($rev==false && $com==false && $int==false && $exa==false)
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td><b>0</b></td>
+                                    @else
+                                        <td><h3 class="text-center"><b><?php $promedio = $revision+$complementarias+$integradoras+$examen;
+                                                    $promedioGlobal=$promedioGlobal+$promedio;
+                                                    echo $promedio?></b></h3>
+                                            @endif
 
-                                </td>
-                        </tr>
-                        @endif
+                                        </td>
+                                </tr>
+                            @endif
+                            @endif
+                        @endforeach
                     @endforeach
+
                     <tr>
                         <td><h3>CONDUCTA</h3></td>
                         <td colspan="8"><h4></h4></td>

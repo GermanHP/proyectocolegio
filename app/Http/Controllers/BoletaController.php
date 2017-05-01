@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Datosboletum;
 use App\Models\Estudiante;
 use App\Models\Gradoseccion;
+use App\Models\Materia;
 use App\Models\Periodo;
 use DB;
 use Illuminate\Http\Request;
@@ -136,9 +137,10 @@ class BoletaController extends Controller
     public function DescargarBoletaGradoo($id){
         $alumnos = Estudiante::where('deleted_at',NULL)
             ->with('user','matriculas.gradoseccion','matriculas.gradoseccion.grado','matriculas.gradoseccion.seccion','matriculas.gradoseccion.materiagrados.materium','matriculas.gradoseccion.materiagrados.notas','datosboleta')->get();
+        $orderMaterias = Materia::orderBy('OrdenMateriaBoleta','ASC')->get();
         $periodos = Periodo::all();
         $gradoSeccion = Gradoseccion::find($id);
-        $pdf = PDF::loadView('main.BoletaGrado',compact('alumnos','periodos','id'))->setPaper('a3')->setOrientation('portrait')->setOption('margin-bottom', 0);
+        $pdf = PDF::loadView('main.BoletaGrado',compact('alumnos','periodos','id','orderMaterias'))->setPaper('a3')->setOrientation('portrait')->setOption('margin-bottom', 0);
         return $pdf->download('Boletas_'.$gradoSeccion->grado->nombre.'_'.$gradoSeccion->seccion->nombre.'.pdf');
 
 
