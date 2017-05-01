@@ -28,7 +28,9 @@
                     <td>
 
                         {!!link_to_route('Boleta.Datos', $title = 'Datos Boleta', $parameters = $grado->id, $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+                       @if(Auth::user()->id==1)
                         {!!link_to_route('Descargar.BoletaGrado', $title = 'Descargar Boleta', $parameters = $grado->id, $attributes = ['class'=>'btn btn-warning','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+                           @endif
 
 
                     </td>

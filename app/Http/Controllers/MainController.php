@@ -43,9 +43,10 @@ class MainController extends Controller
 
     public function ingresar(){
 
-        $alumnos = \App\Models\Estudiante::where('deleted_at',NULL)->with('user','matriculas.gradoseccion.grado','matriculas.gradoseccion.seccion','matriculas.gradoseccion.materiagrados.materium','matriculas.gradoseccion.materiagrados.notas','datosboleta')->get();
+        $alumnos = \App\Models\Estudiante::where('deleted_at',NULL)->with('user','matriculas.gradoseccion','matriculas.gradoseccion.grado','matriculas.gradoseccion.seccion','matriculas.gradoseccion.materiagrados.materium','matriculas.gradoseccion.materiagrados.notas','datosboleta')->get();
         $periodos = Periodo::all();
-        return view('main.boleta',compact('periodos','alumnos'));
+        $id =11;
+        return view('main.BoletaGrado',compact('periodos','alumnos','id'));
     }
 
     public function verBoleta(){

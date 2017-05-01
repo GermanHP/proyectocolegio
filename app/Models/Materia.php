@@ -9,7 +9,7 @@ class Materia extends Model {
      */
 
     protected $table = 'materias';
-    protected $fillable = ['id', 'nombre', 'deleted_at'];
+    protected $fillable = ['id', 'nombre', 'deleted_at','OrdenMateriaBoleta'];
 
 
     public function materiagrados() {

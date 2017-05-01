@@ -6,7 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <!-- Bootstrap 3.3.5 -->
 <style>
-
     <?php include(public_path() . '/assets/css/bootstrap.css');?>
     <?php include(public_path() . '/assets/dist/css/AdminLTE.css');?>
     <?php include(public_path() . '/assets/dist/css/skins/_all-skins.css');?>
