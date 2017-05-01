@@ -14,7 +14,7 @@
 
 @page teacher {
         size: auto ;
-        margin: 1cm;
+        margin: 0.5cm;
     }
 
     .teacherPage {
@@ -29,6 +29,10 @@
 
     .docente{
         margin-left: 4%;
+    }
+
+    label{
+        font-size: xx-large;
     }
 
     .director{
@@ -59,7 +63,11 @@
     }
 
     .ajuste-margen{
-        margin-top: -35px;
+        margin-top: -156px;
+    }
+
+    .adjust-img{
+        margin-top: -24px;
     }
 
     .ajustar{
@@ -91,8 +99,8 @@
     @endif
     <div class="row teacherPage">
         <div class="col-md-12">
-            <div class="col s12">
-            <h4><img src="https://colegiosjb.net/img/indexes/logo.jpg" alt="" height="150" width="150" id="logoboleta"></h4>
+            <div class="col s12 adjust-img">
+            <h4><img src="https://colegiosjb.net/img/indexes/logo.jpg" alt="" height="148" width="148" id="logoboleta"></h4>
             </div>
 
             <div class="col s12 ajuste-margen">
@@ -130,7 +138,7 @@
 
 
                         <tr>
-                            <td><h4>{{$materiagrado->materium->nombre}}</h4></td>
+                            <td><h3>{{$materiagrado->materium->nombre}}</h3></td>
 
                             <?php
                             $rev = false;
@@ -147,38 +155,38 @@
                                     @if($nota->idEstudiante == $alumno->id)
                                         @if($nota->idTipoNota==1)
 
-                                            <td><h4>{{$nota->nota}}</h4></td>
-                                            <td><h4><?php
+                                            <td><h3 class="text-center">{{$nota->nota}}</h3></td>
+                                            <td><h3 class="text-center"><?php
                                                 $rev=true;
                                                 $revision= round($nota->nota*0.15,1);
-                                                echo $revision?></h4></td>
+                                                echo $revision?></h3></td>
 
                                         @endif
                                         @if($nota->idTipoNota==2)
 
-                                            <td><h4>{{$nota->nota}}</h4></td>
-                                            <td><h4><?php
+                                            <td><h3 class="text-center">{{$nota->nota}}</h3></td>
+                                            <td><h3 class="text-center"><?php
                                                 $com= true;
                                                 $complementarias=round($nota->nota*0.20,1);
-                                                echo $complementarias ;?></h4></td>
+                                                echo $complementarias ;?></h3></td>
 
                                         @endif
                                         @if($nota->idTipoNota==3)
 
-                                            <td><h4>{{$nota->nota}}</h4></td>
-                                            <td><h4><?php
+                                            <td><h3 class="text-center">{{$nota->nota}}</h3></td>
+                                            <td><h3 class="text-center"><?php
                                                 $int= true;
                                                 $integradoras =round($nota->nota*0.35,1);
-                                                echo $integradoras;?></h4></td>
+                                                echo $integradoras;?></h3></td>
 
                                         @endif
                                         @if($nota->idTipoNota==4)
 
-                                            <td><h4>{{$nota->nota}}</h4></td>
-                                            <td><h4><?php
+                                            <td><h3 class="text-center">{{$nota->nota}}</h3></td>
+                                            <td><h3 class="text-center"><?php
                                                 $exa=true;
                                                 $examen =round($nota->nota*0.30,1);
-                                                echo $examen?></h4></td>
+                                                echo $examen?></h3></td>
 
                                         @endif
 
@@ -198,9 +206,9 @@
                                 <td>0</td>
                                 <td><b>0</b></td>
                             @else
-                                <td><h4><b><?php $promedio = $revision+$complementarias+$integradoras+$examen;
+                                <td><h3 class="text-center"><b><?php $promedio = $revision+$complementarias+$integradoras+$examen;
                                         $promedioGlobal=$promedioGlobal+$promedio;
-                                        echo $promedio?></b></h4>
+                                        echo $promedio?></b></h3>
                                     @endif
 
                                 </td>
@@ -208,9 +216,9 @@
                         @endif
                     @endforeach
                     <tr>
-                        <td><h4>CONDUCTA</h4></td>
+                        <td><h3>CONDUCTA</h3></td>
                         <td colspan="8"><h4></h4></td>
-                        <td><h4>
+                        <td><h3 class="text-center">
                             <?php $nvueltas =0?>
                             @foreach($alumno->datosboleta as $boleta)
                                 @if($boleta->idPeriodo=1)
@@ -223,17 +231,17 @@
                             @if($nvueltas==0)
                                 0
                             @endif
-                            </h4></td>
+                            </h3></td>
                     </tr>
                     <tr>
-                        <td colspan="9"><h4>PROMEDIO GLOBAL</h4></td>
-                        <td><h4>{!! round(($promedioGlobal/13),1) !!}</h4></td>
+                        <td colspan="9"><h3>PROMEDIO GLOBAL</h3></td>
+                        <td><h3 class="text-center">{!! round(($promedioGlobal/13),1) !!}</h3></td>
                     </tr>
                     <br>
                     <tr>
-                        <td colspan="3"><h4>PORCENTAJE DE ASISTENCIAS</h4></td>
+                        <td colspan="3"><h3>PORCENTAJE DE ASISTENCIAS</h3></td>
 
-                        <td><h4>
+                        <td><h3 class="text-center">
                             <?php $nvueltas =0?>
                             @foreach($alumno->datosboleta as $boleta)
                                 @if($boleta->idPeriodo=1)
@@ -247,13 +255,13 @@
                             @if($nvueltas==0)
                                 --
                             @endif
-                            %</h4></td>
+                            %</h3></td>
                     </tr>
                     </tbody>
                 </table>
 
                 <h4>OBSERVACIONES</h4>
-                <textarea name="observaciones" id="observacion" cols="164" rows="5">@foreach($alumno->datosboleta as $boleta)@if($boleta->idPeriodo=1){{$boleta->Observaciones}}@endif @endforeach</textarea><br><br><br><br><br>
+                <textarea name="observaciones" id="observacion" cols="170" rows="2">@foreach($alumno->datosboleta as $boleta)@if($boleta->idPeriodo=1){{$boleta->Observaciones}}@endif @endforeach</textarea><br><br><br><br><br>
                 <h4>__________________________________</h4>
                 <h6 class="docente">DOCENTE RESPONSABLE DE SECCIÓN</h6>
                 <h4 class="pull-right director">__________________________________</h4><br>

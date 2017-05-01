@@ -175,4 +175,9 @@ class MaestrosController extends Controller
         $usuario = User::find(\Auth::user()->id);
         return view('Maestros.MateriasImpartidas',compact('usuario'));
     }
+
+    public function MateriasGenerales(){
+        $materias = Materiagrado::all();
+        return view('Maestros.TodasLasMaterias',compact('materias'));
+    }
 }
