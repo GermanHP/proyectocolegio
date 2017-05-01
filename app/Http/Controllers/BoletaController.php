@@ -134,7 +134,8 @@ class BoletaController extends Controller
         return redirect()->back();
     }
     public function DescargarBoletaGradoo($id){
-        $alumnos = Estudiante::where('deleted_at',NULL)->with('user','matriculas.gradoseccion','matriculas.gradoseccion.grado','matriculas.gradoseccion.seccion','matriculas.gradoseccion.materiagrados.materium','matriculas.gradoseccion.materiagrados.notas','datosboleta')->get();
+        $alumnos = Estudiante::where('deleted_at',NULL)
+            ->with('user','matriculas.gradoseccion','matriculas.gradoseccion.grado','matriculas.gradoseccion.seccion','matriculas.gradoseccion.materiagrados.materium','matriculas.gradoseccion.materiagrados.notas','datosboleta')->get();
         $periodos = Periodo::all();
         $gradoSeccion = Gradoseccion::find($id);
         $pdf = PDF::loadView('main.BoletaGrado',compact('alumnos','periodos','id'))->setPaper('a3')->setOrientation('portrait')->setOption('margin-bottom', 0);

@@ -234,7 +234,7 @@
                     </tr>
                     <tr>
                         <td colspan="9"><h3>PROMEDIO GLOBAL</h3></td>
-                        <td><h3 class="text-center">{!! round(($promedioGlobal/13),1) !!}</h3></td>
+                        <td><h3 class="text-center"><b>{!! round(($promedioGlobal/13),1) !!}</b></h3></td>
                     </tr>
                     <br>
                     <tr>
