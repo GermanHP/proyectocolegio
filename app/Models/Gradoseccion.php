@@ -52,5 +52,9 @@ class Gradoseccion extends Model {
         return $this->hasMany(\App\Models\Noticiasgrado::class, 'idGradoSeccion', 'id');
     }
 
+    public function indicadoresdelogros() {
+        return $this->hasMany(\App\Models\Indicadoresdelogro::class, 'idGrado', 'id');
+    }
+
 
 }

@@ -15,7 +15,7 @@ class NotasKinder extends Migration
         Schema::create('notaskinder', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idGrado')->unsigned();
-            $table->foreign('idGrado') ->references('id')->on('grados');
+            $table->foreign('idGrado') ->references('id')->on('gradoseccion');
             $table->integer('idIndicador')->unsigned();
             $table->foreign('idIndicador') ->references('id')->on('indicadoresdelogros');
             $table->integer('idEstudiante')->unsigned();

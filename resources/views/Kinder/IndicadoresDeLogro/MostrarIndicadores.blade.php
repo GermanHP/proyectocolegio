@@ -25,7 +25,7 @@
                     <td>{!!link_to_route('Notas.EliminarIndicador', $title = 'Eliminar ', $parameters = $indicadore->id, $attributes = ['class'=>'btn btn-danger','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}</td>
                 </tr>
             @endforeach
-            </tbody>
+
 
             </tbody>
         </table>

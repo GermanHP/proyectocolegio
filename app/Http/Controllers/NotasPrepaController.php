@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Areasdedesarrollokinder;
 use App\Models\Gradoseccion;
 use App\Models\Indicadoresdelogro;
+use App\Models\Notaskinder;
+use App\Models\Tiponotaprepa;
 use DB;
 use Illuminate\Http\Request;
 
@@ -91,5 +93,85 @@ class NotasPrepaController extends Controller
         }
         flash('Eliminado exitosamente', 'warning');
         return redirect()->back();
+    }
+
+
+    public function NotasNuevas($id,$idArea){
+        $indicadores = Indicadoresdelogro::where('idGrado',$id)->where('idAreaDeDesarrollo',$idArea)->get();
+        $notaPrepa = Tiponotaprepa::all();
+        $gradoSeccion = Gradoseccion::find($id);
+        $area = Areasdedesarrollokinder::find($idArea);
+        $notasIngresadas = Notaskinder::where('idGrado',$id)->where('idPeriodo',1)->get();
+        $alumnos = DB::table('users')
+            ->join('estudiante', 'estudiante.idUsuario', '=', 'users.id')
+            ->join('matriculas', 'matriculas.idEstudiante', '=', 'estudiante.id')
+            ->join('gradoseccion', 'gradoseccion.id', '=', 'matriculas.idGradoSeccion')
+            ->join('indicadoresdelogros','indicadoresdelogros.id','=','gradoseccion.id')
+            ->where('indicadoresdelogros.idGrado',$id)
+            ->whereNull('users.deleted_at')
+            ->whereNull('gradoseccion.deleted_at')
+            ->select('users.nombre','users.apellido','estudiante.id')
+            ->orderBy('users.apellido','ASC')
+            ->orderBy('users.nombre','ASC')
+            ->orderBy('users.id','ASC')
+            ->get();
+
+
+        return view('Kinder.Notas.NuevasNotasKinder',compact('indicadores','id','idArea','notasIngresadas','alumnos','notaPrepa','gradoSeccion','area'));
+
+    }
+
+    public function GuardarNotas(Request $request,$id,$idArea){
+        $indicadores = Indicadoresdelogro::where('idGrado',$id)->where('idAreaDeDesarrollo',$idArea)->get();
+        $alumnos = DB::table('users')
+            ->join('estudiante', 'estudiante.idUsuario', '=', 'users.id')
+            ->join('matriculas', 'matriculas.idEstudiante', '=', 'estudiante.id')
+            ->join('gradoseccion', 'gradoseccion.id', '=', 'matriculas.idGradoSeccion')
+            ->join('indicadoresdelogros','indicadoresdelogros.id','=','gradoseccion.id')
+            ->where('indicadoresdelogros.idGrado',$id)
+            ->whereNull('users.deleted_at')
+            ->whereNull('gradoseccion.deleted_at')
+            ->select('users.nombre','users.apellido','estudiante.id')
+            ->orderBy('users.apellido','ASC')
+            ->orderBy('users.nombre','ASC')
+            ->orderBy('users.id','ASC')
+            ->get();
+        $estudiantes = $request['idEstudiante'];
+        if(count($estudiantes)==count($alumnos)){
+            //echo "OK";
+        }
+
+        for($i =0;$i<count($estudiantes);$i++){
+            for($j =0; $j<count($indicadores);$j++){
+                $notas = $request['nota_'.$indicadores[$j]->id];
+                $notasIngresdas = Notaskinder::where('idIndicador',$indicadores[$j]->id)
+                    ->where('idEstudiante',$estudiantes[$i])
+                    ->where('idPeriodo',1)
+                    ->where('idGrado',$id)
+                    ->first();
+                if(count($notasIngresdas)==0){
+                    $notaPrepa = new Notaskinder();
+                    $notaPrepa->fill([
+                        "idGrado"=>$id,
+                        "idIndicador"=>$indicadores[$j]->id,
+                        "idEstudiante"=>$estudiantes[$i],
+                        "idPeriodo"=>1,
+                        "idTipoNotaPrepa"=>$notas[$i]
+                    ]);
+                    $notaPrepa->save();
+                }else{
+                    $notasIngresdas->fill([
+                        "idTipoNotaPrepa"=>$notas[$i]
+                    ]);
+                    $notasIngresdas->save();
+                }
+
+            }
+
+        }
+        flash('Notas Actualizasdas Exitosamente','success');
+        return redirect()->back();
+
+
     }
 }
