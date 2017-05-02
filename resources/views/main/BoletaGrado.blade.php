@@ -197,15 +197,15 @@
 
                                     @endforeach
                                     @if($rev==false && $com==false && $int==false && $exa==false)
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td><b>0</b></td>
+                                        <td><h3 class="text-center">0</h3></td>
+                                        <td><h3 class="text-center">0</h3></td>
+                                        <td><h3 class="text-center">0</h3></td>
+                                        <td><h3 class="text-center">0</h3></td>
+                                        <td><h3 class="text-center">0</h3></td>
+                                        <td><h3 class="text-center">0</h3></td>
+                                        <td><h3 class="text-center">0</h3></td>
+                                        <td><h3 class="text-center">0</h3></td>
+                                        <td><h3 class="text-center"><b>0</b></h3></td>
                                     @else
                                         <td><h3 class="text-center"><b><?php $promedio = $revision+$complementarias+$integradoras+$examen;
                                                     $promedioGlobal=$promedioGlobal+$promedio;
@@ -267,9 +267,9 @@
                 <h4>OBSERVACIONES</h4>
                 <textarea name="observaciones" id="observacion" cols="170" rows="2">@foreach($alumno->datosboleta as $boleta)@if($boleta->idPeriodo=1){{$boleta->Observaciones}}@endif @endforeach</textarea><br><br><br><br><br>
                 <h4>_______________________________________</h4>
-                <h6 class="docente">DOCENTE RESPONSABLE DE SECCIÓN</h6>
+                <h5 class="docente">DOCENTE RESPONSABLE DE SECCIÓN</h5>
                 <h4 class="pull-right director">_______________________________________</h4><br>
-                <h6 class="pull-right director2">DIRECTOR/A</h6>
+                <h5 class="pull-right director2">DIRECTOR/A</h5>
             </div>
         </div><!-- /.col -->
     </div><!-- /.col -->

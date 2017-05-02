@@ -24,5 +24,13 @@ class Grado extends Model {
         return $this->hasMany(\App\Models\Historicoestudiante::class, 'GradoAnterior', 'id');
     }
 
+    public function indicadoresdelogros() {
+        return $this->hasMany(\App\Models\Indicadoresdelogro::class, 'idGrado', 'id');
+    }
+
+    public function notaskinders() {
+        return $this->hasMany(\App\Models\Notaskinder::class, 'idGrado', 'id');
+    }
+
 
 }

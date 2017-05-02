@@ -1,49 +1,39 @@
 @extends('layouts.app4')
 @section('content')
     <div class="container panel panel-body">
-        <h3>Registro de Grados</h3>
-        <h2># Grado</h2>
+
+        <h2>Area de Desarrollo</h2>
 
         @include('alertas.flash')
         @include('alertas.errores')
 
-        <table class="table table-striped" id="matriculados">
+        {!!link_to_route('Notas.prepa.NuevaArea', $title = 'Nueva Area de desarrollo ', $parameters = [], $attributes = ['class'=>'btn btn-success','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+        <table class="table table-striped" id="mestros">
             <thead>
             <tr>
-                <th>Grado</th>
-                <th>Seccion</th>
-                <th>Numero de Alumnos</th>
+                <th>id</th>
+                <th>Area de Desarrollo </th>
 
                 <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($gradoSeccion as $grado)
-                <tr>
-                    <td>{{$grado->grado->nombre}}</td>
-                    <td>{{$grado->seccion->nombre}}</td>
-                    <td>{{$grado->matriculas->count()}}</td>
+                @foreach($areasDeDesarrollo as $areaDeDesarrollo)
+                    <tr>
+                        <td>{{$areaDeDesarrollo->id}}</td>
+                        <td>{{$areaDeDesarrollo->nombre}}</td>
+                        <td>{!!link_to_route('Notas.Prepa.EliminarArea', $title = 'Eliminar ', $parameters = $areaDeDesarrollo->id, $attributes = ['class'=>'btn btn-danger','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}</td>
+                    </tr>
+                @endforeach
+            </tbody>
 
-
-                    <td>
-
-                        {!!link_to_route('Boleta.Datos', $title = 'Datos Boleta', $parameters = $grado->id, $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
-                       @if(Auth::user()->id==1 ||Auth::user()->id==18)
-                        {!!link_to_route('Descargar.BoletaGrado', $title = 'Descargar Boleta', $parameters = $grado->id, $attributes = ['class'=>'btn btn-warning','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
-                           @endif
-
-
-                    </td>
-                </tr>
-
-            @endforeach
             </tbody>
         </table>
     </div>
 
     <script>
         $(document).ready(function () {
-            $('#matriculados').DataTable({
+            $('#mestros').DataTable({
                 "paging": true,
                 "lengthChange": true,
                 "searching": true,

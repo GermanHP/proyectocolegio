@@ -12,6 +12,10 @@ class Tiponotaprepa extends Model {
     protected $fillable = ['id', 'nota', 'significado', 'deleted_at'];
 
 
+    public function notaskinders() {
+        return $this->hasMany(\App\Models\Notaskinder::class, 'idTipoNotaPrepa', 'id');
+    }
+
     public function regristronotasprepas() {
         return $this->hasMany(\App\Models\Regristronotasprepa::class, 'idNota', 'id');
     }

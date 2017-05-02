@@ -247,6 +247,19 @@ Route::group(['middleware' => ['SSL']], function () {
             Route::get('/DescargarBoleta','BoletaController@DescargarBoleta');
             Route::get('/DescargarBoleta/{id}','BoletaController@DescargarBoletaGradoo')->name('Descargar.BoletaGrado');
 
+
+            //Rutas de Kinder
+            Route::get('NuevaAreaDeDesarrollo','NotasPrepaController@NuevosAreasDeDesarrollo')->name('Notas.prepa.NuevaArea');
+            Route::post('GuardarAreaDeDesarrollo','NotasPrepaController@GuardarAreasDeDesarollo')->name('Notas.Prepa.GuardarArea');
+            Route::get('MostrarAreasKinder','NotasPrepaController@MostrarAreasDeDesarrollo')->name('Notas.Prepa.MostrarArea');
+            Route::get('eliminarArea/{id}','NotasPrepaController@EliminarAreaDeDesarrollo')->name('Notas.Prepa.EliminarArea');
+
+            Route::get('NuevoIndicador','NotasPrepaController@NuevoIndicador')->name('Notas.NuevoIndicador');
+            Route::post('GuardarNuevoIndicador','NotasPrepaController@GuardarNuevoIndicador')->name('Notas.GuardarNuevoIndicador');
+            Route::get('MostrarIndicadoresDeLogro','NotasPrepaController@MostrarIndicadoresDeLogro')->name('Notas.MostrarIndicadoresDeLogro');
+            Route::get('Eliminarindicador/{id}','NotasPrepaController@EliminarIndicador')->name('Notas.EliminarIndicador');
+
+
         });
 
         Route::group(['middleware'=>'BloqueadoUsuarioMiddlewares'],function (){

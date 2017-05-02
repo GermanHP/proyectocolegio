@@ -10,9 +10,12 @@ class Estudiante extends Model {
 
     protected $table = 'estudiante';
     protected $fillable = ['id', 'fechaNacimiento', 'parvularia', 'repiteGrado', 'retirada', 'PersonaAutorizada', 'PersonaEmergencia', 'Carnet', 'idUsuario', 'deleted_at'];
-
     public function user() {
         return $this->belongsTo(\App\Models\User::class, 'idUsuario', 'id');
+    }
+
+    public function periodos() {
+        return $this->belongsToMany(\App\Models\Periodo::class, 'datosboleta', 'idEstudiante', 'idPeriodo');
     }
 
     public function enfermedades() {
@@ -25,6 +28,10 @@ class Estudiante extends Model {
 
     public function padredefamilia() {
         return $this->belongsToMany(\App\Models\Padredefamilium::class, 'padreestudiante', 'idEstudiante', 'idPadre');
+    }
+
+    public function datosboleta() {
+        return $this->hasMany(\App\Models\Datosboletum::class, 'idEstudiante', 'id');
     }
 
     public function estudianteenfermedads() {
@@ -43,6 +50,10 @@ class Estudiante extends Model {
         return $this->hasMany(\App\Models\Nota::class, 'idEstudiante', 'id');
     }
 
+    public function notaskinders() {
+        return $this->hasMany(\App\Models\Notaskinder::class, 'idEstudiante', 'id');
+    }
+
     public function padreestudiantes() {
         return $this->hasMany(\App\Models\Padreestudiante::class, 'idEstudiante', 'id');
     }
@@ -51,11 +62,5 @@ class Estudiante extends Model {
         return $this->hasMany(\App\Models\Regristronotasprepa::class, 'idEstudiante', 'id');
     }
 
-    public function datosboleta() {
-        return $this->hasMany(\App\Models\Datosboletum::class, 'idEstudiante', 'id');
-    }
-    public function periodos() {
-        return $this->belongsToMany(\App\Models\Periodo::class, 'datosboleta', 'idEstudiante', 'idPeriodo');
-    }
 
 }
