@@ -1,18 +1,18 @@
 @extends('layouts.app4')
 @section('content')
-    <div class="container panel panel-body">
-        <h3>Notas el area de {{$area->nombre}} </h3>
+    <div class="panel panel-body">
+        <h3>Notas del area de {{$area->nombre}} </h3>
         <h3>Grado: {{$gradoSeccion->grado->nombre}} {{$gradoSeccion->seccion->nombre}}  </h3>
         @include('alertas.flash')
         @include('alertas.errores')
 
-        <table class="table table-striped" id="mestrddos">
+        <table class="table table-striped" id="kinder" border="1" bordercolor="#0000">
             <thead>
             <tr>
                 <th>N°</th>
                 <th>Alumnos</th>
                 @foreach($indicadores as $indicadore)
-                    <th>{{$indicadore->nombreIndicador}}</th>
+                    <th class="contenido centrar">{{$indicadore->nombreIndicador}}</th>
                 @endforeach
             </tr>
             </thead>
