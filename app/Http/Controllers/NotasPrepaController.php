@@ -106,9 +106,9 @@ class NotasPrepaController extends Controller
             ->join('estudiante', 'estudiante.idUsuario', '=', 'users.id')
             ->join('matriculas', 'matriculas.idEstudiante', '=', 'estudiante.id')
             ->join('gradoseccion', 'gradoseccion.id', '=', 'matriculas.idGradoSeccion')
-            ->join('indicadoresdelogros','indicadoresdelogros.id','=','gradoseccion.id')
+
             ->where('gradoseccion.id',$id)
-            ->where('indicadoresdelogros.idGrado',$id)
+
             ->whereNull('users.deleted_at')
             ->whereNull('gradoseccion.deleted_at')
             ->select('users.nombre','users.apellido','estudiante.id')
@@ -128,8 +128,7 @@ class NotasPrepaController extends Controller
             ->join('estudiante', 'estudiante.idUsuario', '=', 'users.id')
             ->join('matriculas', 'matriculas.idEstudiante', '=', 'estudiante.id')
             ->join('gradoseccion', 'gradoseccion.id', '=', 'matriculas.idGradoSeccion')
-            ->join('indicadoresdelogros','indicadoresdelogros.id','=','gradoseccion.id')
-            ->where('indicadoresdelogros.idGrado',$id)
+            ->where('gradoseccion.id',$id)
             ->whereNull('users.deleted_at')
             ->whereNull('gradoseccion.deleted_at')
             ->select('users.nombre','users.apellido','estudiante.id')
