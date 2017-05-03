@@ -259,8 +259,9 @@ Route::group(['middleware' => ['SSL']], function () {
             Route::get('MostrarIndicadoresDeLogro','NotasPrepaController@MostrarIndicadoresDeLogro')->name('Notas.MostrarIndicadoresDeLogro');
             Route::get('Eliminarindicador/{id}','NotasPrepaController@EliminarIndicador')->name('Notas.EliminarIndicador');
 
-            Route::get('NotasKinder/{id}/{idArea}','NotasprepaController@NotasNuevas')->name('Notas.Prepa.Nuevas');
-            Route::post('NotasKinderGuardar/{id}/{idArea}','NotasprepaController@GuardarNotas')->name('Notas.Prepa.NuevasGuardaar');
+            Route::get('NotasKinder/{id}/{idArea}','NotasPrepaController@NotasNuevas')->name('Notas.Prepa.Nuevas');
+            Route::post('NotasKinderGuardar/{id}/{idArea}','NotasPrepaController@GuardarNotas')->name('Notas.Prepa.NuevasGuardaar');
+            Route::get('SeleccionarAreaKinder','NotasPrepaController@SeleccionarAreaKinder')->name('Notas.Prepa.SeleccionarArea');
 
 
         });

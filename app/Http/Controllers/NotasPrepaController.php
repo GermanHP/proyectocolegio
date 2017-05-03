@@ -107,6 +107,7 @@ class NotasPrepaController extends Controller
             ->join('matriculas', 'matriculas.idEstudiante', '=', 'estudiante.id')
             ->join('gradoseccion', 'gradoseccion.id', '=', 'matriculas.idGradoSeccion')
             ->join('indicadoresdelogros','indicadoresdelogros.id','=','gradoseccion.id')
+            ->where('gradoseccion.id',$id)
             ->where('indicadoresdelogros.idGrado',$id)
             ->whereNull('users.deleted_at')
             ->whereNull('gradoseccion.deleted_at')
@@ -173,5 +174,13 @@ class NotasPrepaController extends Controller
         return redirect()->back();
 
 
+    }
+
+
+    public function SeleccionarAreaKinder(){
+        $indicadores = Areasdedesarrollokinder::all();
+        $gradoseccion = Gradoseccion::where('id',1)->orWhere('id',13)->orWhere('id',14)->get();
+
+        return view('Kinder.SeleccionarAreaKinder',compact('indicadores','gradoseccion'));
     }
 }

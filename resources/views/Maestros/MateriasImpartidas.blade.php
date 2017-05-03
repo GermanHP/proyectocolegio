@@ -38,7 +38,7 @@
 
                         {!!link_to_route('Alumnos.Grado', $title = 'Ver Alumnos', $parameters = $materia->idGradoSeccion, $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
                         {!!link_to_route('Notas.Ingresar', $title = 'Notas', $parameters = $materia->id, $attributes = ['class'=>'btn btn-success','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
-                        {!!link_to_route('Notas.Prepara', $title = 'Notas Kinder', $parameters = $materia->id, $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+                        {!!link_to_route('Notas.Prepa.SeleccionarArea', $title = 'Notas  para Kinder', $parameters = [], $attributes = ['class'=>'btn btn-info','onclick'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
 
 
 

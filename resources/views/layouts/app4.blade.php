@@ -152,6 +152,8 @@
                                                                                role="presentation">description</i>Areas de desarrollo</a>
                 <a class="mdl-navigation__link" href="{{url('/MostrarIndicadoresDeLogro')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                role="presentation">description</i>Indicadores de logro </a>
+                <a class="mdl-navigation__link" href="{{url('/SeleccionarAreaKinder')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                               role="presentation">description</i>Notas de Kinder</a>
                 <a class="mdl-navigation__link" href="{{ url('/listado_padres') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                        role="presentation">supervisor_account</i>Listado de Padres</a>
                 <a class="mdl-navigation__link" href="{{ url('/GradosActivos') }}"><i class="mdl-color-text--blue-grey-400 material-icons"
@@ -184,7 +186,8 @@
 
                     <a class="mdl-navigation__link" href="{{url('/Redireccionador')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                              role="presentation">home</i>Inicio</a>
-
+                    <a class="mdl-navigation__link" href="{{url('/SeleccionarAreaKinder')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                                                role="presentation">description</i>Notas de Kinder</a>
                     <a class="mdl-navigation__link" href="{{url('/MateriasALL')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                                              role="presentation">home</i>Todas las materias</a>
                     <a class="mdl-navigation__link" href="{{url('/BloquearUsuarios')}}"><i class="mdl-color-text--blue-grey-400 material-icons"
