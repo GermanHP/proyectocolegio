@@ -12,13 +12,14 @@
         @include('alertas.flash')
         @include('alertas.errores')
 
-        <table class="table table-striped"  border="2" id="mestrddos">
+
+        <table class="table table-striped" id="kinder" border="1" bordercolor="#0000">
             <thead>
             <tr>
                 <th>N°</th>
                 <th>Alumnos</th>
                 @foreach($indicadores as $indicadore)
-                    <th>{{$indicadore->nombreIndicador}}</th>
+                    <th class="contenido centrar">{{$indicadore->nombreIndicador}}</th>
                 @endforeach
             </tr>
             </thead>

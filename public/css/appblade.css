@@ -63,3 +63,49 @@ li:hover{color:white;border:solid white;border-width:0 0.1rem;}
 .video-container .filter{z-index:100;position:absolute;background:rgba(0, 0, 0, 0.4);width:100%;}
 .video-container video{position:absolute;z-index:0;bottom:0;}
 .video-container video.fillWidth{width:100%;}
+
+.ajustarth{
+    height: 105px;
+
+}
+
+
+.Rotate-90th
+{
+    -webkit-transform: rotate(-90deg);
+
+    -moz-transform: rotate(-90deg);
+
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    display: block;
+
+    text-align: match-parent;
+
+    position: absolute;
+
+    right: -5px;top: 15px;
+}
+
+.contenido {
+    _position: absolute;
+    _top: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align:left;
+    width:500px;
+    height: auto;
+}
+.centrar{
+    position: relative;
+    top: -50%;
+    border-style:solid;
+    border-width:2px;
+    border-color:#999999;
+}
+
+table#kinder{
+    display: block;
+    overflow-x: auto;
+}
+
