@@ -115,7 +115,12 @@
                         <td colspan="10"><h3 class="text-center"><strong>ALUMNO/A: {{$alumno->user->nombre}} {{$alumno->user->apellido}}</strong></h3></td>
                     </tr>
                     <tr>
-                        <td colspan="10"><h4 class="text-center">PRIMER PERIODO</h4></td>
+                        <td colspan="10"><h4 class="text-center">@foreach($periodos as $periodo)
+                                                                     @if($periodo->id== env('PERIODO_ID'))
+                                                                         {{$periodo->nombre}}
+                                                                         @endif
+                            @endforeach
+                            </h4></td>
                     </tr>
                     <tr>
                         <th>Asignaturas</th>
@@ -152,7 +157,7 @@
                                     $examen =NULL;?>
                                     @foreach($materiagrado->notas as $nota)
 
-                                        @if($nota->idMateriaGrado == $materiagrado->id)
+                                        @if($nota->idMateriaGrado == $materiagrado->id && $nota->idPeriodos ==env('PERIODO_ID'))
                                             @if($nota->idEstudiante == $alumno->id)
                                                 @if($nota->idTipoNota==1)
 
@@ -225,7 +230,7 @@
                         <td><h3 class="text-center">
                             <?php $nvueltas =0?>
                             @foreach($alumno->datosboleta as $boleta)
-                                @if($boleta->idPeriodo=1)
+                                @if($boleta->idPeriodo==env('PERIODO_ID'))
                                     <?php $nvueltas++;
                                     $promedioGlobal=$promedioGlobal+$boleta->notaConducta;
                                     ?>
@@ -248,7 +253,7 @@
                         <td><h3 class="text-center">
                             <?php $nvueltas =0?>
                             @foreach($alumno->datosboleta as $boleta)
-                                @if($boleta->idPeriodo=1)
+                                @if($boleta->idPeriodo==env('PERIODO_ID'))
                                     <?php $nvueltas++;
                                     $nasistncia = $boleta->porcentajeAsistencia*10;
                                     ?>

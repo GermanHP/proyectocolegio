@@ -58,8 +58,8 @@ class BoletaController extends Controller
             ->where('gradoseccion.id',$id)
             ->whereNull('users.deleted_at')
             ->whereNull('gradoseccion.deleted_at')
-            ->where('datosboleta.idPeriodo',1)
-            ->select('users.nombre','users.apellido','estudiante.id','datosboleta.Observaciones','datosboleta.porcentajeAsistencia','datosboleta.notaConducta')
+            ->where('datosboleta.idPeriodo',env('PERIODO_ID'))
+            ->select('users.nombre','users.apellido','estudiante.id','datosboleta.Observaciones','datosboleta.porcentajeAsistencia','datosboleta.notaConducta','datosboleta.idPeriodo')
             ->orderBy('users.apellido','ASC')
             ->orderBy('users.nombre','ASC')
             ->orderBy('id','DESC')
@@ -82,7 +82,8 @@ class BoletaController extends Controller
         }
 
 
-        return view('main.DatosBoleta',compact('gradpSeccion','id','alumnos','alumnosDisponibles'));
+
+       return view('main.DatosBoleta',compact('gradpSeccion','id','alumnos','alumnosDisponibles'));
     }
 
     public function GuardarDatosBoleta($id, Request $request){
@@ -105,7 +106,7 @@ class BoletaController extends Controller
         $posicion =0;
         if(count($conducta)==count($observaciones) && count($observaciones)== count($asistencia)&& count($asistencia)==count($alumnos)){
             foreach ($alumnos as $alumno){
-                $alumnoExistente = Datosboletum::where('idEstudiante',$alumno->id)->where('idPeriodo',1)->get();
+                $alumnoExistente = Datosboletum::where('idEstudiante',$alumno->id)->where('idPeriodo',env('PERIODO_ID'))->get();
                 if($alumnoExistente->count()==0){
                     $datosBoleta = new Datosboletum();
                     $datosBoleta->fill([
@@ -113,7 +114,7 @@ class BoletaController extends Controller
                         "porcentajeAsistencia"=>$asistencia[$posicion],
                         "notaConducta"=>$conducta[$posicion],
                         "idEstudiante"=>$alumno->id,
-                        "idPeriodo"=>1
+                        "idPeriodo"=>env('PERIODO_ID')
                     ]);
                     $datosBoleta->save();
                 }else{
@@ -122,7 +123,7 @@ class BoletaController extends Controller
                         "porcentajeAsistencia"=>$asistencia[$posicion],
                         "notaConducta"=>$conducta[$posicion],
                         "idEstudiante"=>$alumno->id,
-                        "idPeriodo"=>1
+                        "idPeriodo"=>env('PERIODO_ID')
                     ]);
                     $alumnoExistente[0]->save();
                 }

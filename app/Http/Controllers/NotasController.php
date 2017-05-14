@@ -74,13 +74,13 @@ class NotasController extends Controller
         foreach ($alumnos as $alumno){
 
             //Nota Revision
-            $notaR = Nota::where('idPeriodos',1)->where('idTipoNota',1)->where('idEstudiante',$alumno->idEstudiante)->where('idMateriaGrado',$id)->get();
+            $notaR = Nota::where('idPeriodos',env('PERIODO_ID'))->where('idTipoNota',1)->where('idEstudiante',$alumno->idEstudiante)->where('idMateriaGrado',$id)->get();
             if($notaR->count()==0){
                 $notaRevision = new Nota();
                 $notaRevision->fill([
                     'nota'=>$revision[$posicion],
                     'year'=>'2017',
-                    'idPeriodos'=>1,
+                    'idPeriodos'=>env('PERIODO_ID'),
                     'idTipoNota'=>1,
                     'idEstudiante'=>$alumno->idEstudiante,
                     'idMateriaGrado'=>$id
@@ -91,7 +91,7 @@ class NotasController extends Controller
                 $notaR[0]->fill([
                     'nota'=>$revision[$posicion],
                     'year'=>'2017',
-                    'idPeriodos'=>1,
+                    'idPeriodos'=>env('PERIODO_ID'),
                     'idTipoNota'=>1,
                     'idEstudiante'=>$alumno->idEstudiante,
                     'idMateriaGrado'=>$id
@@ -101,13 +101,13 @@ class NotasController extends Controller
             }
 
             //Nota Actividades Complementarias
-            $notaR = Nota::where('idPeriodos',1)->where('idTipoNota',2)->where('idEstudiante',$alumno->idEstudiante)->where('idMateriaGrado',$id)->get();
+            $notaR = Nota::where('idPeriodos',env('PERIODO_ID'))->where('idTipoNota',2)->where('idEstudiante',$alumno->idEstudiante)->where('idMateriaGrado',$id)->get();
             if($notaR->count()==0){
                 $notaRevision = new Nota();
                 $notaRevision->fill([
                     'nota'=>$ActividadesComplementarias[$posicion],
                     'year'=>'2017',
-                    'idPeriodos'=>1,
+                    'idPeriodos'=>env('PERIODO_ID'),
                     'idTipoNota'=>2,
                     'idEstudiante'=>$alumno->idEstudiante,
                     'idMateriaGrado'=>$id
@@ -118,7 +118,7 @@ class NotasController extends Controller
                 $notaR[0]->fill([
                     'nota' => $ActividadesComplementarias[$posicion],
                     'year' => '2017',
-                    'idPeriodos' => 1,
+                    'idPeriodos' => env('PERIODO_ID'),
                     'idTipoNota' => 2,
                     'idEstudiante' => $alumno->idEstudiante,
                     'idMateriaGrado' => $id
@@ -128,13 +128,13 @@ class NotasController extends Controller
             }
 
             //Nota Actividades Integradoras
-            $notaR = Nota::where('idPeriodos',1)->where('idTipoNota',3)->where('idEstudiante',$alumno->idEstudiante)->where('idMateriaGrado',$id)->get();
+            $notaR = Nota::where('idPeriodos',env('PERIODO_ID'))->where('idTipoNota',3)->where('idEstudiante',$alumno->idEstudiante)->where('idMateriaGrado',$id)->get();
             if($notaR->count()==0){
                 $notaRevision = new Nota();
                 $notaRevision->fill([
                     'nota'=>$ActividadesIntegradoras[$posicion],
                     'year'=>'2017',
-                    'idPeriodos'=>1,
+                    'idPeriodos'=>env('PERIODO_ID'),
                     'idTipoNota'=>3,
                     'idEstudiante'=>$alumno->idEstudiante,
                     'idMateriaGrado'=>$id
@@ -145,7 +145,7 @@ class NotasController extends Controller
                 $notaR[0]->fill([
                     'nota' => $ActividadesIntegradoras[$posicion],
                     'year' => '2017',
-                    'idPeriodos' => 1,
+                    'idPeriodos' => env('PERIODO_ID'),
                     'idTipoNota' => 3,
                     'idEstudiante' => $alumno->idEstudiante,
                     'idMateriaGrado' => $id
@@ -154,13 +154,13 @@ class NotasController extends Controller
 
             }
             //Nota Prueba Objetiva
-            $notaR = Nota::where('idPeriodos', 1)->where('idTipoNota', 4)->where('idEstudiante', $alumno->idEstudiante)->where('idMateriaGrado', $id)->get();
+            $notaR = Nota::where('idPeriodos', env('PERIODO_ID'))->where('idTipoNota', 4)->where('idEstudiante', $alumno->idEstudiante)->where('idMateriaGrado', $id)->get();
             if ($notaR->count() == 0) {
                 $notaRevision = new Nota();
                 $notaRevision->fill([
                     'nota' => $PruebaObjetiva[$posicion],
                     'year' => '2017',
-                    'idPeriodos' => 1,
+                    'idPeriodos' => env('PERIODO_ID'),
                     'idTipoNota' => 4,
                     'idEstudiante' => $alumno->idEstudiante,
                     'idMateriaGrado' => $id
@@ -171,7 +171,7 @@ class NotasController extends Controller
                 $notaR[0]->fill([
                     'nota' => $PruebaObjetiva[$posicion],
                     'year' => '2017',
-                    'idPeriodos' => 1,
+                    'idPeriodos' => env('PERIODO_ID'),
                     'idTipoNota' => 4,
                     'idEstudiante' => $alumno->idEstudiante,
                     'idMateriaGrado' => $id
@@ -251,13 +251,13 @@ class NotasController extends Controller
         foreach ($alumnos as $alumno){
 
             //Nota Revision
-            $notaR = Nota::where('idPeriodos',1)->where('idTipoNota',1)->where('idEstudiante',$alumno->idEstudiante)->where('idMateriaGrado',$id)->get();
+            $notaR = Nota::where('idPeriodos',env('PERIODO_ID'))->where('idTipoNota',1)->where('idEstudiante',$alumno->idEstudiante)->where('idMateriaGrado',$id)->get();
            if($notaR->count()==0){
                $notaRevision = new Nota();
                $notaRevision->fill([
                    'nota'=>$revision[$posicion],
                    'year'=>'2017',
-                   'idPeriodos'=>1,
+                   'idPeriodos'=>env('PERIODO_ID'),
                    'idTipoNota'=>1,
                    'idEstudiante'=>$alumno->idEstudiante,
                    'idMateriaGrado'=>$id
@@ -268,7 +268,7 @@ class NotasController extends Controller
                $notaR[0]->fill([
                    'nota'=>$revision[$posicion],
                    'year'=>'2017',
-                   'idPeriodos'=>1,
+                   'idPeriodos'=>env('PERIODO_ID'),
                    'idTipoNota'=>1,
                    'idEstudiante'=>$alumno->idEstudiante,
                    'idMateriaGrado'=>$id
@@ -278,13 +278,13 @@ class NotasController extends Controller
                    }
 
             //Nota Actividades Complementarias
-            $notaR = Nota::where('idPeriodos',1)->where('idTipoNota',2)->where('idEstudiante',$alumno->idEstudiante)->where('idMateriaGrado',$id)->get();
+            $notaR = Nota::where('idPeriodos',env('PERIODO_ID'))->where('idTipoNota',2)->where('idEstudiante',$alumno->idEstudiante)->where('idMateriaGrado',$id)->get();
             if($notaR->count()==0){
                 $notaRevision = new Nota();
                 $notaRevision->fill([
                     'nota'=>$ActividadesComplementarias[$posicion],
                     'year'=>'2017',
-                    'idPeriodos'=>1,
+                    'idPeriodos'=>env('PERIODO_ID'),
                     'idTipoNota'=>2,
                     'idEstudiante'=>$alumno->idEstudiante,
                     'idMateriaGrado'=>$id
@@ -295,7 +295,7 @@ class NotasController extends Controller
                 $notaR[0]->fill([
                     'nota' => $ActividadesComplementarias[$posicion],
                     'year' => '2017',
-                    'idPeriodos' => 1,
+                    'idPeriodos' => env('PERIODO_ID'),
                     'idTipoNota' => 2,
                     'idEstudiante' => $alumno->idEstudiante,
                     'idMateriaGrado' => $id
@@ -305,13 +305,13 @@ class NotasController extends Controller
             }
 
                 //Nota Actividades Integradoras
-                $notaR = Nota::where('idPeriodos',1)->where('idTipoNota',3)->where('idEstudiante',$alumno->idEstudiante)->where('idMateriaGrado',$id)->get();
+                $notaR = Nota::where('idPeriodos',env('PERIODO_ID'))->where('idTipoNota',3)->where('idEstudiante',$alumno->idEstudiante)->where('idMateriaGrado',$id)->get();
                 if($notaR->count()==0){
                     $notaRevision = new Nota();
                     $notaRevision->fill([
                         'nota'=>$ActividadesIntegradoras[$posicion],
                         'year'=>'2017',
-                        'idPeriodos'=>1,
+                        'idPeriodos'=>env('PERIODO_ID'),
                         'idTipoNota'=>3,
                         'idEstudiante'=>$alumno->idEstudiante,
                         'idMateriaGrado'=>$id
@@ -322,7 +322,7 @@ class NotasController extends Controller
                     $notaR[0]->fill([
                         'nota' => $ActividadesIntegradoras[$posicion],
                         'year' => '2017',
-                        'idPeriodos' => 1,
+                        'idPeriodos' => env('PERIODO_ID'),
                         'idTipoNota' => 3,
                         'idEstudiante' => $alumno->idEstudiante,
                         'idMateriaGrado' => $id
@@ -331,13 +331,13 @@ class NotasController extends Controller
 
                 }
                     //Nota Prueba Objetiva
-                    $notaR = Nota::where('idPeriodos', 1)->where('idTipoNota', 4)->where('idEstudiante', $alumno->idEstudiante)->where('idMateriaGrado', $id)->get();
+                    $notaR = Nota::where('idPeriodos', env('PERIODO_ID'))->where('idTipoNota', 4)->where('idEstudiante', $alumno->idEstudiante)->where('idMateriaGrado', $id)->get();
                     if ($notaR->count() == 0) {
                         $notaRevision = new Nota();
                         $notaRevision->fill([
                             'nota' => $PruebaObjetiva[$posicion],
                             'year' => '2017',
-                            'idPeriodos' => 1,
+                            'idPeriodos' => env('PERIODO_ID'),
                             'idTipoNota' => 4,
                             'idEstudiante' => $alumno->idEstudiante,
                             'idMateriaGrado' => $id
@@ -348,7 +348,7 @@ class NotasController extends Controller
                         $notaR[0]->fill([
                             'nota' => $PruebaObjetiva[$posicion],
                             'year' => '2017',
-                            'idPeriodos' => 1,
+                            'idPeriodos' => env('PERIODO_ID'),
                             'idTipoNota' => 4,
                             'idEstudiante' => $alumno->idEstudiante,
                             'idMateriaGrado' => $id

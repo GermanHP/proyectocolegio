@@ -56,7 +56,8 @@
                         @if($matricula->estudiante->notas!=NULL &&$matricula->estudiante->notas->count()!=0)
 
                           @foreach($matricula->estudiante->notas as $nota)
-                              @if($nota->idTipoNota ==1 && $nota->idMateriaGrado ==$idM)
+
+                              @if($nota->idTipoNota ==1 && $nota->idMateriaGrado ==$idM && $nota->idPeriodos == env('PERIODO_ID'))
                                   <?php $revision = $nota->nota*0.15 ;
                                   $revEn = 1;
                                   ?>
@@ -79,7 +80,7 @@
                         @if($matricula->estudiante->notas!=NULL &&$matricula->estudiante->notas->count()!=0)
 
                             @foreach($matricula->estudiante->notas as $nota)
-                                @if($nota->idTipoNota ==2 && $nota->idMateriaGrado ==$idM)
+                                @if($nota->idTipoNota ==2 && $nota->idMateriaGrado ==$idM && $nota->idPeriodos == env('PERIODO_ID'))
                                     <?php $actividadesComplementarias = $nota->nota*0.20;
                                     $actCEN = 1;?>
                                     {{Form::number('ActividadesComplementarias[]',$nota->nota, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
@@ -98,7 +99,7 @@
                     <td>
                         @if($matricula->estudiante->notas!=NULL &&$matricula->estudiante->notas->count()!=0)
                         @foreach($matricula->estudiante->notas as $nota)
-                            @if($nota->idTipoNota ==3 && $nota->idMateriaGrado ==$idM)
+                            @if($nota->idTipoNota ==3 && $nota->idMateriaGrado ==$idM && $nota->idPeriodos == env('PERIODO_ID'))
                                     <?php $actividadesIntegradores = $nota->nota*0.35 ;
                                     $actIEn=1?>
                                 {{Form::number('ActividadesIntegradoras[]',$nota->nota, ['class'=>'form-control','tabindex'=>'3','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}
@@ -118,7 +119,7 @@
                     <td>
                         @if($matricula->estudiante->notas!=NULL &&$matricula->estudiante->notas->count()!=0)
                         @foreach($matricula->estudiante->notas as $nota)
-                            @if($nota->idTipoNota ==4 && $nota->idMateriaGrado ==$idM)
+                            @if($nota->idTipoNota ==4 && $nota->idMateriaGrado ==$idM && $nota->idPeriodos == env('PERIODO_ID'))
                                     <?php $pruebaObtetiva = $nota->nota*0.30;
                                     $pruebEN=1;?>
                                 {{Form::number('PruebaObjetiva[]',$nota->nota, ['class'=>'form-control','tabindex'=>'4','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}

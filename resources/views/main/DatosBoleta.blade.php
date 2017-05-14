@@ -28,7 +28,7 @@
                         <tr>
                             <td>{{$contador}}</td>
                             <td>{{$alumno->apellido}} {{$alumno->nombre}}</td>
-                            @if(isset($alumno->notaConducta))
+                            @if(isset($alumno->notaConducta) && $alumno->idPeriodo == env('PERIODO_ID'))
                                 <td> {{Form::number('Conducta[]',$alumno->notaConducta, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
                                 <td>  {{Form::number('Asistencia[]',$alumno->porcentajeAsistencia, ['class'=>'form-control','tabindex'=>'2','onclick'=>'if(this.value==0) this.value=""','onblur'=>'if(this.value=="")this.value=0', 'placeholder'=>'0','step'=>'0.01', 'required','min'=>'0','id'=>'correoPadre','max'=>'10', 'aria-describedby'=>'basic-addon1'])}}</td>
                                 <td>  {{Form::text('Observaciones[]',$alumno->Observaciones, ['class'=>'form-control','tabindex'=>'2', 'placeholder'=>'Observaciones','aria-describedby'=>'basic-addon1'])}}</td>
