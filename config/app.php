@@ -166,6 +166,7 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
         Barryvdh\Snappy\ServiceProvider::class,
+	    Spatie\Backup\BackupServiceProvider::class,
 
     ],
 
