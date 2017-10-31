@@ -78,6 +78,8 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
     {!! Html::style('css/material.min.css') !!}
     {!! Html::style('css/main.css') !!}
     {!! Html::style('css/appblade.css') !!}

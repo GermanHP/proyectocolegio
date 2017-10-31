@@ -1,0 +1,267 @@
+/* Small devices (landscape phones, 100px and up) */
+@media (min-width: 100px) {
+    .textoH2Servicio{
+
+        font-size:0.8rem;
+    }
+    .textoH3Servicio{
+
+        font-size:0.8rem;
+    }
+    .informacion-servicio{
+        border-bottom: 2px solid white;
+        font-size:0.7rem;
+    }
+    .textoServicio{
+        margin: 0;
+        padding: 0;
+    }
+    .ocultarTexto{
+        display: none;
+    }
+
+}
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+    .textoH2Servicio{
+        font-size:1rem;
+    }
+    .textoH3Servicio{
+        font-size:0.8rem;
+    }
+    .informacion-servicio{
+        font-size:0.8rem;
+
+        border-bottom: 2px solid white;
+    }
+    .textoServicio{
+        margin: 10px;
+        padding: 0;
+    }
+    .textoCentrado{
+        margin: 5% auto;
+    }
+    .ocultarTexto{
+        display: none;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+    .textoH2Servicio{
+        font-size:2rem;
+    }
+    .textoH3Servicio{
+        font-size:1.5rem;
+    }
+    .informacion-servicio{
+
+        border-bottom: 2px solid white;
+        font-size:1rem;
+    }
+    .textoServicio{
+        margin: 20px;
+        padding: 0;
+    }
+    .ocultarTexto{
+        display: block;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .textoH2Servicio{
+        font-size:2.5rem;
+    }
+    .textoH3Servicio{
+        font-size:2rem;
+    }
+    .informacion-servicio{
+        padding: 6px;
+        border-bottom: 2px solid white;
+        font-size:1rem;
+    }
+    .textoServicio{
+        margin: 30px;
+        padding: 0;
+    }
+    .ocultarTexto{
+        display: block;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .textoH2Servicio{
+        font-size:3.7rem;
+    }
+    .textoH3Servicio{
+        font-size:3.4rem;
+    }
+    .informacion-servicio{
+        padding: 5px;
+        border-bottom: 2px solid white;
+        font-size:2rem;
+    }
+    .textoServicio{
+        margin: 35px;
+        padding: 0;
+    }
+    .ocultarTexto{
+        display: block;
+    }
+    .portafolio-link{
+        margin-top: 0%;
+    }
+}
+
+.img-responsive-opacity{
+    width: 100%;
+    height: auto;
+    opacity: 0.2;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+/*contenedor-img-1*/
+.contenedor-img-1 {
+    width: 100%;
+    height: auto;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+    background-color: #193441;
+}
+.contenedor-img-1 .mascara,.contenedor-img .contenido {
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0
+}
+.contenedor-img-1 img {
+    display: block;
+    position: relative;
+}
+.slide-1 img {
+    transition: all 0.4s ease-in-out;
+}
+.mascara {
+    background-color: rgba(25,52,65,0.8);
+    transform: translateX(-100%);/*Desplazamos 300px a la izquierda*/
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}
+.slide-1:hover .mascara {
+    transform: translateX(0px);/*Regresamos a su posicioón original*/
+}
+.slide-1:hover img {
+    opacity: 1;
+}
+/*Fin contenedor-img-1 */
+/*contenedor-img-2 */
+.contenedor-img-2 {
+    width: 100%;
+    height: auto;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+    background-color: #193441;
+}
+.contenedor-img-2 .mascara-2,.contenedor-img-2 .contenido-2 {
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+}
+.contenedor-img-2 img {
+    display: block;
+    position: relative;
+}
+.slide-1-1 img {
+    transition: all 0.4s ease-in-out;
+}
+.mascara-2 {
+    background-color: rgba(25,52,65,0.8);
+    transform: translateX(100%);/*Desplazamos 100% a la derecha*/
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}
+.slide-1-1:hover .mascara-2 {
+    transform: translateX(0px);/*Regresamos a su posicioón original*/
+}
+.slide-1-1:hover img {
+    opacity: 1;
+}
+/*Fin contenedor-img-2 */
+.informacion-servicio{
+    text-decoration: none;
+    padding: 5px 8px;
+    color: white;
+}
+.textoServicio{
+    margin-top: 0;
+    padding-top: 0;
+}
+.icons-porta{
+    background-color: #000000;
+    width: 100px;
+    height: auto;
+}
+
+div#servicios{
+    background-image: url("../img/arquitectura/bigspace.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ajuste-servicios{
+    margin-top: 10px;
+}
+div#moreinfo{
+    background-image: url("../img/arquitectura/bigspace.jpg");
+    height: 300px;
+}
+.ver-mas{
+    border-bottom: 2px solid white;
+    margin-top: 20%;
+}
+
+.white-text{
+    color: white;
+}
+
+.aula-letra{
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+div#panel-inicio{
+    background-image: url("../img/slider/coverp.jpg");
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+a#facebook:hover{
+    color: #3b5998;
+}
+
+a#twitter:hover{
+    color: #00abf0;
+}
+
+a#youtube:hover{
+    color: #c62828;
+}
+
+a#android:hover{
+    color: #00e765;
+}
