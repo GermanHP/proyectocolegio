@@ -53,7 +53,15 @@ return [
             'root' => storage_path('app/public'),
             'visibility' => 'public',
         ],
-
+	
+	    'google' => [
+		'driver' => 's3',
+        'key' => 'GOOG3WVKQN365X4NNP4Z',
+        'secret' => 'lYP6XHxd1Ujfqk3U0tc5dx7aG4OY3t9xvR/HmUTR',
+        'bucket' => 'backups_colegiosjb',
+        'base_url'=>'https://storage.googleapis.com'
+		],
+	    
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_KEY'),

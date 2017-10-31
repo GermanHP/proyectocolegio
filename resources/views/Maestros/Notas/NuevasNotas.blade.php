@@ -18,7 +18,7 @@
             </tr>
             </thead>
             <tbody>
-            {!!Form::open(['route'=>['Notas.Insertar',$materia->id], 'method'=>'POST', 'onsubmit'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
+            {!!Form::open(['route'=>['Notas.Insertar',$materia->id], 'method'=>'post', 'onsubmit'=>"waitingDialog.show('Cargando... ',{ progressType: 'info'});setTimeout(function () {waitingDialog.hide();}, 3000);"])!!}
 
 
             <?php $contador = 0; ?>

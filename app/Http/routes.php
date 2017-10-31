@@ -21,14 +21,14 @@ Route::group(['middleware' => ['SSL']], function () {
     //------Main--//
     Route::get('/', 'MainController@home')->name('Principal');
 
-    Route::get("/pruebaMoodle",function(){
+    /*Route::get("/pruebaMoodle",function(){
 
         $moodle = new MoodleEngine();
         return  $moodle->addStudent('');
 
 
     });
-
+*/
 
 
 
@@ -66,7 +66,7 @@ Route::group(['middleware' => ['SSL']], function () {
             }
         });
         //Rutas de Maestros y Personal Administrativo
-        Route::group(['middleware' => 'PersonalAdministrativo'], function () {
+       Route::group(['middleware' => 'PersonalAdministrativo'], function () {
             //------Matriculas--//
 
 

@@ -136,8 +136,18 @@ class BoletaController extends Controller
         return redirect()->back();
     }
     public function DescargarBoletaGradoo($id){
+    	
+    	
         $alumnos = Estudiante::where('deleted_at',NULL)
-            ->with('user','matriculas.gradoseccion','matriculas.gradoseccion.grado','matriculas.gradoseccion.seccion','matriculas.gradoseccion.materiagrados.materium','matriculas.gradoseccion.materiagrados.notas','datosboleta')->get();
+            ->with('user',
+	            'matriculas.gradoseccion',
+	            'matriculas.gradoseccion.grado',
+	            'matriculas.gradoseccion.seccion',
+	            'matriculas.gradoseccion.materiagrados.materium',
+	            'matriculas.gradoseccion.materiagrados.notas',
+	            'datosboleta')->get();
+        
+        
         $orderMaterias = Materia::orderBy('OrdenMateriaBoleta','ASC')->get();
 
         $periodos = Periodo::all();
