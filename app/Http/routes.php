@@ -246,6 +246,7 @@ Route::group(['middleware' => ['SSL']], function () {
             Route::get('/moodle', 'MainController@ingresar');
             Route::get('/DescargarBoleta','BoletaController@DescargarBoleta');
             Route::get('/DescargarBoleta/{id}','BoletaController@DescargarBoletaGradoo')->name('Descargar.BoletaGrado');
+            Route::get('/DescargarBoletaGeneral/{id}','BoletaController@DescargarBoletaGeneral')->name('Descargar.BoletaGradoGeneral');
 
 
             //Rutas de Kinder

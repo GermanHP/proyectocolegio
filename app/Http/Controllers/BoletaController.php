@@ -162,4 +162,23 @@ class BoletaController extends Controller
 
          return $pdf->stream('Boletas.pdf');*/
     }
+    
+    public function DescargarBoletaGeneral($id){
+	    $alumnos = Estudiante::where('deleted_at',NULL)
+		    ->with('user',
+			    'matriculas.gradoseccion',
+			    'matriculas.gradoseccion.grado',
+			    'matriculas.gradoseccion.seccion',
+			    'matriculas.gradoseccion.materiagrados.materium',
+			    'matriculas.gradoseccion.materiagrados.notas',
+			    'datosboleta')->get();
+	
+	
+	    $orderMaterias = Materia::orderBy('OrdenMateriaBoleta','ASC')->get();
+	
+	    $periodos = Periodo::all();
+	    $gradoSeccion = Gradoseccion::find($id);
+	    $pdf = PDF::loadView('main.BoletaGradoGeneral',compact('alumnos','periodos','id','orderMaterias'))->setPaper('a3')->setOrientation('portrait')->setOption('margin-bottom', 0);
+	    return $pdf->download('Boletas_'.$gradoSeccion->grado->nombre.'_'.$gradoSeccion->seccion->nombre.'.pdf');
+    }
 }
