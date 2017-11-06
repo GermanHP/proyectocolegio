@@ -73,7 +73,16 @@
 </style>
 
 <body style="height: 300px;!important; background: white;">
-
+<?php $nVueltas = 0; ?>
+@foreach($alumnos as $alumno)
+    @if($alumno->matriculas[0]->gradoseccion->id==$id)
+        @if($nVueltas==0)
+			<?php $nVueltas = 1;?>
+        @elseif($nVueltas>375)
+			<?php break; ?>
+        @else
+            <hr>
+        @endif
     <div class="row teacherPage">
         <div class="col-md-12">
 
@@ -82,14 +91,14 @@
 
             <h3 class="text-center" id="titulo">INFORME FINAL DE RENDIMIENTO ACADÉMICO 2017<br></h3>
             <h3 class="text-center" id="titulo">COLEGIO "SAN JUAN BAUTISTA"<br></h3>
-            <h3 class="text-center" id="titulo">GRADO<br><br></h3>
+            <h3 class="text-center" id="titulo">GRADO {{$alumno->matriculas[0]->gradoseccion->grado->nombre}} {{$alumno->matriculas[0]->gradoseccion->seccion->nombre}}<br><br></h3>
 
 
             <div class="container">
                 <table class="table" border="1" bordercolor="#0000">
                     <thead>
                     <tr>
-                        <td colspan="10"><h4 class="text-center">ALUMNO/A:</h4></td>
+                        <td colspan="10"><h4 class="text-center">ALUMNO/A: {{$alumno->user->nombre}} {{$alumno->user->apellido}}</h4></td>
                     </tr>
 
                     <tr>
@@ -107,131 +116,341 @@
                     </thead>
                     <tbody>
                     <?php $promedioGlobal =0?>
-                    @foreach($alumno->matriculas[0]->gradoseccion->materiagrados as $materiagrado)
-                        <tr>
-                            <td>{{$materiagrado->materium->nombre}}</td>
-
-                            <?php
-                            $rev = false;
-                            $com= false;
-                            $int= false;
-                            $exa= false;
-                            $revision=NULL;
-                            $complementarias =NULL;
-                            $integradoras=NULL;
-                            $examen =NULL;?>
-                            @foreach($materiagrado->notas as $nota)
-
-                                @if($nota->idMateriaGrado == $materiagrado->id)
-                                    @if($nota->idEstudiante == $alumno->id)
-                                        @if($nota->idTipoNota==1)
-
-                                            <td>{{$nota->nota}}</td>
-                                            <td><?php
-                                                $rev=true;
-                                                $revision= round($nota->nota*0.15,2);
-                                                echo $revision?></td>
-
-                                        @endif
-                                        @if($nota->idTipoNota==2)
-
-                                            <td>{{$nota->nota}}</td>
-                                            <td><?php
-                                                $com= true;
-                                                $complementarias=round($nota->nota*0.20,2);
-                                                echo $complementarias ;?></td>
-
-                                        @endif
-                                        @if($nota->idTipoNota==3)
-
-                                            <td>{{$nota->nota}}</td>
-                                            <td><?php
-                                                $int= true;
-                                                $integradoras =round($nota->nota*0.35,2);
-                                                echo $integradoras;?></td>
-
-                                        @endif
-                                        @if($nota->idTipoNota==4)
-
-                                            <td>{{$nota->nota}}</td>
-                                            <td><?php
-                                                $exa=true;
-                                                $examen =round($nota->nota*0.30,2);
-                                                echo $examen?></td>
-
-                                        @endif
-
-                                    @endif
-                                @endif
+                    @foreach($orderMaterias as $orderMateria)
+                        @foreach($alumno->matriculas[0]->gradoseccion->materiagrados as $materiagrado)
+                            @if($materiagrado->idMateria==$orderMateria->id)
+                                @if($materiagrado->idMateria!=14)
 
 
-                            @endforeach
-                            @if($rev==false && $com==false && $int==false && $exa==false)
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td><b>0</b></td>
-                            @else
-                                <td><b><?php $promedio = $revision+$complementarias+$integradoras+$examen;
-                                        $promedioGlobal=$promedioGlobal+$promedio;
-                                        echo $promedio?></b>
-                                    @endif
+                                    <tr>
+                                        <td><h3>{{$materiagrado->materium->nombre}}</h3></td>
 
-                                </td>
-                        </tr>
+					                    <?php
+					                    $rev = false;
+					                    $com= false;
+					                    $int= false;
+					                    $exa= false;
+					                    $revision=NULL;
+					                    $complementarias =NULL;
+					                    $integradoras=NULL;
+					                    $examen =NULL;?>
+
+                                            <!--Primer Periodo-->
+	                                    <?php
+	                                    $rev = false;
+	                                    $com= false;
+	                                    $int= false;
+	                                    $exa= false;
+	                                    $revision=NULL;
+	                                    $complementarias =NULL;
+	                                    $integradoras=NULL;
+	                                    $examen =NULL;?>
+                                        @foreach($materiagrado->notas as $nota)
+
+                                            @if($nota->idMateriaGrado == $materiagrado->id && $nota->idPeriodos ==1)
+                                                @if($nota->idEstudiante == $alumno->id)
+                                                    @if($nota->idTipoNota==1)
+
+                                                        <?php
+							                                    $rev=true;
+							                                    $revision= round($nota->nota*0.15,1);
+							                                    ?>
+
+                                                    @endif
+                                                    @if($nota->idTipoNota==2)
+
+                                                        <?php
+							                                    $com= true;
+							                                    $complementarias=round($nota->nota*0.20,1);
+							                                   ?>
+
+                                                    @endif
+                                                    @if($nota->idTipoNota==3)
+
+                                                       <?php
+							                                    $int= true;
+							                                    $integradoras =round($nota->nota*0.35,1);
+							                                    ?>
+
+                                                    @endif
+                                                    @if($nota->idTipoNota==4)
+
+                                                       <?php
+							                                    $exa=true;
+							                                    $examen =round($nota->nota*0.30,1);
+							                                    ?>
+
+                                                    @endif
+
+                                                @endif
+                                            @endif
+	                                            <?php $promedio_p1 = $revision+$complementarias+$integradoras+$examen; ?>
+                                                    @endforeach
+
+                                        <!--Fin Primer Periodo-->
+
+
+                                        <!--Segundo Periodo-->
+	                                    <?php
+	                                    $rev = false;
+	                                    $com= false;
+	                                    $int= false;
+	                                    $exa= false;
+	                                    $revision=NULL;
+	                                    $complementarias =NULL;
+	                                    $integradoras=NULL;
+	                                    $examen =NULL;?>
+                                        @foreach($materiagrado->notas as $nota)
+
+                                            @if($nota->idMateriaGrado == $materiagrado->id && $nota->idPeriodos ==2)
+                                                @if($nota->idEstudiante == $alumno->id)
+                                                    @if($nota->idTipoNota==1)
+
+                                                        <?php
+							                                    $rev=true;
+							                                    $revision= round($nota->nota*0.15,1);
+							                                    ?>
+
+                                                    @endif
+                                                    @if($nota->idTipoNota==2)
+
+                                                        <?php
+							                                    $com= true;
+							                                    $complementarias=round($nota->nota*0.20,1);
+							                                   ?>
+
+                                                    @endif
+                                                    @if($nota->idTipoNota==3)
+
+                                                       <?php
+							                                    $int= true;
+							                                    $integradoras =round($nota->nota*0.35,1);
+							                                    ?>
+
+                                                    @endif
+                                                    @if($nota->idTipoNota==4)
+
+                                                       <?php
+							                                    $exa=true;
+							                                    $examen =round($nota->nota*0.30,1);
+							                                    ?>
+
+                                                    @endif
+
+                                                @endif
+                                            @endif
+	                                            <?php $promedio_p2 = $revision+$complementarias+$integradoras+$examen; ?>
+                                                    @endforeach
+
+                                        <!--Fin Segundo Periodo-->
+
+
+                                        <!--Tercer Periodo-->
+	                                    <?php
+	                                    $rev = false;
+	                                    $com= false;
+	                                    $int= false;
+	                                    $exa= false;
+	                                    $revision=NULL;
+	                                    $complementarias =NULL;
+	                                    $integradoras=NULL;
+	                                    $examen =NULL;?>
+                                        @foreach($materiagrado->notas as $nota)
+
+                                            @if($nota->idMateriaGrado == $materiagrado->id && $nota->idPeriodos ==3)
+                                                @if($nota->idEstudiante == $alumno->id)
+                                                    @if($nota->idTipoNota==1)
+
+                                                        <?php
+							                                    $rev=true;
+							                                    $revision= round($nota->nota*0.15,1);
+							                                    ?>
+
+                                                    @endif
+                                                    @if($nota->idTipoNota==2)
+
+                                                        <?php
+							                                    $com= true;
+							                                    $complementarias=round($nota->nota*0.20,1);
+							                                   ?>
+
+                                                    @endif
+                                                    @if($nota->idTipoNota==3)
+
+                                                       <?php
+							                                    $int= true;
+							                                    $integradoras =round($nota->nota*0.35,1);
+							                                    ?>
+
+                                                    @endif
+                                                    @if($nota->idTipoNota==4)
+
+                                                       <?php
+							                                    $exa=true;
+							                                    $examen =round($nota->nota*0.30,1);
+							                                    ?>
+
+                                                    @endif
+
+                                                @endif
+                                            @endif
+	                                            <?php $promedio_p3 = $revision+$complementarias+$integradoras+$examen; ?>
+                                                    @endforeach
+
+                                        <!--Fin Tercer Periodo-->
+
+                                        <!--Cuarto Periodo-->
+	                                    <?php
+	                                    $rev = false;
+	                                    $com= false;
+	                                    $int= false;
+	                                    $exa= false;
+	                                    $revision=NULL;
+	                                    $complementarias =NULL;
+	                                    $integradoras=NULL;
+	                                    $examen =NULL;?>
+                                        @foreach($materiagrado->notas as $nota)
+
+                                            @if($nota->idMateriaGrado == $materiagrado->id && $nota->idPeriodos ==4)
+                                                @if($nota->idEstudiante == $alumno->id)
+                                                    @if($nota->idTipoNota==1)
+
+                                                        <?php
+							                                    $rev=true;
+							                                    $revision= round($nota->nota*0.15,1);
+							                                    ?>
+
+                                                    @endif
+                                                    @if($nota->idTipoNota==2)
+
+                                                        <?php
+							                                    $com= true;
+							                                    $complementarias=round($nota->nota*0.20,1);
+							                                   ?>
+
+                                                    @endif
+                                                    @if($nota->idTipoNota==3)
+
+                                                       <?php
+							                                    $int= true;
+							                                    $integradoras =round($nota->nota*0.35,1);
+							                                    ?>
+
+                                                    @endif
+                                                    @if($nota->idTipoNota==4)
+
+                                                       <?php
+							                                    $exa=true;
+							                                    $examen =round($nota->nota*0.30,1);
+							                                    ?>
+
+                                                    @endif
+
+                                                @endif
+                                            @endif
+	                                            <?php $promedio_p4 = $revision+$complementarias+$integradoras+$examen; ?>
+                                                    @endforeach
+
+                                        <!--Fin Tercer Periodo-->
+
+					                    <?php
+					                    $nota1 =0;
+					                    $contadorNota1 =0;
+					                    $nota2 =0;
+					                    $contadorNota2 =0;
+					                    $nota3 =0;
+					                    $contadorNota3 =0;
+					                    $nota4 =0;
+					                    $contadorNota4 =0;
+					                    ?>
+
+
+
+                                                            <td><h3 class="text-center">{{round($promedio_p1,1)}}</h3></td>
+                                                            <td><h3 class="text-center"><?php
+												                    $rev=true;
+												                    $revision= ($promedio_p1)*0.25;
+												                    echo round($revision,1)?></h3></td>
+
+                                                            <td><h3 class="text-center">{{round($promedio_p2,1)}}</h3></td>
+                                                            <td><h3 class="text-center"><?php
+												                    $rev=true;
+												                    $revision= ($promedio_p2)*0.25;
+												                    echo round($revision,1)?></h3></td>
+                                                            <td><h3 class="text-center">{{round($promedio_p3,1)}}</h3></td>
+                                                            <td><h3 class="text-center"><?php
+												                    $rev=true;
+												                    $revision= ($promedio_p3)*0.25;
+												                    echo round($revision,1)?></h3></td>
+                                                            <td><h3 class="text-center">{{round($promedio_p4,1)}}</h3></td>
+                                                            <td><h3 class="text-center"><?php
+												                    $rev=true;
+												                    $revision= ($promedio_p4)*0.25;
+												                    echo round($revision,1)?></h3></td>
+
+
+
+
+                                            <td><h3 class="text-center"><b><?php $promedio = $promedio_p1+$promedio_p2+$promedio_p3+$promedio_p4;
+									                    $promedioGlobal=$promedioGlobal+$promedio;
+									                    echo round($promedio/4,1)?></b></h3>
+
+
+                                            </td>
+                                    </tr>
+                               @endif
+                            @endif
+                        @endforeach
                     @endforeach
+
                     <tr>
                         <td>CONDUCTA</td>
                         <td colspan="8"></td>
                         <td>
-                            <?php $nvueltas =0?>
+                            <?php $promedioConducta =0?>
                             @foreach($alumno->datosboleta as $boleta)
-                                @if($boleta->idPeriodo=1)
-                                    <?php $nvueltas++;
-                                    $promedioGlobal=$promedioGlobal+$boleta->notaConducta;
-                                    ?>
-                                    {{$boleta->notaConducta}}
-                                @endif
+                                    <?php
+                                        $promedioConducta = $promedioConducta+$boleta->notaConducta;
+
+                                   ?>
+
                             @endforeach
-                            @if($nvueltas==0)
-                                0
-                            @endif
+                                <?php
+                                $promedioConducta = $promedioConducta/4;
+                                ?>
+                                {{round($promedioConducta,1)}}
                         </td>
                     </tr>
                     <tr>
                         <td colspan="9">PROMEDIO GLOBAL</td>
-                        <td>{{$promedioGlobal}}</td>
+                        <?php $promedioGlobal = $promedioGlobal/4;
+                            $promedioGlobal = $promedioGlobal+$promedioConducta;
+                        ?>
+                        <td>{{round(($promedioGlobal)/13,1)}}</td>
                     </tr>
                     <br>
                     <tr>
                         <td colspan="3">PORCENTAJE DE ASISTENCIAS</td>
 
                         <td>
-                            <?php $nvueltas =0?>
+                            <?php $nasistncia =0?>
                             @foreach($alumno->datosboleta as $boleta)
-                                @if($boleta->idPeriodo=1)
-                                    <?php $nvueltas++;
-                                    $nasistncia = $boleta->porcentajeAsistencia*10;
-                                    ?>
-                                    {{$nasistncia}}
 
-                                @endif
+                                    <?php
+                                    $nasistncia = $nasistncia+ $boleta->porcentajeAsistencia*10;
+                                    ?>
+
+
+
                             @endforeach
-                            @if($nvueltas==0)
-                                0
-                            @endif
+                                {{round($nasistncia/4,1)}}
                             %</td>
                     </tr>
                     </tbody>
                 </table>
 
                 <h4>OBSERVACIONES</h4>
-                <textarea name="observaciones" id="observacion" cols="164" rows="8">@foreach($alumno->datosboleta as $boleta)@if($boleta->idPeriodo=1){{$boleta->Observaciones}}@endif @endforeach</textarea><br><br><br><br><br>
+                <textarea name="observaciones" id="observacion" cols="164" rows="5">@foreach($alumno->datosboleta as $boleta)@if($boleta->idPeriodo=4){{$boleta->Observaciones}}@endif @endforeach</textarea><br><br><br><br><br>
                 <h4>__________________________________</h4>
                 <h6 class="docente">DOCENTE RESPONSABLE DE SECCIÓN</h6>
                 <h4 class="pull-right director">__________________________________</h4><br>
@@ -243,6 +462,8 @@
 
     <?php $nVueltas++?>
 
+
+    @endif
 
 @endforeach
 </body>
