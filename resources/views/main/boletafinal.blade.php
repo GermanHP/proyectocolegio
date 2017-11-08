@@ -70,6 +70,7 @@
         white-space: -hp-pre-wrap; /* HP */
         word-wrap: break-word; /* IE 5+ */
     }
+
 </style>
 
 <body style="height: 300px;!important; background: white;">
@@ -89,8 +90,8 @@
             <h2 class="text-center"><img src="https://colegiosjb.net/img/indexes/logo.jpg" alt="" height="100" width="100"><br></h2>
             <h2 class="page-header text-center" id="titulo">Colegio San Juan Bautista<br><br></h2>
 
-            <h3 class="text-center" id="titulo">INFORME FINAL DE RENDIMIENTO ACADÉMICO 2017<br></h3>
             <h3 class="text-center" id="titulo">COLEGIO "SAN JUAN BAUTISTA"<br></h3>
+            <h3 class="text-center" id="titulo">INFORME FINAL DE RENDIMIENTO ACADÉMICO 2017<br></h3>
             <h3 class="text-center" id="titulo">GRADO {{$alumno->matriculas[0]->gradoseccion->grado->nombre}} {{$alumno->matriculas[0]->gradoseccion->seccion->nombre}}<br><br></h3>
 
 
@@ -98,19 +99,19 @@
                 <table class="table" border="1" bordercolor="#0000">
                     <thead>
                     <tr>
-                        <td colspan="10"><h4 class="text-center">ALUMNO/A: {{$alumno->user->nombre}} {{$alumno->user->apellido}}</h4></td>
+                        <td colspan="10"><h2 class="text-center">ALUMNO/A: {{$alumno->user->nombre}} {{$alumno->user->apellido}}</h2></td>
                     </tr>
 
                     <tr>
                         <th>PERIODOS</th>
                         <th rowspan="0"><label class="Rotate-90 ajustar">PRIMER PERIODO</label></th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Puntaje</label></th>
+
                         <th rowspan="0"><label class="Rotate-90 ajustar">SEGUNDO PERIODO</label></th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Puntaje</label></th>
+
                         <th rowspan="0"><label class="Rotate-90 ajustar">TERCER PERIODO</label></th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Puntaje</label></th>
+
                         <th rowspan="0"><label class="Rotate-90 ajustar">CUARTO PERIODO</label></th>
-                        <th rowspan="0"><label class="Rotate-90 ajustar">Puntaje</label></th>
+                        <th rowspan="0"><label class="Rotate-90 ajustar">PUNTAJE FINAL</label></th>
                         <th rowspan="0"><label class="Rotate-90 ajustar">PROMEDIO FINAL</label></th>
                     </tr>
                     </thead>
@@ -123,7 +124,7 @@
 
 
                                     <tr>
-                                        <td><h3>{{$materiagrado->materium->nombre}}</h3></td>
+                                        <td><h3 class="text-uppercase">{{$materiagrado->materium->nombre}}</h3></td>
 
 					                    <?php
 					                    $rev = false;
@@ -364,29 +365,48 @@
 					                    $contadorNota4 =0;
 					                    ?>
 
+                                            <!--Puntaje promedio periodo 1-->
+                                        <?php
+                                        $rev=true;
+                                        $revision= ($promedio_p1)*0.25;
+                                        echo round($revision,1)?>
+                                        <!--fin puntaje promedio 1-->
+
+                                        <!--Puntaje promedio 2-->
+                                        <?php
+                                        $rev=true;
+                                        $revision= ($promedio_p2)*0.25;
+                                        echo round($revision,1)?>
+                                        <!--fin puntaje promedio 2-->
+
+                                        <!--puntaje promedio 3-->
+                                        <?php
+                                        $rev=true;
+                                        $revision= ($promedio_p3)*0.25;
+                                        echo round($revision,1)?>
+                                        <!--fin puntaje promedio 3-->
+
+                                        <!--puntaje promedio 4-->
+                                        <?php
+                                        $rev=true;
+                                        $revision= ($promedio_p4)*0.25;
+                                        echo round($revision,1)?>
+                                        <!--fin puntaje promedio 4-->
+
+
+
 
 
                                                             <td><h3 class="text-center">{{round($promedio_p1,1)}}</h3></td>
-                                                            <td><h3 class="text-center"><?php
-												                    $rev=true;
-												                    $revision= ($promedio_p1)*0.25;
-												                    echo round($revision,1)?></h3></td>
 
                                                             <td><h3 class="text-center">{{round($promedio_p2,1)}}</h3></td>
-                                                            <td><h3 class="text-center"><?php
-												                    $rev=true;
-												                    $revision= ($promedio_p2)*0.25;
-												                    echo round($revision,1)?></h3></td>
+
                                                             <td><h3 class="text-center">{{round($promedio_p3,1)}}</h3></td>
-                                                            <td><h3 class="text-center"><?php
-												                    $rev=true;
-												                    $revision= ($promedio_p3)*0.25;
-												                    echo round($revision,1)?></h3></td>
+
                                                             <td><h3 class="text-center">{{round($promedio_p4,1)}}</h3></td>
-                                                            <td><h3 class="text-center"><?php
-												                    $rev=true;
-												                    $revision= ($promedio_p4)*0.25;
-												                    echo round($revision,1)?></h3></td>
+                                                            <td><h3 class="text-center"></h3>
+                                                                <!-- sumatoria de los 4 puntajes obtenidos de cada periodo -->
+                                                            </td>
 
 
 
@@ -403,31 +423,8 @@
                         @endforeach
                     @endforeach
 
-                    <tr>
-                        <td>CONDUCTA</td>
-                        <td colspan="8"></td>
-                        <td>
-                            <?php $promedioConducta =0?>
-                            @foreach($alumno->datosboleta as $boleta)
-                                    <?php
-                                        $promedioConducta = $promedioConducta+$boleta->notaConducta;
 
-                                   ?>
 
-                            @endforeach
-                                <?php
-                                $promedioConducta = $promedioConducta/4;
-                                ?>
-                                {{round($promedioConducta,1)}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="9">PROMEDIO GLOBAL</td>
-                        <?php $promedioGlobal = $promedioGlobal/4;
-                            $promedioGlobal = $promedioGlobal+$promedioConducta;
-                        ?>
-                        <td>{{round(($promedioGlobal)/13,1)}}</td>
-                    </tr>
                     <br>
                     <tr>
                         <td colspan="3">PORCENTAJE DE ASISTENCIAS</td>
