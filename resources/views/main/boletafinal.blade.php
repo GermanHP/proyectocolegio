@@ -369,28 +369,28 @@
                                         <?php
                                         $rev=true;
                                         $revision= ($promedio_p1)*0.25;
-                                        echo round($revision,1)?>
+                                       ?>
                                         <!--fin puntaje promedio 1-->
 
                                         <!--Puntaje promedio 2-->
                                         <?php
                                         $rev=true;
                                         $revision= ($promedio_p2)*0.25;
-                                        echo round($revision,1)?>
+                                        ?>
                                         <!--fin puntaje promedio 2-->
 
                                         <!--puntaje promedio 3-->
                                         <?php
                                         $rev=true;
                                         $revision= ($promedio_p3)*0.25;
-                                        echo round($revision,1)?>
+                                        ?>
                                         <!--fin puntaje promedio 3-->
 
                                         <!--puntaje promedio 4-->
                                         <?php
                                         $rev=true;
                                         $revision= ($promedio_p4)*0.25;
-                                        echo round($revision,1)?>
+                                       ?>
                                         <!--fin puntaje promedio 4-->
 
 
@@ -404,7 +404,11 @@
                                                             <td><h3 class="text-center">{{round($promedio_p3,1)}}</h3></td>
 
                                                             <td><h3 class="text-center">{{round($promedio_p4,1)}}</h3></td>
-                                                            <td><h3 class="text-center"></h3>
+                                                            <td><h3 class="text-center"><?php
+		                                                            $promedioG = $promedio_p1+$promedio_p2+$promedio_p3+$promedio_p4;
+		                                                            echo round($promedioG,1);
+		                                                            ?></h3>
+
                                                                 <!-- sumatoria de los 4 puntajes obtenidos de cada periodo -->
                                                             </td>
 

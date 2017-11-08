@@ -179,6 +179,6 @@ class BoletaController extends Controller
 	    $periodos = Periodo::all();
 	    $gradoSeccion = Gradoseccion::find($id);
 	    $pdf = PDF::loadView('main.boletafinal',compact('alumnos','periodos','id','orderMaterias'))->setPaper('a3')->setOrientation('portrait')->setOption('margin-bottom', 0);
-	    return $pdf->download('Boletas_'.$gradoSeccion->grado->nombre.'_'.$gradoSeccion->seccion->nombre.'.pdf');
+	    return $pdf->download('Boletas_General'.$gradoSeccion->grado->nombre.'_'.$gradoSeccion->seccion->nombre.'.pdf');
     }
 }
